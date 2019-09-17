@@ -5,10 +5,15 @@
              android:layout_height="match_parent"
              tools:context=".navfragments.FaqFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="FAQ Fragment"/>
+    <!--Expanding items container-->
+    <ListView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/expansion_container">
+
+    </ListView>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <include layout="@layout/expansion_item"/>
+    </ScrollView>
 
 </FrameLayout>

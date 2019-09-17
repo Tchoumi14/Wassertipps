@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import com.github.aakira.expandablelayout.ExpandableRelativeLayout
 import com.zeitform.wasserapp.R
 
 
@@ -28,6 +30,8 @@ class FaqFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var expandableLayout1: ExpandableRelativeLayout
+    private lateinit var expandableButton1: Button
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +47,12 @@ class FaqFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_faq, container, false)
+        // Inflate the layout for this fragment
+        var rootView = inflater.inflate(R.layout.fragment_faq, container, false)
+        expandableButton1 = rootView.findViewById(R.id.expandableButton1)
+        expandableLayout1 = rootView.findViewById(R.id.expandableLayout1)
+        expandableButton1.setOnClickListener { expandableLayout1.toggle() }
+        return rootView
     }
 
     // TODO: Rename method, update argument and hook method into UI event

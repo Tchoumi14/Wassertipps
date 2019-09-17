@@ -35,8 +35,7 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionList
     WasserinfoFragment.OnFragmentInteractionListener,
     FaqFragment.OnFragmentInteractionListener,
     RechnerFragment.OnFragmentInteractionListener, KontaktFragment.OnFragmentInteractionListener, TippsHaerteFragment.OnFragmentInteractionListener,
-TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, KontaktSubFragment.OnFragmentInteractionListener,
-        FaqContentFragment.OnFragmentInteractionListener{
+TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, KontaktSubFragment.OnFragmentInteractionListener{
 
     var hart: Int = 1
     var nitrat: Int = 1

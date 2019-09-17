@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="faq_title">
-        <item name="1">Speichern sie irgendwelche Daten von mir, wenn ich die App benutze?</item>
-        <item name="2">Warum bieten sie die App nicht gratis ohne die nervige Werbung an?</item>
-        <item name="3">Was ist die WIB-Initiative?</item>
-        <item name="4">Wer sollte besonders auf den Nitratgehalt achten?</item>
-        <item name="5">Welche zusätzlichen Funktionen kann ich mit dem Kauf freischalten?</item>
-        <item name="6">Wie kommt der persönliche Wasserbedarf im Wasserbedarfsrechner zustande?</item>
-        <item name="7">Raten sie grundsätzlich davon ab, Leitungswasser zu trinken?</item>
-        <item name="8">Ich weiß, welche Wasserhärte/welchen Nitratwert mein Leitungswasser hat. Warum kann ich die App nicht ohne GPS-Ortung verwenden?</item>
-        <item name="9">Wie verlässlich sind die angezeigten Wasserwerte?</item>
-        <item name="10">Warum geben andere Wasserdatenbanken im Internet für meinen Ort eine ganz andere Wasserhärte an als die App?</item>
-        <item name="11">Ich bekomme die Meldung, dass für meinen Ort noch keine Wasserwerte vorliegen</item>
-        <item name="12">Die App liefert mir Wasserwerte mit von-bis Angaben. Wie kommen die zustande?</item>
-        <item name="13">Ich bekomme die Meldung, dass für meinen Ort mehrere Wasserwerke zuständig sind. Was bedeutet das für mein Wasser?</item>
-    </string-array>
-    <string-array name="faq_content">
-        <item name="1">Speichern sie irgendwelche Daten von mir, wenn ich die App benutze?</item>
-        <item name="2">Warum bieten sie die App nicht gratis ohne die nervige Werbung an?</item>
-        <item name="3">Was ist die WIB-Initiative?</item>
-        <item name="4">Wer sollte besonders auf den Nitratgehalt achten?</item>
-        <item name="5">Welche zusätzlichen Funktionen kann ich mit dem Kauf freischalten?</item>
-        <item name="6">Wie kommt der persönliche Wasserbedarf im Wasserbedarfsrechner zustande?</item>
-        <item name="7">Raten sie grundsätzlich davon ab, Leitungswasser zu trinken?</item>
-        <item name="8">Ich weiß, welche Wasserhärte/welchen Nitratwert mein Leitungswasser hat. Warum kann ich die App nicht ohne GPS-Ortung verwenden?</item>
-        <item name="9">Wie verlässlich sind die angezeigten Wasserwerte?</item>
-        <item name="10">Warum geben andere Wasserdatenbanken im Internet für meinen Ort eine ganz andere Wasserhärte an als die App?</item>
-        <item name="11">Ich bekomme die Meldung, dass für meinen Ort noch keine Wasserwerte vorliegen</item>
-        <item name="12">Die App liefert mir Wasserwerte mit von-bis Angaben. Wie kommen die zustande?</item>
-        <item name="13">Ich bekomme die Meldung, dass für meinen Ort mehrere Wasserwerke zuständig sind. Was bedeutet das für mein Wasser?</item>
-    </string-array>
+        <string name="faq_title_1">Speichern sie irgendwelche Daten von mir, wenn ich die App benutze?</string>
+        <string name="faq_title_2">Warum bieten sie die App nicht gratis ohne die nervige Werbung an?</string>
+        <string name="faq_title_3">Was ist die WIB-Initiative?</string>
+        <string name="faq_title_4">Wer sollte besonders auf den Nitratgehalt achten?</string>
+        <string name="faq_title_5">Welche zusätzlichen Funktionen kann ich mit dem Kauf freischalten?</string>
+        <string name="faq_title_6">Wie kommt der persönliche Wasserbedarf im Wasserbedarfsrechner zustande?</string>
+        <string name="faq_title_7">Raten sie grundsätzlich davon ab, Leitungswasser zu trinken?</string>
+        <string name="faq_title_8">Ich weiß, welche Wasserhärte/welchen Nitratwert mein Leitungswasser hat. Warum kann ich die App nicht ohne GPS-Ortung verwenden?</string>
+        <string name="faq_title_9">Wie verlässlich sind die angezeigten Wasserwerte?</string>
+        <string name="faq_title_10">Warum geben andere Wasserdatenbanken im Internet für meinen Ort eine ganz andere Wasserhärte an als die App?</string>
+        <string name="faq_title_11">Ich bekomme die Meldung, dass für meinen Ort noch keine Wasserwerte vorliegen</string>
+        <string name="faq_title_12">Die App liefert mir Wasserwerte mit von-bis Angaben. Wie kommen die zustande?</string>
+        <string name="faq_title_13">Ich bekomme die Meldung, dass für meinen Ort mehrere Wasserwerke zuständig sind. Was bedeutet das für mein Wasser?</string>
+
+        <string name="faq_content_1">Speichern sie irgendwelche Daten von mir, wenn ich die App benutze?</string>
+        <string name="faq_content_2">Warum bieten sie die App nicht gratis ohne die nervige Werbung an?</string>
+        <string name="faq_content_3">Was ist die WIB-Initiative?</string>
+        <string name="faq_content_4">Wer sollte besonders auf den Nitratgehalt achten?</string>
+        <string name="faq_content_5">Welche zusätzlichen Funktionen kann ich mit dem Kauf freischalten?</string>
+        <string name="faq_content_6">Wie kommt der persönliche Wasserbedarf im Wasserbedarfsrechner zustande?</string>
+        <string name="faq_content_7">Raten sie grundsätzlich davon ab, Leitungswasser zu trinken?</string>
+        <string name="faq_content_8">Ich weiß, welche Wasserhärte/welchen Nitratwert mein Leitungswasser hat. Warum kann ich die App nicht ohne GPS-Ortung verwenden?</string>
+        <string name="faq_content_9">Wie verlässlich sind die angezeigten Wasserwerte?</string>
+        <string name="faq_content_10">Warum geben andere Wasserdatenbanken im Internet für meinen Ort eine ganz andere Wasserhärte an als die App?</string>
+        <string name="faq_content_11">Ich bekomme die Meldung, dass für meinen Ort noch keine Wasserwerte vorliegen</string>
+        <string name="faq_content_12">Die App liefert mir Wasserwerte mit von-bis Angaben. Wie kommen die zustande?</string>
+        <string name="faq_content_13">Ich bekomme die Meldung, dass für meinen Ort mehrere Wasserwerke zuständig sind. Was bedeutet das für mein Wasser?</string>
+
 </resources>
