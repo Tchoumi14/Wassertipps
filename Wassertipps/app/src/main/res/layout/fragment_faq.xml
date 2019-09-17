@@ -91,7 +91,7 @@
                     android:backgroundTint="?attr/colorAppSecondary"
                     android:padding="@dimen/basic_text_padding"
                     android:layout_marginTop="@dimen/basic_text_padding"
-                    android:text="@string/faq_title_1"
+                    android:text="@string/faq_title_3"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textAlignment="textStart"/>
@@ -112,7 +112,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        android:text="@string/faq_content_3" />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 4-->
             <TextView
@@ -124,7 +124,7 @@
                     android:backgroundTint="?attr/colorAppSecondary"
                     android:padding="@dimen/basic_text_padding"
                     android:layout_marginTop="@dimen/basic_text_padding"
-                    android:text="@string/faq_title_1"
+                    android:text="@string/faq_title_4"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textAlignment="textStart"/>
@@ -145,7 +145,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        android:text="@string/faq_content_4" />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 5-->
             <TextView
@@ -157,7 +157,7 @@
                     android:backgroundTint="?attr/colorAppSecondary"
                     android:padding="@dimen/basic_text_padding"
                     android:layout_marginTop="@dimen/basic_text_padding"
-                    android:text="@string/faq_title_1"
+                    android:text="@string/faq_title_5"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textAlignment="textStart"/>
@@ -178,7 +178,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        android:text="@string/faq_content_5" />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 6-->
             <TextView
@@ -190,7 +190,7 @@
                     android:backgroundTint="?attr/colorAppSecondary"
                     android:padding="@dimen/basic_text_padding"
                     android:layout_marginTop="@dimen/basic_text_padding"
-                    android:text="@string/faq_title_1"
+                    android:text="@string/faq_title_6"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textAlignment="textStart"/>
@@ -211,7 +211,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        android:text="@string/faq_content_6" />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 7-->
             <TextView
@@ -223,7 +223,7 @@
                     android:backgroundTint="?attr/colorAppSecondary"
                     android:padding="@dimen/basic_text_padding"
                     android:layout_marginTop="@dimen/basic_text_padding"
-                    android:text="@string/faq_title_1"
+                    android:text="@string/faq_title_7"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textAlignment="textStart"/>
@@ -244,7 +244,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        android:text="@string/faq_content_7" />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 8-->
             <TextView
@@ -256,7 +256,7 @@
                     android:backgroundTint="?attr/colorAppSecondary"
                     android:padding="@dimen/basic_text_padding"
                     android:layout_marginTop="@dimen/basic_text_padding"
-                    android:text="@string/faq_title_1"
+                    android:text="@string/faq_title_8"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textAlignment="textStart"/>
@@ -277,7 +277,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        android:text="@string/faq_content_8" />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 9-->
             <TextView
@@ -289,7 +289,7 @@
                     android:backgroundTint="?attr/colorAppSecondary"
                     android:padding="@dimen/basic_text_padding"
                     android:layout_marginTop="@dimen/basic_text_padding"
-                    android:text="@string/faq_title_1"
+                    android:text="@string/faq_title_9"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textAlignment="textStart"/>
@@ -310,7 +310,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        android:text="@string/faq_content_9" />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 10-->
             <TextView
@@ -322,7 +322,7 @@
                     android:backgroundTint="?attr/colorAppSecondary"
                     android:padding="@dimen/basic_text_padding"
                     android:layout_marginTop="@dimen/basic_text_padding"
-                    android:text="@string/faq_title_1"
+                    android:text="@string/faq_title_10"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textAlignment="textStart"/>
@@ -343,7 +343,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        android:text="@string/faq_content_10" />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 11-->
             <TextView
@@ -355,7 +355,7 @@
                     android:backgroundTint="?attr/colorAppSecondary"
                     android:padding="@dimen/basic_text_padding"
                     android:layout_marginTop="@dimen/basic_text_padding"
-                    android:text="@string/faq_title_1"
+                    android:text="@string/faq_title_11"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textAlignment="textStart"/>
@@ -376,7 +376,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        android:text="@string/faq_content_11" />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 12-->
             <TextView
@@ -388,7 +388,7 @@
                     android:backgroundTint="?attr/colorAppSecondary"
                     android:padding="@dimen/basic_text_padding"
                     android:layout_marginTop="@dimen/basic_text_padding"
-                    android:text="@string/faq_title_1"
+                    android:text="@string/faq_title_12"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textAlignment="textStart"/>
@@ -409,7 +409,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        android:text="@string/faq_content_12" />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 13-->
             <TextView
@@ -421,7 +421,7 @@
                     android:backgroundTint="?attr/colorAppSecondary"
                     android:padding="@dimen/basic_text_padding"
                     android:layout_marginTop="@dimen/basic_text_padding"
-                    android:text="@string/faq_title_1"
+                    android:text="@string/faq_title_13"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textAlignment="textStart"/>
@@ -442,7 +442,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        android:text="@string/faq_content_13" />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
         </LinearLayout>
     </ScrollView>
