@@ -4,10 +4,14 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.ScrollView
+import android.widget.TextView
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout
 import com.zeitform.wasserapp.R
 
@@ -30,8 +34,34 @@ class FaqFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var faqContainer: LinearLayout
     private lateinit var expandableLayout1: ExpandableRelativeLayout
-    private lateinit var expandableButton1: Button
+    private lateinit var expandableLayout2: ExpandableRelativeLayout
+    private lateinit var expandableLayout3: ExpandableRelativeLayout
+    private lateinit var expandableLayout4: ExpandableRelativeLayout
+    private lateinit var expandableLayout5: ExpandableRelativeLayout
+    private lateinit var expandableLayout6: ExpandableRelativeLayout
+    private lateinit var expandableLayout7: ExpandableRelativeLayout
+    private lateinit var expandableLayout8: ExpandableRelativeLayout
+    private lateinit var expandableLayout9: ExpandableRelativeLayout
+    private lateinit var expandableLayout10: ExpandableRelativeLayout
+    private lateinit var expandableLayout11: ExpandableRelativeLayout
+    private lateinit var expandableLayout12: ExpandableRelativeLayout
+    private lateinit var expandableLayout13: ExpandableRelativeLayout
+
+    private lateinit var expandableButton1: TextView
+    private lateinit var expandableButton2: TextView
+    private lateinit var expandableButton3: TextView
+    private lateinit var expandableButton4: TextView
+    private lateinit var expandableButton5: TextView
+    private lateinit var expandableButton6: TextView
+    private lateinit var expandableButton7: TextView
+    private lateinit var expandableButton8: TextView
+    private lateinit var expandableButton9: TextView
+    private lateinit var expandableButton10: TextView
+    private lateinit var expandableButton11: TextView
+    private lateinit var expandableButton12: TextView
+    private lateinit var expandableButton13: TextView
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,10 +79,51 @@ class FaqFragment : Fragment() {
         // Inflate the layout for this fragment
         // Inflate the layout for this fragment
         var rootView = inflater.inflate(R.layout.fragment_faq, container, false)
-        expandableButton1 = rootView.findViewById(R.id.expandableButton1)
-        expandableLayout1 = rootView.findViewById(R.id.expandableLayout1)
-        expandableButton1.setOnClickListener { expandableLayout1.toggle() }
+        faqContainer = rootView.findViewById(R.id.faqContainer)
+        setTitleOnClick(rootView)
         return rootView
+    }
+    private fun setTitleOnClick(rootView: View){
+        expandableLayout1 = rootView.findViewById(R.id.expandableLayout1)
+        expandableLayout2 = rootView.findViewById(R.id.expandableLayout2)
+        expandableLayout3 = rootView.findViewById(R.id.expandableLayout3)
+        expandableLayout4 = rootView.findViewById(R.id.expandableLayout4)
+        expandableLayout5 = rootView.findViewById(R.id.expandableLayout5)
+        expandableLayout6 = rootView.findViewById(R.id.expandableLayout6)
+        expandableLayout7 = rootView.findViewById(R.id.expandableLayout7)
+        expandableLayout8 = rootView.findViewById(R.id.expandableLayout8)
+        expandableLayout9 = rootView.findViewById(R.id.expandableLayout9)
+        expandableLayout10 = rootView.findViewById(R.id.expandableLayout10)
+        expandableLayout11 = rootView.findViewById(R.id.expandableLayout11)
+        expandableLayout12 = rootView.findViewById(R.id.expandableLayout12)
+        expandableLayout13 = rootView.findViewById(R.id.expandableLayout13)
+
+        expandableButton1 = rootView.findViewById(R.id.expandableButton1)
+        expandableButton1.setOnClickListener { expandableLayout1.toggle() }
+        expandableButton2 = rootView.findViewById(R.id.expandableButton2)
+        expandableButton2.setOnClickListener { expandableLayout2.toggle() }
+        expandableButton3 = rootView.findViewById(R.id.expandableButton3)
+        expandableButton3.setOnClickListener { expandableLayout3.toggle() }
+        expandableButton4 = rootView.findViewById(R.id.expandableButton4)
+        expandableButton4.setOnClickListener { expandableLayout4.toggle() }
+        expandableButton5 = rootView.findViewById(R.id.expandableButton5)
+        expandableButton5.setOnClickListener { expandableLayout5.toggle() }
+        expandableButton6 = rootView.findViewById(R.id.expandableButton6)
+        expandableButton6.setOnClickListener { expandableLayout6.toggle() }
+        expandableButton7 = rootView.findViewById(R.id.expandableButton7)
+        expandableButton7.setOnClickListener { expandableLayout7.toggle() }
+        expandableButton8 = rootView.findViewById(R.id.expandableButton8)
+        expandableButton8.setOnClickListener { expandableLayout8.toggle() }
+        expandableButton9 = rootView.findViewById(R.id.expandableButton9)
+        expandableButton9.setOnClickListener { expandableLayout9.toggle() }
+        expandableButton10 = rootView.findViewById(R.id.expandableButton10)
+        expandableButton10.setOnClickListener { expandableLayout10.toggle() }
+        expandableButton11 = rootView.findViewById(R.id.expandableButton11)
+        expandableButton11.setOnClickListener { expandableLayout11.toggle() }
+        expandableButton12 = rootView.findViewById(R.id.expandableButton12)
+        expandableButton12.setOnClickListener { expandableLayout12.toggle() }
+        expandableButton13 = rootView.findViewById(R.id.expandableButton13)
+        expandableButton13.setOnClickListener { expandableLayout13.toggle() }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
