@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 
 import com.zeitform.wasserapp.R
 
@@ -28,6 +29,7 @@ class FaqContentFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var itemContainer: LinearLayout
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +45,9 @@ class FaqContentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_faq_content, container, false)
+        var rootView = inflater.inflate(R.layout.fragment_faq_content, container, false)
+        itemContainer = rootView.findViewById(R.id.expansion_container)
+        return rootView
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -3,9 +3,23 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$PROJECT_DIR$/Wassertipps/gradle" />
         <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Wassertipps" />
+        <option name="gradleHome" value="$PROJECT_DIR$/Wassertipps/gradle" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Wassertipps" />
+            <option value="$PROJECT_DIR$/Wassertipps/app" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>
