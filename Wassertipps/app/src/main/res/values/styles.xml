@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/appBackground_light</item>
+        <item name="colorAppPrimary">@color/colorPrimary</item>
+        <item name="colorAppPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAppAccent">@color/colorAccent</item>
+        <item name="colorAppSecondary">@color/colorSecondary</item>
+        <item name="colorAppTextPrimary">@color/colorTextPrimary</item>
+        <item name="colorAppTextSecondary">@color/colorTextSecondary</item>
+        <item name="colorDarkTint">@color/colorDarkTint</item>
+        <item name="navBarGrey">@color/navbarGrey</item>
+        <item name="textWhite">@color/textWhite</item>
+        <item name="appBackgroundColor">@color/appBackground_light</item>
+    </style>
+    <!--Dark theme -->
+    <style name="DarkTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/appBackground_dark</item>
+        <item name="colorAppPrimary">@color/colorPrimary_dark</item>
+        <item name="colorAppPrimaryDark">@color/colorPrimaryFocus_dark</item>
+        <item name="colorAppAccent">@color/colorAccent_dark</item>
+        <item name="colorAppSecondary">@color/colorSecondary_dark</item>
+        <item name="colorAppTextPrimary">@color/colorTextPrimary</item>
+        <item name="colorAppTextSecondary">@color/colorTextSecondary</item>
+        <item name="colorDarkTint">@color/colorDarkTint_dark</item>
+        <item name="navBarGrey">@color/navbarGrey_dark</item>
+        <item name="textWhite">@color/textWhite</item>
+        <item name="appBackgroundColor">@color/appBackground_dark</item>
+    </style>
+    <style name="NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+</resources>

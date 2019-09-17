@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".navfragments.HomeFragment"
+             android:id="@+id/home_gr"
+             android:background="@drawable/app_background">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/main_layout">
+        <android.support.v7.widget.CardView
+                android:id="@+id/card_haerte"
+                android:layout_width="match_parent"
+                app:cardBackgroundColor="?attr/colorAppSecondary"
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp">
+            <ImageView
+                    android:src="@drawable/bg_haerte"
+                    android:contentDescription="@string/wasserhaerte"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent" android:id="@+id/bghaerte"
+                    android:scaleType="fitCenter"/>
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textColor="?attr/colorAppTextPrimary"
+                        android:id="@+id/haerte_title"
+                        android:text="@string/wasserhaerte" android:textSize="24sp" android:textStyle="bold"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/haerte_text"
+                        android:textColor="?attr/colorAppTextPrimary"
+                        android:layout_marginStart="10dp"
+                        android:layout_below="@id/haerte_title"/>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true">
+                    <FrameLayout android:layout_width="wrap_content" android:layout_height="match_parent">
+                        <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:textColor="?attr/textWhite"
+                                android:id="@+id/haerte_value"
+                                android:text=""
+                                android:gravity="center"
+                                android:background="@color/colorPrimary"/>
+                        <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_icon_info"
+                                android:layout_gravity="bottom|center"
+                                android:contentDescription="info icon"
+                                android:scaleType="fitCenter"
+                                android:id="@+id/info_icon"
+                                android:visibility="invisible"/>
+                    </FrameLayout>
+                    <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:textColor="?attr/textWhite"
+                            android:id="@+id/haerte_unit"
+                            android:text="dh°"
+                            android:gravity="center"
+                            android:background="?attr/colorDarkTint"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <Button
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tipps_haerte"
+                android:layout_gravity="bottom"
+                android:text="@string/haerte_button"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="150dp"
+                android:background="@drawable/button_background"
+                android:textAllCaps="false"
+                android:textColor="?attr/textWhite"
+                android:fontFamily="sans-serif"
+                android:textSize="14sp"/>
+        <android.support.v7.widget.CardView
+                android:id="@+id/card_nitrat"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                app:cardBackgroundColor="?attr/colorAppSecondary"
+                android:layout_height="150dp"
+                android:layout_below="@+id/card_haerte">
+            <ImageView
+                    android:src="@drawable/bg_nitrat"
+                    android:contentDescription="@string/nitrat"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent" android:id="@+id/bgnitrat"
+                    android:scaleType="fitCenter"/>
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nitrat_title"
+                        android:textColor="?attr/colorAppTextPrimary"
+                        android:text="@string/nitrat" android:textSize="24sp" android:fontFamily="sans-serif"
+                        android:textStyle="bold" android:layout_marginStart="10dp"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nitrat_text"
+                        android:textColor="?attr/colorAppTextPrimary"
+                        android:layout_marginStart="10dp"
+                        android:layout_below="@id/nitrat_title"/>
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true">
+                    <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:textColor="?attr/textWhite"
+                            android:id="@+id/nitrat_value"
+                            android:text=""
+                            android:gravity="center"
+                            android:background="@color/colorPrimary"/>
+                    <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:textColor="?attr/textWhite"
+                            android:id="@+id/nitrat_unit"
+                            android:text="@string/nitrat_unit"
+                            android:gravity="center"
+                            android:background="?attr/colorDarkTint"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <Button
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tipps_nitrat"
+                android:layout_gravity="bottom"
+                android:text="@string/nitrat_button"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="330dp"
+                android:background="@drawable/button_background"
+                android:textColor="?attr/textWhite"
+                android:textAllCaps="false"
+                android:fontFamily="sans-serif"
+                android:textSize="14sp"/>
+        <android.support.v7.widget.CardView
+                android:visibility="invisible"
+                android:layout_marginTop="40dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:cardBackgroundColor="?attr/colorAccent"
+                android:textAlignment="center"
+                android:id="@+id/near_card"
+                android:layout_below="@id/card_nitrat" android:layout_centerInParent="true"
+        >
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:id="@+id/near_text"
+                    android:text="@string/near"
+                    android:textColor="?attr/textWhite"/>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                    android:visibility="invisible"
+                    android:background="@drawable/app_background"
+                     android:id="@+id/nohardness_layout">
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/nodata_card">
+        <ImageView
+                android:src="@drawable/bg_haerte"
+                android:contentDescription="@string/wasserhaerte"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"/>
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/title_nodata"
+                    android:textSize="24sp" android:textStyle="bold"/>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true">
+                <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:textColor="?attr/colorAppTextPrimary"
+                        android:text="@string/empty"
+                        android:gravity="center"
+                        android:background="@color/haerte2"/>
+                <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:textColor="?attr/colorAppTextPrimary"
+                        android:gravity="center"
+                        />
+            </LinearLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nodata_text"
+            android:text="@string/text1_nodata"
+            android:layout_below="@+id/nodata_card"
+            android:padding="@dimen/basic_text_padding"/>
+        <include layout="@layout/nodata_layout"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                android:layout_below="@+id/nodata_text"/>
+
+</RelativeLayout>
+
+
+</RelativeLayout>

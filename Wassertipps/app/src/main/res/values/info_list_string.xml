@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wasserinfos_titlebar_text">
+        <item name="wasser_tt">Faszination Wasser</item>
+        <item name="trinkwasser_tt">Trinkwasser </item>
+        <item name="trinkwasssergewinnung_tt">Trinkwassergewinnung</item>
+        <item name="trinkwasserverbrauch_tt">Trinkwasserverbrauch</item>
+        <item name="trinkwasseranalyse_tt">Trinkwasseranalyse</item>
+        <item name="wasserhaerte_tt">Trinkwasserhärte </item>
+        <item name="nitratgehalt_tt">Nitratgehalt im Trinkwasser</item>
+        <item name="quellen_tt">Quellen und Publikationen</item>
+    </string-array>
+    <string-array name="wasserinfos_titles">
+        <item name="wasser_title">Das Element Wasser</item>
+        <item name="trinkwasser_title">Allgemeine Informationen zum Trinkwasser</item>
+        <item name="trinkwasssergewinnung_title">Trinkwasser gewinnen, aufbereiten und verteilen</item>
+        <item name="trinkwasserverbrauch_title">Fakten zum Trinkwasserverbrauch</item>
+        <item name="trinkwasseranalyse_title">Trinkwasserqualität</item>
+        <item name="wasserhaerte_title">Weich, Mittel oder Hart, °dH oder mmol/l?</item>
+        <item name="nitratgehalt_title">Nitrate und Trinkwasser</item>
+        <item name="quellen_title">Zum Thema Wasser</item>
+    </string-array>
+
+    <string-array name="wasserinfos_content">
+        <item name="wasser"><![CDATA[<p>Rein chemisch betrachtet besteht Wasser bzw. ein Wassermolekül aus lediglich zwei Wasserstoffatomen (H) und einem Sauerstoffatom (O), also H2O. </p>
+                        <p>Bereits 1781 hat der Chemiker Henry Cavendish das Element Wasserstoff entdeckt. Trotzdem gibt Wasser der Wissenschaft bis heute noch einige Rätsel auf, da es verschiedenste Anomalien aufweist!</p>
+                        <p>So kann bspw. Wasser in 3 Aggregatzuständen vorliegen, fest, flüssig und gasförmig. Damit ist es bereits einzigartig, keine andere Substanz auf der Erde liegt in drei Zuständen vor. </p>
+                        <p>Außerdem dehnt sich Wasser sowohl bei Wärme (&gt; 4 Grad Celsius), als auch bei Kälte (&lt;4 Grad Celsius) aus. Dieses Phänomen nennt man Dichteanomalie, denn „normalerweise“ gilt: Je kälter, desto kleiner und je wärmer, desto größer die Ausdehnung. Damit zusammenhängend ist Wasser bei 4 Grad Celsius am schwersten. </p>
+                        <p>Übrigens: Es werden von Forschern 13 verschiedene Arten von Eis oder kristallinem Wasser unterschieden, je nach Druck- und Temperaturänderung.</p>
+                        <p>Eine weitere Anomalie: Ab 347 Grad Celsius siedet Wasser nicht mehr! Wasser und Dampf lassen sich nicht mehr unterscheiden, die Aggregatzustände fest und flüssig haben sich vereinigt.</p>
+
+                        <b>Wasser und Leben</b>
+                        <p>Zellen benötigen ein flüssiges Lösungsmittel, um chemische Prozesse zu ermöglichen. Wasser stellt ein solches Lösungsmittel dar. Darüber hinaus ist Wasser elektrisch geladen, also polar. Diese Eigenschaft bildet die Basis für einen schnellen Stoffaustausch.</p>
+                        <p>Außerdem reagiert Wasser mit sich selbst, sein Gemisch aus Base und Säure neutralisiert sich gegenseitig. Dadurch ist Wasser neutral.</p>
+
+                        <b>Wasser und der menschliche Körper</b>
+                        <p>Wasser ist lebensnotwendig. Ein Mensch besteht zu 50 - 80 % aus Wasser, wobei hier unter anderem das Alter eine Rolle spielt. Jüngere Menschen haben einen höheren Wasseranteil im Körper, im Laufe des Lebens nimmt dieser jedoch ab.</p>
+                        <p>Nimmt man 24 Stunden als Maßstab, so strömen ca. 2.000 Liter Wasser durch die Nieren und ca. 1.400 Liter durch das Gehirn. Ein Wassermangel kann hier schnell dramatische Folgen haben. Auch das Blut, die Leber und die Muskulatur sind auf ausreichend Wasser angewiesen, um korrekt arbeiten zu können. In diesen 24 Stunden scheidet ein gesunder Körper ca. 2,5 Liter Wasser (und damit bspw. auch verschiedenste Schadstoffe) wieder aus, was zeigt, wie wichtig die ausreichende Aufnahme von Wasser zum Ausgleich des Flüssigkeitsverlustes ist. Denn der menschliche Körper besitzt keine Wasserreserven. </p>
+                        <p>Ein Teil des benötigten Wassers wird über die Nahrung aufgenommen, der Rest muss jedoch über zusätzliche Flüssigkeitszufuhr zugeführt werden, grob verallgemeinert ca. 1,5 Liter pro Tag. Zu wenig Wasser kann unter anderem zu einem Leistungsabfall und Konzentrationsmangel führen, auch durch Flüssigkeitsmangel bedingte Kopfschmerzen sind keine Seltenheit.</p>
+                        <p><a href="#/einstellungen/">Unsere App bietet Ihnen hier den Service an, Ihren individuellen körpereigenen Wasserbedarf zu ermitteln und Sie über den Tag verteilt in regelmäßigen Abständen an das Trinken zu erinnern!</a> </p>
+                        <p>Wasser, in zu großen Mengen von mehreren Litern und in zu kleinen Zeitabständen zu sich genommen, kann tatsächlich tödlich sein (die sogenannte Wasservergiftung), da es die Konzentration von Salzen im Körper verändert <sup>(1)</sup>.</p>
+                        <p>Zu wenig Wasser bzw. Flüssigkeit führt ebenfalls zum Tod, wobei die eigentliche Todesursache beim Verdursten eine innere Vergiftung bzw. ein Kreislaufzusammenbruch ist. Die Nieren können aufgrund des Flüssigkeitsmangels nicht mehr arbeiten und körpereigene Gifte und Schadstoffe werden nicht mehr ausgeschieden, das Blut verdickt sich und der Salzgehalt konzentriert sich. Letztendlich ist es die massiv ansteigende Kaliumkonzentration, die das Herz überlastet, es kommt zum Herzstillstand durch eine fortgeschrittene Exsikkose, die Austrocknung des Körpers.</p>
+
+                        <b>Wasser im Wasserkreislauf der Natur</b>
+                        <p>Der Wasserkreislauf unserer Erde besteht aus einem Zusammenspiel von Atmosphäre, Landmassen und Gewässern/Meeren. Er bestimmt maßgeblich das Wetter und erzeugt immer wieder neues Wasser.</p>
+                        <p>Durch die Verdunstung des Wassers der Meere, Seen und Flüsse bildeten sich Wolken. Diese Wolken entladen sich zu Regen, der zum Teil direkt wieder in die Gewässer gelangt, zum Teil von Pflanzen und Tieren aufgenommen wird und zum Teil im Boden versickert.</p>
+                        <p>Dabei durchdringt er verschiedene Gesteins- und Bodenschichten und löst dort, je nach Bodenbeschaffenheit,  verschiedene Stoffe in unterschiedlichen Konzentrationen heraus, vor allen Dingen Salz und Kalk.</p>
+                        <p>Regen, der direkt in einen Fluss fällt, wird über kurz oder lang wieder zurück ins Meer transportiert. Auch auf diesem Weg werden verschiedene Stoffe gelöst und ins Meer geschwemmt.</p>
+                        <p>70 Prozent der Erdoberfläche ist von Wasser bedeckt, ca. 1,4 Milliarden km³. Davon entfallen nur ca. 2,5 Prozent auf Süßwasser, also ca. 12.000 km³.</p>
+                        <p>Durch den Klimawandel und den damit einhergehenden Temperaturanstieg verdunstet weltweit immer mehr Wasser. Dies führt in manchen Teilen der Welt zu Überschwemmungen, in anderen Teilen sind Dürreperioden.</p>
+                        <ul class="footnote">
+                            <li>(1) <a href="https://www.swr.de/odysso/wenn-trinken-toedlich-ist/-/id=1046894/did=5225792/nid=1046894/1c34oy8/">https://www.swr.de/odysso/wenn-trinken-toedlich-ist/-/id=1046894/did=5225792/nid=1046894/1c34oy8/</a></li>
+                        </ul>]]></item>
+        <item name="trinkwasser"><![CDATA[<p>Trinkwasser stammt aus dem Grundwasser (unterirdische Brunnen) oder Oberflächenwässern (Seen oder Flüsse). Dieses Rohwasser wird in Wasserwerken gefiltert, überprüft, bei Bedarf gereinigt und „ausgeliefert“. </p>
+                        <p>Das Rohwasser für die Aufbereitung des Trinkwassers stammt aus Grundwasser,  Oberflächenwasser,  Uferfiltrat, künstlich angereichertem Grundwasser und aus sonstigen Ressourcen <sup>(1)</sup>. </p>
+                        <p>Sauberes Trinkwasser zu haben ist ein Privileg und keine Selbstverständlichkeit: Über 1 Milliarde Menschen haben weltweit keinen Zugang zu sauberem Wasser. Prognosen gehen davon aus, dass es - in Anbetracht des momentanen Bevölkerungswachstums -  in 20 Jahren einem Drittel der Bevölkerung weltweit an genügend sauberem Wasser mangeln wird.  </p>
+                        <p>Etwa 80 Prozent aller Infektionskrankheiten in Entwicklungsländern werden durch verunreinigtes  Wasser übertragen, eine hohe Kindersterblichkeitsrate ist unter anderem die Folge. So spielt sauberes Wasser neben der Nahrungszubereitung und dem Trinken auch für die Hygiene eine entscheidende Rolle. Darüber hinaus wird für viele Industriezweige Wasser benötigt und dies nicht nur, um Lebensmittel herzustellen.</p>
+                        <p>Neben dem Wasser aus dem Wasserhahn gibt es noch verschiedene weitere Wasserarten, in der Regel in Flaschen, zu kaufen.</p>
+
+                        <b>Wasserarten</b>
+                        <p>Mineralwasser ist ein geschützter Begriff und darf nur für Wasser, das aus unterirdischen Quellen stammt und direkt vor Ort an der Quelle abgefüllt worden ist, verwendet werden. Lediglich Kohlensäure darf hinzugefügt werden, sonst nichts.</p>
+                        <p>Heilwasser darf ein Wasser nur dann genannt werden, wenn die Heilkraft wissenschaftlich nachgewiesen worden ist. Auch Heilwasser muss direkt  an der Quelle abgefüllt werden.</p>
+                        <p>Tafelwasser ist nichts anderes als normales Leitungswasser, dem ggf. einige Stoffe zugesetzt worden sind.</p>
+
+                        <ul class="footnote">
+                            <li>(1) Umwelt Bundesamt, <a href="http://www.umweltbundesamt.de/publikationen/bericht-des-bundesministeriums-fuer-gesundheit-des-2">http://www.umweltbundesamt.de/publikationen/bericht-des-bundesministeriums-fuer-gesundheit-des-2</a></li>
+                        </ul>]]></item>
+        <item name="trinkwassergewinnung"><![CDATA[<p>Gewinnen, Aufbereiten und Verteilen des Trinkwassers - dies alles erfolgt durch Wasserversorger. Die staatliche Überwachung dieser Wasserversorger und deren Verteilungssystemen bzw. die Einhaltung der Qualitätsstandards erfolgt durch die Gesundheitsämter in der Verantwortung der Länder und Gemeinden.</p>
+                        <p>Die Qualität  des Trinkwassers wird durch die Trinkwasserverordnung (TrinkwV) gesetzlich geregelt, es handelt sich damit um ein streng kontrolliertes Lebensmittel. Für die Einhaltung der Verordnung sind die einzelnen Bundesländer verantwortlich. </p>
+                        <p>Wie das Rohwasser aufbereitet wird, hängt von der Region, der Gewinnung (Grundwasser, Quellwasser, Oberflächenwasser, etc.)  und der damit verbundenen Qualität ab.</p>
+                        <p>Rohwasser wird in einem Wasserwerk zunächst belüftet, wenn es bestimmte Gase (in zu hoher Konzentration aufweist).  Danach wird freier Sauerstoff zugefügt, da bspw. aus Brunnen gefördertes Rohwasser keinen freien Sauerstoff enthält. Dadurch lösen sich vorhandene Mangan- und Eisenverbindungen und können herausgefiltert werden. Ist das Wasser sehr hart, wird es enthärtet. Liegt der pH-Wert nicht zwischen 6,5 und 9,5, muss es entsprechend aufbereitet werden. </p>
+                        <p>Die Höchstmengen/Grenzwerte bestimmter, im Trinkwasser vorhandener, Stoffe werden von der Trinkwasserverordnung vorgeschrieben, bspw. der oben genannte ph-Wert-Bereich. Dementsprechend müssen ggf. noch weitere Stoffe, bspw. Nitrate, bei der Aufbereitung des Rohwassers entfernt werden, um die Qualitätsanforderungen an das Trinkwasser zu erfüllen.<br>
+                            Am Ende der Aufbereitung entsteht das sogenannte Reinwasser, das als Trinkwasser weitergeleitet wird. </p>
+                        <p>Je „verschmutzter“ das Rohwasser ist, desto höher ist der Aufwand, es zu reinigen, um die gesetzlich vorgeschriebenen Grenzwerte einzuhalten. Besonders die steigenden Nitratwerte im Grundwasser stellen die Wasserwerke vor neue Herausforderungen, was unter anderem auch mit steigenden Kosten für die Reinigung und Aufbereitung des Rohwassers einhergeht.</p>
+                        <p>Es gibt ca. 6.200 Wasserversorgungsunternehmen in Deutschland und .ca. 180.000 Eigenwasserversorgungen (Hausbrunnen).
+                           Zusammengenommen beträgt die Gesamtlänge aller Verteilungsnetze ca. 500.000 Kilometer <sup>(1)</sup>.</p>
+
+                        <ul class="footnote">
+                            <li>(1) Umwelt Bundesamt, <a href="http://www.umweltbundesamt.de/sites/default/files/medien/479/publikationen/uba_rund_um_das_trinkwasser_ratgeber_web_0.pdf">http://www.umweltbundesamt.de/sites/default/files/medien/479/publikationen/uba_rund_um_das_trinkwasser_ratgeber_web_0.pdf</a></li>
+                        </ul>]]></item>
+        <item name="trinkwasserverbrauch"><![CDATA[<p>In Deutschland verbraucht jeder Einwohner ca. 120 Liter Trinkwasser am Tag in privaten Haushalten. Dabei entfällt der größte Anteil auf die Körperpflege, gefolgt von Toilettenspülung, Wäsche waschen, Geschirr spülen und Reinigung. Lediglich ca. 4 Prozent werden am Tag für Essen und Trinken verbraucht.</p>
+                        <p>Weitere ca. 3.900 Liter Wasser pro Tag werden für die Herstellung von Lebensmitteln, Bekleidung und anderen Bedarfsgütern verwendet. Ein Großteil dieses indirekt genutzten Wassers wird für die Bewässerung von Obst, Gemüse und Getreide benötigt <sup>(1)</sup>.</p>
+
+                        <ul class="footnote">
+                            <li>(1) Umwelt Bundesamt, <a href="http://www.umweltbundesamt.de/daten/private-haushalte-konsum/wassernutzung-privater-haushalte#textpart-1">http://www.umweltbundesamt.de/daten/private-haushalte-konsum/wassernutzung-privater-haushalte#textpart-1</a></li>
+                        </ul>]]></item>
+        <item name="trinkwasseranalyse"><![CDATA[<p>„Der Unternehmer und der sonstige Inhaber einer Wasserversorgungsanlage &#8230; , sofern die Anlage im Rahmen einer gewerblichen oder öffentlichen Tätigkeit betrieben wird, .. haben den betroffenen Verbrauchern mindestens jährlich geeignetes und aktuelles Informationsmaterial über die Qualität des bereitgestellten Trinkwassers auf der Grundlage der Untersuchungsergebnisse nach § 14, 14a und gegebenenfalls nach § 19 Absatz 7 und § 20 zu übermitteln. Dazu gehören auch Angaben über die Aufbereitungsstoffe, die bei der Aufbereitung und Verteilung verwendet werden, sowie Angaben, die für die Auswahl geeigneter Materialien für die Trinkwasser-Installation nach den allgemein anerkannten Regeln der Technik erforderlich sind.“ <sup>(1)</sup></p>
+                        <p>
+                            Dazu zählen auch Städte und Gemeinden, die dieser Veröffentlichungspflicht der Trinkwasseranalyseergebnisse nachkommen müssen.  Die Daten, die in unserer Datenbank erfasst werden, beruhen auf diesen veröffentlichten und jährlich aktualisierten Angaben. Allerdings kommen nicht alle dieser Pflicht umfänglich nach, teils sind die Analyseergebnisse sehr stark verkürzt (es wird bspw. nur der Härtegrad des Trinkwassers angegeben), teils erhält man nur telefonisch Auskunft.</p>
+                        <p>
+                            Die Trinkwasseranalysen basieren auf dem bereits aufbereiteten Trinkwasser und geben keine Auskunft über die Inhaltsstoffe und Werte des Rohwassers.</p>
+                       <ul class="footnote">
+                            <li> (1) gekürztes Zitat, <a href="https://www.dvgw.de/themen/wasser/trinkwasserverordnung/abschnitt-5/">
+                            https://www.dvgw.de/themen/wasser/trinkwasserverordnung/abschnitt-5/</a>
+                            </li>
+                        </ul>]]></item>
+        <item name="wasserhaerte"><![CDATA[<p>Regenwasser ist von Natur aus „weich“. Die Wasserhärte entsteht beim Durchtritt des Wassers durch Böden und/oder Grundwasserleiter (Aquifere). Deshalb hängt es stark vom geologischen Untergrund ab, welche und wie viel Härtebildner mit dem Wasser „in Lösung gehen“ können.</p>
+                        <p>Weiches Wasser ist günstig für alle Anwendungen, bei denen Geräte durch die Nutzung von/mit Wasser sonst schnell verkalken können. Dazu gehören u.a. Waschmaschinen, Wasserkocher und Kaffeemaschinen. Auch Zimmerpflanzen sind dankbar für weiches Wasser. Was sich auf die Lebensdauer einer Waschmaschine (und ebenso auf die benötigte Waschmittelmenge) positiv auswirkt, geht jedoch mit dem Nachteil der starken Schaumbildung bei Waschmitteln und der schlechten Entfernbarkeit von Seife einher.</p>
+                        <p>Hartes Wasser führt zur schnelleren Verkalkung von Haushaltsgeräten, erhöht den Verbrauch von Spül- und Waschmitteln, und beeinträchtigt oder fördert, je nach dem Maß der Härte, den Geschmack und das Aussehen empfindlicher Speisen und Getränke (z. B. Tee). Hartes Wasser kommt aus Regionen, in denen Sand- und Kalkgesteine vorherrschen <sup>(1)</sup>.</p>
+                        <p>Nach der Neufassung des Wasch- und Reinigungsmittelgesetzes im Jahr 2007 wird die Wasserhärte in 3 Härtebereiche eingeteilt:</p>
+                        <ul>
+                            <li>Weich mit einer Härte bis 8,4 °dH (&lt;1,5 mmol/l)</li>
+                            <li>Mittel mit einer Wasserhärte von 8,4-14 °dH (1,5-2,5 mmol/l)</li>
+                            <li>Hart mit einer Wasserhärte über 14 °dH (&gt; 2,5 mmol/l)</li>
+                            </ul>
+                            <p>Gleichzeitig wurde die bis dahin übliche Angabe Gesamthärte je Liter (°dH) durch die Maßeinheit Millimol Calciumcarbonat je Liter (mmol/l) ersetzt.<br>
+                            Mit dieser Maßnahme sollten die Härtebereiche an die europäischen Standards angepasst werden.</p>
+                            <p>Angaben in mmol/l haben wir zusätzlich in die (im Moment noch) sehr weit verbreitete Maßeinheit °dH umgerechnet, werden lediglich Härtebereiche (weich, mittel, hart) genannt, übersetzen wir das entsprechend in °dH-Angaben.</p>
+
+                        <ul class="footnote">
+                            <li>(1) <a href="https://de.wikipedia.org/wiki/Wasserhärte">https://de.wikipedia.org/wiki/Wasserhärte</a></li>
+                        </ul>]]></item>
+        <item name="nitratgehalt"><![CDATA[<p>Nitrate sind Salze und Ester (Stoffgruppe chemischer Verbindungen, die formal oder de facto durch die Reaktion einer Säure und eines Alkohols oder Phenols unter Abspaltung von Wasser entstehen) der Salpetersäure. <br>
+                        Sie kommen in freier Natur hauptsächlich in Form von Natriumnitrat vor, sind gut wasserlöslich und wichtig bspw. als Nährstoff für Pflanzen. In wenigen Teilen der Welt (in wenigen Wüsten) kommen sie in solchen Mengen vor, dass sie sogar abgebaut werden können. <br>
+                        In Böden und Gewässern werden Nitrate durch bakterielle Nitrifikation (Oxidation von Ammoniak bzw. Ammonium-Ionen  zu Nitrat) gebildet. Die Oxidation durch Bakterien der Gattung Nitrosomonas führt zu Nitrit, welches durch Bakterien der Gattung Nitrobacter zum Nitrat weiteroxidiert wird <sup>(1)</sup>.</p>
+                      <p>Nitrate werden bspw. in der Pyrotechnik eingesetzt, als Lebensmittelzusatzstoffe (Konservierungsstoffe), in der Medizin und – was in letzter Zeit immer mehr zu einem brisanten Thema  wird -  als Düngemittel (häufig in Form von Gülle).</p>
+                      <p>Die Nitratwerte im Grundwasser sind in den vergangenen Jahrzehnten deutlich gestiegen, manche reden in diesem Zusammenhang von einer dramatischen Steigerung.
+                        Denn obwohl Nitrat im Prinzip und in geringen, fest definierten Mengen als gesundheitlich unbedenklich gilt, können sich bei höheren Konzentrationen im menschlichen Körper durch die Umwandlung von Nitrat in Nitrit krebserregende Nitrosamine bilden.</p>
+                      <p>Bei Babys bis etwa zum 6. Lebensmonat, deren Körper noch nicht in der Lage ist Nitrat zu Nitrit umzuwandeln, bindet das Blut bei einer zu hohen Konzentration statt Sauerstoff Nitritmoleküle. Dies kann zu Blausucht führen oder im schlimmsten Fall sogar zum Erstickungstod.</p>
+                      <p>Nitrat wird jedoch nicht nur über das Trinkwasser aufgenommen, auch verschiedene Gemüsesorten weisen einen natürlichen, hohen Nitratgehalt auf. Dazu zählen unter anderem Rucola und andere Blattsalate, Spinat, Kohlrabi, Rote Beete, Radieschen und Rettich. </p>
+                      <p>Besonders bei Kindern und älteren Menschen, die an bakteriellen Magen-Darm-Infektionen leiden, sollte man neben der Ernährung auch auf den Nitratgehalt des Trinkwassers achten <sup>(2)</sup>.</p>
+                      <p>Der aktuelle Grenzwert für Nitrat im Trinkwasser liegt laut der deutschen und österreichischen Trinkwasserverordnung bei 50 mg/l, nach der schweizerischen Gewässerschutzverordnung bei 25 mg/l.<br>
+                        Dieser Grenzwert muss von den Wasserversorgern verpflichtend eingehalten werden.</p>
+                      <p>Bereits im Jahr 1986 hat das deutsche Bundesgesundheitsamt empfohlen, für die Zubereitung von Säuglingsnahrung einen Nitratgrenzwert von 10mg/l im Trinkwasser nicht zu überschreiten <sup>(3)</sup>.</p>
+                      <p> Studien in Dänemark<sup>4</sup> und den USA<sup>5</sup> haben bereits bei mittleren und niedrigen Nitratwerten eine signifikante Zunahme an Darmkrebsfällen gegenüber Trinkwasser mit einem Nitratgehalt von weniger als 5mg/l festgestellt.<br>
+                        Alle Autoren betonen aber, dass die Nitratproblematik noch nicht ausreichend untersucht wurde, um hier eine abschliessende Beurteilung zu erlauben.</p>
+                        <ul class="footnote">
+                            <li>(1) <a href="https://de.wikipedia.org/wiki/Nitrate">https://de.wikipedia.org/wiki/Nitrate</a></li>
+                            <li>(2) <a href="http://www.bfr.bund.de/de/fragen_und_antworten_zu_nitrat_und_nitrit_in_lebensmitteln-	187056.html">http://www.bfr.bund.de/de/fragen_und_antworten_zu_nitrat_und_nitrit_in_lebensmitteln-	187056.html</a></li>
+                            <li>(3) Bekanntmachungen des Bundesgesundheitsamtes 1986; Bundesgesundheitsblatt 	29 (6), 192-193</li>
+                            <li>(4) <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/ijc.31306">Nitrate in drinking water and colorectal cancer risk: A nationwide population‐based cohort study</a></li>
+                            <li>(5) <a href="https://journals.lww.com/epidem/fulltext/2003/11000/Nitrate_in_Public_Water_Supplies_and_the_Risk_of.4.aspx">Nitrate in Public Water Supplies and the Risk of Colon and Rectum Cancers</a></li>
+                        </ul>]]></item>
+        <item name="quellen"><![CDATA[<ul class="footnote quellen">
+                      <li><a href="http://www.umweltbundesamt.de/sites/default/files/medien/378/publikationen/umwelt_und_gesundheit_02_2015_trinkwasserbericht_des_bmg.pdf" class="pdf">umweltbundesamt.de/sites/default/files/medien/378/publikationen/umwelt_und_gesundheit_02_2015_trinkwasserbericht_des_bmg.pdf</a></li>
+<li><a href="http://www.umweltbundesamt.de/sites/default/files/medien/479/publikationen/uba_rund_um_das_trinkwasser_ratgeber_web_0.pdf" class="pdf">umweltbundesamt.de/sites/default/files/medien/479/publikationen/uba_rund_um_das_trinkwasser_ratgeber_web_0.pdf</a></li>
+<li><a href="http://www.bmub.bund.de/themen/wasser-abfall-boden/binnengewaesser/trinkwasser/" class="web">bmub.bund.de/themen/wasser-abfall-boden/binnengewaesser/trinkwasser/</a></li>
+<li><a href="https://www.wasistwas.de/" class="web">www.wasistwas.de/</a></li>
+<li><a href="https://de.wikipedia.org/wiki/Trinkwasserverordnung" class="web">de.wikipedia.org/wiki/Trinkwasserverordnung</a></li>
+<li><a href="http://www.umweltbundesamt.de/themen/wasser/trinkwasser" class="web">www.umweltbundesamt.de/themen/wasser/trinkwasser</a></li>
+<li><a href="http://www.umweltbundesamt.de/daten/private-haushalte-konsum/wassernutzung-privater-haushalte#textpart-1" class="web">umweltbundesamt.de/daten/private-haushalte-konsum/wassernutzung-privater-haushalte#textpart-1</a></li>
+
+<li><a href="http://www.umweltbundesamt.de/publikationen/bericht-des-bundesministeriums-fuer-gesundheit-des-2" class="web">umweltbundesamt.de/publikationen/bericht-des-bundesministeriums-fuer-gesundheit-des-2</a></li>
+
+<li><a href="http://www.umweltbundesamt.de/themen/wasser/trinkwasser" class="web">umweltbundesamt.de/themen/wasser/trinkwasser</a></li>
+
+<li><a href="https://de.wikipedia.org/wiki/Ester" class="web">de.wikipedia.org/wiki/Ester</a></li>
+
+<li><a href="https://de.wikipedia.org/wiki/Nitrate" class="web">de.wikipedia.org/wiki/Nitrate</a></li>
+
+<li><a href="https://www.dvgw.de/themen/wasser/trinkwasserverordnung/abschnitt-5/" class="web">dvgw.de/themen/wasser/trinkwasserverordnung/abschnitt-5/</a></li>
+
+<li><a href="https://www.greenpeace.de/themen/landwirtschaft/zeitbombe-im-trinkwasser" class="web">greenpeace.de/themen/landwirtschaft/zeitbombe-im-trinkwasser</a></li>
+
+<li><a href="http://www.klassewasser.de/content/language1/downloads/schuelerbogen_wasserwerk.pdf" class="pdf">klassewasser.de/content/language1/downloads/schuelerbogen_wasserwerk.pdf</a></li>
+
+<li><a href="https://www.vg-selters.de/rathaus/wasser-abwasserwerk/rohwasser-wird-trinkwasser/" class="web">vg-selters.de/rathaus/wasser-abwasserwerk/rohwasser-wird-trinkwasser/</a></li>
+
+<li><a href="https://www.swr.de/odysso/wenn-trinken-toedlich-ist/-/id=1046894/did=5225792/nid=1046894/1c34oy8/" class="web">swr.de/odysso/wenn-trinken-toedlich-ist/-/id=1046894/did=5225792/nid=1046894/1c34oy8/</a></li>
+                     </ul>]]></item>
+
+    </string-array>
+</resources>

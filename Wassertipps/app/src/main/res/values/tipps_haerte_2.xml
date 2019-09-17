@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="hart_2_title">
+        <item name="aquarium_title">Wasser für das Aquarium</item>
+        <item name="babynahrung_title">Wasser für Babynahrung</item>
+        <item name="gartenteich_title">Wasser für Ihren Gartenteich</item>
+        <item name="haut_haar_title">Wasser für Haut und Haar</item>
+        <item name="kaffee_title">Wasser für den Kaffee</item>
+        <item name="tee_title">Wasser für den perfekten Tee</item>
+        <item name="gesund_title">Wasser ist gesund</item>
+        <item name="waesche_title">Wäsche waschen</item>
+        <item name="wein_title">Wasser und Wein</item>
+        <item name="whiskey_title">Wasser und Whiskey</item>
+    </string-array>
+
+    <string-array name="hart_2_content">
+        <item name="aquarium"><![CDATA[<p>Leitungswasser ist zunächst einmal für den menschliche Gebrauch aufbereitetes Wasser, d.h. es ist biologisch neutrales Wasser. Trotzdem ist es für den Gebrauch im Aquarium sehr gut geeignet, es müssen nur einige Dinge beachtet werden.</p>
+            <p>So sollten Sie bei der Erstauffüllung das Becken mit Kies und Pflanzen bestücken und mehrere Tage oder besser ein paar Wochen stehen lassen, damit sich die ersten Mikroorganismen bilden können.  </p>
+            <p>Im laufenden Betrieb können Sie dann regelmäßig einen kleinen Teil des Wassers gegen frisches Leitungswasser ersetzen. Achten Sie dabei nur auf die richtige Temperatur. Wenn Sie kaltes Wasser hinzu geben, können Sie Ihren Fischen einen regelrechten Schock verpassen.</p>
+            <p>Das Wasser aus Ihrer Leitung ist weich. Bei der Auswahl geeigneter Fische sollten Sie darauf Rücksicht nehmen. Die meisten in Aquarien gehaltenen Fische kommen aus salzarmen Gewässern, wie z. B. dem Amazonasbecken, weiten Teilen Südostasiens und den Seen in Westafrika.</p>
+            <p>
+                Damit ist Ihr Wasser sehr gut geeignet für die Pflege vom empfindlichen Diskus (Symphysodon) oder den interessanten Fadenfischen (Trichogaster). Sie sollten lediglich darauf achten, dass die meisten Fische aus diesen Gewässern auch einen eher niedrigen PH-Wert unter 7 benötigen. Eine Ausnahme stellen  Fische dar, die aus dem ostafrikanischen Malawisee stammen. Sie benötigen weiches Wasser mit einem höheren PH-Wert (8-8,5) zum gedeihen <sup>1</sup>.
+            </p>
+
+            <p>Im Zweifelsfall kann Ihnen ein Zoofachhändler sicherlich noch ein paar geeignete Fische nennen.</p>
+            <p>Weiches Wasser hat leider auch einige  nachteilige Eigenschaften, die Sie beachten sollten.</p>
+            <p>Je salzarmer ein Aquarienwasser ist, um so schneller gerät es außer Kontrolle. Das hat mehrere Gründe. Die wichtigsten hängen mit dem Nitrathaushalt des Aquarienwassers zusammen. Wenn Sie also beispielsweise ein weiches Wasser mit einem hohen Nitratwert haben, sollten Sie das Wasser regelmäßig kontrollieren. Auch viele Wasserpflanzen gedeihen in salzarmem Wasser schlechter als in härterem Wasser <sup>2</sup>.
+            </p>
+            <ul class="footnote">
+                <li>(1) <a href="http://www.zierfischverzeichnis.de/wasser/">http://www.zierfischverzeichnis.de/wasser/</a></li>
+                <li>(2) <a href="http://www.weichwasserfische.de/weichwasser.htm">http://www.weichwasserfische.de/weichwasser.htm</a></li>
+            </ul>]]></item>
+        <item name="babynahrung"><![CDATA[<p>Sie haben weiches Wasser. Das bedeutet, es enthält kaum Mineralsalze, und stellt damit für Ihr Baby eine gute Grundlage für die Zubereitung von Säuglingsnahrung dar.</p>
+            <p>Wichtiger als die Wasserhärte ist aber der Nitratgehalt des Wassers, der für Säuglingsnahrung nicht über 10mg/l Wasser liegen sollte. Im Bereich <a href="#/tipps_nitrat/">„Tipps zu Ihrem Nitratwert“</a> finden Sie hierzu genauere Informationen.</p>
+            <p>Eine vollständige Analyse des Wassers Ihrer Gemeinde finden Sie über den Link am Ende dieser Seite.</p>
+            <p>
+                Wenn Sie unsicher sind und lieber kein Leitungswasser für Ihr Baby verwenden wollen, können Sie ein spezielles Mineralwasser verwenden, das explizit für Säuglingsnahrung geeignet ist. Ein Wasser, das diesen geschützten Begriff verwendet, muss sehr strenge Vorgaben bezüglich der Inhaltsstoffe erfüllen. Die Zeitschrift Ökotest <sup>1</sup> und die Stiftung Warentest <sup>2</sup> führen regelmäßig Tests durch, über die Sie sich genau informieren können.</p>
+            <p>Spezielle Babywässer sind zusätzlich keimfrei abgefüllt, im Prinzip aber nicht besser als für Säuglingsnahrung geeignete Mineralwässer. Sie können eine angebrochene Flasche zwar 24 Stunden im Kühlschrank aufbewahren, müssen es dann aber ebenfalls  vor dem Gebrauch abkochen. Dafür ist es aber noch einmal deutlich teurer.</p>
+            <p>Ein paar Dinge sollten Sie grundsätzlich beachten:</p>
+            <p>Lassen Sie das Standwasser immer ablaufen und verwenden Sie nur das frische (kühlere) Wasser. Wenn Wasser über vier Stunden oder länger (beispielsweise über Nacht) in der Hausleitung gestanden hat, kann es Inhaltsstoffe der Leitungsrohre, die für Babys schädlich sein können, aufnehmen.</p>
+            <p>Da warmes Wasser fast immer “Standwasser” ist, weil es in Warmwasserbehältern wie Boilern, Untertischgeräten, Warmwasserbehältern der Heizung etc. warm gehalten wird, sollte es grundsätzlich NICHT verwendet werden.</p>
+            <p>Wer in Altbauten wohnt, in denen noch Blei- und Zinkrohre verbaut sind, sollte das Wasser sicherheitshalber nicht für Babynahrung verwenden <sup>1</sup>.</p>
+            <ul class="footnote">
+                <li>(1) <a href="https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html">https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html</a></li>
+                <li>(2) <a href="https://www.test.de/Leitungswasser-und-Mineralwasser-Der-grosse-Wassercheck-5049737-0/">https://www.test.de/Natuerliches-Mineralwasser-im-Test-4258945-tabelle/suche/</a></li>
+                <li>(3) <a href="http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html">http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html</a></li>
+            </ul>]]></item>
+        <item name="gartenteich"><![CDATA[<p>In der Regel ist für Gartenteiche ein mittelhartes Wasser am günstigsten. Es ist einerseits soweit gepuffert, dass es nicht zu einem plötzlichen Absinken des pH-Wertes kommen kann, andererseits ist es nicht so kalkhaltig, dass es eine Algenblüte auslösen könnte.</p>
+            <p>Man kann zu hartem Leitungswasser das weiche Regenwasser beimischen. Eine weitere Möglichkeit besteht darin, in den Gartenteich zeitweise ein Säckchen mit ungedüngtem Torf einzuhängen oder das Wasser über einen Torfzusatz zu filtern. Dabei muss man allerdings darauf achten, dass der pH-Wert nicht zu sehr gesenkt wird.</p>]]></item>
+        <item name="haur_haar"><![CDATA[<p>Unsere Haut benötigt eine Mindestmenge an Feuchtigkeit, Fetten und Ölen, um gesund, straff und geschmeidig zu bleiben. Menschen mit Hauttrockenheit neigen vermehrt zur Bildung von Ekzemen. Der Grund: Wenn die Haut ausgetrocknet ist, bilden sich kleine Risse zwischen den Hautzellen, die Keimen, Bakterien und Allergenen Zutritt gewähren – so haben Entzündungen ein leichtes Spiel. Die im harten Leitungswasser enthaltenen Mineralien trocknen die Haut aus und begünstigen so die Entstehung von Ekzemen. Dazu kommt, dass beim Waschen mit hartem Wasser Mineralrückstände auf der Haut verbleiben. Ist die Haut trocken und spröde, können auch diese Rückstände in die Haut eindringen und zu Reizungen und Entzündungen führen.</p>
+            <p>Forscher der University of London um Michael Perkin haben den Zusammenhang zwischen der Wasserhärte und dem Risiko für entzündliche Hauterkrankungen bei Kleinkindern untersucht.<br/> Für ihre Studie werteten die Forscher Daten von 1.300 drei Monate alten Kindern aus Großbritannien und Nordirland aus und kamen zu dem Ergebnis, dass in einer Gegend mit hartem Wasser zu leben, bei den Kleinkindern das Risiko für Ekzeme erhöht <sup>1</sup>.
+            </p>
+            <p>Wenn Sie beispielsweise nach einem längeren Urlaub ähnliche Hautprobleme bemerken, sprechen Sie Ihren Hautarzt darauf an. Und erkundigen Sie sich, ob an Ihrem Urlaubsort eventuell härteres Wasser als bei Ihnenzuhause aus der Leitung kommt.
+            </p>
+            <p>Auch die Haare reagieren oftmals empfindlich bei hartem Wasser.</p>
+            <p>Ein häufig beobachtetes Phänomen bei kalkhaltigem Wasser sind klettige, verklebende Haare, die nicht richtig sauber zu werden scheinen, was sich auch an Ablagerungen in Kamm oder Bürste erkennen lässt.</p>
+            <p>Rauhe(re), trockene(re) Haare sind ebenfalls keine Seltenheit.</p>
+            <p>Hier können Sie eine abschließende saure Rinse als Guss ausprobieren - sie hilft, Kalk- und Shampooreste aus den Haaren zu spülen <sup>2</sup>. </p>
+            <ul class="footnote">
+                <li>(1) <a href="http://www.jacionline.org/article/S0091-6749%2816%2930187-7/abstract">jacionline.org/article/S0091-6749%2816%2930187-7</a></li>
+                <li>(2) <a href="http://www.langhaarwiki.de/wiki/Problem:_Kalkhaltiges/hartes_Wasser">langhaarwiki.de/Problem:_Kalkhaltiges/hartes_Wasser</a></li>
+            </ul>]]></item>
+        <item name="kaffee"><![CDATA[<p>Die Wasserhärte geht einher mit dem pH-Wert. Hartes Wasser reagiert eher basisch. Deshalb werden bei hartem Wasser die, insbesondere bei Arabica-Sorten vorkommenden, feinen Fruchtsäuren durch den basischen Charakter neutralisiert. Aber auch zu weiches Kaffeewasser kann den Kaffeegeschmack negativ beeinflussen. Hier kann es zu einer Veränderung des Quellverhaltens des Kaffeemehles kommen. Überextraktionen mit einer hohen Säure- und Bitterintensität im Kaffee und damit eine niedrige Geschmacksakzeptanz können die Folge sein. </p>
+            <p>Ideal zur Zubereitung von Kaffee ist Wasser mit einem pH-Wert von 7,0 und einer Gesamthärte von ca. 7 - 12°dH.</p>
+            <p>Die ideale Wassertemperatur zum Aufbrühen liegt bei 92°-96°C. Liegt sie darunter, tendiert der Kaffee dazu, sauer zu werden. Liegt sie darüber, verflüchtigen sich die Aromastoffe zu schnell und er neigt gleichzeitig dazu, bitter bzw. verbrannt zu schmecken.</p>
+            <p><strong></strong>Sie haben eher weiches Wasser, Sie könnten auf säurearme Kaffeebohnen umsteigen, hier bieten sich indische Sorten wie Nagambika Estate oder Monsooned Malabar an aber auch Kaffees aus Papua Neu-Guinea und Indonesien sind eher säurearm. Zusätzlich können Sie bei der Brühtemperatur eher in Richtung 96° halten.</p>
+            <p>Wenn Sie Ihren Kaffee von Hand zubereiten, lassen Sie das Wasser nach dem Kochen etwa 30 - 60 Sekunden stehen, bevor Sie es über den Kaffee geben. Benetzen Sie den Kaffee zunächst nur leicht, damit das Kaffeepulver aufquellen kann. Geben Sie dann in einer kreisförmigen Bewegung das restliche Wasser in den Filter.</p>
+            <p>Beim Espresso sollte die Extraktionszeit, also die Zeit in der das Wasser durch den Kaffee gepresst wird etwa 20 - 25 Sekunden betragen.</p>]]></item>
+        <item name="tee"><![CDATA[<p>Weiße Tees, grüne Tees und die meisten Tees aus Darjeeling sollten mit weichem Wasser aufgegossen werden, besonders wenn sie einen hochwertigen GFOP oder TGFOP verwenden. </p>
+            <p>Aber auch die weniger empfindlichen Tees aus Assam und Ceylon schmecken mit weichem Wasser besser als mit hartem.</p>
+            <p>Grundsätzlich sollte bei der Zubereitung von Tee immer sprudelnd kochendes Wasser verwendet werden, das auf die entsprechende Gradzahl abgekühlt wird. Das Wasser sollte nicht mehrfach aufgekocht werden, da bei jedem Erhitzen Sauerstoff entweicht und der Tee letztendlich einen Großteil seines Aromas einbüßen muss. </p>
+            <p>Am hitzeunempfindlichsten sind Schwarztees. Bei diesen Tees darf die Wassertemperatur bei 90-95°C liegen, ohne dass das Aroma darunter leiden muss. Besonders empfindlich dagegen sind grüne und weiße Teesorten. Ein chinesischer grüner Tee entfaltet sein bestes Aroma bei einer Wassertemperatur zwischen 70-85°C. Weiße Tees fühlen sich sogar nur bei 70°C am wohlsten. </p>
+            <p>Ein grüner Tee aus Japan gilt als hitzeempfindlichste Sorte. Maximal bei 60°C sollte hier die Wassertemperatur liegen. Ein Rotbuschtee sollte ebenfalls nicht mit sprudelnd kochendem Wasser übergossen werden. Hier ist eine Temperatur zwischen 80-90°C vollkommen ausreichend. Ein Pu-Erh Tee wird dagegen tatsächlich mit kochendem Wasser übergossen.</p>
+            <p>Eine Ausnahme bei der Wassertemperatur stellt die Zubereitung von Kräuter- und Früchtetees dar. Das Bundesinstitut für Risikobewertung (BfR) empfiehlt hier für die Zubereitung unbedingt sprudelnd kochendes Wasser zu verwenden. Nur durch diese Vorgehensweise ist gewährleistet, dass eventuell vorhandene Keime in Kräuter- und Früchtemischungen auch wirklich abgetötet werden <sup>1</sup></p>
+            <p>Besonders für empfindliche Personen, wie Säuglinge und chronisch kranke Personen, kann ein solcher Keimbefall im Tee schwerwiegende, gesundheitliche Folgen haben. Auch ein mit sprudelnd kochendem Wasser zubereiteter Kräutertee sollte zeitnah getrunken werden, da eventuell vorhandene Sporen im Tee sonst wieder erneut auskeimen könnten. Gemäß BfR ist eine Wassertemperatur von 80-85°C für das sichere Abtöten solcher Keime nicht ausreichend.</p>
+            <ul class="footnote">
+                <li>(1) <a href="http://www.bfr.bund.de/de/presseinformation/2005/37/kraeutertees_unbedingt_mit_kochendem_wasser_aufgiessen-7096.html">www.bfr.bund.de/de/presseinformation/2005/37/kraeutertees_unbedingt_mit_kochendem_wasser_aufgiessen-7096.html</a></li>
+            </ul>]]></item>
+        <item name="trinkwasser"><![CDATA[<p>Sie haben weiches Wasser. Das bedeutet, dass Ihr Leitungswasser nur wenige Mineralien wie Calzium und Magnesium enthält. Und was für Ihre Waschmaschine ein klarer Vorteil ist, ist auch für Sie nicht unbedingt schlecht.</p>
+            <p>Zwar neigt weiches Wasser dazu, geschmacklich eher fad zu sein, vom gesundheitlichen Aspekt her ist es aber völlig unbedenklich trinkbar. Und wenn Sie beispielsweise das Wasser durch einen Wassersprudler mit CO2 anreichern, können Sie den Geschmack je nach Menge der zugesetzten Kohlensäure ein wenig aufpeppen.</p>
+            <p><b>Umrechnung von mmol/l in mg/l</b></p>
+            <p>Manche Wasserversorger geben in den Analysen den Mineraliengehalt in mmol/l an, die Mineralwasserhersteller aber in mg/l. Die Umrechnung dieser beiden Angaben ist nicht ganz einfach, sie hängt nämlich von der molaren Masse des Elementes an. Die gibt die Masse pro mol in [g/mol] an. Praktischerweise ist das Periodensystem der Elemente nach genau dieser geordnet.</p>
+            <p>Calcium beispielsweise hat die Ordnungszahl 20, setzt sich also aus 20 Elektronen, 20 Protonen und 20 Neutronen zusammen. Die Masse ergibt sich aus der Anzahl der Protonen und der Neutronen, bei Calcium also 40 (das Molekulargewicht liegt exakt 40.08 aber für die Umrechnung reicht der ungefähre Wert).<br/>
+                1 mmol/l Calcium entspricht also 40 mg/l.<br/>
+                Bei Magnesium (Ordnungszahl 12) müssen Sie demnach mit 24 multiplizieren, bei Natrium mit 22 (Ordnungszahl 11), wenn Sie Ihr Leitungswasser mit einem Mineralwasser vergleichen wollen.
+            </p>
+            <p>Es gibt also - von wenigen Ausnahmen abgesehen - keinen Grund, auf teure Mineralwässer auszuweichen.</p>
+            <p>Eine Ausnahme könnte der Nitratgehalt des Wassers darstellen. Wenn Ihr Leitungswasser viel Nitrat enthält, können Sie auf Mineralwasser ausweichen, das für Säuglingsnahrung geeignet ist. Genaueres zu diesem Thema erfahren Sie <a href="#/tipps_nitrat">im Bereich "Tipps zu Ihrem Nitratwert"</a>.</p>
+            <p>Ein paar Dinge sollten Sie grundsätzlich beachten:</p>
+            <p>Lassen Sie das Standwasser immer ablaufen und verwenden Sie nur das frische (kühlere) Wasser. Wenn Wasser über vier Stunden oder länger (beispielsweise über Nacht) in der Hausleitung gestanden hat, kann es Inhaltsstoffe der Leitungsrohre, die für Babys schädlich sein können, aufnehmen.</p>
+            <p>Da warmes Wasser fast immer “Standwasser” ist, weil es in Warmwasserbehältern wie Boilern, Untertischgeräten, Warmwasserbehältern der Heizung etc. warm gehalten wird, sollte es grundsätzlich NICHT verwendet werden.</p>
+            <p>Wer in Altbauten wohnt, in denen noch Blei- und Zinkrohre verbaut sind, sollte das Wasser unbedingt länger ablaufen lassen, bevor es getrunken wird. Kinder, Schwangere und ältere Menschen sollten in diesem Fall lieber auf gekauftes Mineralwasser ausweichen <sup>1</sup>.</p>
+            <p>
+                Die Zeitschrift Ökotest <sup>2</sup> und die Stiftung Warentest <sup>3</sup> testen regelmäßig Mineralwässer.
+            </p>
+            <p>
+                Oder Sie achten beim Kauf auf das Siegel "Für die Zubereitung von Säuglingsnahrung geeignet". Diese Mineralwässer müssen strengere Anforderungen erfüllen, u.a. muss der Nitratgehalt unter 10 mg/l liegen.
+            </p>
+
+            <ul class="footnote">
+                <li>(1) <a href="http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html">http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html</a></li>
+                <li>(2) <a href="https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html">https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html</a></li>
+                <li>(3) <a href="https://www.test.de/Leitungswasser-und-Mineralwasser-Der-grosse-Wassercheck-5049737-0/">https://www.test.de/Natuerliches-Mineralwasser-im-Test-4258945-tabelle/suche/</a></li>
+            </ul>]]></item>
+        <item name="waesche"><![CDATA[<p>Sie haben weiches Wasser. Es enthält nur wenige Mineralien, so kann sich kaum Kalk auf den Heizstäben Ihrer Waschmaschine ablagern.</p>
+            <img src="/images/app/tipps/bsp-dosierung_hart1.png" alt="Beispielhafte Dosierung bei weichem Wasser" class="img-responsive"/>
+            <p>
+                Deshalb sollten Sie bei der Dosieranweisung, die auf jeder Waschmittel-Packung abgedruckt ist, die Mengenangaben für weiches Wasser (Härtebereich 1) befolgen, da Ihr Leitungswasser nur wenig Enthärter benötigt. Sie können damit sehr viel Waschmittel einsparen und tun dabei auch noch etwas Gutes für die Umwelt.</p>]]></item>
+        <item name="wein"><![CDATA[<p> Zu einem guten Wein kann und sollte man auch das passende Wasser trinken. Einige Mineralwasserproduzenten haben dieses Potential erkannt und bieten dem interessierten Weintrinker Hilfestellungen bei der Auswahl des passenden Wassers zum Wein <sup>1</sup>.</p>
+
+            <p>Bei den Mineralwässern wird hauptsächlich zwischen stillem, medium und stark kohlensäurehaltigem Wasser unterschieden, die zu unterschiedlichen Weinen passen <sup>2</sup>.
+            </p>
+            <p>Eine Grundregel gibt es: Je weniger Säure vorhanden ist, desto mehr Sprudel geht. Vor allem bei schweren Weißweinen wie Spät- und Auslesen passt ein kohlensäurehaltiges Wasser gut. Beim Riesling, der selbst viel Säure hat, weniger.
+            </p>
+            <p>Auch mit Rotwein kann es zu unerwünschten Nebenwirkungen kommen. Die Bläschen vertragen sich nicht mit den Gerbstoffen (Tanninen), die in jedem Rotwein mehr oder weniger stark vorhanden sind. Diese Tannine machen reife Weine weich und rund im Mund.
+            </p>
+
+            <p>Aber auch ohne Kohlensäure gibt es deutliche Unterschiede beim Wasser und der Art, wie es zu einem guten Wein passt.	 Ein mineralstoffarmes, weiches Wasser kann einen spritzigen Wein flach machen, da es ihm die Säure nimmt.
+            </p>
+            <p>Ein tanninbetonter Rotwein kann mit einem weichen Wasser durchaus gewinnen.</p>
+            <p>Letztendlich aber entscheidet Ihr ganz persönlicher Geschmack. Probieren Sie es einfach aus <sup>3</sup>.
+            </p>
+            <ul class="footnote">
+                <li>(1) <a href="http://preview.selters.de/selters-wein/">hselters.de/selters-wein/</a></li>
+                <li>(2) <a href="http://www.gastro-sommelier.de/wasser-wein.html">gastro-sommelier.de/wasser-wein.html</a></li>
+                <li>(3) <a href="http://www.brigitte.de/woman/reise-genuss/lebensart/wein&#8212;das-richtige-wasser-zum-wein-10133564.html">brigitte.de/woman/reise-genuss/lebensart/</a></li>
+            </ul>]]></item>
+        <item name="whiskey"><![CDATA[<p>Vorab ein paar kurze Worte zur Benennung. Die Whiskysorten der meisten Länder werden in schottischer Tradition hergestellt und schreiben sich ohne "e". Ein irischer oder amerikanischer Whiskey hingegen zeichnet sich immer durch das zusätzliche "e" als solcher aus. Allerdings gibt es, wie meist, auch hier Ausnahmen <sup>1</sup>. </p>
+            <p>Grundsätzlich unterscheidet man in der Whiskyproduktion das „process water“, das zur Einmaischung der Gerste verwendet wird, vom „reduction water“, mit welchem der fertige Whisky vor der Abfüllung auf Trinkstärke herabgesetzt wird.</p>
+            <p>Für den Maischungs- und Fermentationsprozess ist die Härte des Wassers von entscheidender Bedeutung: Hartes Wasser mit hohem Kalziumgehalt verleiht den Enzymen, die Stärke in Zucker verwandeln, eine höhere Effektivität und kann während der Fermentation Hefen zu einer besseren Wirkung verhelfen, was wiederum eine größere Bandbreite an Aromen bedingt. Auf der anderen Seite maischt die Gerste in weichem Wasser besser ein, als in zu hartem Wasser <sup>2</sup>.</p>
+            <p>Da Schottland überwiegend aus Granitfelsen und Sandstein besteht, kann das Regenwasser hier nur wenig Mineralien aufnehmen, d.h. in schottischen Destillerien wird hauptsächlich weiches Wasser verwendet.</p>
+            <p>Irland ist hier etwas vielfältiger, das weite, zentral gelegene Flachland besteht aus Kalkstein. Hier ansässige Destillerien dürften also eher härteres Wasser für die Mischung verwenden. Im Norden gibt es wieder größere Gebiete, die aus Granit bestehen.</p>
+            <p>Probieren Sie einfach verschiedene Whisk(e)ys aus, um den Unterschied zu erleben.</p>
+            <p>Und wie sieht es mit dem reduction water, also der Verdünnung von Whisky mit Wasser, aus?</p>
+            <p>Whisky wird in der Regel mit 63,5 %Vol Alkohol in die Fässer zur Lagerung abgefüllt. Mit der Lagerung über viele Jahre verliert der Whisky an Alkoholstärke, da der Alkohol durch die Faßwand entweicht. Gleichzeitig nimmt der Whisky Inhaltsstoffe aus dem Holz auf, was ihm einen Teil seines Aromas verleiht. Jedes Jahr verliert der Whisky im Faß zwischen einem halben und einem Prozentpunkt an Alkoholstärke. Bei der Abfüllung hat der Whisky meist nur noch 50%Vol bis 60%Vol Alkohol. Dennoch würde in dieser Stärke der Alkohol unsere Geschmacksknospen auf der Zunge und im Mundraum immer noch betäuben. Unser Geschmacksempfinden wäre massiv beeinträchtigt. Wir müssen also verdünnen.</p>
+            <p>Hochwertige Whiskys werden immer öfter in Fassstärke abgefüllt, um es dem Genießer selbst zu überlassen, in welcher Verdünnung der Whisky genossen sein will. Beginnen Sie mit einer geringen Stärke (starken Verdünnung) und steigern Sie sie, wenn sich Ihr Gaumen an den Geschmack gewöhnt hat.</p>
+            <p>Schottische Whiskys, die mit 50%Vol bis 60%Vol Alkohol aus dem Fass kommen, werden mit destilliertem bzw. deionisiertem Wasser auf die geforderte Flaschenstärke reduziert. Das schottische Whisky Gesetz schreibt diese Vorgehensweise zwingend für die Flaschenabfüllung außerhalb der Brennereien vor.</p>
+            <p><b>Ihr Wasser ist  sehr hart, d.h. es enthält deutlich mehr Mineralien als destilliertes Wasser. Es ist deshalb nicht so gut geeignet, um als Beigabe zu einem guten Whisky verwendet zu werden, da der Eigengeschmack des Whiskys hier verfälscht werden kann.</b></p>
+            <p>Die große Vielzahl der im Handel erhältlichen Mineralwässer weist leider einen noch viel größeren Mineralgehalt auf. Wenn Sie also nicht mit Ihrem Leitungswasser verdünnen wollen, achten Sie bei der Auswahl Ihres Wasser auf die Analyseergebnisse auf der Flasche. Den größten Einfluß auf den Geschmack eines Mineralwassers hat das Salz und das Hydrogencarbonat. Vermeiden Sie Wässer, die hohe Gehalte davon aufweisen.</p>
+            <p>Verwenden Sie auch ausschließlich stille Mineralwässer, da sprudelnde Wässer den Whisky unruhig auf der Zunge machen und mit ihrer gelösten Kohlensäule den Geschmack negativ beeinflussen.</p>
+            <p>Am Besten eignen sich original schottische oder die bekannten französischen stillen und mineralstoffarmen Mineralwässer und natürlich destilliertes bzw. deionisiertes Wasser <sup>3</sup>.
+            </p>
+            <ul class="footnote">
+                <li>(1) <a href="http://www.alkoblog.de/whisky-oder-whiskey-unterschied/">www.alkoblog.de/whisky-oder-whiskey-unterschied/</a></li>
+                <li>(2) <a href="https://whic.de/wissen/whisky-und-wasser">whic.de/wissen/whisky-und-wasser/</a></li>
+                <li>(3) <a href="https://www.whisky.de/whisky/wissen/geschmack/verkostung1/wasserundwhisky.html">whisky.de/whisky/wissen/geschmack/verkostung1/wasserundwhisky.html</a></li>
+            </ul>]]></item>
+    </string-array>
+</resources>

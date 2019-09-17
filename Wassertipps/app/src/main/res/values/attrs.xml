@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorAppPrimary" format="reference"/>
+    <attr name="colorAppPrimaryDark" format="reference"/>
+    <attr name="colorAppAccent" format="reference"/>
+    <attr name="colorAppSecondary" format="reference"/>
+    <attr name="colorAppTextPrimary" format="reference"/>
+    <attr name="colorAppTextSecondary" format="reference"/>
+    <attr name="colorDarkTint" format="reference" />
+    <attr name="navBarGrey" format="reference" />
+    <attr name="textWhite" format="reference" />
+    <attr name="appBackgroundColor" format="reference" />
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/icon_app_color"
+            android:title="@string/icon_home"/>
+
+    <item
+            android:id="@+id/navigation_wasserinfo"
+            android:icon="@drawable/icon_wasserinfo_color"
+            android:title="@string/icon_wasserinfos"/>
+
+    <item
+            android:id="@+id/navigation_help"
+            android:icon="@drawable/icon_help_color"
+            android:title="@string/icon_help"/>
+    <item
+            android:id="@+id/navigation_wasserbedarf"
+            android:icon="@drawable/icon_trinken_color"
+            android:title="@string/icon_wasserbedarf"/>
+
+    <item
+            android:id="@+id/navigation_kontakt"
+            android:icon="@drawable/icon_kontakt_color"
+            android:title="@string/icon_kontakt"/>
+
+</menu>

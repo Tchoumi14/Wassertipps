@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_erklaerung"
+                tools:context=".IntroActivity">
+
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    <LinearLayout
+            android:id="@+id/layoutDots"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dots_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dots_margin_bottom"
+            android:gravity="center"
+            android:orientation="horizontal"></LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha=".5"
+            android:layout_above="@id/layoutDots"/>
+
+    <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/button_background"
+            android:text="@string/btn_standort"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
+            android:fontFamily="sans-serif"/>
+
+</RelativeLayout>

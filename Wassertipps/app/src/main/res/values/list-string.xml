@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wasserinfos_array">
+        <item>Faszination Wasser</item>
+        <item>Trinkwasser</item>
+        <item>Trinkwassergewinnung</item>
+        <item>Trinkwasserverbrauch</item>
+        <item>Trinkwasseranalyse</item>
+        <item>Wasserhärte</item>
+        <item>Nitratgehalt</item>
+        <item>Quellen</item>
+    </string-array>
+
+    <string-array name="kontakt_array">
+        <item>Kontakt</item>
+        <item>Nutzungsbedingungen</item>
+        <item>Datenschutzerklärung</item>
+    </string-array>
+    <string-array name="kontakt_titlebar_text">
+        <item>Kontakt</item>
+        <item>Impressum</item>
+        <item>Datenschutzerklärung</item>
+    </string-array>
+
+    <!--Tipps Härte-->
+    <string-array name="haerte_tipps">
+        <item>Aquarium</item>
+        <item>Babynahrung</item>
+        <item>Gartenteich</item>
+        <item>Haut &amp; Haar</item>
+        <item>Kaffee</item>
+        <item>Tee</item>
+        <item>Trinkwasser</item>
+        <item>Wäsche</item>
+        <item>Wein</item>
+        <item>Whiskey</item>
+    </string-array>
+    <string-array name="haerte_box_images">
+        <item>tipps_aquarium</item>
+        <item>tipps_babynahrung</item>
+        <item>tipps_gartenteich</item>
+        <item>tipps_haut_haar</item>
+        <item>tipps_kaffee</item>
+        <item>tipps_tee</item>
+        <item>tipps_wasser</item>
+        <item>tipps_waesche</item>
+        <item>tipps_wein</item>
+        <item>tipps_whiskey</item>
+    </string-array>
+    <string-array name="haerte_box_colors">
+        <item>#5fa8e6</item>
+        <item>#f399c2</item>
+        <item>#93d762</item>
+        <item>#ecc460</item>
+        <item>#d17e53</item>
+        <item>#71be71</item>
+        <item>#44d2ca</item>
+        <item>#3db4d9</item>
+        <item>#e45e78</item>
+        <item>#f39f4d</item>
+    </string-array>
+
+    <!--Tipps Nitrat-->
+    <string-array name="nitrat_tipps">
+        <item>Allgemein</item>
+        <item>Aquarium</item>
+        <item>Babynahrung</item>
+        <item>Ernährung</item>
+        <item>Gartenteich</item>
+        <item>Trinkwasser</item>
+    </string-array>
+    <string-array name="nitrat_box_images">
+        <item>tipps_allgemein_nitrat</item>
+        <item>tipps_aquarium</item>
+        <item>tipps_babynahrung</item>
+        <item>tipps_ernaehrung</item>
+        <item>tipps_gartenteich</item>
+        <item>tipps_wasser</item>
+    </string-array>
+    <string-array name="nitrat_box_colors">
+        <item>#D59292</item>
+        <item>#5fa8e6</item>
+        <item>#f399c2</item>
+        <item>#2fbee0</item>
+        <item>#93d762</item>
+        <item>#44d2ca</item>
+    </string-array>
+</resources>

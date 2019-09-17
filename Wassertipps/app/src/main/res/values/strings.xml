@@ -1,0 +1,137 @@
+<resources>
+    <string name="app_name">Wassertipps</string>
+    <string name="title_home">Wassertipps für</string>
+    <string name="title_wasserinfos">Informationen über unser Wasser</string>
+    <string name="title_help">Wassertipps FAQ</string>
+    <string name="title_wasserbedarf">Wasserbedarf</string>
+    <string name="title_kontakt">Kontakt</string>
+    <string name="title_tipps_haerte">Tipps für Ihre Wasserhärte</string>
+    <string name="title_tipps_nitrat">Tipps zu Ihrem Nitratwert</string>
+
+    <!--Intro page-->
+    <string name="btn_standort">Strandort Freigeben</string>
+    <string name="btn_weiter">Weiter</string>
+
+    <string name="intro1_title">Einführung</string>
+    <string name="intro1_text">Um Angaben zu Wasserhärte und Nitrat in Ihrer Umgebung zu finden muss Ihr GPS-System
+        aktiviert sein.
+    </string>
+    <string name="intro5_title">Einverständniserklärung</string>
+    <string name="intro5_text1">Die Aufnahme von Nitrat durch das Trinkwasser oder nitrathaltige Lebensmittel kann für
+        Sie und Ihr Kind mit gesundheitlichen Risiken verbunden sein, wie mehrere Studien aus Amerika und Europa in den
+        letzten Jahren gezeigt haben.
+    </string>
+    <string name="intro5_text2">Nähere Informationen dazu und zu den Studien finden Sie in der App.</string>
+    <string name="intro5_text3">Haftungsausschluss und allgemeiner Hinweis zu medizinischen Themen: Sämtliche in der App
+        dargestellten Inhalte dienen ausschließlich der neutralen Information. Sie stellen keinerlei
+        Handlungsempfehlungen oder Bewerbung einzelner Produkte dar. Diese App erhebt weder einen Anspruch auf
+        Vollständigkeit, noch kann die Aktualität und Richtigkeit der hier dargebotenen Information garantiert werden.
+        Diese App ersetzt keinesfalls die fachliche Beratung durch einen Arzt oder Apotheker und darf nicht als
+        Grundlage zur eigenständigen Diagnose bei medizinischen Problemen verwendet werden.
+    </string>
+    <string name="intro5_text4">Bitte lesen Sie dazu auch unsere Datenschutzerklärung und die Nutzungsbedingungen
+    </string>
+    <string name="intro5_btnText">Ich habe verstanden und stimme zu</string>
+
+    <!-- Menu icon titles -->
+    <string name="icon_home">Home</string>
+    <string name="icon_wasserinfos">Wasserinfos</string>
+    <string name="icon_help">FAQ</string>
+    <string name="icon_wasserbedarf">Wasserbedarf</string>
+    <string name="icon_kontakt">Kontakt</string>
+
+    <!-- Home page -->
+    <string name="wasserhaerte">Wasserhärte</string>
+    <string name="nitrat">Nitrat</string>
+    <string name="haerte_button">Tipps zur Wasserhärte</string>
+    <string name="nitrat_button">Tipps zur Nitrat</string>
+    <string name="nitrat_unit">mg/l</string>
+    <string name="near">Sie befinden sich an der Grenze mehrerer Versorgungszonen. Durch Ungenauigkeiten, die bei der
+        GPS-Ortung auftreten können, werden Ihnen möglicherweise falsche Daten angezeigt. Um sicher zu gehen informieren
+        Sie sich bei Ihrer Gemeinde.
+    </string>
+
+    <!--No data/no hardness page-->
+    <string name="title_nodata">Tut uns leid</string>
+    <string name="empty">\?</string>
+    <string name="text1_nodata">Wir haben leider noch keine Wasserwerte für Ihren Standort. Sie können aber einen Ort in
+        Ihrer Umgegend auswählen:
+    </string>
+    <string name="header1">Ort</string>
+    <string name="header2">Entf.</string>
+    <string name="header3">Härte</string>
+    <string name="header4">Nitrat</string>
+    <!--Wasserhärte text-->
+    <string name="haerteText1">Sie haben weiches Wasser</string>
+    <string name="haerteText2">Sie haben mittelhartes Wasser</string>
+    <string name="haerteText3">Sie haben hartes Wasser</string>
+    <string name="haerteText4">Sie haben weiches Wasser</string>
+    <string name="haerteText5">Sie haben mittelhartes Wasser</string>
+    <string name="haerteText6">Sie haben hartes Wasser</string>
+
+    <!--Nitrat text-->
+    <string name="nitratText1">Der Nitratgehalt ist niedrig</string>
+    <string name="nitratText2">Der Nitratgehalt ist mittel</string>
+    <string name="nitratText3">Der Nitratgehalt ist hoch</string>
+    <string name="nitratText4">Sie haben Mischwasser, der Nitratgehalt kann schwanken.</string>
+    <string name="nitratText5">Sie haben Mischwasser, der Nitratgehalt kann hoch sein.</string>
+    <string name="nitratText6">Sie haben Mischwasser, der Nitratgehalt kann unterschiedlich hoch sein.</string>
+    <string name="title_activity_intro">IntroActivity</string>
+
+    <!--Wasserenthärtungsanlage popup-->
+    <string name="dialog_title_1">Sonderfall Wasserenthärtungsanlage</string>
+    <string name="dialog_title_2">Zurücksetzen</string>
+    <string name="dialog_message_1">Wenn Sie eine Wasserenthärtungsanlage haben, wird Ihre Wasserhärte etwa 5 &#8211; 6
+        °dH entsprechen. Wollen Sie diesen Wert in der App verwenden?
+    </string>
+    <string name="dialog_message_2">Wollen Sie auf die Ursprungswerte zurücksetzen?</string>
+    <string name="dialog_button_yes">Ja</string>
+    <string name="dialog_button_no">Nien</string>
+
+    <!--Wasserbedarfrechner string-->
+    <string name="rechner_text_1">Entsprechend den Referenzwerten der Deutschen Gesellschaft für Ernährung (DGE), können
+        Sie hier die Flüssigkeitsmenge ausrechnen, die Ihr Körper täglich an Getränken benötigt (ohne Oxidationswasser
+        und Wasserzufuhr durch feste Nahrung).
+    </string>
+    <string name="rechner_text_2">Außerdem können Sie sich regelmäßig an Ihre Trinkpausen erinnern lassen.
+        Empfehlenswert sind hier mehrere kleinere Portionen von 200 - 250ml.
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="test_string">
+
+        Leitungswasser ist zunächst einmal für den menschliche Gebrauch aufbereitetes Wasser, d.h. es ist biologisch
+        neutrales Wasser. Trotzdem ist es für den Gebrauch im Aquarium sehr gut geeignet, es müssen nur einige Dinge
+        beachtet werden.
+
+        So sollten Sie bei der Erstauffüllung das Becken mit Kies und Pflanzen bestücken und mehrere Tage oder besser
+        ein paar Wochen stehen lassen, damit sich die ersten Mikroorganismen bilden können.
+
+        Im laufenden Betrieb können Sie dann regelmäßig einen kleinen Teil des Wassers gegen frisches Leitungswasser
+        ersetzen. Achten Sie dabei nur auf die richtige Temperatur. Wenn Sie kaltes Wasser hinzu geben, können Sie Ihren
+        Fischen einen regelrechten Schock verpassen.
+
+        Das Wasser aus Ihrer Leitung ist relativ hart. Bei der Auswahl geeigneter Fische sollten Sie darauf Rücksicht
+        nehmen.
+
+        Die meisten Ährenfischartigen (Atheriniformes) kommen sehr gut mit hartem Wasser zurecht. Ebenso einige
+        Barschartige (Perciformes), z.B. der bekannte Zebrabuntbarsch (Amatitlania nigrofasciata) und viele
+        Zahnkärpflinge (Cyprinodontiformes), am bekanntesten sind sicherlich Guppy und Schwertträger, sowie der
+        Goldfisch und der Schleierschwanz, ansonsten aber nur wenige Karpfenartige (Cypriniformes). Im Zweifelsfall kann
+        Ihnen ein Zoofachhändler sicherlich noch weitere geeignete Fische nennen.
+
+        Sie sollten ausserdem darauf achten, das die meisten Fische aus diesen Gewässern auch einen höheren PH-Wert
+        (7-9) benötigen 1.
+
+        Wenn Sie die Härte Ihres Aquariumwassers verringern wollen, können Sie das Leitungswasser mit destilliertem
+        Wasser mischen oder Sie installieren eine Osmose Anlage. Bedenken Sie dabei aber auch, dass viele Wasserpflanzen
+        in weichem Wasser schlechter gedeihen als in hartem 2.
+
+        (1) http://www.zierfischverzeichnis.de/wasser/
+        (2) http://www.weichwasserfische.de/weichwasser.htm
+
+    </string>
+    <string name="round_button_text">Link zur Gemeindeseite bzw. Analyse</string>
+</resources>

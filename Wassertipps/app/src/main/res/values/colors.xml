@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4795D2</color>
+    <color name="colorPrimaryDark">#214f73</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorSecondary">#e4e5e5</color>
+    <color name="colorTextPrimary">#909090</color>
+    <color name="colorTextSecondary">#FFFFFF</color>
+    <color name="colorDarkTint">#989999</color>
+    <color name="navbarGrey">#F2F2F2</color>
+
+    <color name="textWhite">#FFFFFF</color>
+    <color name="appBackground_light">#FFFFFF</color>
+
+    <!--Dark theme colors-->
+    <color name="colorPrimary_dark">#1974b2</color>
+    <color name="colorPrimaryFocus_dark">#0C3C63</color>
+    <color name="colorAccent_dark">#D81B60</color>
+    <color name="colorSecondary_dark">#444e53</color>
+    <color name="colorTextPrimary_dark">#FFFFFF</color>
+    <color name="colorTextSecondary_dark">#868686</color>
+    <color name="colorDarkTint_dark">#222729</color>
+    <color name="navbarGrey_dark">#222729</color>
+    <color name="appBackground_dark">#444e53</color>
+
+    <!--bottom nav icon tint-->
+    <color name="app_icon">#866eff</color>
+
+    <color name="textBoxOpaque">#ffffff99</color>
+    <color name="zustimmen">#69c12c</color>
+    <color name="zustimmen_pressed">#447d1c</color>
+
+    <!--Home page Härte und Nitrat-->
+    <color name="haerte1">#4dbd40</color>
+    <color name="haerte2">#f5bd00</color>
+    <color name="haerte3">#CC1417</color>
+
+    <color name="nitrat1">#07A9CB</color>
+    <color name="nitrat2">#766ee4</color>
+    <color name="nitrat3">#de1e86</color>
+
+    <!-- dots inactive color -->
+    <color name="dot_active">@color/colorPrimary</color>
+
+    <!-- dots active color -->
+    <color name="dot_inactive">@color/colorPrimaryDark</color>
+
+</resources>

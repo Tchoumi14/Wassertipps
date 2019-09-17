@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="kontakt_sub_content">
+        <item name="kontakt"><![CDATA[<p>
+                              <span class="org fn">
+                                <span class="organization-name">zeitform Internet Dienste OHG</span></span><br>
+                              <span class="street-address">Fraunhoferstraße 5</span><br>
+                              D-<span class="postal-code">64283</span> <span class="locality">Darmstadt</span><br>
+                              <span class="country-name" style="display:none;">Germany</span></p>
+                                <p>
+                              <span class="tel">Telefon: 06151/155-637</span><br>
+                              <span class="tel">Telefax: 06151/155-634</span><br>
+                              <span xml:lang="en">E-Mail</span>: <a class="email" href="mailto:zeitform@zeitform.de">zeitform@zeitform.de</a><br>
+                              <span xml:lang="en">Web</span>: <a class="url" href="https://www.zeitform.de">https://www.zeitform.de</a><br>
+                            </p>
+                            <p>Einzelvertretungsberechtigte Gesellschafter:<br>
+                            Thomas Krisch, Alex Pleiner</p>
+                            <p>Registergericht: Amtsgericht Darmstadt<br>
+                            Registernummer: HRA 6898<br>
+                            USt.-ID gemäß §27a Umsatzsteuergesetz: DE185142567 </p>]]></item>
+        <item name="impressum"><![CDATA[<p>
+                          Sie können diese App grundsätzlich ohne Offenlegung Ihrer persönlichen Daten nutzen. Durch das Aufrufen und Speichern dieser Webapplikation werden Daten für Sicherungszwecke gespeichert, wie der Namen Ihres Internetserviceproviders, die Website, von der aus Sie uns besuchen, die Websites, die Sie bei uns besuchen und Ihre IP-Adresse. Diese Daten würden möglicherweise eine Identifizierung zulassen, allerdings findet diesbezüglich keine personenbezogene Verwertung statt. Sie können zu statistischen Zwecken ausgewertet werden, wobei der einzelne Benutzer jedoch anonym bleibt. Soweit Daten an externe Dienstleister weitergegeben werden, haben wir durch technische und organisatorische Maßnahmen sichergestellt, dass die Vorschriften des Datenschutzes beachtet werden.</p>
+
+                          <p> Aktuell beinhaltet unsere Datenbank alle Städte mit mehr als 10.000 Einwohnern und viele kleinere Ortschaften in Deutschland, Österreich und der Schweiz. Damit  liegen aktuell Wasserwerte für über 75 Millionen Menschen in den drei Ländern vor, unsere Datenbank wird regelmäßig aktualisiert und erweitert.<br>
+                          Trotzdem kann es vorkommen, dass wir für Ihren Standort noch keine Daten erfasst haben. In diesem Fall zeigen wir Ihnen eine Kiste mit Orten in Ihrer Umgebung, für die uns Daten vorliegen. Sie können einen Dieser Orte auswählen, wenn Sie glauben, das dort die gleichen Wasserwerte vorliegen, wie bei Ihnen.</p>
+                          <p>Ebenso kann es sein, dass zu deinem Standort lediglich die Wasserhärte, nicht jedoch der Nitratgehalt veröffentlicht wurde. Auch in diesem Fall bieten wir dir eine Liste mit Gemeinden in der Nähe an. Hier kannst du beispielsweise nach einer Gemeinde mit gleicher oder ähnlicher Wasserhärte suchen, um den dort hinterlegten Nitratwert zu übernehmen.</p>
+                          <p>Sie finden dann in den Wassertipps wiederum einen Link zur ausgewählten Gemeinde, über den Sie die Möglichkeit haben, sich direkt zu informieren, ob Ihre Gemeinde ebenfalls von diesem Wasserversorger beliefert wird.</p>
+
+                            <p> Wenn wir Ihnen Wasserwerte zu Ihrem Ort liefern, dann beruhen die auf den Analysewerten des für Ihren Ort zuständigen Wasserversorgers, den wir im Internet recherchiert haben. Wir haben die Daten nach bestem Wissen in unsere Datenbank übernommen, können jedoch keine Gewährleistung für die Richtigkeit der Angaben übernehmen.</p>
+
+                            <p>Folgende Gründe können dazu führen, dass die von uns gelieferten Angaben nicht mit dem tatsächlich bei Ihnen vorliegenden Wasserwerten überein stimmen:</p>
+
+                            <p>Nach § 16 Absatz 4 der Trinkwasserverordnung sind Wasserversorgungsunternehmen verpflichtet, einmal jährlich alle bei der Aufbereitung verwendeten Zusatzstoffe bekannt zugeben. Daran halten sich auch die allermeisten Städte und Gemeinden und darauf beruhen die Daten, die wir für unsere Datenbank erfasst haben. Wir aktualisieren alle Werte mindestens einmal jährlich, dabei haben wir bislang fest gestellt, dass die Daten sich über einen Jahreszeitraum nur wenig verändern. Diese Änderungen können in Zukunft aber stärker ausfallen, wir bemühen uns deshalb, unsere Aktualisierungsintervalle zu verkürzen. Trotzdem kann es vorkommen, dass unsere Werte von den tatsächlich vorhandenen abweichen.</p>
+
+                            <p>In manchen Versorgungsgebieten werden mehrere unterschiedliche Wasserwerke oder Brunnen zur Versorgung heran gezogen, die sehr unterschiedliche Wässer bereit stellen. Wir haben die jeweiligen Regionen so genau wie es uns aus den Angaben der Wasserversorger möglich war, in unserer Datenbank abgebildet, um Ihnen die passenden Wasserwerte liefern zu können. Da die Versorgungsgrenzen manchmal einzelne Häuser betreffen, Kanne shier bei der Interpretation der Daten durch uns zu Ungenauigkeiten gekommen sein. Auch kann die GPS-Ortung Ihres Smartphones durch Häuserwänden eine gewisse Ungenauigkeit ausweisen, die in Extremsituationen dazu führen kann, dass Ihnen das falsche Versorgungsgebiet zugewiesen wird.<br>
+                            Wir haben deshalb eine Funktion eigebaut, die Ihnen eine Warnung anzeigt, wenn Ihr Standort näher als 20 Meter an einer Versorgungsgrenze verortet wird.</p>
+
+                            <p>Es gibt ebenfalls Versorgungsgebiete, in denen der Wasserversorger die Wässer mehrerer Wasserwerke oder Brunnen mischt. Wenn das Mischungsverhältnis immer konstant ist, geben die Wasserversorger in den Analysen die genauen Daten dieses Mischwassers an, die wir auch so übernehmen.</p>
+
+                            <p>Wenn die Mischung nicht immer gleich ist, sondern je nach Versorgungslage schwankt, geben die Wasserversorger das ebenfalls an und veröffentlichen die Analysen der einzelnen Quellen. In manchen Städten, gibt es auch Stadtteile, die je nach Versorgungslage mal vollständig von einer Quelle und mal von einer anderen Quelle versorgt werden. Der Zeitpunkt der Umstellung wird nicht öffentlich bekannt gegeben und kann deshalb auch nicht in unsere App einfliessen. Auch in solch einen Fall weisen wir Sie in der App darauf hin und geben einen Minimal- und Maximalwert an, innerhalb dessen sich die Wasserqualität befinden kann. </p>
+
+                            <p>Wenn Sie unsicher sind, ob die angegebenen Werte auch tatsächlich auf Ihr Wasser zutreffen, bitten wir Sie, sich direkt mit Ihrem Wasserversorger in Verbindung zu setzen. Einen entsprechenden Link finden Sie am Ender jedes Erläuterungstextes zu Ihrem Wasser.</p>
+
+                            <h4>Nitratgehalt des Trinkwassers</h4>
+
+                            <p>Die Obergrenze für Nitrat im Trinkwasser ist gesetzlich auf 50 mg/l in Deutschland und Österreich, auf 40 mg/l in der Schweiz fest gelegt. Für Säuglinge wird in allen 3 Ländern eine Höchstgrenze von 10 mg/l empfohlen. Wir geben in der Erläuterung zu den Wasserwerten eine Empfehlung, das Leitungswasser nicht für die Zubereitung von Säuglingsnahrung zu verwenden, wenn der Nitratgehalt über 10 mg/l liegt. Diese Empfehlungen beruhen einerseits auf den Grenzwerten der Bundesgesundheitsämter und der WHO (Welt Gesundheits Organisation), andererseits auch auf diversen internationalen Studien, die einen direkten Zusammenhang zwischen dem Nitratgehalt von Trinkwasser und der Häufigkeit von diversen Krebsarten fest gestellt haben. Wenn Sie unsicher sind, ob die bei Ihnen vorliegenden Nitratwerte für Sie oder Ihre Familie ungesund sind, kontaktieren Sie bitte Ihren Hausarzt.</p>
+
+                            <h3>Wasserbedarfsrechner</h3>
+
+                            <p>Wir haben uns bei der Berechnung der täglichen Wassermenge an den Empfehlungen der Deutschen Gesellschaft für Ernährung orientiert und zeigen nur die tatsächlich nötige  Flüssigkeitsaufnahme durch Getränke an.</p>
+
+                            <p>Da jeder Mensch einen sehr individuellen Flüssigkeitsbedarf hat, können die angezeigten Werte nur Empfehlungen sein. Wenn Sie unsicher sind, ob die angezeigte Menge für Sie richtig ist, kontaktieren Sie bitte Ihren Hausarzt.</p>]]></item>
+        <item name="datenschutz"><![CDATA[<ol class="nolist">
+              <li>
+            	  Der Schutz Ihrer Daten ist uns wichtig. In dieser Datenschutzerklärung wird beschrieben, welche Informationen wir über Sie als Nutzer unserer mobilen Anwendungen (die „App“) sowie unserer Dienstleistungen erheben, wie diese Informationen verarbeitet werden und wie Sie bestimmten Verarbeitungsformen widersprechen können.
+                <h3>1. Angaben zur verantwortlichen Stelle</h3>
+            	  zeitform Internet Dienste OHG
+                <br>Fraunhoferstraße 5
+                <br>64283 Darmstadt
+                <br>Geschäftsführer: Thomas Krisch
+                <br>Tel: 06151-155 637
+                <br>E-Mail: <a href="mailto:zeitform@zeitform.de">zeitform@zeitform.de</a>
+              </li>
+              <li>
+                <h3>2. Was sind personenbezogenen Daten?</h3>
+            	  Personenbezogene Daten sind Angaben über die persönlichen oder sachlichen Verhältnisse einer bestimmten oder bestimmbaren Person (wie z.B. Ihr Name, Ihre Adresse, Ihre Telefonnummer, Ihre E-Mail-Adresse usw.).
+              </li>
+              <li>
+                <h3>3. Wie verarbeiten wir personenbezogene Daten?</h3>
+            	  Wir erheben personenbezogene Daten ausschließlich im Rahmen der geltenden Datenschutzgesetze bzw. mit Ihrer Zustimmung. Ggf. erheben wir personenbezogene Daten über Sie, wenn Sie unsere Seite besuchen oder E-Mails an uns schicken, sodass wir Ihnen die von Ihnen gewünschten Dienstleistungen und Informationen zukommen lassen können. Teilen Sie uns Ihre personenbezogenen Daten bitte nicht mit, wenn Sie deren Erhebung durch uns nicht wünschen.
+              </li>
+              <li>
+                <h3>4. Zweckgebundene Verwendung personenbezogener Daten in Bezug auf mobile Anwendungen („Apps“)</h3>
+                <h4>4.1 Standortdaten bei der Nutzung von Apps</h4>
+            	  Um Ihnen die für Ihren Standort zutreffenden Wasserwerte liefern zu können, muss die GPS-Funktion Ihres Smartphones aktiviert sein. Ohne Aktivierung ist die Benutzung der App nicht möglich. Sie werden beim ersten Starten der App darauf hingewiesen, das GPS-System zu aktivieren. Sie können nach Beenden der App das GPS in den Einstellungen Ihres Smartphones wieder deaktivieren. Sie werden dann beim nächsten Starten der App wieder darum gebeten, das GPS erneut zu aktivieren.
+                <br>
+            	  Cookies werden bei der App nicht eingesetzt, es sei denn, Ihr Browser ist im Rahmen der App geöffnet. In diesem Fall werden ggf. Cookies fremder Anbieter im Internetbrowser des Geräts gespeichert.
+                <h4>4.2 Datenaustausch mit unseren Servern</h4>
+            	  Nachdem Sie das GPS-System ihres Smartphones aktiviert haben, sendet die App über eine verschlüsselte Verbindung ihren Standort an unseren Datenbankserver. Hierbei werden lediglich ihre Geo-Koordinaten anonym an unsere Datenbankanwendung übermittelt, die daraufhin über dieselbe verschlüsselte Verbindung die Wasserwerte und weitere Informationen, die wir zu ihrem Standort in unserer Datenbank abgespeichert haben zurück liefert.
+                <br>
+            	  Dabei werden die Zugriffsdaten ihres Smartphones in den Log-Dateien des Servers für 7 Tage anonymisiert gespeichert und anschliessend gelöscht.
+                <h4>4.3 Erhebung personenbezogener Daten bei Nutzung der App</h4>
+            	  Wir erheben keinerlei persönliche Daten bei der Benutzung der App.
+                <h4>4.4 Werbung in der App und Links zu anderen Internetseiten</h4>
+                  Wenn Sie die Gratis-Version der App verwenden, nutzen wir Google AdMob um Ihnen In-App-Werbung  anzuzeigen. Dabei werden spezielle Werbe-IDs verwendet, die von den Android und IOS-Betriebssystemen zur Verfügung gestellt werden. Nähere Informationen über die Nutzung von Daten durch Google finden Sie <a href="https://policies.google.com/technologies/partner-sites"> auf dieser Informationsseite</a>. Sie können dem Einsatz solcher Tracking-Maßnahmen jederzeit widersprechen. Wenn Sie dem Einsatz einer von uns über unsere Apps verwendeten Technik widersprechen möchten, kann dies durch entsprechendes Sperren, Löschen oder Deaktivieren erfolgen, sofern dies bei Ihrem Gerät möglich ist.<br>
+                  Wir weisen Sie ausserdem darauf hin, das die Werbung Links zu anderen Internetseiten enthält, die sich unserer Kontrolle entziehen und nicht durch diese Datenschutzerklärung abgedeckt sind.  Bitte beachten Sie: Wenn Sie über die bereitgestellten Links andere Internetseiten aufrufen, erheben die Betreiber dieser Internetseiten ggf. (personenbezogene) Daten über Sie. Diese Daten werden von diesen Seitenbetreibern genutzt und unterliegen deren Datenschutzerklärung, welche von unserer abweichen kann.
+                <br>Dabei werden auch Cookies Dritter gesetzt  (wie z.&nbsp;B. Google Analytics, Google Maps und Google Ads). Auf diese Cookies haben wir keinen Zugriff. Wir gestatten lediglich deren Verwendung. Die diese Cookies und sog. Action-Tags generierenden Dritten verfügen über eigene Datenschutzerklärungen, in denen beschrieben wird, wie sie die von ihnen erhobenen Daten verwenden. Weitere Informationen über die von den jeweiligen Drittanbietern platzierten Cookies sowie darüber, wie deren Cookies eingeschränkt oder blockiert werden können, sind über den entsprechenden Link zu ihrer Internetseite verfügbar. Dort finden Sie ebenfalls Informationen darüber, wie ein „Opt-out-Cookie“ erzeugt wird, mit dem sich das Speichern weiterer Cookies auf Ihrem Gerät verhindern lässt. Weitere Informationen hinsichtlich Opt-out-Cookies für Google-Dienste finden Sie unter <a href="https://www.google.com/policies/privacy/">www.google.com/policies/privacy/</a>. Darüber hinaus können Sie die Internetseite der European Interactive Digital Advertising Alliance (EDDA) unter http://youronlinechoices.eu/ besuchen, um Informationen darüber zu erhalten, wie Sie ein Opt-out-Cookie von Drittanbietern erhalten.
+                <br>
+              </li>
+              <li>
+                <h3>5. Datenspeicherung und -sicherheit</h3>
+            	  Wenn Sie unsere Dienste in Anspruch nehmen während Sie sich außerhalb des EWR (Europäischer Wirtschaftsraum) befinden, werden Ihre Daten zudem ggf. an Länder außerhalb des EWR weitergeleitet, um Ihnen diese Dienste zur Verfügung zu stellen.
+            	  Ihre gespeicherten personenbezogenen Daten werden gelöscht, wenn Sie Ihre Einwilligung widerrufen, eine Datenspeicherung zu diesem Zweck nicht mehr erforderlich ist oder sie aus anderen Gründen nicht gespeichert werden können (z.&nbsp;B. bei entgegenstehenden Rechtsvorschriften).
+                <br>Die Übertragung von Daten über das Internet kann nie vollkommen sicher erfolgen. Wir werden uns zwar bestmöglich um den Schutz Ihrer personenbezogenen Daten bemühen, können jedoch die Sicherheit von Daten, die Sie uns über das Internet übermitteln, nicht garantieren. Jegliche Übermittlung erfolgt auf Ihr eigenes Risiko. Sobald wir Ihre Daten erhalten haben, werden wir strenge Verfahren und Sicherheitsmerkmale verwenden, um unbefugten Zugriff zu verhindern.
+              </li>
+              <li>
+                <h3>6. Aufbewahrung von Daten (Data Retention)</h3>
+            	  Wir speichern personenbezogene Daten so lange, wie es nötig ist, um eine Dienstleistung auszuführen, die Sie gewünscht oder zu der Sie Ihre Einwilligung erteilt haben, sofern keine anderslautenden gesetzlichen Verpflichtungen bestehen wie zum Beispiel bei laufenden Gerichtsverfahren.
+              </li>
+              <li>
+                <h3>7. Zugang zu bzw. Berichtigung, Löschung, Sperrung oder Widerruf von personenbezogenen Daten</h3>
+            	  Sie können folgende Rechte ausüben, indem Sie uns schriftlich kontaktieren oder eine E-Mail schicken (nähere Informationen hierzu finden Sie im nachfolgenden Abschnitt&nbsp;9 – „Kontaktangaben“):
+                <ul>
+                  <li>Beantragung des Zugangs zu Ihren personenbezogenen Daten, einschließlich der Verarbeitungszwecke, der Kategorien der betroffenen personenbezogenen Daten sowie der Empfänger bzw. Empfängerkategorien, denen gegenüber personenbezogene Daten offengelegt werden;</li>
+                  <li>Beantragung der ordnungsgemäßen Berichtigung, Löschung oder Sperrung Ihrer personenbezogenen Daten, sofern deren Verarbeitung den Bestimmungen geltender Datenschutzgesetze widerspricht, insbesondere aufgrund unvollständiger oder unzutreffender personenbezogener Daten;</li>
+                  <li>jederzeitiger Widerruf Ihrer Einwilligung zur Verarbeitung Ihrer personenbezogenen Daten;</li>
+                  <li>jederzeitiger Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten aus berechtigten und vernünftigen Gründen, die mit Ihrem speziellen Fall im Zusammenhang stehen.</li>
+                </ul>
+            	  Sie können entweder den Zugang zu den von uns über Sie gespeicherten personenbezogenen Daten beantragen (z.B. indem wir Ihnen eine Kopie dieser Daten zukommen lassen) oder verlangen, dass wir die von uns gespeicherten personenbezogenen Daten ändern und/oder aktualisieren. Wenden Sie sich hierfür einfach an uns.
+                <br>Auf Anfrage ermöglichen wir Ihnen Zugang zu den von uns über Sie gespeicherten personenbezogenen Daten, es sei denn, es gelten spezielle Beschränkungen (z.B. wenn die Bereitstellung des Zugangs rechtswidrig wäre).
+                <br>Wir werden jede Bitte um einen Zugang zu personenbezogenen Daten innerhalb eines angemessenen Zeitraums nach Übermittlung der Anfrage beantworten und den Zugang zu den personenbezogenen Daten in der von Ihnen gewünschten Art und Weise ermöglichen, sofern dies für uns zumutbar und praktikabel ist.
+                <br>Wenn wir Ihnen einen solchen Zugang nicht ermöglichen oder Ihre personenbezogenen Daten nicht wie gewünscht ändern möchten, werden Sie entsprechend benachrichtigt. Ggf. teilen wir Ihnen den Grund/die Gründe für unsere Entscheidung mit und nennen Ihnen Möglichkeiten, wie Sie gegen die Ablehnung vorgehen können. Betrifft die Ablehnung eine Bitte um Änderung Ihrer personenbezogenen Daten, können Sie eine Stellungnahme zur gewünschten Änderung abgeben, die wir dann in Ihrem Datensatz hinterlegen werden.
+              </li>
+              <li>
+                <h3>8. Kontakt</h3>
+            	  Bei Problemen, Fragen oder Anregungen können Sie sich gerne per E-Mail an
+            	  <a href="mailto:zeitform@zeitform.de">zeitform@zeitform.de</a> wenden, wir helfen Ihnen dann gern weiter.
+              </li>
+            </ol>]]></item>
+    </string-array>
+</resources>

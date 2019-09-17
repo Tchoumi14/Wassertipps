@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools"
+                android:background="@drawable/app_background"
+                android:id="@+id/nodata_layout">
+    <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/nodata_table"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin">
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/header_row">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_weight=".40"
+                        android:text="@string/header1"
+                        android:textColor="?attr/textWhite"
+                        android:background="@color/haerte2"/>
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_weight=".20"
+                        android:text="@string/header2"
+                        android:textColor="?attr/textWhite"
+                        android:background="@color/haerte2"
+                        android:textAlignment="center"/>
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_weight=".20"
+                        android:text="@string/header3"
+                        android:textColor="?attr/textWhite"
+                        android:background="@color/haerte2"
+                        android:textAlignment="center"/>
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_weight=".20"
+                        android:text="@string/header4"
+                        android:textColor="?attr/textWhite"
+                        android:background="@color/haerte2"
+                        android:textAlignment="textEnd"/>
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
