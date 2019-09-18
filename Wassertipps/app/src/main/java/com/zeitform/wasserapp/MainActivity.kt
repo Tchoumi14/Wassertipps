@@ -242,7 +242,8 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             R.id.navigation_home -> {
                 textMessage.setText(R.string.title_home)
                 //toolbar.setTitle(R.string.title_home)
-                toolbarText.text = resources.getString(R.string.title_home)
+                var city = sharedViewModel?.serverData?.value?.optString("city")
+                toolbarText.text= getString(R.string.title_home)+city
                 fm.beginTransaction().hide(active).show(fragment1).commit()
                 active = fragment1
                 return@OnNavigationItemSelectedListener true
