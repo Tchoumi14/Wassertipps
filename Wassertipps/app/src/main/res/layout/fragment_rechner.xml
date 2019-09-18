@@ -33,6 +33,8 @@
                 android:text="@string/rechner_text_2"/>
 
         <include layout="@layout/rechner_koerpermasse"/>
+        <include layout="@layout/rechner_sport"/>
+        <include layout="@layout/rechner_stillendefrauen"/>
         <include layout="@layout/rechner_wasser"/>
         <include layout="@layout/rechner_mitteilungen"/>
     </LinearLayout>
