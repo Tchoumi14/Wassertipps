@@ -134,4 +134,11 @@
 
     </string>
     <string name="round_button_text">Link zur Gemeindeseite bzw. Analyse</string>
+
+    <!--Wasserbedarf rechner-->
+    <string name="koerpermasse">Körpermaße</string>
+    <string name="sport">Sport</string>
+    <string name="stillende_frauen">Stillende Frauen</string>
+    <string name="wasser_pro_tag">Wasser pro Tag:</string>
+    <string name="mitteilung">Mitteilung</string>
 </resources>

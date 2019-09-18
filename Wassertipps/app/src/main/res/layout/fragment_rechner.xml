@@ -32,42 +32,9 @@
                 android:layout_marginEnd="@dimen/basic_text_padding"
                 android:text="@string/rechner_text_2"/>
 
-        <!--BOX-->
-        <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginStart="@dimen/basic_text_padding"
-                android:layout_marginEnd="@dimen/basic_text_padding"
-            android:layout_below="@+id/rechner_text2">
-            <!--Title Box-->
-            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                            android:background="@drawable/rechner_title"
-            android:id="@+id/box_title">
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/basic_text_padding"
-                        android:textColor="?attr/colorAppTextPrimary"
-                        android:id="@+id/box_title1"
-                        android:text="Sample Text"/>
-            </RelativeLayout>
-            <!--Content Box-->
-            <RelativeLayout android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/box_content"
-                            android:background="@drawable/rechner_content"
-                            android:layout_below="@+id/box_title">
-                <Switch
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/switch1"
-                        android:outlineAmbientShadowColor="?attr/colorAppPrimary"
-                        android:padding="@dimen/basic_text_padding"
-                        android:layout_alignParentEnd="true"
-                        android:gravity="end"/>
-            </RelativeLayout>
-        </RelativeLayout>
+        <include layout="@layout/rechner_koerpermasse"/>
+        <include layout="@layout/rechner_wasser"/>
+        <include layout="@layout/rechner_mitteilungen"/>
     </LinearLayout>
 
 </FrameLayout>
