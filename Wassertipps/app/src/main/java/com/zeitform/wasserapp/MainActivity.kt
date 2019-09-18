@@ -221,6 +221,8 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         if(active==fragmentHaerte || active == fragmentNitrat){
             fm.beginTransaction().hide(active).show(fragment1).commit()
             active = fragment1
+            var city = sharedViewModel?.serverData?.value?.optString("city")
+            toolbarText.text= getString(R.string.title_home)+city
         } else if(active == fragmentTipps|| active == fragmentInfos || active == fragmentKontaktSub){
             fm.beginTransaction().hide(active).show(prevFragment).commit()
             active = prevFragment
@@ -335,7 +337,8 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             it?.let {
                 if(active == fragment1){
                     //toolbar.title = "Wassertipps für "+it.optString("city")
-                    toolbarText.text = "Wassertipps für "+it.optString("city")
+                    var city = it.optString("city")
+                    toolbarText.text = getString(R.string.title_home)+city
                 }
             }
         })
