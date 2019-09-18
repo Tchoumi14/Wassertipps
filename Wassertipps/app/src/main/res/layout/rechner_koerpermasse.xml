@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--BOX-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layout_marginTop="@dimen/activity_vertical_margin"
-android:layout_marginStart="@dimen/basic_text_padding"
-android:layout_marginEnd="@dimen/basic_text_padding"
-android:layout_below="@+id/rechner_text2">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/basic_text_padding"
+                android:layout_marginStart="@dimen/basic_text_padding"
+                android:layout_marginEnd="@dimen/basic_text_padding"
+                android:layout_below="@+id/rechner_text2">
 <!--Title Box-->
 <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:background="@drawable/rechner_title"
+                android:padding="@dimen/basic_text_padding"
                 android:id="@+id/box_title">
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/basic_text_padding"
             android:textColor="?attr/colorAppTextPrimary"
             android:id="@+id/box_title1"
             android:text="@string/koerpermasse"
@@ -27,13 +27,35 @@ android:layout_below="@+id/rechner_text2">
                 android:padding="@dimen/basic_text_padding"
                 android:background="@drawable/rechner_content"
                 android:layout_below="@+id/box_title">
-    <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/switch1"
-            android:outlineAmbientShadowColor="?attr/colorAppPrimary"
-            android:padding="@dimen/basic_text_padding"
-            android:layout_alignParentEnd="true"
-            android:gravity="end"/>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:padding="@dimen/basic_text_padding"
+                    android:id="@+id/gewicht_row">
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentStart="true"
+                    android:text="@string/gewicht"/>
+        <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/switch1"
+                android:outlineAmbientShadowColor="?attr/colorAppPrimary"
+                android:layout_alignParentEnd="true"
+                android:gravity="end"/>
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:padding="@dimen/basic_text_padding"
+                    android:layout_below="@+id/gewicht_row">
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentStart="true"
+                  android:text="@string/alter"/>
+        <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/switch2"
+                android:outlineAmbientShadowColor="?attr/colorAppPrimary"
+                android:layout_alignParentEnd="true"
+                android:gravity="end"/>
+    </RelativeLayout>
 </RelativeLayout>
 </RelativeLayout>

@@ -3,21 +3,31 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/basic_text_padding"
                 android:layout_marginStart="@dimen/basic_text_padding"
                 android:layout_marginEnd="@dimen/basic_text_padding"
                 android:layout_below="@+id/rechner_text2">
     <!--Title Box-->
     <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:background="@drawable/rechner_single_item"
+                    android:padding="@dimen/basic_text_padding"
                     android:id="@+id/box_title">
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/basic_text_padding"
                 android:textColor="?attr/colorAppTextPrimary"
-                android:id="@+id/box_title1"
+                android:id="@+id/box_title_stillendefrauen"
                 android:text="@string/stillende_frauen"
                 android:textStyle="bold"/>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/box_title_stillendefrauen"
+                android:orientation="horizontal">
+            <android.support.v7.widget.SwitchCompat android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignParentEnd="true"
+                                                    android:theme="@style/SwitchCompatStyle"/>
+        </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

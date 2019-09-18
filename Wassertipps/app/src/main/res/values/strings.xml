@@ -141,4 +141,11 @@
     <string name="stillende_frauen">Stillende Frauen</string>
     <string name="wasser_pro_tag">Wasser pro Tag:</string>
     <string name="mitteilung">Mitteilung</string>
+
+    <string name="gewicht">Gewicht</string>
+    <string name="alter">Alter</string>
+
+    <string name="aufwachen">Aufwachen</string>
+    <string name="einschlafen">Einschlafen</string>
+    <string name="erinnerungen">Erinnerungen</string>
 </resources>
