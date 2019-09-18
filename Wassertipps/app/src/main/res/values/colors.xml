@@ -9,6 +9,7 @@
     <color name="colorDarkTint">#989999</color>
     <color name="navbarGrey">#F2F2F2</color>
 
+    <color name="lightBorderColor">#ddd</color>
     <color name="textWhite">#FFFFFF</color>
     <color name="appBackground_light">#FFFFFF</color>
 
