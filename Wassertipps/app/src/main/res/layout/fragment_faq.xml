@@ -43,10 +43,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_1" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- Item 2 -->
             <TextView
@@ -76,10 +77,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_2" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 3-->
             <TextView
@@ -109,10 +111,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_3" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 4-->
             <TextView
@@ -142,10 +145,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_4" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 5-->
             <TextView
@@ -175,10 +179,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_5" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 6-->
             <TextView
@@ -208,10 +213,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_6" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 7-->
             <TextView
@@ -242,10 +248,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_7" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 8-->
             <TextView
@@ -275,10 +282,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_8" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 9-->
             <TextView
@@ -308,10 +316,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_9" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 10-->
             <TextView
@@ -341,10 +350,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_10" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 11-->
             <TextView
@@ -374,10 +384,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_11" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 12-->
             <TextView
@@ -407,10 +418,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_12" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
             <!-- item 13-->
             <TextView
@@ -440,10 +452,11 @@
                     app:ael_orientation="vertical">
 
                 <TextView
+                        android:id="@+id/expandableText13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:text="@string/faq_content_13" />
+                        />
             </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
         </LinearLayout>
     </ScrollView>

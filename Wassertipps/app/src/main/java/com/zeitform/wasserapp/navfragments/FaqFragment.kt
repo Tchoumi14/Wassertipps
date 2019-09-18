@@ -4,6 +4,7 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.text.HtmlCompat
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -62,6 +63,19 @@ class FaqFragment : Fragment() {
     private lateinit var expandableButton11: TextView
     private lateinit var expandableButton12: TextView
     private lateinit var expandableButton13: TextView
+    private lateinit var expandableText1: TextView
+    private lateinit var expandableText2: TextView
+    private lateinit var expandableText3: TextView
+    private lateinit var expandableText4: TextView
+    private lateinit var expandableText5: TextView
+    private lateinit var expandableText6: TextView
+    private lateinit var expandableText7: TextView
+    private lateinit var expandableText8: TextView
+    private lateinit var expandableText9: TextView
+    private lateinit var expandableText10: TextView
+    private lateinit var expandableText11: TextView
+    private lateinit var expandableText12: TextView
+    private lateinit var expandableText13: TextView
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,6 +95,7 @@ class FaqFragment : Fragment() {
         var rootView = inflater.inflate(R.layout.fragment_faq, container, false)
         faqContainer = rootView.findViewById(R.id.faqContainer)
         setTitleOnClick(rootView)
+        fillTextContent(rootView)
         return rootView
     }
     private fun setTitleOnClick(rootView: View){
@@ -139,6 +154,41 @@ class FaqFragment : Fragment() {
         expandableButton13.setOnClickListener { expandableLayout13.toggle() }
     }
 
+    private fun fillTextContent(rootView: View){
+        expandableText1 = rootView.findViewById(R.id.expandableText1)
+        expandableText2 = rootView.findViewById(R.id.expandableText2)
+        expandableText3 = rootView.findViewById(R.id.expandableText3)
+        expandableText4 = rootView.findViewById(R.id.expandableText4)
+        expandableText5 = rootView.findViewById(R.id.expandableText5)
+        expandableText6 = rootView.findViewById(R.id.expandableText6)
+        expandableText7 = rootView.findViewById(R.id.expandableText7)
+        expandableText8 = rootView.findViewById(R.id.expandableText8)
+        expandableText9 = rootView.findViewById(R.id.expandableText9)
+        expandableText10 = rootView.findViewById(R.id.expandableText10)
+        expandableText11 = rootView.findViewById(R.id.expandableText11)
+        expandableText12 = rootView.findViewById(R.id.expandableText12)
+        expandableText13 = rootView.findViewById(R.id.expandableText13)
+
+        val textArray: ArrayList<TextView> = ArrayList()
+        textArray.add(expandableText1)
+        textArray.add(expandableText2)
+        textArray.add(expandableText3)
+        textArray.add(expandableText4)
+        textArray.add(expandableText5)
+        textArray.add(expandableText6)
+        textArray.add(expandableText7)
+        textArray.add(expandableText8)
+        textArray.add(expandableText9)
+        textArray.add(expandableText10)
+        textArray.add(expandableText11)
+        textArray.add(expandableText12)
+        textArray.add(expandableText13)
+
+        var contentArray = resources.getStringArray(R.array.faq_content_array)
+        for (i in 0 until contentArray.size){
+            textArray[i].text = HtmlCompat.fromHtml(contentArray[i], HtmlCompat.FROM_HTML_MODE_COMPACT)
+        }
+    }
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)
