@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#214f73</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorSecondary">#e4e5e5</color>
-    <color name="colorTextPrimary">#909090</color>
-    <color name="colorTextSecondary">#FFFFFF</color>
+    <color name="colorTextPrimary">#464646</color>
+    <color name="colorTextSecondary">#6B6B6B</color>
     <color name="colorDarkTint">#989999</color>
     <color name="navbarGrey">#F2F2F2</color>
 
@@ -18,7 +18,7 @@
     <color name="colorAccent_dark">#D81B60</color>
     <color name="colorSecondary_dark">#444e53</color>
     <color name="colorTextPrimary_dark">#FFFFFF</color>
-    <color name="colorTextSecondary_dark">#868686</color>
+    <color name="colorTextSecondary_dark">#757575</color>
     <color name="colorDarkTint_dark">#222729</color>
     <color name="navbarGrey_dark">#222729</color>
     <color name="appBackground_dark">#444e53</color>

@@ -8,8 +8,8 @@
 
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:paddingStart="@dimen/basic_text_padding"
+                    android:paddingEnd="@dimen/basic_text_padding"
                     android:background="?attr/appBackgroundColor">
         <TextView
                 android:layout_width="match_parent"
