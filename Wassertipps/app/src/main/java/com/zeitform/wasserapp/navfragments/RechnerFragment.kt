@@ -54,17 +54,46 @@ class RechnerFragment : Fragment() {
         var rootView = inflater.inflate(R.layout.fragment_rechner, container, false)
         aufwachenText = rootView.findViewById(R.id.aufwachen_text)
         einschlafenText = rootView.findViewById(R.id.einschlafen_text)
-        aufwachenText.setOnClickListener { openTimePickerDialog() }
-        einschlafenText.setOnClickListener { openTimePickerDialog() }
+        aufwachenText.setOnClickListener {
+            var timeText = aufwachenText.text
+            var time = timeText.split(" : ")
+            var hour = time[0].toInt()
+            var min = time[1].toInt()
+            openAufwachenTimePicker(hour, min)
+        }
+        einschlafenText.setOnClickListener {
+            var timeText = aufwachenText.text
+            var time = timeText.split(" : ")
+            var hour = time[0].toInt()
+            var min = time[1].toInt()
+            openEinschlafenTimePicker(hour, min)
+        }
         return rootView
     }
 
-    private fun openTimePickerDialog(){
+    private fun openAufwachenTimePicker(hourInput: Int, minInput: Int){
         val timePickerListener = TimePickerDialog.OnTimeSetListener{ view, h, m ->
-
             Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
+            var hour = h.toString()
+            var min = m.toString()
+            if(hour.length<2) hour = "0"+hour
+            if(min.length<2) min = "0"+min
+            aufwachenText.text = hour+" : "+min
         }
-        timePicker = TimePickerDialog(this.activity, timePickerListener,12,0,true)
+        timePicker = TimePickerDialog(this.activity, timePickerListener,hourInput,minInput,true)
+
+        timePicker.show()
+    }
+    private fun openEinschlafenTimePicker(hourInput: Int, minInput: Int){
+        val timePickerListener = TimePickerDialog.OnTimeSetListener{ view, h, m ->
+            Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
+            var hour = h.toString()
+            var min = m.toString()
+            if(hour.length<2) hour = "0"+hour
+            if(min.length<2) min = "0"+min
+            einschlafenText.text = hour+" : "+min
+        }
+        timePicker = TimePickerDialog(this.activity, timePickerListener,hourInput,minInput,true)
 
         timePicker.show()
     }
