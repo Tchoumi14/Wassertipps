@@ -10,15 +10,35 @@
     <!--Title Box-->
     <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:background="@drawable/rechner_title"
+                    android:padding="@dimen/activity_vertical_margin"
                     android:id="@+id/box_title">
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/basic_text_padding"
                 android:textColor="?attr/colorAppTextPrimary"
                 android:id="@+id/box_title1"
                 android:text="@string/wasser_pro_tag"
                 android:textStyle="bold"/>
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_alignParentEnd="true"
+                      android:layout_centerVertical="true">
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_box_styles"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/wasserprotag"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="@drawable/input_box_styles">
+                <ImageView android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                          android:padding="5dp"
+                           android:src="@drawable/fa_tint"
+                            />
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
     <!--Content Box-->
     <RelativeLayout android:layout_width="match_parent"
