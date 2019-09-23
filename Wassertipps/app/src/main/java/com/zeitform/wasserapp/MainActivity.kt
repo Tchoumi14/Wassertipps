@@ -300,7 +300,6 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 savedDesc = savedResponse.optString("desc")
 
                 isReducedSaved = dataManager!!.isReduced
-
             } catch (e: JSONException) {
                 Log.d("Exception", e.toString())
             }
@@ -380,10 +379,12 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             sharedViewModel?.completeData?.postValue(jsonArray) //saves the complete result
             if(savedCity!= null && savedCity == city && savedMax == max && savedNmax == nmax && savedDesc == desc){
                 sharedViewModel?.serverData?.postValue(savedResponse) //use saved data
+                sharedViewModel?.url?.postValue(savedResponse.optString("url")) //saves URL
                 sharedViewModel?.isReduced?.postValue(isReducedSaved)
                 Log.d("Saved data" ,"saved")
             } else {
                 sharedViewModel?.serverData?.postValue(jsonArray!!.optJSONObject(0)) //saves only the first entry
+                sharedViewModel?.url?.postValue(jsonArray!!.optJSONObject(0).optString("url")) //saves URL
                 sharedViewModel?.isReduced?.postValue(false)
                 Log.d("New data" ,"new")
             }

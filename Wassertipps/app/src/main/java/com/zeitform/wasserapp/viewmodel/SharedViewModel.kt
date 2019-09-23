@@ -18,4 +18,5 @@ class SharedViewModel: ViewModel() {
     val infoContent = MutableLiveData<Spanned>()
     //kontaktSubFragment
     val kontaktSubContent = MutableLiveData<Spanned>()
+    val url = MutableLiveData<String>()
 }

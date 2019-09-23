@@ -137,6 +137,7 @@ class HomeFragment : Fragment() {
     }
     private fun initElements(jsonObj: JSONObject) {
         val min = jsonObj.optString("min").toDouble()
+        isReduced = dataManager!!.isReduced
         val max = if(isReduced)  haerteReduced else jsonObj.optString("max").toDouble()
         val nmin = jsonObj.optString("nmin").toDouble()
         val nmax = jsonObj.optString("nmax").toDouble()
@@ -264,6 +265,9 @@ class HomeFragment : Fragment() {
         } else {
             nearCard.visibility = View.INVISIBLE
         }
+
+        //wasserenthärtungsanlage
+        if(isReduced) infoIcon.visibility = View.VISIBLE
     }
     override fun onAttach(context: Context) {
         super.onAttach(context)

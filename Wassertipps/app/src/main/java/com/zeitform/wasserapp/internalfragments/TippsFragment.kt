@@ -12,6 +12,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -37,6 +38,7 @@ class TippsFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     lateinit var text: TextView
+    private lateinit var urlButton: Button
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,6 +56,8 @@ class TippsFragment : Fragment() {
         // Inflate the layout for this fragment
         var rootView = inflater.inflate(R.layout.fragment_tipps, container, false)
         text = rootView.findViewById(R.id.tipps_text)
+        urlButton = rootView.findViewById(R.id.url_Button)
+        urlButton.setOnClickListener {  }
         return rootView
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -64,17 +68,19 @@ class TippsFragment : Fragment() {
         }
     }
     private fun observeInput(sharedViewModel: SharedViewModel) {
-        //sharedViewModel.serverData.removeObservers(this)
         sharedViewModel.tippsContent.observe(this, Observer {
             it?.let {
-                Log.d("Text DATA", it.toString())
                 text.text = it
             }
         })
-        //sharedViewModel.isReduced.removeObservers(this)
         sharedViewModel.tippsTitle.observe(this, Observer {
             it?.let {
                 Log.d("Image DATA", it.toString())
+            }
+        })
+        sharedViewModel.url.observe(this, Observer {
+            it?.let {
+                Log.d("URL", it.toString())
             }
         })
     }

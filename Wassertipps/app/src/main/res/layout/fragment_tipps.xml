@@ -25,6 +25,7 @@
             <Button android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_centerInParent="true"
+                    android:id="@+id/url_Button"
                     android:background="@drawable/round_button"
                     android:text="@string/round_button_text"
                     android:textAllCaps="false"
