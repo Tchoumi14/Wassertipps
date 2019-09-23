@@ -40,10 +40,10 @@
                       android:layout_height="wrap_content"
                       android:layout_alignParentStart="true"
                       android:text="@string/aufwachen"/>
-            <Switch
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:outlineAmbientShadowColor="?attr/colorAppPrimary"
+                    android:text="00 : 00"
                     android:layout_alignParentEnd="true"
                     android:gravity="end"/>
         </RelativeLayout>
@@ -56,29 +56,45 @@
                       android:layout_height="wrap_content"
                       android:layout_alignParentStart="true"
                       android:text="@string/einschlafen"/>
-            <Switch
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:outlineAmbientShadowColor="?attr/colorAppPrimary"
+                    android:text="00 : 00"
                     android:layout_alignParentEnd="true"
                     android:gravity="end"/>
         </RelativeLayout>
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:padding="@dimen/basic_text_padding"
                         android:background="@drawable/grey_row"
                         android:id="@+id/mitteilung_row3"
                         android:layout_below="@+id/mitteilung_row2">
-            <TextView android:layout_width="wrap_content"
+            <TextView android:layout_width="0dp"
+                      android:layout_weight=".60"
                       android:layout_height="wrap_content"
                       android:layout_alignParentStart="true"
                       android:text="@string/erinnerungen"/>
-            <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:outlineAmbientShadowColor="?attr/colorAppPrimary"
-                    android:layout_alignParentEnd="true"
-                    android:gravity="end"/>
-        </RelativeLayout>
+            <LinearLayout android:layout_width="0dp"
+                          android:layout_weight=".40"
+                          android:layout_height="40dp"
+                          android:layout_alignParentEnd="true"
+                          android:orientation="horizontal">
+                <Button android:layout_width="0dp"
+                        android:layout_weight=".25"
+                        android:background="@drawable/button_box_styles"
+                        android:textColor="?attr/textWhite"
+                        android:layout_height="match_parent"
+                        android:text="-"/>
+                <EditText android:layout_width="0dp"
+                          android:layout_weight=".50" android:layout_height="match_parent"
+                          android:background="@drawable/input_box_styles"/>
+                <Button android:layout_width="0dp"
+                        android:layout_weight=".25"
+                        android:background="@drawable/button_box_styles"
+                        android:textColor="?attr/textWhite"
+                        android:layout_height="match_parent"
+                        android:text="+"/>
+            </LinearLayout>
+        </LinearLayout>
 
     </RelativeLayout>
 </RelativeLayout>
