@@ -1,5 +1,6 @@
 package com.zeitform.wasserapp.navfragments
 
+import android.app.TimePickerDialog
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
@@ -7,7 +8,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
+import android.widget.TextView
+import android.widget.Toast
 import com.zeitform.wasserapp.R
+import java.awt.font.TextAttribute
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -28,6 +33,9 @@ class RechnerFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var aufwachenText: TextView
+    private lateinit var einschlafenText: TextView
+    private lateinit var timePicker: TimePickerDialog
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +51,21 @@ class RechnerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rechner, container, false)
+        var rootView = inflater.inflate(R.layout.fragment_rechner, container, false)
+        aufwachenText = rootView.findViewById(R.id.aufwachen_text)
+        einschlafenText = rootView.findViewById(R.id.einschlafen_text)
+        aufwachenText.setOnClickListener { openTimePickerDialog() }
+        return rootView
+    }
+
+    private fun openTimePickerDialog(){
+        val timePickerListener = TimePickerDialog.OnTimeSetListener{ view, h, m ->
+
+            Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
+        }
+        timePicker = TimePickerDialog(activity?.applicationContext, timePickerListener,12,0,true)
+
+        timePicker.show()
     }
 
     // TODO: Rename method, update argument and hook method into UI event
