@@ -55,6 +55,7 @@ class RechnerFragment : Fragment() {
         aufwachenText = rootView.findViewById(R.id.aufwachen_text)
         einschlafenText = rootView.findViewById(R.id.einschlafen_text)
         aufwachenText.setOnClickListener { openTimePickerDialog() }
+        einschlafenText.setOnClickListener { openTimePickerDialog() }
         return rootView
     }
 
@@ -63,7 +64,7 @@ class RechnerFragment : Fragment() {
 
             Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
         }
-        timePicker = TimePickerDialog(activity?.applicationContext, timePickerListener,12,0,true)
+        timePicker = TimePickerDialog(this.activity, timePickerListener,12,0,true)
 
         timePicker.show()
     }
