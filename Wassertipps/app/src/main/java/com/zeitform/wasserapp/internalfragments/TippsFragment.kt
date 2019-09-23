@@ -18,6 +18,10 @@ import android.widget.TextView
 
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.viewmodel.SharedViewModel
+import org.w3c.dom.Text
+import android.content.Intent
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,6 +43,7 @@ class TippsFragment : Fragment() {
     private var param2: String? = null
     lateinit var text: TextView
     private lateinit var urlButton: Button
+    private lateinit var url: String
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +62,10 @@ class TippsFragment : Fragment() {
         var rootView = inflater.inflate(R.layout.fragment_tipps, container, false)
         text = rootView.findViewById(R.id.tipps_text)
         urlButton = rootView.findViewById(R.id.url_Button)
-        urlButton.setOnClickListener {  }
+        urlButton.setOnClickListener {
+            val uri = Uri.parse(url) // missing 'http://' will cause crashed
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent) }
         return rootView
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -81,6 +89,7 @@ class TippsFragment : Fragment() {
         sharedViewModel.url.observe(this, Observer {
             it?.let {
                 Log.d("URL", it.toString())
+                url = it.toString()
             }
         })
     }
