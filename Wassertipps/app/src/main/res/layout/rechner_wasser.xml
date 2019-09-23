@@ -8,38 +8,40 @@
                 android:layout_marginEnd="@dimen/basic_text_padding"
                 android:layout_below="@+id/rechner_text2">
     <!--Title Box-->
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:background="@drawable/rechner_title"
                     android:padding="@dimen/activity_vertical_margin"
+                  android:orientation="horizontal"
                     android:id="@+id/box_title">
+
         <TextView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight=".50"
                 android:layout_height="wrap_content"
                 android:textColor="?attr/colorAppTextPrimary"
                 android:id="@+id/box_title1"
                 android:text="@string/wasser_pro_tag"
                 android:textStyle="bold"/>
-        <LinearLayout android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:layout_alignParentEnd="true"
-                      android:layout_centerVertical="true">
+        <LinearLayout android:layout_width="0dp"
+                      android:layout_weight=".50"
+                      android:layout_height="wrap_content">
             <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight=".80"
                     android:layout_height="wrap_content"
                     android:background="@drawable/input_box_styles"
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/wasserprotag"/>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-            android:background="@drawable/input_box_styles">
-                <ImageView android:layout_width="match_parent"
+                <ImageView android:layout_width="0dp"
+                           android:layout_weight=".20"
                            android:layout_height="match_parent"
-                          android:padding="5dp"
+                          android:padding="7dp"
+                           android:background="@drawable/input_box_styles"
                            android:src="@drawable/fa_tint"
                             />
-            </LinearLayout>
         </LinearLayout>
-    </RelativeLayout>
+    </LinearLayout>
     <!--Content Box-->
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="wrap_content"
