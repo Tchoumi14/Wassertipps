@@ -62,7 +62,7 @@ class RechnerFragment : Fragment() {
             openAufwachenTimePicker(hour, min)
         }
         einschlafenText.setOnClickListener {
-            var timeText = aufwachenText.text
+            var timeText = einschlafenText.text
             var time = timeText.split(" : ")
             var hour = time[0].toInt()
             var min = time[1].toInt()
