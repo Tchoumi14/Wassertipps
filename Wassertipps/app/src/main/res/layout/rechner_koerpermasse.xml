@@ -29,6 +29,7 @@
                 android:layout_below="@+id/box_title">
     <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:padding="@dimen/basic_text_padding"
+                    android:background="@drawable/grey_row"
                     android:id="@+id/gewicht_row">
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
@@ -44,6 +45,7 @@
     </RelativeLayout>
     <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:padding="@dimen/basic_text_padding"
+                    android:background="@drawable/white_row"
                     android:layout_below="@+id/gewicht_row">
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"

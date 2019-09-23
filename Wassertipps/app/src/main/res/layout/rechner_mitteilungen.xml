@@ -34,6 +34,7 @@
                     android:layout_below="@+id/box_title">
         <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:padding="@dimen/basic_text_padding"
+                        android:background="@drawable/grey_row"
                         android:id="@+id/mitteilung_row1">
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
@@ -48,6 +49,7 @@
         </RelativeLayout>
         <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:padding="@dimen/basic_text_padding"
+                        android:background="@drawable/white_row"
                         android:id="@+id/mitteilung_row2"
                         android:layout_below="@+id/mitteilung_row1">
             <TextView android:layout_width="wrap_content"
@@ -63,6 +65,7 @@
         </RelativeLayout>
         <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:padding="@dimen/basic_text_padding"
+                        android:background="@drawable/grey_row"
                         android:id="@+id/mitteilung_row3"
                         android:layout_below="@+id/mitteilung_row2">
             <TextView android:layout_width="wrap_content"
