@@ -184,8 +184,6 @@ class RechnerFragment : Fragment() {
             var waterml = Integer.parseInt(wasserProTagField.text.toString().trim())
             if((waterml/(count-1)>=200) && (waterml/(count-1) <= 250)){
                 erinnerungenField.setText((count-1).toString(),TextView.BufferType.EDITABLE)
-            } else {
-                Toast.makeText(activity?.applicationContext, "waterml :"+waterml+", count :"+count, Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -194,8 +192,6 @@ class RechnerFragment : Fragment() {
             var waterml = Integer.parseInt(wasserProTagField.text.toString().trim())
             if((waterml/(count+1)>=200) && (waterml/(count+1) <= 250)){
                 erinnerungenField.setText((count+1).toString(),TextView.BufferType.EDITABLE)
-            } else {
-                Toast.makeText(activity?.applicationContext, "waterml :"+waterml+", count :"+count, Toast.LENGTH_SHORT).show()
             }
         }
     }
