@@ -131,6 +131,7 @@ class RechnerFragment : Fragment() {
         mitteilungenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
             //Set alarms
+            if(isChecked) setAlarms() else clearAlarms()
         }
         return rootView
     }
@@ -150,6 +151,12 @@ class RechnerFragment : Fragment() {
         einschlafenTimeInt = if(sleepTime == 0) 1440 else sleepTime// convert text time to number
         calculateWasser()
     }
+
+    /**
+     * Convert time string of format 'hh : mm' to int
+     * @param timeAsString - time as a string in the format 'hh : mm'
+     * @return timeInNumber - (hh * 60) + mm
+     */
     private fun timetoNumber(timeAsString: String): Int {
         var timeInNumber = 0
         var time = timeAsString.split(" : ")
@@ -317,6 +324,13 @@ class RechnerFragment : Fragment() {
         erinnerungenField.setText(consumptionTimes.toString(),TextView.BufferType.EDITABLE)
         Log.d("ConsumptionTimes", consumptionTimes.toString())
         wasserProTagField.setText((waterml.toInt()).toString(), TextView.BufferType.EDITABLE)
+    }
+
+    private fun setAlarms(){
+        //set alarms
+    }
+    private fun clearAlarms(){
+        //clear alarms
     }
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
