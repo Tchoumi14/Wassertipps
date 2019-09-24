@@ -72,13 +72,14 @@ class RechnerFragment : Fragment() {
         erinnerungenField.setText("7",TextView.BufferType.EDITABLE)
 
         gewichtButtonMinus = rootView.findViewById(R.id.gewicht_minus)
-        gewichtButtonMinus.setOnClickListener { gewichtField.setText(Integer.parseInt(gewichtField.text.toString().trim())-1,TextView.BufferType.EDITABLE) }
         gewichtButtonPlus = rootView.findViewById(R.id.gewicht_plus)
-        gewichtButtonPlus.setOnClickListener { gewichtField.setText(Integer.parseInt(gewichtField.text.toString().trim())+1,TextView.BufferType.EDITABLE) }
+        gewichtButtonController()
         alterButtonMinus = rootView.findViewById(R.id.alter_minus)
         alterButtonPlus = rootView.findViewById(R.id.alter_plus)
+        alterButtonController()
         erinnerungButtonMinus = rootView.findViewById(R.id.erinnerungen_minus)
         erinnerungButtonPlus = rootView.findViewById(R.id.erinnerungen_plus)
+        erinnerungButtonController()
 
         aufwachenText.setOnClickListener {
             var timeText = aufwachenText.text
@@ -124,6 +125,51 @@ class RechnerFragment : Fragment() {
         timePicker.show()
     }
 
+    /**
+     * Gewicht button listener. Increment and decrement values
+     *
+     */
+    private fun gewichtButtonController(){
+        gewichtButtonMinus.setOnClickListener {
+            var value = Integer.parseInt(gewichtField.text.toString().trim())
+            gewichtField.setText((value-1).toString(),TextView.BufferType.EDITABLE)
+        }
+
+        gewichtButtonPlus.setOnClickListener {
+            var value = Integer.parseInt(gewichtField.text.toString().trim())
+            gewichtField.setText((value+1).toString(),TextView.BufferType.EDITABLE)
+        }
+    }
+    /**
+     * Alter button listener. Increment and decrement values
+     *
+     */
+    private fun alterButtonController(){
+        alterButtonMinus.setOnClickListener {
+            var value = Integer.parseInt(alterField.text.toString().trim())
+            alterField.setText((value-1).toString(),TextView.BufferType.EDITABLE)
+        }
+
+        alterButtonPlus.setOnClickListener {
+            var value = Integer.parseInt(alterField.text.toString().trim())
+            alterField.setText((value+1).toString(),TextView.BufferType.EDITABLE)
+        }
+    }
+    /**
+     * Erinnerungen button listener. Increment and decrement values
+     *
+     */
+    private fun erinnerungButtonController(){
+        erinnerungButtonMinus.setOnClickListener {
+            var value = Integer.parseInt(erinnerungenField.text.toString().trim())
+            erinnerungenField.setText((value-1).toString(),TextView.BufferType.EDITABLE)
+        }
+
+        erinnerungButtonPlus.setOnClickListener {
+            var value = Integer.parseInt(erinnerungenField.text.toString().trim())
+            erinnerungenField.setText((value+1).toString(),TextView.BufferType.EDITABLE)
+        }
+    }
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)
