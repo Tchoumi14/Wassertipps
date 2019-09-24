@@ -81,7 +81,7 @@ class RechnerFragment : Fragment() {
         gewichtField.setText("70",TextView.BufferType.EDITABLE)
         alterField.setText("29",TextView.BufferType.EDITABLE)
         wasserProTagField.setText("0",TextView.BufferType.EDITABLE)
-        erinnerungenField.setText("7",TextView.BufferType.EDITABLE)
+        erinnerungenField.setText("0",TextView.BufferType.EDITABLE)
 
         sportSwitch = rootView.findViewById(R.id.sport_switch)
         stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
@@ -138,7 +138,8 @@ class RechnerFragment : Fragment() {
         aufwachenText.text = rechnerDataManager!!.aufwachen
         aufwachenTimeInt = timetoNumber(rechnerDataManager!!.aufwachen) // convert text time to number
         einschlafenText.text = rechnerDataManager!!.einschlafen
-        einschlafenTimeInt = timetoNumber(rechnerDataManager!!.einschlafen) // convert text time to number
+        var sleepTime = timetoNumber(rechnerDataManager!!.einschlafen)
+        einschlafenTimeInt = if(sleepTime == 0) 1440 else sleepTime// convert text time to number
         calculateWasser()
     }
     private fun timetoNumber(timeAsString: String): Int {
@@ -177,7 +178,8 @@ class RechnerFragment : Fragment() {
             var time = hour+" : "+min
             einschlafenText.text = time
             rechnerDataManager!!.einschlafen = time
-            einschlafenTimeInt = timetoNumber(time) // convert text time to number
+            var sleepTime = timetoNumber(time)
+            einschlafenTimeInt = if(sleepTime == 0) 1440 else sleepTime// convert text time to number
             Log.d("Sleep time as number", einschlafenTimeInt.toString())
         }
         timePicker = TimePickerDialog(this.activity, timePickerListener,hourInput,minInput,true)

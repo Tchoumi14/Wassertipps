@@ -3,6 +3,7 @@ package com.zeitform.wasserapp.prefmanagers
 import android.content.Context
 import android.content.SharedPreferences
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class RechnerDataManager(internal var _context: Context) {
 
     private var pref: SharedPreferences
@@ -46,14 +47,14 @@ class RechnerDataManager(internal var _context: Context) {
         }
 
     var aufwachen: String
-        get() = pref.getString(AUFWACHEN_ZEIT,"00 : 00")
+        get() = pref.getString(AUFWACHEN_ZEIT,"09 : 00")
         set(aufwachenData) {
             editor.putString(AUFWACHEN_ZEIT, aufwachenData)
             editor.commit()
         }
 
     var einschlafen: String
-        get() = pref.getString(EINSCHLAFEN_ZEIT,"00 : 00")
+        get() = pref.getString(EINSCHLAFEN_ZEIT,"20 : 00")
         set(einschlafenData) {
             editor.putString(EINSCHLAFEN_ZEIT, einschlafenData)
             editor.commit()
