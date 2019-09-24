@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.zeitform.wasserapp.R
+import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
 import java.awt.font.TextAttribute
 
 
@@ -35,6 +36,7 @@ class RechnerFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var rechnerDataManager: RechnerDataManager? = null
     private lateinit var aufwachenText: TextView
     private lateinit var einschlafenText: TextView
     private lateinit var timePicker: TimePickerDialog
@@ -58,6 +60,8 @@ class RechnerFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        //DataManager init
+        rechnerDataManager = RechnerDataManager(activity!!.applicationContext)
     }
 
     override fun onCreateView(
@@ -74,12 +78,13 @@ class RechnerFragment : Fragment() {
         einschlafenText = rootView.findViewById(R.id.einschlafen_text)
         gewichtField.setText("70",TextView.BufferType.EDITABLE)
         alterField.setText("29",TextView.BufferType.EDITABLE)
-        wasserProTagField.setText("1330",TextView.BufferType.EDITABLE)
+        wasserProTagField.setText("0",TextView.BufferType.EDITABLE)
         erinnerungenField.setText("7",TextView.BufferType.EDITABLE)
 
         sportSwitch = rootView.findViewById(R.id.sport_switch)
         stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
-
+        //set field values
+        initFields()
         //change Listeners
         gewichtField.addTextChangedListener(myTextWatcher)
         alterField.addTextChangedListener(myTextWatcher)
@@ -116,7 +121,16 @@ class RechnerFragment : Fragment() {
         }
         return rootView
     }
-
+    /**
+     * Init fields in Wasserbedarf rechner from RechnerDataManager and call calculateWasser()
+     */
+    private fun initFields(){
+        gewichtField.setText(rechnerDataManager!!.gewicht,TextView.BufferType.EDITABLE)
+        alterField.setText(rechnerDataManager!!.alter,TextView.BufferType.EDITABLE)
+        sportSwitch.isChecked = rechnerDataManager!!.sport
+        stillendeFrauenSwitch.isChecked = rechnerDataManager!!.stillendefrauen
+        calculateWasser()
+    }
     private fun openAufwachenTimePicker(hourInput: Int, minInput: Int){
         val timePickerListener = TimePickerDialog.OnTimeSetListener{ view, h, m ->
             Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
