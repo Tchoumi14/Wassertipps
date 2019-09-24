@@ -5,6 +5,7 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.SwitchCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,6 +45,8 @@ class RechnerFragment : Fragment() {
     private lateinit var alterButtonPlus: Button
     private lateinit var erinnerungButtonMinus: Button
     private lateinit var erinnerungButtonPlus: Button
+    private lateinit var sportSwitch: SwitchCompat
+    private lateinit var stillendeFrauenSwitch: SwitchCompat
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,6 +73,9 @@ class RechnerFragment : Fragment() {
         alterField.setText("29",TextView.BufferType.EDITABLE)
         wasserProTagField.setText("1330",TextView.BufferType.EDITABLE)
         erinnerungenField.setText("7",TextView.BufferType.EDITABLE)
+
+        sportSwitch = rootView.findViewById(R.id.sport_switch)
+        stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
 
         gewichtButtonMinus = rootView.findViewById(R.id.gewicht_minus)
         gewichtButtonPlus = rootView.findViewById(R.id.gewicht_plus)
@@ -169,6 +175,47 @@ class RechnerFragment : Fragment() {
             var value = Integer.parseInt(erinnerungenField.text.toString().trim())
             erinnerungenField.setText((value+1).toString(),TextView.BufferType.EDITABLE)
         }
+    }
+
+    private fun calculateWasser(){
+        var gewicht = Integer.parseInt(gewichtField.text.toString().trim())
+        var alter = Integer.parseInt(alterField.text.toString().trim())
+        var waterml = 0.0
+        if(alter >=1 && alter <=3){
+            waterml = 60.0 * gewicht
+        } else if(alter >=4 && alter <=6){
+            waterml = 44.0 * gewicht
+        } else if(alter >=7 && alter <=9){
+            waterml = 32.0 * gewicht
+        } else if(alter >=10 && alter <=12){
+            waterml = 27.0 * gewicht
+        } else if(alter >=13 && alter <=18){
+            waterml = 22.0 * gewicht
+        } else if(alter >=19 && alter <=50){
+            waterml = 19.0 * gewicht
+        } else if(alter >=51 && alter <=64){
+            waterml = 16.5 * gewicht
+        } else if(alter >=65){
+            waterml = 17.5 * gewicht
+        }
+
+        if(alter < 13){
+            stillendeFrauenSwitch.isChecked = false
+        }
+        if(alter < 19){
+            sportSwitch.isChecked = false
+        }
+        if(stillendeFrauenSwitch.isChecked){
+            if(alter >=13){
+                waterml = 25.0 * gewicht
+            }
+        }
+        if(sportSwitch.isChecked){
+            if(alter >= 19){
+                waterml = waterml + 500
+            }
+        }
+        wasserProTagField.setText(waterml.toString(), TextView.BufferType.EDITABLE)
     }
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
