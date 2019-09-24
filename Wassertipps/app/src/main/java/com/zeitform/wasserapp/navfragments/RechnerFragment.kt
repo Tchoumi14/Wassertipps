@@ -54,6 +54,8 @@ class RechnerFragment : Fragment() {
     private lateinit var erinnerungButtonPlus: Button
     private lateinit var sportSwitch: SwitchCompat
     private lateinit var stillendeFrauenSwitch: SwitchCompat
+
+    private lateinit var mitteilungenSwitch: SwitchCompat
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -123,6 +125,12 @@ class RechnerFragment : Fragment() {
             var hour = time[0].toInt()
             var min = time[1].toInt()
             openEinschlafenTimePicker(hour, min)
+        }
+
+        mitteilungenSwitch = rootView.findViewById(R.id.mitteilungen_switch)
+        mitteilungenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
+            //Set alarms
         }
         return rootView
     }

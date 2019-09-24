@@ -23,7 +23,10 @@
                                                 android:layout_height="wrap_content"
                                                 android:layout_centerVertical="true"
                                                 android:layout_alignParentEnd="true"
-                                                android:theme="@style/SwitchCompatStyle"
+                                                app:track="@drawable/track_selector"
+                                                android:thumb="@drawable/thumb_selector"
+
+                                                android:id="@+id/mitteilungen_switch"
                                                 />
     </RelativeLayout>
     <!--Content Box-->

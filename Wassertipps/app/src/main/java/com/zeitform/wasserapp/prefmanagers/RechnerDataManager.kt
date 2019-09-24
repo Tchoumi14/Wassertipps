@@ -59,6 +59,13 @@ class RechnerDataManager(internal var _context: Context) {
             editor.putString(EINSCHLAFEN_ZEIT, einschlafenData)
             editor.commit()
         }
+
+    var mitteilungenSwitch: Boolean
+        get() = pref.getBoolean(MITTEILUNGEN_SWITCH,false)
+        set(mitteilungen) {
+            editor.putBoolean(MITTEILUNGEN_SWITCH, mitteilungen)
+            editor.commit()
+        }
     init {
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
         editor = pref.edit()
@@ -76,6 +83,8 @@ class RechnerDataManager(internal var _context: Context) {
         private const val WATER_PRO_TAG = "WaterProTag-data"
         private const val AUFWACHEN_ZEIT = "aufwachen-data"
         private const val EINSCHLAFEN_ZEIT = "einschlafen-data"
+
+        private const val MITTEILUNGEN_SWITCH = "mitteilungen-switch"
     }
 
 }
