@@ -87,6 +87,13 @@ class RechnerFragment : Fragment() {
 
         sportSwitch = rootView.findViewById(R.id.sport_switch)
         stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
+
+        mitteilungenSwitch = rootView.findViewById(R.id.mitteilungen_switch)
+        mitteilungenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
+            //Set alarms
+            if(isChecked) setAlarms() else clearAlarms()
+        }
         //set field values
         initFields()
 
@@ -127,16 +134,11 @@ class RechnerFragment : Fragment() {
             openEinschlafenTimePicker(hour, min)
         }
 
-        mitteilungenSwitch = rootView.findViewById(R.id.mitteilungen_switch)
-        mitteilungenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
-            rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
-            //Set alarms
-            if(isChecked) setAlarms() else clearAlarms()
-        }
+
         return rootView
     }
     /**
-     * Init fields in Wasserbedarf rechner from RechnerDataManager and call calculateWasser()
+     * Init fields and switches in Wasserbedarf rechner from RechnerDataManager and call calculateWasser()
      */
     private fun initFields(){
         gewichtField.setText(rechnerDataManager!!.gewicht,TextView.BufferType.EDITABLE)
@@ -149,6 +151,8 @@ class RechnerFragment : Fragment() {
         einschlafenText.text = rechnerDataManager!!.einschlafen
         var sleepTime = timetoNumber(rechnerDataManager!!.einschlafen)
         einschlafenTimeInt = if(sleepTime == 0) 1440 else sleepTime// convert text time to number
+
+        mitteilungenSwitch.isChecked = rechnerDataManager!!.mitteilungenSwitch
         calculateWasser()
     }
 
@@ -327,6 +331,10 @@ class RechnerFragment : Fragment() {
     }
 
     private fun setAlarms(){
+        var duration = einschlafenTimeInt - aufwachenTimeInt
+        var times = Integer.parseInt(erinnerungenField.text.toString().trim())
+        var interval = Math.round((duration/times).toDouble())
+        Log.d("Time interval", interval.toString())
         //set alarms
     }
     private fun clearAlarms(){
