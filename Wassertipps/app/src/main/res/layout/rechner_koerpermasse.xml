@@ -38,7 +38,7 @@
                     android:text="@string/gewicht"/>
         <LinearLayout android:layout_width="0dp"
                       android:layout_weight=".40"
-                      android:layout_height="40dp"
+                      android:layout_height="35dp"
                       android:layout_alignParentEnd="true"
 
                       android:orientation="horizontal">
@@ -54,6 +54,8 @@
             <EditText android:layout_width="0dp"
                       android:layout_weight=".50"
                       android:layout_height="match_parent"
+                      android:textAlignment="center"
+                      android:id="@+id/gewicht_field"
                       android:inputType="number"
                       android:background="@drawable/input_box_styles"/>
             <Button android:layout_width="0dp"
@@ -78,7 +80,7 @@
                   android:text="@string/alter"/>
         <LinearLayout android:layout_width="0dp"
                       android:layout_weight=".40"
-                      android:layout_height="40dp"
+                      android:layout_height="35dp"
                       android:layout_alignParentEnd="true"
                       android:orientation="horizontal">
             <Button android:layout_width="0dp"
@@ -93,6 +95,8 @@
             <EditText android:layout_width="0dp"
                       android:layout_weight=".50"
                       android:layout_height="match_parent"
+                      android:textAlignment="center"
+                      android:id="@+id/alter_field"
                       android:inputType="number"
                       android:background="@drawable/input_box_styles"/>
             <Button android:layout_width="0dp"

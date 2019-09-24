@@ -29,10 +29,11 @@
                     android:layout_width="0dp"
                     android:layout_weight=".80"
                     android:layout_height="match_parent"
+                    android:textAlignment="center"
                     android:background="@drawable/input_box_styles"
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/wasserprotag"/>
+                    android:id="@+id/wasserprotag_field"/>
                 <ImageView android:layout_width="0dp"
                            android:layout_weight=".20"
                            android:layout_height="match_parent"

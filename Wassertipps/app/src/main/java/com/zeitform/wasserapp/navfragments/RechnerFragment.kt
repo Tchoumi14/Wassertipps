@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.zeitform.wasserapp.R
@@ -36,6 +37,10 @@ class RechnerFragment : Fragment() {
     private lateinit var aufwachenText: TextView
     private lateinit var einschlafenText: TextView
     private lateinit var timePicker: TimePickerDialog
+    private lateinit var gewichtField: EditText
+    private lateinit var alterField: EditText
+    private lateinit var wasserProTagField: EditText
+    private lateinit var erinnerungenField: EditText
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +57,10 @@ class RechnerFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         var rootView = inflater.inflate(R.layout.fragment_rechner, container, false)
+        gewichtField = rootView.findViewById(R.id.gewicht_field)
+        alterField = rootView.findViewById(R.id.alter_field)
+        wasserProTagField = rootView.findViewById(R.id.wasserprotag_field)
+        erinnerungenField = rootView.findViewById(R.id.erinnerungen_field)
         aufwachenText = rootView.findViewById(R.id.aufwachen_text)
         einschlafenText = rootView.findViewById(R.id.einschlafen_text)
         aufwachenText.setOnClickListener {
