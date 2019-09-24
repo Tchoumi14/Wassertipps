@@ -2,7 +2,7 @@
 <!--BOX-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_marginTop="@dimen/basic_text_padding"
                 android:layout_marginStart="@dimen/basic_text_padding"
                 android:layout_marginEnd="@dimen/basic_text_padding"
@@ -27,7 +27,8 @@
             <android.support.v7.widget.SwitchCompat android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_alignParentEnd="true"
-                                                    android:theme="@style/SwitchCompatStyle"
+                                                    app:track="@drawable/track_selector"
+                                                    android:thumb="@drawable/thumb_selector"
                                                     android:id="@+id/stillendefrauen_switch"/>
         </RelativeLayout>
     </RelativeLayout>

@@ -2,6 +2,8 @@
 <resources>
     <attr name="colorAppPrimary" format="reference"/>
     <attr name="colorAppPrimaryDark" format="reference"/>
+    <attr name="colorSwitchTrackActive" format="reference"/>
+    <attr name="colorSwitchTrackInactive" format="reference"/>
     <attr name="colorAppAccent" format="reference"/>
     <attr name="colorAppSecondary" format="reference"/>
     <attr name="colorAppTextPrimary" format="reference"/>

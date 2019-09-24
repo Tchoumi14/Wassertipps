@@ -25,7 +25,6 @@
                                                 android:layout_alignParentEnd="true"
                                                 app:track="@drawable/track_selector"
                                                 android:thumb="@drawable/thumb_selector"
-
                                                 android:id="@+id/mitteilungen_switch"
                                                 />
     </RelativeLayout>

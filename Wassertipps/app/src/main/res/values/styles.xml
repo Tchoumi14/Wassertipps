@@ -6,6 +6,8 @@
         <item name="android:windowBackground">@color/appBackground_light</item>
         <item name="colorAppPrimary">@color/colorPrimary</item>
         <item name="colorAppPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorSwitchTrackActive">@color/colorSwitchTrackActive</item>
+        <item name="colorSwitchTrackInactive">@color/colorSwitchTrackInactive</item>
         <item name="colorAppAccent">@color/colorAccent</item>
         <item name="colorAppSecondary">@color/colorSecondary</item>
         <item name="colorAppTextPrimary">@color/colorTextPrimary</item>
@@ -22,6 +24,8 @@
         <item name="android:windowBackground">@color/appBackground_dark</item>
         <item name="colorAppPrimary">@color/colorPrimary_dark</item>
         <item name="colorAppPrimaryDark">@color/colorPrimaryFocus_dark</item>
+        <item name="colorSwitchTrackActive">@color/colorSwitchTrackActive_dark</item>
+        <item name="colorSwitchTrackInactive">@color/colorSwitchTrackInactive_dark</item>
         <item name="colorAppAccent">@color/colorAccent_dark</item>
         <item name="colorAppSecondary">@color/colorSecondary_dark</item>
         <item name="colorAppTextPrimary">@color/colorTextPrimary</item>

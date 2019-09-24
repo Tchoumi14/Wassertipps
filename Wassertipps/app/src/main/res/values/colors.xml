@@ -2,6 +2,8 @@
 <resources>
     <color name="colorPrimary">#4795D2</color>
     <color name="colorPrimaryDark">#214f73</color>
+    <color name="colorSwitchTrackActive">#BADAF3</color>
+    <color name="colorSwitchTrackInactive">#BEBEBE</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorSecondary">#e4e5e5</color>
     <color name="colorTextPrimary">#464646</color>
@@ -16,6 +18,8 @@
     <!--Dark theme colors-->
     <color name="colorPrimary_dark">#1974b2</color>
     <color name="colorPrimaryFocus_dark">#0C3C63</color>
+    <color name="colorSwitchTrackActive_dark">#21242B</color>
+    <color name="colorSwitchTrackInactive_dark">#21242B</color>
     <color name="colorAccent_dark">#D81B60</color>
     <color name="colorSecondary_dark">#444e53</color>
     <color name="colorTextPrimary_dark">#FFFFFF</color>
