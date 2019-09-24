@@ -90,9 +90,11 @@ class RechnerFragment : Fragment() {
         alterField.addTextChangedListener(myTextWatcher)
 
         sportSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            rechnerDataManager!!.sport = isChecked //save to data manager
             calculateWasser()
         }
         stillendeFrauenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            rechnerDataManager!!.stillendefrauen = isChecked //save to data manager
             calculateWasser()
         }
         gewichtButtonMinus = rootView.findViewById(R.id.gewicht_minus)
@@ -173,11 +175,13 @@ class RechnerFragment : Fragment() {
         gewichtButtonMinus.setOnClickListener {
             var value = Integer.parseInt(gewichtField.text.toString().trim())
             gewichtField.setText((value-1).toString(),TextView.BufferType.EDITABLE)
+            rechnerDataManager!!.gewicht = gewichtField.text.toString() //save to data manager
         }
 
         gewichtButtonPlus.setOnClickListener {
             var value = Integer.parseInt(gewichtField.text.toString().trim())
             gewichtField.setText((value+1).toString(),TextView.BufferType.EDITABLE)
+            rechnerDataManager!!.gewicht = gewichtField.text.toString() //save to data manager
         }
     }
     /**
@@ -188,11 +192,13 @@ class RechnerFragment : Fragment() {
         alterButtonMinus.setOnClickListener {
             var value = Integer.parseInt(alterField.text.toString().trim())
             alterField.setText((value-1).toString(),TextView.BufferType.EDITABLE)
+            rechnerDataManager!!.alter = alterField.text.toString() //save to data manager
         }
 
         alterButtonPlus.setOnClickListener {
             var value = Integer.parseInt(alterField.text.toString().trim())
             alterField.setText((value+1).toString(),TextView.BufferType.EDITABLE)
+            rechnerDataManager!!.alter = alterField.text.toString() //save to data manager
         }
     }
     /**
