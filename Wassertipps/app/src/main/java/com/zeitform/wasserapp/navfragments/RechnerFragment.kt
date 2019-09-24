@@ -85,6 +85,7 @@ class RechnerFragment : Fragment() {
         stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
         //set field values
         initFields()
+
         //change Listeners
         gewichtField.addTextChangedListener(myTextWatcher)
         alterField.addTextChangedListener(myTextWatcher)
