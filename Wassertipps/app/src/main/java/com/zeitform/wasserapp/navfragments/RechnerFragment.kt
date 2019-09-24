@@ -6,6 +6,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.SwitchCompat
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -77,6 +79,15 @@ class RechnerFragment : Fragment() {
         sportSwitch = rootView.findViewById(R.id.sport_switch)
         stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
 
+        //change Listeners
+        gewichtField.addTextChangedListener(myTextWatcher)
+        alterField.addTextChangedListener(myTextWatcher)
+        sportSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            calculateWasser()
+        }
+        stillendeFrauenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            calculateWasser()
+        }
         gewichtButtonMinus = rootView.findViewById(R.id.gewicht_minus)
         gewichtButtonPlus = rootView.findViewById(R.id.gewicht_plus)
         gewichtButtonController()
@@ -176,8 +187,21 @@ class RechnerFragment : Fragment() {
             erinnerungenField.setText((value+1).toString(),TextView.BufferType.EDITABLE)
         }
     }
+    private var myTextWatcher = object: TextWatcher{
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        }
 
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        }
+
+        override fun afterTextChanged(s: Editable?) {
+            calculateWasser()
+        }
+
+    }
     private fun calculateWasser(){
+        sportSwitch.isEnabled = true
+        stillendeFrauenSwitch.isEnabled = true
         var gewicht = Integer.parseInt(gewichtField.text.toString().trim())
         var alter = Integer.parseInt(alterField.text.toString().trim())
         var waterml = 0.0
@@ -201,9 +225,11 @@ class RechnerFragment : Fragment() {
 
         if(alter < 13){
             stillendeFrauenSwitch.isChecked = false
+            stillendeFrauenSwitch.isEnabled = false
         }
         if(alter < 19){
             sportSwitch.isChecked = false
+            sportSwitch.isEnabled = false
         }
         if(stillendeFrauenSwitch.isChecked){
             if(alter >=13){
@@ -212,7 +238,7 @@ class RechnerFragment : Fragment() {
         }
         if(sportSwitch.isChecked){
             if(alter >= 19){
-                waterml = waterml + 500
+                waterml+= 500
             }
         }
         wasserProTagField.setText(waterml.toString(), TextView.BufferType.EDITABLE)
