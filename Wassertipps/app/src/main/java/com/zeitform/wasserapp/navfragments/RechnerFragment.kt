@@ -8,10 +8,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.zeitform.wasserapp.R
 import java.awt.font.TextAttribute
 
@@ -41,6 +38,12 @@ class RechnerFragment : Fragment() {
     private lateinit var alterField: EditText
     private lateinit var wasserProTagField: EditText
     private lateinit var erinnerungenField: EditText
+    private lateinit var gewichtButtonMinus: Button
+    private lateinit var gewichtButtonPlus: Button
+    private lateinit var alterButtonMinus: Button
+    private lateinit var alterButtonPlus: Button
+    private lateinit var erinnerungButtonMinus: Button
+    private lateinit var erinnerungButtonPlus: Button
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,6 +66,20 @@ class RechnerFragment : Fragment() {
         erinnerungenField = rootView.findViewById(R.id.erinnerungen_field)
         aufwachenText = rootView.findViewById(R.id.aufwachen_text)
         einschlafenText = rootView.findViewById(R.id.einschlafen_text)
+        gewichtField.setText("70",TextView.BufferType.EDITABLE)
+        alterField.setText("29",TextView.BufferType.EDITABLE)
+        wasserProTagField.setText("1330",TextView.BufferType.EDITABLE)
+        erinnerungenField.setText("7",TextView.BufferType.EDITABLE)
+
+        gewichtButtonMinus = rootView.findViewById(R.id.gewicht_minus)
+        gewichtButtonMinus.setOnClickListener { gewichtField.setText(Integer.parseInt(gewichtField.text.toString().trim())-1,TextView.BufferType.EDITABLE) }
+        gewichtButtonPlus = rootView.findViewById(R.id.gewicht_plus)
+        gewichtButtonPlus.setOnClickListener { gewichtField.setText(Integer.parseInt(gewichtField.text.toString().trim())+1,TextView.BufferType.EDITABLE) }
+        alterButtonMinus = rootView.findViewById(R.id.alter_minus)
+        alterButtonPlus = rootView.findViewById(R.id.alter_plus)
+        erinnerungButtonMinus = rootView.findViewById(R.id.erinnerungen_minus)
+        erinnerungButtonPlus = rootView.findViewById(R.id.erinnerungen_plus)
+
         aufwachenText.setOnClickListener {
             var timeText = aufwachenText.text
             var time = timeText.split(" : ")

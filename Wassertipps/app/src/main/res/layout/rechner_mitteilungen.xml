@@ -91,6 +91,7 @@
                         android:background="@drawable/button_minus_selector"
                         android:textColor="?attr/textWhite"
                         android:layout_height="match_parent"
+                        android:id="@+id/erinnerungen_minus"
                         android:text="-"/>
                 <EditText android:layout_width="0dp"
                           android:layout_weight=".50"
@@ -106,6 +107,7 @@
                         android:background="@drawable/button_plus_selector"
                         android:textColor="?attr/textWhite"
                         android:layout_height="match_parent"
+                        android:id="@+id/erinnerungen_plus"
                         android:text="+"/>
             </LinearLayout>
         </LinearLayout>
