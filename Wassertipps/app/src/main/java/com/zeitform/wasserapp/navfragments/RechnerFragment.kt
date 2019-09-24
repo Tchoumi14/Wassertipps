@@ -39,6 +39,8 @@ class RechnerFragment : Fragment() {
     private var rechnerDataManager: RechnerDataManager? = null
     private lateinit var aufwachenText: TextView
     private lateinit var einschlafenText: TextView
+    private var aufwachenTimeInt: Int = 0
+    private var einschlafenTimeInt: Int = 0
     private lateinit var timePicker: TimePickerDialog
     private lateinit var gewichtField: EditText
     private lateinit var alterField: EditText
@@ -134,8 +136,18 @@ class RechnerFragment : Fragment() {
         stillendeFrauenSwitch.isChecked = rechnerDataManager!!.stillendefrauen
         //init times
         aufwachenText.text = rechnerDataManager!!.aufwachen
+        aufwachenTimeInt = timetoNumber(rechnerDataManager!!.aufwachen) // convert text time to number
         einschlafenText.text = rechnerDataManager!!.einschlafen
+        einschlafenTimeInt = timetoNumber(rechnerDataManager!!.einschlafen) // convert text time to number
         calculateWasser()
+    }
+    private fun timetoNumber(timeAsString: String): Int {
+        var timeInNumber = 0
+        var time = timeAsString.split(" : ")
+        var hour = time[0].toInt()
+        var min = time[1].toInt()
+        timeInNumber = (hour * 60) + min
+        return timeInNumber
     }
     private fun openAufwachenTimePicker(hourInput: Int, minInput: Int){
         val timePickerListener = TimePickerDialog.OnTimeSetListener{ view, h, m ->
@@ -147,6 +159,9 @@ class RechnerFragment : Fragment() {
             var time = hour+" : "+min
             aufwachenText.text = time
             rechnerDataManager!!.aufwachen = time
+            aufwachenTimeInt = timetoNumber(time) // convert text time to number
+            Log.d("wake up time as number", aufwachenTimeInt.toString())
+
         }
         timePicker = TimePickerDialog(this.activity, timePickerListener,hourInput,minInput,true)
 
@@ -162,6 +177,8 @@ class RechnerFragment : Fragment() {
             var time = hour+" : "+min
             einschlafenText.text = time
             rechnerDataManager!!.einschlafen = time
+            einschlafenTimeInt = timetoNumber(time) // convert text time to number
+            Log.d("Sleep time as number", einschlafenTimeInt.toString())
         }
         timePicker = TimePickerDialog(this.activity, timePickerListener,hourInput,minInput,true)
 

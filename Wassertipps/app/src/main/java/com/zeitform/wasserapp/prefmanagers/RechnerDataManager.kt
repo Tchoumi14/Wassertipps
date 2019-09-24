@@ -11,13 +11,13 @@ class RechnerDataManager(internal var _context: Context) {
     // shared pref mode
     internal var PRIVATE_MODE = 0
 
-    var gewicht: String?
+    var gewicht: String
         get() = pref.getString(GEWICHT,"70")
         set(gewichtData) {
             editor.putString(GEWICHT, gewichtData)
             editor.commit()
         }
-    var alter: String?
+    var alter: String
         get() = pref.getString(ALTER,"29")
         set(alterData) {
             editor.putString(ALTER, alterData)
@@ -38,21 +38,21 @@ class RechnerDataManager(internal var _context: Context) {
             editor.commit()
         }
 
-    var wasserProTag: String?
+    var wasserProTag: String
         get() = pref.getString(WATER_PRO_TAG,"0")
         set(waterProTagData) {
             editor.putString(WATER_PRO_TAG, waterProTagData)
             editor.commit()
         }
 
-    var aufwachen: String?
+    var aufwachen: String
         get() = pref.getString(AUFWACHEN_ZEIT,"00 : 00")
         set(aufwachenData) {
             editor.putString(AUFWACHEN_ZEIT, aufwachenData)
             editor.commit()
         }
 
-    var einschlafen: String?
+    var einschlafen: String
         get() = pref.getString(EINSCHLAFEN_ZEIT,"00 : 00")
         set(einschlafenData) {
             editor.putString(EINSCHLAFEN_ZEIT, einschlafenData)
