@@ -129,6 +129,9 @@ class RechnerFragment : Fragment() {
         alterField.setText(rechnerDataManager!!.alter,TextView.BufferType.EDITABLE)
         sportSwitch.isChecked = rechnerDataManager!!.sport
         stillendeFrauenSwitch.isChecked = rechnerDataManager!!.stillendefrauen
+        //init times
+        aufwachenText.text = rechnerDataManager!!.aufwachen
+        einschlafenText.text = rechnerDataManager!!.einschlafen
         calculateWasser()
     }
     private fun openAufwachenTimePicker(hourInput: Int, minInput: Int){
@@ -138,7 +141,9 @@ class RechnerFragment : Fragment() {
             var min = m.toString()
             if(hour.length<2) hour = "0"+hour
             if(min.length<2) min = "0"+min
-            aufwachenText.text = hour+" : "+min
+            var time = hour+" : "+min
+            aufwachenText.text = time
+            rechnerDataManager!!.aufwachen = time
         }
         timePicker = TimePickerDialog(this.activity, timePickerListener,hourInput,minInput,true)
 
@@ -151,7 +156,9 @@ class RechnerFragment : Fragment() {
             var min = m.toString()
             if(hour.length<2) hour = "0"+hour
             if(min.length<2) min = "0"+min
-            einschlafenText.text = hour+" : "+min
+            var time = hour+" : "+min
+            einschlafenText.text = time
+            rechnerDataManager!!.einschlafen = time
         }
         timePicker = TimePickerDialog(this.activity, timePickerListener,hourInput,minInput,true)
 
