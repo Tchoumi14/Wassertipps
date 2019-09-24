@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.SwitchCompat
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,7 +41,7 @@ class RechnerFragment : Fragment() {
     private lateinit var gewichtField: EditText
     private lateinit var alterField: EditText
     private lateinit var wasserProTagField: EditText
-    private lateinit var erinnerungenField: EditText
+    private lateinit var erinnerungenField: TextView
     private lateinit var gewichtButtonMinus: Button
     private lateinit var gewichtButtonPlus: Button
     private lateinit var alterButtonMinus: Button
@@ -82,6 +83,7 @@ class RechnerFragment : Fragment() {
         //change Listeners
         gewichtField.addTextChangedListener(myTextWatcher)
         alterField.addTextChangedListener(myTextWatcher)
+
         sportSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             calculateWasser()
         }
@@ -178,13 +180,23 @@ class RechnerFragment : Fragment() {
      */
     private fun erinnerungButtonController(){
         erinnerungButtonMinus.setOnClickListener {
-            var value = Integer.parseInt(erinnerungenField.text.toString().trim())
-            erinnerungenField.setText((value-1).toString(),TextView.BufferType.EDITABLE)
+            var count = Integer.parseInt(erinnerungenField.text.toString().trim())
+            var waterml = Integer.parseInt(wasserProTagField.text.toString().trim())
+            if((waterml/(count-1)>=200) && (waterml/(count-1) <= 250)){
+                erinnerungenField.setText((count-1).toString(),TextView.BufferType.EDITABLE)
+            } else {
+                Toast.makeText(activity?.applicationContext, "waterml :"+waterml+", count :"+count, Toast.LENGTH_SHORT).show()
+            }
         }
 
         erinnerungButtonPlus.setOnClickListener {
-            var value = Integer.parseInt(erinnerungenField.text.toString().trim())
-            erinnerungenField.setText((value+1).toString(),TextView.BufferType.EDITABLE)
+            var count = Integer.parseInt(erinnerungenField.text.toString().trim())
+            var waterml = Integer.parseInt(wasserProTagField.text.toString().trim())
+            if((waterml/(count+1)>=200) && (waterml/(count+1) <= 250)){
+                erinnerungenField.setText((count+1).toString(),TextView.BufferType.EDITABLE)
+            } else {
+                Toast.makeText(activity?.applicationContext, "waterml :"+waterml+", count :"+count, Toast.LENGTH_SHORT).show()
+            }
         }
     }
     private var myTextWatcher = object: TextWatcher{
@@ -231,17 +243,29 @@ class RechnerFragment : Fragment() {
             sportSwitch.isChecked = false
             sportSwitch.isEnabled = false
         }
+        //Zusätzlich Switch Stillende Frauen: 25 ml/kg (nur aktiv wenn Alter mindestens 13 Jahre)
         if(stillendeFrauenSwitch.isChecked){
             if(alter >=13){
                 waterml = 25.0 * gewicht
             }
         }
+        //Zusätzlich Switch Sport: +500ml (kann bleiben) nur aktiv wenn Alter mindestens 19 Jahre
         if(sportSwitch.isChecked){
             if(alter >= 19){
                 waterml+= 500
             }
         }
-        wasserProTagField.setText(waterml.toString(), TextView.BufferType.EDITABLE)
+        //maximal 20 Erinnerungen pro Tag. Jede Erinnerung hat ein Maximum von 200-250ml.
+        var consumptionTimes = 0
+        for(i in 1 until 20){
+            if((waterml/i >=200) && (waterml/i<=250)){
+                consumptionTimes = i
+                break
+            }
+        }
+        erinnerungenField.setText(consumptionTimes.toString(),TextView.BufferType.EDITABLE)
+        Log.d("ConsumptionTimes", consumptionTimes.toString())
+        wasserProTagField.setText((waterml.toInt()).toString(), TextView.BufferType.EDITABLE)
     }
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {

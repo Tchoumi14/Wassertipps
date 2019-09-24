@@ -32,6 +32,7 @@
                     android:textAlignment="center"
                     android:background="@drawable/input_box_styles"
                     android:inputType="number"
+                    android:textSize="7pt"
                     android:ems="10"
                     android:id="@+id/wasserprotag_field"/>
                 <ImageView android:layout_width="0dp"

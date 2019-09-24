@@ -93,12 +93,13 @@
                         android:layout_height="match_parent"
                         android:id="@+id/erinnerungen_minus"
                         android:text="-"/>
-                <EditText android:layout_width="0dp"
+                <TextView android:layout_width="0dp"
                           android:layout_weight=".50"
                           android:layout_height="match_parent"
-                          android:textAlignment="center"
+                          android:textSize="7pt"
+                          android:gravity="center"
                           android:id="@+id/erinnerungen_field"
-                          android:background="@drawable/input_box_styles"/>
+                          android:background="@drawable/erinnerung_textview"/>
                 <Button android:layout_width="0dp"
                         android:layout_weight=".25"
                         android:textAlignment="center"
