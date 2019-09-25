@@ -47,8 +47,8 @@ class RechnerFragment : Fragment() {
     private var aufwachenTimeInt: Int = 0
     private var einschlafenTimeInt: Int = 0
     private lateinit var timePicker: TimePickerDialog
-    private lateinit var gewichtField: EditText
-    private lateinit var alterField: EditText
+    private lateinit var gewichtField: TextView
+    private lateinit var alterField: TextView
     private lateinit var wasserProTagField: EditText
     private lateinit var erinnerungenField: TextView
     private lateinit var gewichtButtonMinus: Button
@@ -90,6 +90,8 @@ class RechnerFragment : Fragment() {
         wasserProTagField.setText("0",TextView.BufferType.EDITABLE)
         erinnerungenField.setText("0",TextView.BufferType.EDITABLE)
 
+        gewichtField.setOnClickListener { openDialog(SelectorType.GEWICHT,gewichtField.text.toString()) }
+        alterField.setOnClickListener { openDialog(SelectorType.ALTER,alterField.text.toString()) }
         erinnerungenField.setOnClickListener { openDialog(SelectorType.ERINNERUNGEN,erinnerungenField.text.toString()) }
         sportSwitch = rootView.findViewById(R.id.sport_switch)
         stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
@@ -116,7 +118,7 @@ class RechnerFragment : Fragment() {
             rechnerDataManager!!.stillendefrauen = isChecked //save to data manager
             calculateWasser()
         }
-        gewichtButtonMinus = rootView.findViewById(R.id.gewicht_minus)
+        /*gewichtButtonMinus = rootView.findViewById(R.id.gewicht_minus)
         gewichtButtonPlus = rootView.findViewById(R.id.gewicht_plus)
         gewichtButtonController()
         alterButtonMinus = rootView.findViewById(R.id.alter_minus)
@@ -124,7 +126,7 @@ class RechnerFragment : Fragment() {
         alterButtonController()
         erinnerungButtonMinus = rootView.findViewById(R.id.erinnerungen_minus)
         erinnerungButtonPlus = rootView.findViewById(R.id.erinnerungen_plus)
-        erinnerungButtonController()
+        erinnerungButtonController()*/
 
         aufwachenText.setOnClickListener {
             var timeText = aufwachenText.text
@@ -160,7 +162,10 @@ class RechnerFragment : Fragment() {
                 numPicker.minValue=1
                 numPicker.maxValue=100
                 numPicker.value = currentValue.toInt()
-                buttonSet.setOnClickListener { alert.dismiss() }
+                buttonSet.setOnClickListener {
+                    gewichtField.text = numPicker.value.toString()
+                    alert.dismiss()
+                }
                 buttonCancel.setOnClickListener { alert.dismiss() }
             }
             SelectorType.ALTER ->{
@@ -168,7 +173,10 @@ class RechnerFragment : Fragment() {
                 numPicker.minValue=1
                 numPicker.maxValue=100
                 numPicker.value = currentValue.toInt()
-                buttonSet.setOnClickListener { alert.dismiss() }
+                buttonSet.setOnClickListener {
+                    alterField.text = numPicker.value.toString()
+                    alert.dismiss()
+                }
                 buttonCancel.setOnClickListener { alert.dismiss() }
             }
             SelectorType.ERINNERUNGEN ->{
@@ -178,7 +186,8 @@ class RechnerFragment : Fragment() {
                 numPicker.value = currentValue.toInt()
                 buttonSet.setOnClickListener {
                     erinnerungenField.text = numPicker.value.toString()
-                    alert.dismiss() }
+                    alert.dismiss()
+                }
                 buttonCancel.setOnClickListener { alert.dismiss() }
             }
         }
@@ -253,7 +262,7 @@ class RechnerFragment : Fragment() {
 
         timePicker.show()
     }
-
+/*
     /**
      * Gewicht button listener. Increment and decrement values
      *
@@ -308,7 +317,7 @@ class RechnerFragment : Fragment() {
                 erinnerungenField.setText((count+1).toString(),TextView.BufferType.EDITABLE)
             }
         }
-    }
+    } */
     private var myTextWatcher = object: TextWatcher{
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
         }

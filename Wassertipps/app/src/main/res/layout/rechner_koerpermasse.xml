@@ -34,9 +34,17 @@
         <TextView android:layout_width="0dp"
                   android:layout_weight=".60"
                   android:layout_height="wrap_content"
-                  android:layout_alignParentStart="true"
+                  android:layout_gravity="start"
                     android:text="@string/gewicht"/>
-        <LinearLayout android:layout_width="0dp"
+        <TextView android:layout_width="0dp"
+                  android:layout_weight=".20"
+                  android:layout_height="wrap_content"
+                  android:textAlignment="center"
+                  android:textSize="7pt"
+                  android:layout_gravity="end"
+                  android:id="@+id/gewicht_field"
+                  android:background="@drawable/input_box_styles"/>
+        <!--<LinearLayout android:layout_width="0dp"
                       android:layout_weight=".40"
                       android:layout_height="35dp"
                       android:layout_alignParentEnd="true"
@@ -70,7 +78,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/gewicht_plus"
                     android:text="+"/>
-        </LinearLayout>
+        </LinearLayout> -->
     </LinearLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:padding="@dimen/basic_text_padding"
@@ -79,9 +87,17 @@
         <TextView android:layout_width="0dp"
                   android:layout_weight=".60"
                   android:layout_height="wrap_content"
-                  android:layout_alignParentStart="true"
+                  android:layout_gravity="start"
                   android:text="@string/alter"/>
-        <LinearLayout android:layout_width="0dp"
+        <TextView android:layout_width="0dp"
+                  android:layout_weight=".20"
+                  android:layout_height="wrap_content"
+                  android:textAlignment="center"
+                  android:textSize="7pt"
+                  android:id="@+id/alter_field"
+                  android:layout_gravity="end"
+                  android:background="@drawable/input_box_styles"/>
+        <!--<LinearLayout android:layout_width="0dp"
                       android:layout_weight=".40"
                       android:layout_height="35dp"
                       android:layout_alignParentEnd="true"
@@ -114,7 +130,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/alter_plus"
                     android:text="+"/>
-        </LinearLayout>
+        </LinearLayout> -->
     </LinearLayout>
 </RelativeLayout>
 </RelativeLayout>
