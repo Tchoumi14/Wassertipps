@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:padding="@dimen/activity_vertical_margin"
+                app:layout_constraintCircleRadius="@dimen/basic_text_padding"
+                android:background="?attr/appBackgroundColor">
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:textStyle="bold"
+              android:textSize="@dimen/activity_vertical_margin"
+              android:text="Dialog Title"
+              android:id="@+id/dialog_title"/>
+    <NumberPicker
+            android:id="@+id/numberPicker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_title"
+            android:layout_centerHorizontal="true"/>
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/numberPicker1"
+                  android:layout_toRightOf="@+id/numberPicker1"
+                  android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:orientation="horizontal">
+        <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/appBackgroundColor"
+                android:textColor="@color/colorPrimary"
+                android:text="Cancel" />
+
+        <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/appBackgroundColor"
+                android:textColor="@color/colorPrimary"
+                android:text="Set" />
+    </LinearLayout>
+
+
+</RelativeLayout>

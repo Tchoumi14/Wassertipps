@@ -54,7 +54,7 @@ class RechnerFragment : Fragment() {
     private lateinit var erinnerungButtonPlus: Button
     private lateinit var sportSwitch: SwitchCompat
     private lateinit var stillendeFrauenSwitch: SwitchCompat
-
+    private lateinit var erinnerungPicker: NumberPicker
     private lateinit var mitteilungenSwitch: SwitchCompat
     private var listener: OnFragmentInteractionListener? = null
 
@@ -84,10 +84,11 @@ class RechnerFragment : Fragment() {
         alterField.setText("29",TextView.BufferType.EDITABLE)
         wasserProTagField.setText("0",TextView.BufferType.EDITABLE)
         erinnerungenField.setText("0",TextView.BufferType.EDITABLE)
-
+        erinnerungenField.setOnClickListener { openDialog() }
         sportSwitch = rootView.findViewById(R.id.sport_switch)
         stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
 
+        //erinnerungPicker = rootView.findViewById(R.id.erinnerungen_picker)
         mitteilungenSwitch = rootView.findViewById(R.id.mitteilungen_switch)
         mitteilungenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
@@ -136,6 +137,9 @@ class RechnerFragment : Fragment() {
 
 
         return rootView
+    }
+    private fun openDialog(){
+
     }
     /**
      * Init fields and switches in Wasserbedarf rechner from RechnerDataManager and call calculateWasser()
