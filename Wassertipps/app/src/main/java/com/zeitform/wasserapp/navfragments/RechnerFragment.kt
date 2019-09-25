@@ -179,6 +179,7 @@ class RechnerFragment : Fragment() {
                 numPicker.value = currentValue.toInt()
                 buttonSet.setOnClickListener {
                     erinnerungenField.text = numPicker.value.toString()
+                    rechnerDataManager!!.erinnerungen = numPicker.value
                     alert.dismiss()
                 }
                 buttonCancel.setOnClickListener { alert.dismiss() }
@@ -203,13 +204,15 @@ class RechnerFragment : Fragment() {
 
         mitteilungenSwitch.isChecked = rechnerDataManager!!.mitteilungenSwitch
 
-        var wasserProTagValue = rechnerDataManager!!.wasserProTag.trim()
+        val wasserProTagValue = rechnerDataManager!!.wasserProTag.trim()
         wasserProTagField.setText(wasserProTagValue,TextView.BufferType.EDITABLE)
         erinnerungenField.text = rechnerDataManager!!.erinnerungen.toString()
 
 
-        if(wasserProTagValue=="-1"){
+        if(wasserProTagValue=="-1" ){
             calculateWasser()
+        } else {
+            calculateErinnerung(wasserProTagValue.toInt())
         }
 
     }
@@ -354,17 +357,23 @@ class RechnerFragment : Fragment() {
                 consumptionTimes.add(i)
             }
         }
+        var value = "0"
         if(consumptionTimes.size>2){
             val index = Math.round((consumptionTimes.size/2).toDouble())
-            val value = consumptionTimes.get(index.toInt()).toString()
-            erinnerungenField.text =value
+            value = consumptionTimes.get(index.toInt()).toString()
         } else if(consumptionTimes.size in 1..2) {
-            val value = consumptionTimes.get(consumptionTimes.size-1).toString()
-            erinnerungenField.text = value
+            value = consumptionTimes.get(consumptionTimes.size-1).toString()
         } else {
             consumptionTimes.add(0)
-            erinnerungenField.text = consumptionTimes.get(0).toString()
+            value = consumptionTimes.get(0).toString()
             Log.d("Cant be less", "that 200")
+        }
+        var savedValue = rechnerDataManager!!.erinnerungen
+        if(savedValue!= -1 && consumptionTimes.indexOf(savedValue)!=-1){
+            erinnerungenField.text = savedValue.toString()
+        } else {
+            erinnerungenField.text = value
+            rechnerDataManager!!.erinnerungen = value.toInt()
         }
 
         Log.d("ConsumptionTimes", consumptionTimes.toString())
