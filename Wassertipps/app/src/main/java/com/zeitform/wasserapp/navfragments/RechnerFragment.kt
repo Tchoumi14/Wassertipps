@@ -1,10 +1,12 @@
 package com.zeitform.wasserapp.navfragments
 
+import android.app.Dialog
 import android.app.TimePickerDialog
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.SwitchCompat
 import android.text.Editable
 import android.text.TextWatcher
@@ -13,6 +15,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
 import java.awt.font.TextAttribute
@@ -139,7 +142,18 @@ class RechnerFragment : Fragment() {
         return rootView
     }
     private fun openDialog(){
-
+        val dialog = AlertDialog.Builder(activity!!.baseContext, R.style.myDialog)
+        val view = layoutInflater.inflate(R.layout.number_picker_dialog, null)
+        dialog.setTitle("Test Dialog")
+        dialog.setView(view)
+        val buttonSet = view.findViewById(R.id.button1) as Button
+        val buttonCancel = view.findViewById(R.id.button2) as Button
+        val numPicker = view.findViewById(R.id.numberPicker1) as NumberPicker
+        numPicker.minValue=1
+        numPicker.maxValue=10
+        buttonSet.setOnClickListener {  }
+        buttonCancel.setOnClickListener {  }
+        dialog.show()
     }
     /**
      * Init fields and switches in Wasserbedarf rechner from RechnerDataManager and call calculateWasser()
