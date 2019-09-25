@@ -299,6 +299,10 @@ class RechnerFragment : Fragment() {
         }
 
     }
+
+    /**
+     * Calculate WasserProTag and call calculateErinnerungen
+     */
     private fun calculateWasser(){
         sportSwitch.isEnabled = true
         stillendeFrauenSwitch.isEnabled = true
@@ -346,6 +350,12 @@ class RechnerFragment : Fragment() {
         wasserProTagField.setText((waterml.toInt()).toString(), TextView.BufferType.EDITABLE)
         calculateErinnerung(waterml.toInt())
     }
+
+    /**
+     * Calculate number of reminders such that each reminder is 200-250ml
+     * Use saved data if it exists in the array, else use middle value of the array
+     * @param waterml - Wasser Pro Tag
+     */
     private fun calculateErinnerung(waterml:Int){
         wasserProTagText.text = getString(R.string.wasser_pro_tag_text, waterml.toString())
         rechnerDataManager!!.wasserProTag = waterml.toString()
@@ -375,9 +385,12 @@ class RechnerFragment : Fragment() {
             erinnerungenField.text = value
             rechnerDataManager!!.erinnerungen = value.toInt()
         }
-
         Log.d("ConsumptionTimes", consumptionTimes.toString())
     }
+
+    /**
+     * Create alarms at regular intervals between aufwachen and einschlafen time.
+     */
     private fun setAlarms(){
         val duration = einschlafenTimeInt - aufwachenTimeInt
         val times = Integer.parseInt(erinnerungenField.text.toString().trim())
@@ -385,9 +398,14 @@ class RechnerFragment : Fragment() {
         Log.d("Time interval", interval.toString())
         //set alarms
     }
+
+    /**
+     * Clear running alarms
+     */
     private fun clearAlarms(){
         //clear alarms
     }
+    
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)
