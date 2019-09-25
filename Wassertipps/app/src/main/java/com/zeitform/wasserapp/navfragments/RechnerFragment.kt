@@ -17,8 +17,10 @@ import android.view.ViewGroup
 import android.widget.*
 import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.R
+import com.zeitform.wasserapp.SelectorType
 import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
-import java.awt.font.TextAttribute
+
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -87,7 +89,8 @@ class RechnerFragment : Fragment() {
         alterField.setText("29",TextView.BufferType.EDITABLE)
         wasserProTagField.setText("0",TextView.BufferType.EDITABLE)
         erinnerungenField.setText("0",TextView.BufferType.EDITABLE)
-        erinnerungenField.setOnClickListener { openDialog() }
+
+        erinnerungenField.setOnClickListener { openDialog(SelectorType.ERINNERUNGEN,erinnerungenField.text.toString()) }
         sportSwitch = rootView.findViewById(R.id.sport_switch)
         stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
 
@@ -141,19 +144,45 @@ class RechnerFragment : Fragment() {
 
         return rootView
     }
-    private fun openDialog(){
-        val dialog = AlertDialog.Builder(activity!!.baseContext, R.style.myDialog)
+    private fun openDialog(selectorType: SelectorType, currentValue: String){
+        val dialog = AlertDialog.Builder(activity!!, R.style.myDialog)
+        val alert = dialog.create()
         val view = layoutInflater.inflate(R.layout.number_picker_dialog, null)
-        dialog.setTitle("Test Dialog")
-        dialog.setView(view)
+
+        alert.setView(view)
         val buttonSet = view.findViewById(R.id.button1) as Button
         val buttonCancel = view.findViewById(R.id.button2) as Button
         val numPicker = view.findViewById(R.id.numberPicker1) as NumberPicker
-        numPicker.minValue=1
-        numPicker.maxValue=10
-        buttonSet.setOnClickListener {  }
-        buttonCancel.setOnClickListener {  }
-        dialog.show()
+
+        when(selectorType){
+            SelectorType.GEWICHT ->{
+                alert.setTitle("Gewicht")
+                numPicker.minValue=1
+                numPicker.maxValue=100
+                numPicker.value = currentValue.toInt()
+                buttonSet.setOnClickListener { alert.dismiss() }
+                buttonCancel.setOnClickListener { alert.dismiss() }
+            }
+            SelectorType.ALTER ->{
+                alert.setTitle("Alter")
+                numPicker.minValue=1
+                numPicker.maxValue=100
+                numPicker.value = currentValue.toInt()
+                buttonSet.setOnClickListener { alert.dismiss() }
+                buttonCancel.setOnClickListener { alert.dismiss() }
+            }
+            SelectorType.ERINNERUNGEN ->{
+                alert.setTitle("Erinnerungen")
+                numPicker.minValue=1
+                numPicker.maxValue=10
+                numPicker.value = currentValue.toInt()
+                buttonSet.setOnClickListener {
+                    erinnerungenField.text = numPicker.value.toString()
+                    alert.dismiss() }
+                buttonCancel.setOnClickListener { alert.dismiss() }
+            }
+        }
+        alert.show()
     }
     /**
      * Init fields and switches in Wasserbedarf rechner from RechnerDataManager and call calculateWasser()
@@ -171,6 +200,7 @@ class RechnerFragment : Fragment() {
         einschlafenTimeInt = if(sleepTime == 0) 1440 else sleepTime// convert text time to number
 
         mitteilungenSwitch.isChecked = rechnerDataManager!!.mitteilungenSwitch
+
         calculateWasser()
     }
 
