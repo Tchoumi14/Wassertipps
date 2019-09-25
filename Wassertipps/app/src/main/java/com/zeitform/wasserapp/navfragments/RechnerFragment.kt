@@ -155,6 +155,7 @@ class RechnerFragment : Fragment() {
                 numPicker.value = currentValue.toInt()
                 buttonSet.setOnClickListener {
                     gewichtField.text = numPicker.value.toString()
+                    rechnerDataManager!!.gewicht = numPicker.value.toString()
                     alert.dismiss()
                 }
                 buttonCancel.setOnClickListener { alert.dismiss() }
@@ -166,6 +167,7 @@ class RechnerFragment : Fragment() {
                 numPicker.value = currentValue.toInt()
                 buttonSet.setOnClickListener {
                     alterField.text = numPicker.value.toString()
+                    rechnerDataManager!!.alter = numPicker.value.toString()
                     alert.dismiss()
                 }
                 buttonCancel.setOnClickListener { alert.dismiss() }
@@ -188,20 +190,28 @@ class RechnerFragment : Fragment() {
      * Init fields and switches in Wasserbedarf rechner from RechnerDataManager and call calculateWasser()
      */
     private fun initFields(){
-        gewichtField.setText(rechnerDataManager!!.gewicht,TextView.BufferType.EDITABLE)
-        alterField.setText(rechnerDataManager!!.alter,TextView.BufferType.EDITABLE)
+        gewichtField.text = rechnerDataManager!!.gewicht
+        alterField.text = rechnerDataManager!!.alter
         sportSwitch.isChecked = rechnerDataManager!!.sport
         stillendeFrauenSwitch.isChecked = rechnerDataManager!!.stillendefrauen
         //init times
         aufwachenText.text = rechnerDataManager!!.aufwachen
         aufwachenTimeInt = timetoNumber(rechnerDataManager!!.aufwachen) // convert text time to number
         einschlafenText.text = rechnerDataManager!!.einschlafen
-        var sleepTime = timetoNumber(rechnerDataManager!!.einschlafen)
+        val sleepTime = timetoNumber(rechnerDataManager!!.einschlafen)
         einschlafenTimeInt = if(sleepTime == 0) 1440 else sleepTime// convert text time to number
 
         mitteilungenSwitch.isChecked = rechnerDataManager!!.mitteilungenSwitch
 
-        calculateWasser()
+        var wasserProTagValue = rechnerDataManager!!.wasserProTag.trim()
+        wasserProTagField.setText(wasserProTagValue,TextView.BufferType.EDITABLE)
+        erinnerungenField.text = rechnerDataManager!!.erinnerungen.toString()
+
+
+        if(wasserProTagValue=="-1"){
+            calculateWasser()
+        }
+
     }
 
     /**
@@ -292,19 +302,19 @@ class RechnerFragment : Fragment() {
         val gewicht = Integer.parseInt(gewichtField.text.toString().trim())
         val alter = Integer.parseInt(alterField.text.toString().trim())
         var waterml = 0.0
-        if(alter >=1 && alter <=3){
+        if(alter in 1..3){
             waterml = 60.0 * gewicht
-        } else if(alter >=4 && alter <=6){
+        } else if(alter in 4..6){
             waterml = 44.0 * gewicht
-        } else if(alter >=7 && alter <=9){
+        } else if(alter in 7..9){
             waterml = 32.0 * gewicht
-        } else if(alter >=10 && alter <=12){
+        } else if(alter in 10..12){
             waterml = 27.0 * gewicht
-        } else if(alter >=13 && alter <=18){
+        } else if(alter in 13..18){
             waterml = 22.0 * gewicht
-        } else if(alter >=19 && alter <=50){
+        } else if(alter in 19..50){
             waterml = 19.0 * gewicht
-        } else if(alter >=51 && alter <=64){
+        } else if(alter in 51..64){
             waterml = 16.5 * gewicht
         } else if(alter >=65){
             waterml = 17.5 * gewicht
@@ -335,6 +345,7 @@ class RechnerFragment : Fragment() {
     }
     private fun calculateErinnerung(waterml:Int){
         wasserProTagText.text = getString(R.string.wasser_pro_tag_text, waterml.toString())
+        rechnerDataManager!!.wasserProTag = waterml.toString()
         //maximal 20 Erinnerungen pro Tag. Jede Erinnerung hat ein Maximum von 200-250ml.
         Log.d("Waterml at er", waterml.toString())
         consumptionTimes = ArrayList()

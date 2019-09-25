@@ -40,7 +40,7 @@ class RechnerDataManager(internal var _context: Context) {
         }
 
     var wasserProTag: String
-        get() = pref.getString(WATER_PRO_TAG,"0")
+        get() = pref.getString(WATER_PRO_TAG,"-1")
         set(waterProTagData) {
             editor.putString(WATER_PRO_TAG, waterProTagData)
             editor.commit()
@@ -66,6 +66,12 @@ class RechnerDataManager(internal var _context: Context) {
             editor.putBoolean(MITTEILUNGEN_SWITCH, mitteilungen)
             editor.commit()
         }
+    var erinnerungen: Int
+        get() = pref.getInt(ERINNERUNGEN,-1)
+        set(erinnerungen) {
+            editor.putInt(ERINNERUNGEN, erinnerungen)
+            editor.commit()
+        }
     init {
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
         editor = pref.edit()
@@ -85,6 +91,7 @@ class RechnerDataManager(internal var _context: Context) {
         private const val EINSCHLAFEN_ZEIT = "einschlafen-data"
 
         private const val MITTEILUNGEN_SWITCH = "mitteilungen-switch"
+        private const val ERINNERUNGEN = "erinnerungen"
     }
 
 }
