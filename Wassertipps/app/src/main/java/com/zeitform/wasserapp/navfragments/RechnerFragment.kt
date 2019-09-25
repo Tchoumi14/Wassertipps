@@ -61,6 +61,7 @@ class RechnerFragment : Fragment() {
     private lateinit var stillendeFrauenSwitch: SwitchCompat
     private lateinit var erinnerungPicker: NumberPicker
     private lateinit var mitteilungenSwitch: SwitchCompat
+    private lateinit var consumptionTimes: ArrayList<Int>
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,13 +91,14 @@ class RechnerFragment : Fragment() {
         wasserProTagField.setText("0",TextView.BufferType.EDITABLE)
         erinnerungenField.setText("0",TextView.BufferType.EDITABLE)
 
+        //TextView number, onClick opens Dialog with NumberPicker
         gewichtField.setOnClickListener { openDialog(SelectorType.GEWICHT,gewichtField.text.toString()) }
         alterField.setOnClickListener { openDialog(SelectorType.ALTER,alterField.text.toString()) }
         erinnerungenField.setOnClickListener { openDialog(SelectorType.ERINNERUNGEN,erinnerungenField.text.toString()) }
+
         sportSwitch = rootView.findViewById(R.id.sport_switch)
         stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
 
-        //erinnerungPicker = rootView.findViewById(R.id.erinnerungen_picker)
         mitteilungenSwitch = rootView.findViewById(R.id.mitteilungen_switch)
         mitteilungenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
@@ -118,16 +120,6 @@ class RechnerFragment : Fragment() {
             rechnerDataManager!!.stillendefrauen = isChecked //save to data manager
             calculateWasser()
         }
-        /*gewichtButtonMinus = rootView.findViewById(R.id.gewicht_minus)
-        gewichtButtonPlus = rootView.findViewById(R.id.gewicht_plus)
-        gewichtButtonController()
-        alterButtonMinus = rootView.findViewById(R.id.alter_minus)
-        alterButtonPlus = rootView.findViewById(R.id.alter_plus)
-        alterButtonController()
-        erinnerungButtonMinus = rootView.findViewById(R.id.erinnerungen_minus)
-        erinnerungButtonPlus = rootView.findViewById(R.id.erinnerungen_plus)
-        erinnerungButtonController()*/
-
         aufwachenText.setOnClickListener {
             var timeText = aufwachenText.text
             var time = timeText.split(" : ")
@@ -147,7 +139,7 @@ class RechnerFragment : Fragment() {
         return rootView
     }
     private fun openDialog(selectorType: SelectorType, currentValue: String){
-        val dialog = AlertDialog.Builder(activity!!, R.style.myDialog)
+        val dialog = AlertDialog.Builder(activity!!)
         val alert = dialog.create()
         val view = layoutInflater.inflate(R.layout.number_picker_dialog, null)
 
@@ -181,8 +173,8 @@ class RechnerFragment : Fragment() {
             }
             SelectorType.ERINNERUNGEN ->{
                 alert.setTitle("Erinnerungen")
-                numPicker.minValue=1
-                numPicker.maxValue=10
+                numPicker.minValue=consumptionTimes[0]
+                numPicker.maxValue=consumptionTimes[consumptionTimes.size-1]
                 numPicker.value = currentValue.toInt()
                 buttonSet.setOnClickListener {
                     erinnerungenField.text = numPicker.value.toString()
@@ -262,62 +254,7 @@ class RechnerFragment : Fragment() {
 
         timePicker.show()
     }
-/*
-    /**
-     * Gewicht button listener. Increment and decrement values
-     *
-     */
-    private fun gewichtButtonController(){
-        gewichtButtonMinus.setOnClickListener {
-            var value = Integer.parseInt(gewichtField.text.toString().trim())
-            gewichtField.setText((value-1).toString(),TextView.BufferType.EDITABLE)
-            rechnerDataManager!!.gewicht = gewichtField.text.toString() //save to data manager
-        }
 
-        gewichtButtonPlus.setOnClickListener {
-            var value = Integer.parseInt(gewichtField.text.toString().trim())
-            gewichtField.setText((value+1).toString(),TextView.BufferType.EDITABLE)
-            rechnerDataManager!!.gewicht = gewichtField.text.toString() //save to data manager
-        }
-    }
-    /**
-     * Alter button listener. Increment and decrement values
-     *
-     */
-    private fun alterButtonController(){
-        alterButtonMinus.setOnClickListener {
-            var value = Integer.parseInt(alterField.text.toString().trim())
-            alterField.setText((value-1).toString(),TextView.BufferType.EDITABLE)
-            rechnerDataManager!!.alter = alterField.text.toString() //save to data manager
-        }
-
-        alterButtonPlus.setOnClickListener {
-            var value = Integer.parseInt(alterField.text.toString().trim())
-            alterField.setText((value+1).toString(),TextView.BufferType.EDITABLE)
-            rechnerDataManager!!.alter = alterField.text.toString() //save to data manager
-        }
-    }
-    /**
-     * Erinnerungen button listener. Increment and decrement values
-     *
-     */
-    private fun erinnerungButtonController(){
-        erinnerungButtonMinus.setOnClickListener {
-            var count = Integer.parseInt(erinnerungenField.text.toString().trim())
-            var waterml = Integer.parseInt(wasserProTagField.text.toString().trim())
-            if((waterml/(count-1)>=200) && (waterml/(count-1) <= 250)){
-                erinnerungenField.setText((count-1).toString(),TextView.BufferType.EDITABLE)
-            }
-        }
-
-        erinnerungButtonPlus.setOnClickListener {
-            var count = Integer.parseInt(erinnerungenField.text.toString().trim())
-            var waterml = Integer.parseInt(wasserProTagField.text.toString().trim())
-            if((waterml/(count+1)>=200) && (waterml/(count+1) <= 250)){
-                erinnerungenField.setText((count+1).toString(),TextView.BufferType.EDITABLE)
-            }
-        }
-    } */
     private var myTextWatcher = object: TextWatcher{
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
         }
@@ -375,14 +312,21 @@ class RechnerFragment : Fragment() {
             }
         }
         //maximal 20 Erinnerungen pro Tag. Jede Erinnerung hat ein Maximum von 200-250ml.
-        var consumptionTimes = 0
+        consumptionTimes = ArrayList()
         for(i in 1 until 20){
             if((waterml/i >=200) && (waterml/i<=250)){
-                consumptionTimes = i
-                break
+                consumptionTimes.add(i)
             }
         }
-        erinnerungenField.setText(consumptionTimes.toString(),TextView.BufferType.EDITABLE)
+        if(consumptionTimes.size>2){
+            var index = Math.round((consumptionTimes.size/2).toDouble())
+            var value = consumptionTimes.get(index.toInt()).toString()
+            erinnerungenField.setText(value,TextView.BufferType.EDITABLE)
+        } else {
+            var value = consumptionTimes.get(consumptionTimes.size-1).toString()
+            erinnerungenField.setText(value,TextView.BufferType.EDITABLE)
+        }
+
         Log.d("ConsumptionTimes", consumptionTimes.toString())
         wasserProTagField.setText((waterml.toInt()).toString(), TextView.BufferType.EDITABLE)
     }

@@ -43,7 +43,7 @@
                   android:textSize="7pt"
                   android:layout_gravity="end"
                   android:id="@+id/gewicht_field"
-                  android:background="@drawable/input_box_styles"/>
+                  android:background="@drawable/erinnerung_textview"/>
         <!--<LinearLayout android:layout_width="0dp"
                       android:layout_weight=".40"
                       android:layout_height="35dp"
@@ -96,7 +96,7 @@
                   android:textSize="7pt"
                   android:id="@+id/alter_field"
                   android:layout_gravity="end"
-                  android:background="@drawable/input_box_styles"/>
+                  android:background="@drawable/erinnerung_textview"/>
         <!--<LinearLayout android:layout_width="0dp"
                       android:layout_weight=".40"
                       android:layout_height="35dp"
