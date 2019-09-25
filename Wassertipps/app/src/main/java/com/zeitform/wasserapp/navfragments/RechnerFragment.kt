@@ -9,16 +9,19 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.SwitchCompat
 import android.text.Editable
+import android.text.InputFilter
 import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.zeitform.wasserapp.MainActivity
+import com.zeitform.wasserapp.InputFilterMinMax
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.SelectorType
 import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
+
+
 
 
 
@@ -50,16 +53,10 @@ class RechnerFragment : Fragment() {
     private lateinit var gewichtField: TextView
     private lateinit var alterField: TextView
     private lateinit var wasserProTagField: EditText
+    private lateinit var wasserProTagText: TextView
     private lateinit var erinnerungenField: TextView
-    private lateinit var gewichtButtonMinus: Button
-    private lateinit var gewichtButtonPlus: Button
-    private lateinit var alterButtonMinus: Button
-    private lateinit var alterButtonPlus: Button
-    private lateinit var erinnerungButtonMinus: Button
-    private lateinit var erinnerungButtonPlus: Button
     private lateinit var sportSwitch: SwitchCompat
     private lateinit var stillendeFrauenSwitch: SwitchCompat
-    private lateinit var erinnerungPicker: NumberPicker
     private lateinit var mitteilungenSwitch: SwitchCompat
     private lateinit var consumptionTimes: ArrayList<Int>
     private var listener: OnFragmentInteractionListener? = null
@@ -83,12 +80,14 @@ class RechnerFragment : Fragment() {
         gewichtField = rootView.findViewById(R.id.gewicht_field)
         alterField = rootView.findViewById(R.id.alter_field)
         wasserProTagField = rootView.findViewById(R.id.wasserprotag_field)
+        wasserProTagText = rootView.findViewById(R.id.wasserprotag_text)
         erinnerungenField = rootView.findViewById(R.id.erinnerungen_field)
         aufwachenText = rootView.findViewById(R.id.aufwachen_text)
         einschlafenText = rootView.findViewById(R.id.einschlafen_text)
         gewichtField.setText("70",TextView.BufferType.EDITABLE)
         alterField.setText("29",TextView.BufferType.EDITABLE)
         wasserProTagField.setText("0",TextView.BufferType.EDITABLE)
+        wasserProTagField.filters = arrayOf<InputFilter>(InputFilterMinMax(800, 10000))
         erinnerungenField.setText("0",TextView.BufferType.EDITABLE)
 
         //TextView number, onClick opens Dialog with NumberPicker
@@ -111,7 +110,7 @@ class RechnerFragment : Fragment() {
         //change Listeners
         gewichtField.addTextChangedListener(myTextWatcher)
         alterField.addTextChangedListener(myTextWatcher)
-
+        wasserProTagField.addTextChangedListener(wasserProTagWatcher)
         sportSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             rechnerDataManager!!.sport = isChecked //save to data manager
             calculateWasser()
@@ -243,10 +242,10 @@ class RechnerFragment : Fragment() {
             var min = m.toString()
             if(hour.length<2) hour = "0"+hour
             if(min.length<2) min = "0"+min
-            var time = hour+" : "+min
+            val time = hour+" : "+min
             einschlafenText.text = time
             rechnerDataManager!!.einschlafen = time
-            var sleepTime = timetoNumber(time)
+            val sleepTime = timetoNumber(time)
             einschlafenTimeInt = if(sleepTime == 0) 1440 else sleepTime// convert text time to number
             Log.d("Sleep time as number", einschlafenTimeInt.toString())
         }
@@ -255,6 +254,9 @@ class RechnerFragment : Fragment() {
         timePicker.show()
     }
 
+    /**
+     * Text watcher for gewicht and alter, change in the values calls calculateWasser()
+     */
     private var myTextWatcher = object: TextWatcher{
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
         }
@@ -267,11 +269,28 @@ class RechnerFragment : Fragment() {
         }
 
     }
+    /**
+     * Text watcher for wasserProTag, change in the values calls calculateErinnerung()
+     */
+    private var wasserProTagWatcher = object: TextWatcher{
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        }
+
+        override fun afterTextChanged(s: Editable?) {
+            if(s.toString().trim()!=""){
+                calculateErinnerung(Integer.parseInt(s.toString().trim()))
+            }
+        }
+
+    }
     private fun calculateWasser(){
         sportSwitch.isEnabled = true
         stillendeFrauenSwitch.isEnabled = true
-        var gewicht = Integer.parseInt(gewichtField.text.toString().trim())
-        var alter = Integer.parseInt(alterField.text.toString().trim())
+        val gewicht = Integer.parseInt(gewichtField.text.toString().trim())
+        val alter = Integer.parseInt(alterField.text.toString().trim())
         var waterml = 0.0
         if(alter >=1 && alter <=3){
             waterml = 60.0 * gewicht
@@ -311,7 +330,13 @@ class RechnerFragment : Fragment() {
                 waterml+= 500
             }
         }
+        wasserProTagField.setText((waterml.toInt()).toString(), TextView.BufferType.EDITABLE)
+        calculateErinnerung(waterml.toInt())
+    }
+    private fun calculateErinnerung(waterml:Int){
+        wasserProTagText.text = getString(R.string.wasser_pro_tag_text, waterml.toString())
         //maximal 20 Erinnerungen pro Tag. Jede Erinnerung hat ein Maximum von 200-250ml.
+        Log.d("Waterml at er", waterml.toString())
         consumptionTimes = ArrayList()
         for(i in 1 until 20){
             if((waterml/i >=200) && (waterml/i<=250)){
@@ -319,22 +344,24 @@ class RechnerFragment : Fragment() {
             }
         }
         if(consumptionTimes.size>2){
-            var index = Math.round((consumptionTimes.size/2).toDouble())
-            var value = consumptionTimes.get(index.toInt()).toString()
-            erinnerungenField.setText(value,TextView.BufferType.EDITABLE)
+            val index = Math.round((consumptionTimes.size/2).toDouble())
+            val value = consumptionTimes.get(index.toInt()).toString()
+            erinnerungenField.text =value
+        } else if(consumptionTimes.size in 1..2) {
+            val value = consumptionTimes.get(consumptionTimes.size-1).toString()
+            erinnerungenField.text = value
         } else {
-            var value = consumptionTimes.get(consumptionTimes.size-1).toString()
-            erinnerungenField.setText(value,TextView.BufferType.EDITABLE)
+            consumptionTimes.add(0)
+            erinnerungenField.text = consumptionTimes.get(0).toString()
+            Log.d("Cant be less", "that 200")
         }
 
         Log.d("ConsumptionTimes", consumptionTimes.toString())
-        wasserProTagField.setText((waterml.toInt()).toString(), TextView.BufferType.EDITABLE)
     }
-
     private fun setAlarms(){
-        var duration = einschlafenTimeInt - aufwachenTimeInt
-        var times = Integer.parseInt(erinnerungenField.text.toString().trim())
-        var interval = Math.round((duration/times).toDouble())
+        val duration = einschlafenTimeInt - aufwachenTimeInt
+        val times = Integer.parseInt(erinnerungenField.text.toString().trim())
+        val interval = Math.round((duration/times).toDouble())
         Log.d("Time interval", interval.toString())
         //set alarms
     }

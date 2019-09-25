@@ -51,7 +51,8 @@
                     android:padding="@dimen/basic_text_padding"
                     android:background="@drawable/rechner_content"
                     android:layout_below="@+id/box_title">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="@string/wasser_pro_tag"/>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/wasserprotag_text"/>
     </RelativeLayout>
 </RelativeLayout>
