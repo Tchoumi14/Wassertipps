@@ -78,12 +78,12 @@ object NotificationHelper {
         val channelId = "${context.packageName}-wasserbedarf"
         return NotificationCompat.Builder(context, channelId).apply {
             setSmallIcon(R.drawable.ic_notifications_black_24dp)
-            setContentTitle("Test!")
+            setContentTitle(context.getString(R.string.notification_title))
             setContentText(context.getString(R.string.group_notification_for, "wasserbedarf"))
             setStyle(NotificationCompat.BigTextStyle().bigText(context.getString(R.string.group_notification_for, "wasserbedarf")))
             setAutoCancel(true)
             setGroupSummary(true)
-            setGroup("wasserbedarf")
+            setGroup(context.getString(R.string.notification_group))
         }
     }
 
@@ -100,7 +100,7 @@ object NotificationHelper {
 
         return NotificationCompat.Builder(context, channelId).apply {
             setSmallIcon(R.drawable.notification_template_icon_bg)
-            setContentTitle("Trink wasser")
+            setContentTitle(context.getString(R.string.notification_title))
             setAutoCancel(true)
 
             // get a drawable reference for the LargeIcon

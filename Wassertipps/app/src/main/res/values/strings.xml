@@ -150,5 +150,9 @@
     <string name="erinnerungen">Erinnerungen</string>
     <string name="wasser_pro_tag_text">Ihr empfohlener Wasserbedarf pro Tag ist %1$s ml. Dieser Wert ist jederzeit nur eine Empfehlung. Sie können diesen Wert ändern, die Benachrichtigungen werden dann angepasst.</string>
 
+    <!--Notification texts-->
     <string name="group_notification_for">This is the %s notification group.</string>
+    <string name="notification_title">Erinnerung</string>
+    <string name="notification_group">wasserbedarf</string>
+    <string name="trink_wasser_text">Trink %s ml wasser!</string>
 </resources>

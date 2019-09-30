@@ -57,7 +57,6 @@ object AlarmScheduler {
         datetimeToAlarm.set(MILLISECOND, 0)
         Log.d("Scheduled for ", alarmData.hour.toString()+":"+alarmData.min)
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP,datetimeToAlarm.timeInMillis,24*60*60*1000, alarmIntent)
-        return
     }
 
     /**

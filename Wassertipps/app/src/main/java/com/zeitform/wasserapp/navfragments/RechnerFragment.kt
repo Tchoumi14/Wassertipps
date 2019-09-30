@@ -406,6 +406,7 @@ class RechnerFragment : Fragment() {
             NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
             getString(R.string.app_name), "App notification channel.")
 
+        var waterMl = Integer.parseInt(wasserProTagField.text.toString().trim())
         val duration = einschlafenTimeInt - aufwachenTimeInt
         val times = Integer.parseInt(erinnerungenField.text.toString().trim())
         val interval = Math.round((duration/times).toDouble()).toInt()
