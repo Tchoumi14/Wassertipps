@@ -19,7 +19,7 @@ object AlarmScheduler {
      * @param context      current application context
      * @param reminderData ReminderData to use for the alarm
      */
-    fun scheduleAlarmsForReminder(context: Context) {
+    fun scheduleAlarmsForReminder(context: Context, alarmData: AlarmData) {
         Log.d("At scheduler", "--")
         // get the AlarmManager reference
         val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
@@ -42,21 +42,20 @@ object AlarmScheduler {
             }
         } */
         val alarmIntent = createPendingIntent(context)
-        scheduleAlarm(alarmIntent, alarmMgr)
+        scheduleAlarm(alarmIntent, alarmMgr, alarmData)
     }
 
-    private fun scheduleAlarm(alarmIntent: PendingIntent, alarmMgr: AlarmManager){
+    private fun scheduleAlarm(alarmIntent: PendingIntent, alarmMgr: AlarmManager, alarmData: AlarmData){
         // get the AlarmManager reference
 
         // Set up the time to schedule the alarm
         val datetimeToAlarm = Calendar.getInstance(Locale.getDefault())
         datetimeToAlarm.timeInMillis = System.currentTimeMillis()
-        datetimeToAlarm.set(HOUR_OF_DAY, 16)
-        datetimeToAlarm.set(MINUTE, 24)
+        datetimeToAlarm.set(HOUR_OF_DAY, alarmData.hour)
+        datetimeToAlarm.set(MINUTE, alarmData.min)
         datetimeToAlarm.set(SECOND, 0)
         datetimeToAlarm.set(MILLISECOND, 0)
-        datetimeToAlarm.set(DAY_OF_WEEK, 1)
-        Log.d("Scheduled!", "--")
+        Log.d("Scheduled for ", alarmData.hour.toString()+":"+alarmData.min)
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP,datetimeToAlarm.timeInMillis,24*60*60*1000, alarmIntent)
         return
     }
@@ -77,5 +76,39 @@ object AlarmScheduler {
         }
 
         return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+    }
+
+    /**
+     * Removes the notification if it was previously scheduled.
+     *
+     * @param context      current application context
+     * @param reminderData ReminderData for the notification
+     */
+    fun removeAlarmsForReminder(context: Context) {
+        val intent = Intent(context.applicationContext, NotifReceiver::class.java)
+        //intent.action = context.getString(R.string.action_notify_administer_medication)
+        //intent.putExtra(ReminderDialog.KEY_ID, reminderData.id)
+
+        // type must be unique so Intent.filterEquals passes the check to make distinct PendingIntents
+        // Schedule the alarms based on the days to administer the medicine
+       /* if (reminderData.days != null) {
+            for (i in reminderData.days!!.indices) {
+                val day = reminderData.days!![i]
+
+                if (day != null) {
+                    val type = String.format(Locale.getDefault(), "%s-%s-%s-%s", day, reminderData.name, reminderData.medicine, reminderData.type.name)
+
+                    intent.type = type
+                    val alarmIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+
+                    val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+                    alarmMgr.cancel(alarmIntent)
+                }
+            }
+        } */
+        val alarmIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+
+        val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        alarmMgr.cancel(alarmIntent)
     }
 }

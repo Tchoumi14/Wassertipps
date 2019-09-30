@@ -26,6 +26,7 @@ import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.SelectorType
 import com.zeitform.wasserapp.notif.AlarmScheduler
 import com.zeitform.wasserapp.notif.NotificationHelper
+import com.zeitform.wasserapp.notif.AlarmData
 import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
 
 
@@ -66,7 +67,7 @@ class RechnerFragment : Fragment() {
     private lateinit var stillendeFrauenSwitch: SwitchCompat
     private lateinit var mitteilungenSwitch: SwitchCompat
     private lateinit var consumptionTimes: ArrayList<Int>
-    private lateinit var alarmTimes: ArrayList<Int>
+    private lateinit var alarmTimes: ArrayList<AlarmData>
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -401,6 +402,10 @@ class RechnerFragment : Fragment() {
      * Create alarms at regular intervals between aufwachen and einschlafen time.
      */
     private fun setAlarms(){
+        NotificationHelper.createNotificationChannel(activity!!.applicationContext,
+            NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
+            getString(R.string.app_name), "App notification channel.")
+
         val duration = einschlafenTimeInt - aufwachenTimeInt
         val times = Integer.parseInt(erinnerungenField.text.toString().trim())
         val interval = Math.round((duration/times).toDouble()).toInt()
@@ -410,39 +415,23 @@ class RechnerFragment : Fragment() {
             var t = aufwachenTimeInt + (i * interval)
             var mins = t%60
             var hour = t/60
-            //alarmTimes.add()
+            alarmTimes.add(AlarmData(hour, mins))
             Log.d("Times", hour.toString()+":"+mins)
         }
+        //Schedule alarm for each entry(time)
+        for(alarmData in alarmTimes){
+            AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext, alarmData)
+        }
 
-        NotificationHelper.createNotificationChannel(activity!!.applicationContext,
-            NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
-            getString(R.string.app_name), "App notification channel.")
         //NotificationHelper.createNotification(activity!!.applicationContext)
 
-        AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext)
-
         //Log.d("Alarm times", alarmTimes.toString())
-
-        //set alarms
-    }
-
-    private fun buildNotification(context: Context): NotificationCompat.Builder{
-        return NotificationCompat.Builder(context, "test").apply { setSmallIcon(R.drawable.ic_notifications_black_24dp) }
-    }
-    private fun sampleIntent(context: Context): PendingIntent {
-        // 1
-        val intent = Intent(context, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-// 2
-        val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
-// 3
-        return pendingIntent
     }
     /**
      * Clear running alarms
      */
     private fun clearAlarms(){
-        //clear alarms
+        AlarmScheduler.removeAlarmsForReminder(activity!!.applicationContext)
     }
 
     // TODO: Rename method, update argument and hook method into UI event
