@@ -416,7 +416,7 @@ class RechnerFragment : Fragment() {
         NotificationHelper.createNotificationChannel(activity!!.applicationContext,
             NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
             getString(R.string.app_name), "App notification channel.")
-        NotificationHelper.createNotificationForPet(activity!!.applicationContext)
+        NotificationHelper.createNotification(activity!!.applicationContext)
 
 
         //Log.d("Alarm times", alarmTimes.toString())

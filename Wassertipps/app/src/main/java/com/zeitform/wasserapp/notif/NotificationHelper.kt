@@ -50,21 +50,21 @@ object NotificationHelper {
      * @param reminderData ReminderData for this notification
      */
 
-    fun createNotificationForPet(context: Context) {
+    fun createNotification(context: Context) {
 
         // create a group notification
-        val groupBuilder = buildGroupNotification(context)
+        //val groupBuilder = buildGroupNotification(context)
 
         // create the pet notification
         val notificationBuilder = buildNotificationForWasserbedarf(context)
 
         // add an action to the pet notification
         val administerPendingIntent = createPendingIntentForAction(context)
-        notificationBuilder.addAction(R.drawable.app_icon, context.getString(R.string.app_name), administerPendingIntent)
-
+        //notificationBuilder.addAction(R.drawable.app_icon, context.getString(R.string.app_name), administerPendingIntent)
+        notificationBuilder.setContentIntent(administerPendingIntent)
         // call notify for both the group and the pet notification
         val notificationManager = NotificationManagerCompat.from(context)
-        notificationManager.notify(2, groupBuilder.build())
+        //notificationManager.notify(2, groupBuilder.build())
         notificationManager.notify(1, notificationBuilder.build())
     }
 
@@ -100,13 +100,13 @@ object NotificationHelper {
 
         return NotificationCompat.Builder(context, channelId).apply {
             setSmallIcon(R.drawable.notification_template_icon_bg)
-            setContentTitle("wasserbedarf")
+            setContentTitle("Trink wasser")
             setAutoCancel(true)
 
             // get a drawable reference for the LargeIcon
 
             setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.app_icon))
-            setContentText("Empty content!")
+            setContentText("Trink ---ml Wasser!")
             setGroup("wasserbedarf")
 
             // note is not important so if it doesn't exist no big deal
