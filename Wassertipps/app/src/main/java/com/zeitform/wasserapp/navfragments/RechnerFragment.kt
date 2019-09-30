@@ -89,24 +89,25 @@ class RechnerFragment : Fragment() {
         alterField.setText("29",TextView.BufferType.EDITABLE)
         wasserProTagField.setText("0",TextView.BufferType.EDITABLE)
         wasserProTagField.filters = arrayOf<InputFilter>(InputFilterMinMax(800, 10000))
-        erinnerungenField.setText("0",TextView.BufferType.EDITABLE)
+        //erinnerungenField.setText("0",TextView.BufferType.EDITABLE)
+
+        sportSwitch = rootView.findViewById(R.id.sport_switch)
+        stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
+        mitteilungenSwitch = rootView.findViewById(R.id.mitteilungen_switch)
+
+        //set field values
+        initFields()
 
         //TextView number, onClick opens Dialog with NumberPicker
         gewichtField.setOnClickListener { openDialog(SelectorType.GEWICHT,gewichtField.text.toString()) }
         alterField.setOnClickListener { openDialog(SelectorType.ALTER,alterField.text.toString()) }
         erinnerungenField.setOnClickListener { openDialog(SelectorType.ERINNERUNGEN,erinnerungenField.text.toString()) }
 
-        sportSwitch = rootView.findViewById(R.id.sport_switch)
-        stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
-
-        mitteilungenSwitch = rootView.findViewById(R.id.mitteilungen_switch)
         mitteilungenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
             //Set alarms
             if(isChecked) setAlarms() else clearAlarms()
         }
-        //set field values
-        initFields()
 
         //change Listeners
         gewichtField.addTextChangedListener(myTextWatcher)
@@ -398,10 +399,15 @@ class RechnerFragment : Fragment() {
         val interval = Math.round((duration/times).toDouble()).toInt()
         Log.d("Time interval", interval.toString()+"mins")
         alarmTimes = ArrayList()
-        for(i in 0 until times){
-            alarmTimes.add(einschlafenTimeInt + (i * interval))
+        for(i in 1 until times+1){
+            var t = aufwachenTimeInt + (i * interval)
+            var mins = t%60
+            var hour = t/60
+            //alarmTimes.add()
+            Log.d("Times", hour.toString()+":"+mins)
         }
-        Log.d("Alarm times", alarmTimes.toString())
+        //Log.d("Alarm times", alarmTimes.toString())
+
         //set alarms
     }
 
