@@ -24,6 +24,7 @@ import com.zeitform.wasserapp.InputFilterMinMax
 import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.SelectorType
+import com.zeitform.wasserapp.notif.NotificationHelper
 import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
 
 
@@ -411,10 +412,12 @@ class RechnerFragment : Fragment() {
             //alarmTimes.add()
             Log.d("Times", hour.toString()+":"+mins)
         }
-        val notifBuilder = buildNotification(activity!!.applicationContext)
-        notifBuilder.addAction(R.drawable.app_icon, "Test notification", sampleIntent(activity!!.applicationContext) )
-        val notificationManager = NotificationManagerCompat.from(activity!!.applicationContext)
-        notificationManager.notify(1, notifBuilder.build())
+
+        NotificationHelper.createNotificationChannel(activity!!.applicationContext,
+            NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
+            getString(R.string.app_name), "App notification channel.")
+        NotificationHelper.createNotificationForPet(activity!!.applicationContext)
+
 
         //Log.d("Alarm times", alarmTimes.toString())
 
@@ -422,7 +425,7 @@ class RechnerFragment : Fragment() {
     }
 
     private fun buildNotification(context: Context): NotificationCompat.Builder{
-        return NotificationCompat.Builder(context, "test").apply { setSmallIcon(R.id.right_icon) }
+        return NotificationCompat.Builder(context, "test").apply { setSmallIcon(R.drawable.ic_notifications_black_24dp) }
     }
     private fun sampleIntent(context: Context): PendingIntent {
         // 1

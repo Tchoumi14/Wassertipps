@@ -149,4 +149,6 @@
     <string name="einschlafen">Einschlafen</string>
     <string name="erinnerungen">Erinnerungen</string>
     <string name="wasser_pro_tag_text">Ihr empfohlener Wasserbedarf pro Tag ist %1$s ml. Dieser Wert ist jederzeit nur eine Empfehlung. Sie können diesen Wert ändern, die Benachrichtigungen werden dann angepasst.</string>
+
+    <string name="group_notification_for">This is the %s notification group.</string>
 </resources>
