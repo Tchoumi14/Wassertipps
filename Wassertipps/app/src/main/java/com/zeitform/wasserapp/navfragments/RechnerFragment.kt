@@ -59,6 +59,7 @@ class RechnerFragment : Fragment() {
     private lateinit var stillendeFrauenSwitch: SwitchCompat
     private lateinit var mitteilungenSwitch: SwitchCompat
     private lateinit var consumptionTimes: ArrayList<Int>
+    private lateinit var alarmTimes: ArrayList<Int>
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -394,8 +395,13 @@ class RechnerFragment : Fragment() {
     private fun setAlarms(){
         val duration = einschlafenTimeInt - aufwachenTimeInt
         val times = Integer.parseInt(erinnerungenField.text.toString().trim())
-        val interval = Math.round((duration/times).toDouble())
-        Log.d("Time interval", interval.toString())
+        val interval = Math.round((duration/times).toDouble()).toInt()
+        Log.d("Time interval", interval.toString()+"mins")
+        alarmTimes = ArrayList()
+        for(i in 0 until times){
+            alarmTimes.add(einschlafenTimeInt + (i * interval))
+        }
+        Log.d("Alarm times", alarmTimes.toString())
         //set alarms
     }
 
@@ -405,7 +411,7 @@ class RechnerFragment : Fragment() {
     private fun clearAlarms(){
         //clear alarms
     }
-    
+
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)
