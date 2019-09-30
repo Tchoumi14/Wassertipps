@@ -1,11 +1,15 @@
 package com.zeitform.wasserapp.navfragments
 
 import android.app.Dialog
+import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.NotificationCompat
+import android.support.v4.app.NotificationManagerCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.SwitchCompat
 import android.text.Editable
@@ -17,6 +21,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.zeitform.wasserapp.InputFilterMinMax
+import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.SelectorType
 import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
@@ -406,11 +411,28 @@ class RechnerFragment : Fragment() {
             //alarmTimes.add()
             Log.d("Times", hour.toString()+":"+mins)
         }
+        val notifBuilder = buildNotification(activity!!.applicationContext)
+        notifBuilder.addAction(R.drawable.app_icon, "Test notification", sampleIntent(activity!!.applicationContext) )
+        val notificationManager = NotificationManagerCompat.from(activity!!.applicationContext)
+        notificationManager.notify(1, notifBuilder.build())
+
         //Log.d("Alarm times", alarmTimes.toString())
 
         //set alarms
     }
 
+    private fun buildNotification(context: Context): NotificationCompat.Builder{
+        return NotificationCompat.Builder(context, "test").apply { setSmallIcon(R.id.right_icon) }
+    }
+    private fun sampleIntent(context: Context): PendingIntent {
+        // 1
+        val intent = Intent(context, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+// 2
+        val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+// 3
+        return pendingIntent
+    }
     /**
      * Clear running alarms
      */
