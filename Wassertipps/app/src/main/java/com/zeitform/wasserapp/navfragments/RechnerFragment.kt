@@ -419,10 +419,9 @@ class RechnerFragment : Fragment() {
             alarmTimes.add(AlarmData(hour, mins))
             Log.d("Times", hour.toString()+":"+mins)
         }
+        AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext, AlarmData(17,44))
         //Schedule alarm for each entry(time)
-        for(alarmData in alarmTimes){
-            AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext, alarmData)
-        }
+
 
         //NotificationHelper.createNotification(activity!!.applicationContext)
 

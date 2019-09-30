@@ -68,7 +68,7 @@ object AlarmScheduler {
      */
     private fun createPendingIntent(context: Context): PendingIntent {
         // create the intent using a unique type
-        val intent = Intent(context.applicationContext, NotifReceiver::class.java).apply {
+        val intent = Intent(context, NotifReceiver::class.java).apply {
             action = context.getString(R.string.app_name)
             //type = "$day-${reminderData.name}-${reminderData.medicine}-${reminderData.type.name}"
             //putExtra(ReminderDialog.KEY_ID, reminderData.id)
