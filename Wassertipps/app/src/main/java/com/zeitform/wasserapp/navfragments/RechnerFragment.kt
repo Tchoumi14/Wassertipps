@@ -24,6 +24,7 @@ import com.zeitform.wasserapp.InputFilterMinMax
 import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.SelectorType
+import com.zeitform.wasserapp.notif.AlarmScheduler
 import com.zeitform.wasserapp.notif.NotificationHelper
 import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
 
@@ -416,8 +417,9 @@ class RechnerFragment : Fragment() {
         NotificationHelper.createNotificationChannel(activity!!.applicationContext,
             NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
             getString(R.string.app_name), "App notification channel.")
-        NotificationHelper.createNotification(activity!!.applicationContext)
+        //NotificationHelper.createNotification(activity!!.applicationContext)
 
+        AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext)
 
         //Log.d("Alarm times", alarmTimes.toString())
 
