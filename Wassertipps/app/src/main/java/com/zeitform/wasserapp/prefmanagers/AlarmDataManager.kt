@@ -13,8 +13,8 @@ class AlarmDataManager(internal var _context: Context) {
 
     var alarmArrayString: String?
         get() = pref.getString(ALARM_DATA,"")
-        set(dataJsonObj) {
-            editor.putString(ALARM_DATA, dataJsonObj)
+        set(arrayAsString) {
+            editor.putString(ALARM_DATA, arrayAsString)
             editor.commit()
         }
 

@@ -67,7 +67,7 @@ object AlarmScheduler {
      */
     fun removeAlarmsForReminder(context: Context) {
         val intent = Intent(context.applicationContext, NotifReceiver::class.java)
-
+        Log.d("removeAlarms", AlarmDataManagerHelper.getFromAlarmDataManager(context).size.toString())
         if(AlarmDataManagerHelper.getFromAlarmDataManager(context).size != 0){
             var alarmTimes = AlarmDataManagerHelper.getFromAlarmDataManager(context)
             for(alarmTime in alarmTimes){
@@ -75,7 +75,6 @@ object AlarmScheduler {
                 val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
                 alarmMgr.cancel(alarmIntent)
             }
-            AlarmDataManagerHelper.clearSavedData(context)
         }
 
 

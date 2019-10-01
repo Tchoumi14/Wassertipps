@@ -193,6 +193,7 @@ class RechnerFragment : Fragment() {
                 buttonSet.setOnClickListener {
                     erinnerungenField.text = numPicker.value.toString()
                     rechnerDataManager!!.erinnerungen = numPicker.value
+                    Log.d("Selected value", numPicker.value.toString())
                     updateAlarms()
                     alert.dismiss()
                 }
@@ -440,7 +441,7 @@ class RechnerFragment : Fragment() {
             var hour = t/60
             var id = Integer.parseInt(hour.toString()+""+mins.toString())
             alarmTimes.add(AlarmData(id, hour, mins, waterMl))
-            //Log.d("Times", hour.toString()+":"+mins)
+            Log.d("Times", times.toString())
         }
         AlarmDataManagerHelper.saveToAlarmDataManager(activity!!.applicationContext, alarmTimes)
         for(alarmTime in alarmTimes){
