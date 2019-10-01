@@ -109,7 +109,7 @@ class RechnerFragment : Fragment() {
         sportSwitch = rootView.findViewById(R.id.sport_switch)
         stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
         mitteilungenSwitch = rootView.findViewById(R.id.mitteilungen_switch)
-        mitteilungActiveText = rootView.findViewById(R.id.mitteilung_active_text_box)
+        mitteilungActiveTextBox = rootView.findViewById(R.id.mitteilung_active_text_box)
         mitteilungActiveText = rootView.findViewById(R.id.mitteilung_active_text)
         //set field values
         initFields()
