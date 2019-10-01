@@ -69,6 +69,8 @@ class RechnerFragment : Fragment() {
     private lateinit var sportSwitch: SwitchCompat
     private lateinit var stillendeFrauenSwitch: SwitchCompat
     private lateinit var mitteilungenSwitch: SwitchCompat
+    private lateinit var mitteilungActiveTextBox: LinearLayout
+    private lateinit var mitteilungActiveText: TextView
     private lateinit var consumptionTimes: ArrayList<Int>
     private lateinit var alarmTimes: ArrayList<AlarmData>
     private var alarmDataManager: AlarmDataManager? = null
@@ -107,7 +109,8 @@ class RechnerFragment : Fragment() {
         sportSwitch = rootView.findViewById(R.id.sport_switch)
         stillendeFrauenSwitch = rootView.findViewById(R.id.stillendefrauen_switch)
         mitteilungenSwitch = rootView.findViewById(R.id.mitteilungen_switch)
-
+        mitteilungActiveText = rootView.findViewById(R.id.mitteilung_active_text_box)
+        mitteilungActiveText = rootView.findViewById(R.id.mitteilung_active_text)
         //set field values
         initFields()
 
@@ -119,7 +122,11 @@ class RechnerFragment : Fragment() {
         mitteilungenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
             //Set alarms
-            if(isChecked) setAlarms() else clearAlarms()
+            if(isChecked)
+                setAlarms()
+            else
+                clearAlarms()
+                disableMitteilungActiveText()
         }
 
         //change Listeners
@@ -447,6 +454,7 @@ class RechnerFragment : Fragment() {
         for(alarmTime in alarmTimes){
             AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext, alarmTime)
         }
+        setMitteilungActiveText(waterMl,interval)
     }
     /**
      * Clear running alarms
@@ -455,8 +463,14 @@ class RechnerFragment : Fragment() {
         AlarmScheduler.removeAlarmsForReminder(activity!!.applicationContext)
     }
 
+    private fun setMitteilungActiveText(waterMl: Int, interval: Int){
+        mitteilungActiveText.text = resources.getString(R.string.mitteilungen_active_text, waterMl, interval)
+        mitteilungActiveTextBox.visibility = View.VISIBLE
+    }
 
-
+    private fun disableMitteilungActiveText(){
+        mitteilungActiveTextBox.visibility = View.INVISIBLE
+    }
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)
