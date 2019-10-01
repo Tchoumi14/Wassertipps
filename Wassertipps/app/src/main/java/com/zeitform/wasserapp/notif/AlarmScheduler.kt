@@ -83,7 +83,7 @@ object AlarmScheduler {
      * @param context      current application context
      * @param reminderData ReminderData for the notification
      */
-    fun removeAlarmsForReminder(context: Context, alarmTimes: ArrayList<AlarmData>) {
+    fun removeAlarmsForReminder(context: Context) {
         val intent = Intent(context.applicationContext, NotifReceiver::class.java)
         //intent.action = context.getString(R.string.action_notify_administer_medication)
         //intent.putExtra(ReminderDialog.KEY_ID, reminderData.id)
@@ -105,10 +105,15 @@ object AlarmScheduler {
                 }
             }
         } */
-        for(alarmTime in alarmTimes){
-            var alarmIntent = PendingIntent.getBroadcast(context, alarmTime.id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-            val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-            alarmMgr.cancel(alarmIntent)
+        var alarmTimes = AlarmDataManagerHelper.getFromAlarmDataManager(context)
+        if(alarmTimes!=null){
+            for(alarmTime in alarmTimes){
+                var alarmIntent = PendingIntent.getBroadcast(context, alarmTime.id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+                val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+                alarmMgr.cancel(alarmIntent)
+            }
+        } else {
+            Log.d("Alarm times ", "null")
         }
 
 

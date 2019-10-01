@@ -77,7 +77,7 @@ object NotificationHelper {
     private fun buildGroupNotification(context: Context): NotificationCompat.Builder {
         val channelId = "${context.packageName}-wasserbedarf"
         return NotificationCompat.Builder(context, channelId).apply {
-            setSmallIcon(R.drawable.ic_notifications_black_24dp)
+            setSmallIcon(R.drawable.icon_status)
             setContentTitle(context.getString(R.string.notification_title))
             setContentText(context.getString(R.string.group_notification_for, "wasserbedarf"))
             setStyle(NotificationCompat.BigTextStyle().bigText(context.getString(R.string.group_notification_for, "wasserbedarf")))
@@ -99,7 +99,7 @@ object NotificationHelper {
         val channelId = "${context.packageName}-wasserbedarf"
 
         return NotificationCompat.Builder(context, channelId).apply {
-            setSmallIcon(R.drawable.notification_template_icon_bg)
+            setSmallIcon(R.drawable.icon_status)
             setContentTitle(context.getString(R.string.notification_title))
             setAutoCancel(true)
 

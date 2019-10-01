@@ -25,4 +25,10 @@ object AlarmDataManagerHelper {
         }.type
         return gson.fromJson(arrayAsString, type)
     }
+    fun clearSavedData(context: Context){
+        var alarmDataManager = AlarmDataManager(context)
+        if(alarmDataManager.alarmArrayString!=""){
+            alarmDataManager.alarmArrayString= ""
+        }
+    }
 }

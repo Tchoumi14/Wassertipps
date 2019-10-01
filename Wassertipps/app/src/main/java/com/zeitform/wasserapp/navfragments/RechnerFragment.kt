@@ -432,11 +432,7 @@ class RechnerFragment : Fragment() {
      * Clear running alarms
      */
     private fun clearAlarms(){
-        var test = AlarmDataManagerHelper.getFromAlarmDataManager(activity!!.applicationContext)
-        for(i in test){
-            Log.d("Array", i.toString())
-        }
-        AlarmScheduler.removeAlarmsForReminder(activity!!.applicationContext, alarmTimes)
+        AlarmScheduler.removeAlarmsForReminder(activity!!.applicationContext)
     }
 
 
