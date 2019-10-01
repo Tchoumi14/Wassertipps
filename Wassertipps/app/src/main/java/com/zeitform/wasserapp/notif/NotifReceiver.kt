@@ -10,11 +10,11 @@ class NotifReceiver: BroadcastReceiver() {
 
     private lateinit var alarmDataManager: AlarmDataManager
     override fun onReceive(context: Context, intent: Intent?) {
-        var stringID = intent?.extras!!.getString("ID")
-        Log.d("At notifReceiver", stringID)
+        var stringID = intent?.extras!!.getInt("ID")
+        Log.d("At notifReceiver", stringID.toString())
         //alarmDataManager = AlarmDataManager(context)
         if(context != null){
-            NotificationHelper.createNotification(context, stringID)
+            NotificationHelper.createNotification(context, stringID.toString())
         }
     }
 }
