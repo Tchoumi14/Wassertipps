@@ -24,24 +24,6 @@ object AlarmScheduler {
         Log.d("At scheduler", "--")
         // get the AlarmManager reference
         val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-
-        // Schedule the alarms based on the days to administer the medicine
-       /* val days = context.resources.getStringArray(R.array.days)
-        if (reminderData.days != null) {
-            for (index in reminderData.days!!.indices) {
-
-                val day = reminderData.days!![index]
-                if (day != null) {
-
-                    // get the PendingIntent for the alarm
-                    val alarmIntent = createPendingIntent(context, reminderData, day)
-
-                    // schedule the alarm
-                    val dayOfWeek = getDayOfWeek(days, day)
-                    scheduleAlarm(reminderData, dayOfWeek, alarmIntent, alarmMgr)
-                }
-            }
-        } */
         val alarmIntent = createPendingIntent(context, alarmData)
         scheduleAlarm(alarmIntent, alarmMgr, alarmData)
     }
@@ -85,26 +67,7 @@ object AlarmScheduler {
      */
     fun removeAlarmsForReminder(context: Context) {
         val intent = Intent(context.applicationContext, NotifReceiver::class.java)
-        //intent.action = context.getString(R.string.action_notify_administer_medication)
-        //intent.putExtra(ReminderDialog.KEY_ID, reminderData.id)
 
-        // type must be unique so Intent.filterEquals passes the check to make distinct PendingIntents
-        // Schedule the alarms based on the days to administer the medicine
-       /* if (reminderData.days != null) {
-            for (i in reminderData.days!!.indices) {
-                val day = reminderData.days!![i]
-
-                if (day != null) {
-                    val type = String.format(Locale.getDefault(), "%s-%s-%s-%s", day, reminderData.name, reminderData.medicine, reminderData.type.name)
-
-                    intent.type = type
-                    val alarmIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-
-                    val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-                    alarmMgr.cancel(alarmIntent)
-                }
-            }
-        } */
         var alarmTimes = AlarmDataManagerHelper.getFromAlarmDataManager(context)
         if(alarmTimes!=null){
             for(alarmTime in alarmTimes){

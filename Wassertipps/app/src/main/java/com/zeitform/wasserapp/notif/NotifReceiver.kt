@@ -4,23 +4,24 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import com.zeitform.wasserapp.prefmanagers.AlarmDataManager
 import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
 
 class NotifReceiver: BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent?) {
-        if(context != null){
-            var intentId = intent?.extras!!.getInt("ID")
+            val intentId = intent?.extras!!.getInt("ID")
             Log.d("At notifReceiver", intentId.toString())
             val alarmArray = AlarmDataManagerHelper.getFromAlarmDataManager(context)
-            for(alarmData in alarmArray){
-                if(alarmData.id == intentId){
-                    NotificationHelper.createNotification(context, alarmData.waterMl)
+            if(alarmArray.size!=0){
+                for(alarmData in alarmArray){
+                    if(alarmData.id == intentId){
+                        NotificationHelper.createNotification(context, alarmData.waterMl)
+                    }
                 }
+                checkEndOfAlarms(context, alarmArray, intentId)
+            } else {
+                Log.d("Array null ", "at notifReceiver ")
             }
-            checkEndOfAlarms(context, alarmArray, intentId)
-        }
     }
 
     /**

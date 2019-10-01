@@ -1,5 +1,6 @@
 package com.zeitform.wasserapp.notif
 
+import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -11,6 +12,9 @@ import android.support.v4.app.NotificationCompat
 import android.support.v4.app.NotificationManagerCompat
 import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.R
+import android.media.RingtoneManager
+
+
 
 object NotificationHelper {
 
@@ -102,7 +106,9 @@ object NotificationHelper {
             setSmallIcon(R.drawable.icon_status)
             setContentTitle(context.getString(R.string.notification_title))
             setAutoCancel(true)
-
+            setDefaults(Notification.DEFAULT_VIBRATE)
+            setDefaults(Notification.DEFAULT_SOUND)
+            setDefaults(Notification.DEFAULT_LIGHTS)
             // get a drawable reference for the LargeIcon
 
             setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.app_icon))
