@@ -416,9 +416,13 @@ class RechnerFragment : Fragment() {
             var t = aufwachenTimeInt + (i * interval)
             var mins = t%60
             var hour = t/60
-            AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext, AlarmData(hour,mins))
-            //alarmTimes.add(AlarmData(hour, mins))
+            var id = Integer.parseInt(hour.toString()+""+mins.toString())
+            alarmTimes.add(AlarmData(id, hour, mins))
             //Log.d("Times", hour.toString()+":"+mins)
+        }
+
+        for(alarmTime in alarmTimes){
+            AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext, alarmTime)
         }
         //AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext, AlarmData(17,44))
         //Schedule alarm for each entry(time)
@@ -432,7 +436,7 @@ class RechnerFragment : Fragment() {
      * Clear running alarms
      */
     private fun clearAlarms(){
-        AlarmScheduler.removeAlarmsForReminder(activity!!.applicationContext)
+        AlarmScheduler.removeAlarmsForReminder(activity!!.applicationContext, alarmTimes)
     }
 
     // TODO: Rename method, update argument and hook method into UI event

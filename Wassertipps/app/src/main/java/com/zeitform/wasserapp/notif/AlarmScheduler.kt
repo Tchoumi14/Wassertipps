@@ -8,6 +8,7 @@ import android.util.Log
 import com.zeitform.wasserapp.R
 import java.util.*
 import java.util.Calendar.*
+import kotlin.collections.ArrayList
 
 
 object AlarmScheduler {
@@ -41,7 +42,7 @@ object AlarmScheduler {
                 }
             }
         } */
-        val alarmIntent = createPendingIntent(context)
+        val alarmIntent = createPendingIntent(context, alarmData)
         scheduleAlarm(alarmIntent, alarmMgr, alarmData)
     }
 
@@ -66,7 +67,7 @@ object AlarmScheduler {
      * @param reminderData ReminderData for the notification
      * @param day          String representation of the day
      */
-    private fun createPendingIntent(context: Context): PendingIntent {
+    private fun createPendingIntent(context: Context, alarmData: AlarmData): PendingIntent {
         // create the intent using a unique type
         val intent = Intent(context, NotifReceiver::class.java).apply {
             action = context.getString(R.string.app_name)
@@ -74,7 +75,7 @@ object AlarmScheduler {
             //putExtra(ReminderDialog.KEY_ID, reminderData.id)
         }
 
-        return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        return PendingIntent.getBroadcast(context, alarmData.id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
     }
 
     /**
@@ -83,7 +84,7 @@ object AlarmScheduler {
      * @param context      current application context
      * @param reminderData ReminderData for the notification
      */
-    fun removeAlarmsForReminder(context: Context) {
+    fun removeAlarmsForReminder(context: Context, alarmTimes: ArrayList<AlarmData>) {
         val intent = Intent(context.applicationContext, NotifReceiver::class.java)
         //intent.action = context.getString(R.string.action_notify_administer_medication)
         //intent.putExtra(ReminderDialog.KEY_ID, reminderData.id)
@@ -105,9 +106,12 @@ object AlarmScheduler {
                 }
             }
         } */
-        val alarmIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        for(alarmTime in alarmTimes){
+            var alarmIntent = PendingIntent.getBroadcast(context, alarmTime.id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+            val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+            alarmMgr.cancel(alarmIntent)
+        }
 
-        val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        alarmMgr.cancel(alarmIntent)
+
     }
 }
