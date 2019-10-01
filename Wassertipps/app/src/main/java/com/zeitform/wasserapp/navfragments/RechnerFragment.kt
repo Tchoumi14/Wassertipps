@@ -193,6 +193,7 @@ class RechnerFragment : Fragment() {
                 buttonSet.setOnClickListener {
                     erinnerungenField.text = numPicker.value.toString()
                     rechnerDataManager!!.erinnerungen = numPicker.value
+                    updateAlarms()
                     alert.dismiss()
                 }
                 buttonCancel.setOnClickListener { alert.dismiss() }
@@ -401,26 +402,20 @@ class RechnerFragment : Fragment() {
         }
         var savedValue = rechnerDataManager!!.erinnerungen
         if(savedValue!= -1 && consumptionTimes.indexOf(savedValue)!=-1){
-            if(erinnerungenField.text != savedValue.toString()){
                 erinnerungenField.text = savedValue.toString()
-                updateAlarms()
-                Log.d("Erinngerung 1", "updated")
-            }
         } else {
-            if(erinnerungenField.text != value){
-                erinnerungenField.text = value
-                updateAlarms()
-                Log.d("Erinngerung 2", "updated")
-            }
+            erinnerungenField.text = value
             rechnerDataManager!!.erinnerungen = value.toInt()
         }
         Log.d("ConsumptionTimes", consumptionTimes.toString())
+        updateAlarms()
     }
     /**
      * Updates alarms if switch is already turned on
      */
     private fun updateAlarms(){
         if(rechnerDataManager!!.mitteilungenSwitch){
+            clearAlarms()
             setAlarms()
         }
     }
@@ -428,7 +423,6 @@ class RechnerFragment : Fragment() {
      * Create alarms at regular intervals between aufwachen and einschlafen time.
      */
     private fun setAlarms(){
-        clearAlarms()
 
         NotificationHelper.createNotificationChannel(activity!!.applicationContext,
             NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
