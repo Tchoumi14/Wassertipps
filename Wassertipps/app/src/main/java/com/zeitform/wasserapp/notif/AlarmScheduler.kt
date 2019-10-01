@@ -72,7 +72,7 @@ object AlarmScheduler {
         val intent = Intent(context, NotifReceiver::class.java).apply {
             action = context.getString(R.string.app_name)
             //type = "$day-${reminderData.name}-${reminderData.medicine}-${reminderData.type.name}"
-            //putExtra(ReminderDialog.KEY_ID, reminderData.id)
+            putExtra("ID", alarmData.id)
         }
 
         return PendingIntent.getBroadcast(context, alarmData.id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
