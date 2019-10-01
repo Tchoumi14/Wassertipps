@@ -464,8 +464,8 @@ class RechnerFragment : Fragment() {
     }
 
     private fun setMitteilungActiveText(waterMl: Int, interval: Int){
-        mitteilungActiveText.text = resources.getString(R.string.mitteilungen_active_text, waterMl, interval)
         mitteilungActiveTextBox.visibility = View.VISIBLE
+        mitteilungActiveText.text = resources.getString(R.string.mitteilungen_active_text, waterMl, interval)
     }
 
     private fun disableMitteilungActiveText(){
