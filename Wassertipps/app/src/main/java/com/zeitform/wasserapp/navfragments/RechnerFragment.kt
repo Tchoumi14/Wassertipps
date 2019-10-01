@@ -20,6 +20,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.google.gson.Gson
 import com.zeitform.wasserapp.InputFilterMinMax
 import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.R
@@ -27,6 +28,8 @@ import com.zeitform.wasserapp.SelectorType
 import com.zeitform.wasserapp.notif.AlarmScheduler
 import com.zeitform.wasserapp.notif.NotificationHelper
 import com.zeitform.wasserapp.notif.AlarmData
+import com.zeitform.wasserapp.notif.AlarmDataManagerHelper
+import com.zeitform.wasserapp.prefmanagers.AlarmDataManager
 import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
 
 
@@ -68,6 +71,7 @@ class RechnerFragment : Fragment() {
     private lateinit var mitteilungenSwitch: SwitchCompat
     private lateinit var consumptionTimes: ArrayList<Int>
     private lateinit var alarmTimes: ArrayList<AlarmData>
+    private var alarmDataManager: AlarmDataManager? = null
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,6 +81,7 @@ class RechnerFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
         //DataManager init
+        alarmDataManager = AlarmDataManager(activity!!.applicationContext)
         rechnerDataManager = RechnerDataManager(activity!!.applicationContext)
     }
 
@@ -143,8 +148,6 @@ class RechnerFragment : Fragment() {
             var min = time[1].toInt()
             openEinschlafenTimePicker(hour, min)
         }
-
-
         return rootView
     }
     private fun openDialog(selectorType: SelectorType, currentValue: String){
@@ -420,24 +423,23 @@ class RechnerFragment : Fragment() {
             alarmTimes.add(AlarmData(id, hour, mins))
             //Log.d("Times", hour.toString()+":"+mins)
         }
-
+        AlarmDataManagerHelper.saveToAlarmDataManager(activity!!.applicationContext, alarmTimes)
         for(alarmTime in alarmTimes){
             AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext, alarmTime)
         }
-        //AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext, AlarmData(17,44))
-        //Schedule alarm for each entry(time)
-
-
-        //NotificationHelper.createNotification(activity!!.applicationContext)
-
-        //Log.d("Alarm times", alarmTimes.toString())
     }
     /**
      * Clear running alarms
      */
     private fun clearAlarms(){
+        var test = AlarmDataManagerHelper.getFromAlarmDataManager(activity!!.applicationContext)
+        for(i in test){
+            Log.d("Array", i.toString())
+        }
         AlarmScheduler.removeAlarmsForReminder(activity!!.applicationContext, alarmTimes)
     }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {

@@ -74,7 +74,6 @@ object AlarmScheduler {
             //type = "$day-${reminderData.name}-${reminderData.medicine}-${reminderData.type.name}"
             putExtra("ID", alarmData.id)
         }
-
         return PendingIntent.getBroadcast(context, alarmData.id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
     }
 
