@@ -251,11 +251,14 @@ class RechnerFragment : Fragment() {
             if(hour.length<2) hour = "0"+hour
             if(min.length<2) min = "0"+min
             var time = hour+" : "+min
-            aufwachenText.text = time
             rechnerDataManager!!.aufwachen = time
             aufwachenTimeInt = timetoNumber(time) // convert text time to number
+            if(aufwachenText.text!= time){
+                aufwachenText.text = time
+                updateAlarms()
+                Log.d("Aufwachen", "updated")
+            }
             Log.d("wake up time as number", aufwachenTimeInt.toString())
-
         }
         timePicker = TimePickerDialog(this.activity, timePickerListener,hourInput,minInput,true)
 
@@ -269,10 +272,15 @@ class RechnerFragment : Fragment() {
             if(hour.length<2) hour = "0"+hour
             if(min.length<2) min = "0"+min
             val time = hour+" : "+min
-            einschlafenText.text = time
+
             rechnerDataManager!!.einschlafen = time
             val sleepTime = timetoNumber(time)
             einschlafenTimeInt = if(sleepTime == 0) 1440 else sleepTime// convert text time to number
+            if(einschlafenText.text != time){
+                einschlafenText.text = time
+                updateAlarms()
+                Log.d("Einschlafen", "updated")
+            }
             Log.d("Sleep time as number", einschlafenTimeInt.toString())
         }
         timePicker = TimePickerDialog(this.activity, timePickerListener,hourInput,minInput,true)
@@ -393,26 +401,43 @@ class RechnerFragment : Fragment() {
         }
         var savedValue = rechnerDataManager!!.erinnerungen
         if(savedValue!= -1 && consumptionTimes.indexOf(savedValue)!=-1){
-            erinnerungenField.text = savedValue.toString()
+            if(erinnerungenField.text != savedValue.toString()){
+                erinnerungenField.text = savedValue.toString()
+                updateAlarms()
+                Log.d("Erinngerung 1", "updated")
+            }
         } else {
-            erinnerungenField.text = value
+            if(erinnerungenField.text != value){
+                erinnerungenField.text = value
+                updateAlarms()
+                Log.d("Erinngerung 2", "updated")
+            }
             rechnerDataManager!!.erinnerungen = value.toInt()
         }
         Log.d("ConsumptionTimes", consumptionTimes.toString())
     }
-
+    /**
+     * Updates alarms if switch is already turned on
+     */
+    private fun updateAlarms(){
+        if(rechnerDataManager!!.mitteilungenSwitch){
+            setAlarms()
+        }
+    }
     /**
      * Create alarms at regular intervals between aufwachen and einschlafen time.
      */
     private fun setAlarms(){
+        clearAlarms()
+
         NotificationHelper.createNotificationChannel(activity!!.applicationContext,
             NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
             getString(R.string.app_name), "App notification channel.")
 
-        var waterMl = Integer.parseInt(wasserProTagField.text.toString().trim())
         val duration = einschlafenTimeInt - aufwachenTimeInt
         val times = Integer.parseInt(erinnerungenField.text.toString().trim())
         val interval = Math.round((duration/times).toDouble()).toInt()
+        var waterMl = Integer.parseInt(wasserProTagField.text.toString().trim())/times
         Log.d("Time interval", interval.toString()+"mins")
         alarmTimes = ArrayList()
         for(i in 1 until times+1){

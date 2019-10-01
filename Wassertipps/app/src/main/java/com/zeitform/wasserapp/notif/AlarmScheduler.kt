@@ -60,8 +60,8 @@ object AlarmScheduler {
     }
 
     /**
-     * Removes the notification if it was previously scheduled.
-     *
+     * Removes all the notification if it was previously scheduled.
+     * and clears the saved alarm data
      * @param context      current application context
      * @param reminderData ReminderData for the notification
      */
@@ -69,16 +69,13 @@ object AlarmScheduler {
         val intent = Intent(context.applicationContext, NotifReceiver::class.java)
 
         var alarmTimes = AlarmDataManagerHelper.getFromAlarmDataManager(context)
-        if(alarmTimes!=null){
-            for(alarmTime in alarmTimes){
-                var alarmIntent = PendingIntent.getBroadcast(context, alarmTime.id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-                val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-                alarmMgr.cancel(alarmIntent)
-            }
-        } else {
-            Log.d("Alarm times ", "null")
-        }
 
+        for(alarmTime in alarmTimes){
+            var alarmIntent = PendingIntent.getBroadcast(context, alarmTime.id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+            val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+            alarmMgr.cancel(alarmIntent)
+        }
+        AlarmDataManagerHelper.clearSavedData(context)
 
     }
 }

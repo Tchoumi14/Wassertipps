@@ -107,7 +107,8 @@ object NotificationHelper {
             setContentTitle(context.getString(R.string.notification_title))
             setAutoCancel(true)
             setDefaults(Notification.DEFAULT_VIBRATE)
-            setDefaults(Notification.DEFAULT_SOUND)
+            setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+            //setDefaults(Notification.DEFAULT_SOUND)
             setDefaults(Notification.DEFAULT_LIGHTS)
             // get a drawable reference for the LargeIcon
 
