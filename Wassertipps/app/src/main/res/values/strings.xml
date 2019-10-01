@@ -154,5 +154,5 @@
     <string name="group_notification_for">This is the %s notification group.</string>
     <string name="notification_title">Erinnerung</string>
     <string name="notification_group">wasserbedarf</string>
-    <string name="trink_wasser_text">Trink %s ml wasser!</string>
+    <string name="notification_trink_wasser_text">Trink %sml wasser!</string>
 </resources>

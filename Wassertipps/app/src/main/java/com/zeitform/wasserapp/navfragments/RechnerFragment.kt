@@ -420,7 +420,7 @@ class RechnerFragment : Fragment() {
             var mins = t%60
             var hour = t/60
             var id = Integer.parseInt(hour.toString()+""+mins.toString())
-            alarmTimes.add(AlarmData(id, hour, mins))
+            alarmTimes.add(AlarmData(id, hour, mins, waterMl))
             //Log.d("Times", hour.toString()+":"+mins)
         }
         AlarmDataManagerHelper.saveToAlarmDataManager(activity!!.applicationContext, alarmTimes)

@@ -10,17 +10,32 @@ import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
 class NotifReceiver: BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent?) {
-        var stringID = intent?.extras!!.getInt("ID")
-        Log.d("At notifReceiver", stringID.toString())
-        var alarmArray = AlarmDataManagerHelper.getFromAlarmDataManager(context)
-        if(alarmArray[alarmArray.size-1].id == stringID){
-            Log.d("Last intent id", stringID.toString())
+        if(context != null){
+            var intentId = intent?.extras!!.getInt("ID")
+            Log.d("At notifReceiver", intentId.toString())
+            val alarmArray = AlarmDataManagerHelper.getFromAlarmDataManager(context)
+            for(alarmData in alarmArray){
+                if(alarmData.id == intentId){
+                    NotificationHelper.createNotification(context, alarmData.waterMl)
+                }
+            }
+            checkEndOfAlarms(context, alarmArray, intentId)
+        }
+    }
+
+    /**
+     * Checks if the broadcast received is from the last intent (last notification).
+     * If yes, clears the saved alarm data and turns the Mitteilung switch off.
+     * @param context
+     * @param alarmArray - saved alarm data
+     * @param intentId   - id of the intent
+     */
+    private fun checkEndOfAlarms(context: Context, alarmArray: ArrayList<AlarmData>, intentId: Int){
+        if(alarmArray[alarmArray.size-1].id == intentId){
+            Log.d("Last intent id", intentId.toString())
             Log.d("Last entry", alarmArray[alarmArray.size-1].id.toString())
             AlarmDataManagerHelper.clearSavedData(context)
             RechnerDataManager(context).mitteilungenSwitch = false
-        }
-        if(context != null){
-            NotificationHelper.createNotification(context, stringID.toString())
         }
     }
 }

@@ -50,13 +50,13 @@ object NotificationHelper {
      * @param reminderData ReminderData for this notification
      */
 
-    fun createNotification(context: Context, id: String) {
+    fun createNotification(context: Context, waterMl: Int) {
 
         // create a group notification
         //val groupBuilder = buildGroupNotification(context)
 
         // create the pet notification
-        val notificationBuilder = buildNotificationForWasserbedarf(context, id)
+        val notificationBuilder = buildNotificationForWasserbedarf(context, waterMl)
 
         // add an action to the pet notification
         val administerPendingIntent = createPendingIntentForAction(context)
@@ -93,7 +93,7 @@ object NotificationHelper {
      * @param context current application context
      * @param reminderData ReminderData for this notification
      */
-    private fun buildNotificationForWasserbedarf(context: Context, id: String): NotificationCompat.Builder {
+    private fun buildNotificationForWasserbedarf(context: Context, waterMl: Int): NotificationCompat.Builder {
 
 
         val channelId = "${context.packageName}-wasserbedarf"
@@ -106,7 +106,7 @@ object NotificationHelper {
             // get a drawable reference for the LargeIcon
 
             setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.app_icon))
-            setContentText("Trink ---ml Wasser!. ID is: "+id)
+            setContentText(context.getString(R.string.notification_trink_wasser_text, waterMl.toString()))
             setGroup("wasserbedarf")
 
             // note is not important so if it doesn't exist no big deal
