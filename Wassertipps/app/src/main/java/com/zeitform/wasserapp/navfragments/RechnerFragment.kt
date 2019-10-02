@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.app.Fragment
 import android.support.v4.app.NotificationCompat
 import android.support.v4.app.NotificationManagerCompat
@@ -464,12 +465,19 @@ class RechnerFragment : Fragment() {
     }
 
     private fun setMitteilungActiveText(waterMl: Int, interval: Int){
-        mitteilungActiveTextBox.visibility = View.VISIBLE
-        mitteilungActiveText.text = resources.getString(R.string.mitteilungen_active_text, waterMl, interval)
+        var handler = Handler()
+        handler.postAtTime(Runnable {
+            mitteilungActiveTextBox.visibility = View.VISIBLE
+            mitteilungActiveText.text = resources.getString(R.string.mitteilungen_active_text, waterMl, interval)
+        },1000)
     }
 
     private fun disableMitteilungActiveText(){
-        mitteilungActiveTextBox.visibility = View.INVISIBLE
+        var handler = Handler()
+        handler.postAtTime(Runnable {
+            mitteilungActiveTextBox.visibility = View.INVISIBLE
+        },1000)
+
     }
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
