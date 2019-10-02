@@ -397,6 +397,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             billingClient.querySkuDetailsAsync(params) { responseCode, skuDetailsList ->
                 if (responseCode.responseCode == BillingClient.BillingResponseCode.OK) {
                     println("querySkuDetailsAsync, responseCode: $responseCode")
+                    println(skuDetailsList)
                     //initProductAdapter(skuDetailsList)
                 } else {
                     println("Can't querySkuDetailsAsync, responseCode: $responseCode")
