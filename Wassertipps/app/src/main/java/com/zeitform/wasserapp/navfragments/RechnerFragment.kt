@@ -123,11 +123,13 @@ class RechnerFragment : Fragment() {
         mitteilungenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
             //Set alarms
-            if(isChecked)
+            if(isChecked) {
+                mitteilungActiveTextBox.visibility = View.VISIBLE
                 setAlarms()
-            else
+            } else {
                 clearAlarms()
                 disableMitteilungActiveText()
+            }
         }
 
         //change Listeners
@@ -467,7 +469,7 @@ class RechnerFragment : Fragment() {
     private fun setMitteilungActiveText(waterMl: Int, interval: Int){
 
         var handler = Handler()
-        handler.postAtTime(Runnable {
+        handler.postAtTime({
             mitteilungActiveTextBox.visibility = View.VISIBLE
             mitteilungActiveText.text = resources.getString(R.string.mitteilungen_active_text, waterMl, interval)
         },1000)
@@ -475,7 +477,7 @@ class RechnerFragment : Fragment() {
 
     private fun disableMitteilungActiveText(){
         var handler = Handler()
-        handler.postAtTime(Runnable {
+        handler.postAtTime( {
             mitteilungActiveTextBox.visibility = View.INVISIBLE
         },1000)
 
