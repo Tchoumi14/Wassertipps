@@ -447,7 +447,7 @@ class RechnerFragment : Fragment() {
             var t = aufwachenTimeInt + (i * interval)
             var mins = t%60
             var hour = t/60
-            var id = Integer.parseInt(hour.toString()+""+mins.toString())
+            var id = Integer.parseInt(String.format("%02d", hour)+""+String.format("%02d", mins))  //format hour and mins to two digits
             alarmTimes.add(AlarmData(id, hour, mins, waterMl))
             Log.d("Times", times.toString())
         }
@@ -465,6 +465,7 @@ class RechnerFragment : Fragment() {
     }
 
     private fun setMitteilungActiveText(waterMl: Int, interval: Int){
+
         var handler = Handler()
         handler.postAtTime(Runnable {
             mitteilungActiveTextBox.visibility = View.VISIBLE
