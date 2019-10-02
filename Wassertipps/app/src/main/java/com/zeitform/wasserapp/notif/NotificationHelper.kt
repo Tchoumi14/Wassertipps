@@ -13,7 +13,7 @@ import android.support.v4.app.NotificationManagerCompat
 import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.R
 import android.media.RingtoneManager
-
+import android.support.v4.content.ContextCompat
 
 
 object NotificationHelper {
@@ -111,7 +111,7 @@ object NotificationHelper {
             //setDefaults(Notification.DEFAULT_SOUND)
             setDefaults(Notification.DEFAULT_LIGHTS)
             // get a drawable reference for the LargeIcon
-
+            color = ContextCompat.getColor(context.applicationContext, R.color.colorPrimary)
             setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.app_icon))
             setContentText(context.getString(R.string.notification_trink_wasser_text, waterMl.toString()))
             setGroup("wasserbedarf")
