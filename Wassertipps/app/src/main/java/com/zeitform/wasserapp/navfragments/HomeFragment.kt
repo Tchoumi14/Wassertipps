@@ -16,10 +16,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.android.billingclient.api.BillingClient
+import com.android.billingclient.api.BillingFlowParams
 import com.android.billingclient.api.SkuDetails
 import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.prefmanagers.DataManager
 import com.zeitform.wasserapp.R
+import com.zeitform.wasserapp.billing.BillingManager
 import com.zeitform.wasserapp.viewmodel.SharedViewModel
 import org.json.JSONObject
 
@@ -40,6 +43,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class HomeFragment : Fragment() {
 
+    private lateinit var billingManager: BillingManager
     private var sharedViewModel: SharedViewModel? = null
     private lateinit var productList:  MutableList<SkuDetails>
     private lateinit var mainLayout: RelativeLayout
@@ -340,7 +344,7 @@ class HomeFragment : Fragment() {
                 setPositiveButton(
                     context.getString(R.string.purchase_button,productList[0].price)
                 ) { _, _ ->
-
+                    billingManager.initiatePurchaseFlow(productList[0])
                 }
                 setNegativeButton(
                     R.string.dialog_button_no
@@ -406,7 +410,8 @@ class HomeFragment : Fragment() {
 
         }
     }
-    fun initProductData(data: MutableList<SkuDetails>){
+    fun initProductData(billingManager: BillingManager, data: MutableList<SkuDetails>){
+        this.billingManager = billingManager
         productList = data
     }
     /**

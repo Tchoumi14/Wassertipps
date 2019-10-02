@@ -18,6 +18,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.android.billingclient.api.*
 import com.zeitform.wasserapp.billing.BillingConstants
+import com.zeitform.wasserapp.billing.BillingManager
 import com.zeitform.wasserapp.internalfragments.*
 import com.zeitform.wasserapp.location.LocationCheck
 import com.zeitform.wasserapp.navfragments.*
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity(), PurchasesUpdatedListener, HomeFragment
 TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, KontaktSubFragment.OnFragmentInteractionListener{
 
 
+    private lateinit var billingManager: BillingManager
     private lateinit var billingClient: BillingClient
     var hart: Int = 1
     var nitrat: Int = 1
@@ -291,7 +293,12 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setupBillingClient()
+
+        billingManager = BillingManager(this)
+        billingManager.setupBillingClient()
+        var f = fragment1 as HomeFragment
+        f.initProductData(billingManager, billingManager.loadProduct())
+
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
 
@@ -363,53 +370,12 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             Toast.makeText(this, "Android < 6", Toast.LENGTH_SHORT).show()
         }
     }
-    private fun setupBillingClient() {
-        billingClient = BillingClient
-            .newBuilder(this)
-            .setListener(this)
-            .enablePendingPurchases()
-            .build()
 
-        billingClient.startConnection(object : BillingClientStateListener {
-            override fun onBillingSetupFinished(billingResult: BillingResult?) {
-                if (billingResult?.responseCode == BillingClient.BillingResponseCode.OK) {
-                    println("BILLING | startConnection | RESULT OK - 1")
-                    loadProduct()
-                } else {
-                    println("BILLING | startConnection | RESULT: "+billingResult?.responseCode)
-                }
-
-            }
-            override fun onBillingServiceDisconnected() {
-                println("BILLING | onBillingServiceDisconnected | DISCONNECTED")
-            }
-        })
-    }
     override fun onPurchasesUpdated(billingResult: BillingResult?, purchases: MutableList<Purchase>?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    private fun loadProduct(){
-        if (billingClient.isReady) {
-            val params = SkuDetailsParams
-                .newBuilder()
-                .setSkusList(BillingConstants.getSkuList())
-                .setType(BillingClient.SkuType.INAPP)
-                .build()
-            billingClient.querySkuDetailsAsync(params) { responseCode, skuDetailsList ->
-                if (responseCode.responseCode == BillingClient.BillingResponseCode.OK) {
-                    println("querySkuDetailsAsync, responseCode: $responseCode")
-                    //println(skuDetailsList)
-                    var f = fragment1 as HomeFragment
-                    f.initProductData(skuDetailsList)
-                } else {
-                    println("Can't querySkuDetailsAsync, responseCode: $responseCode")
-                }
-            }
-        } else {
-            println("Billing Client not ready")
-        }
-    }
+
     private fun checkPermission(permissionArray: Array<String>): Boolean {
         var allSuccess = true
         for (i in permissionArray.indices) {
