@@ -297,7 +297,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         billingManager = BillingManager(this)
         billingManager.setupBillingClient()
         var f = fragment1 as HomeFragment
-        f.initProductData(billingManager, billingManager.loadProduct())
+        f.initBillingManager(billingManager)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
@@ -369,6 +369,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         } else {
             Toast.makeText(this, "Android < 6", Toast.LENGTH_SHORT).show()
         }
+
     }
 
     override fun onPurchasesUpdated(billingResult: BillingResult?, purchases: MutableList<Purchase>?) {

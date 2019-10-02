@@ -45,7 +45,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var billingManager: BillingManager
     private var sharedViewModel: SharedViewModel? = null
-    private lateinit var productList:  MutableList<SkuDetails>
     private lateinit var mainLayout: RelativeLayout
     private lateinit var nohardnessLayout: RelativeLayout
     private var jsonResult: JSONArray? = null
@@ -342,9 +341,9 @@ class HomeFragment : Fragment() {
                 builder.setTitle(R.string.purchase_title)
                 builder.setMessage(R.string.purchase_content)
                 setPositiveButton(
-                    context.getString(R.string.purchase_button,productList[0].price)
+                    context.getString(R.string.purchase_button,billingManager.productList[0].price)
                 ) { _, _ ->
-                    billingManager.initiatePurchaseFlow(productList[0])
+                    billingManager.initiatePurchaseFlow(billingManager.productList[0])
                 }
                 setNegativeButton(
                     R.string.dialog_button_no
@@ -410,9 +409,8 @@ class HomeFragment : Fragment() {
 
         }
     }
-    fun initProductData(billingManager: BillingManager, data: MutableList<SkuDetails>){
+    fun initBillingManager(billingManager: BillingManager){
         this.billingManager = billingManager
-        productList = data
     }
     /**
      * Updates serverData and saves it to sharedPreferences for when the app restarts

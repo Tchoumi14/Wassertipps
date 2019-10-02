@@ -9,6 +9,9 @@ class BillingManager(var context: Activity): PurchasesUpdatedListener {
 
     private lateinit var billingClient: BillingClient
     private var mIsServiceConnected: Boolean = false
+    private var BASE_64_ENCODED_PUBLIC_KEY: String = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjy0WC/xn5aBjn/iaqZfjVxCJ4brNva7A8VCajk8bExnUsqsBMgHnznb7RuhPHSPoliUiXUAwMekfiiRUuKoipf7dwSiup7eawr+px95m40lHIumb+mcrbUpfPJ2nxJqryja8lDRyu/2qb0BYHsn7NrOj8oOkZmtk3pPMMWO2JJ2LgXzZn2uE/SYkbr1E4cTgMAPLs96R1LzXtuw3lFwiLAqCLx8icf2YPgXdiv7N/7mDl+dhgR44A/GjxpaSpwmNomg2d6EddU5IUwd47BFkhdquiEptvCSS/WF7fJs6KgUZnP5hoXZvEQuf/FSuLZuPbls5eDgR9dZDdbkXNK9QAQIDAQAB"
+
+    var productList: ArrayList<SkuDetails> = ArrayList()
 
     fun setupBillingClient() {
         billingClient = BillingClient
@@ -22,6 +25,7 @@ class BillingManager(var context: Activity): PurchasesUpdatedListener {
                 if (billingResult?.responseCode == BillingClient.BillingResponseCode.OK) {
                     println("BILLING | startConnection | RESULT OK - 1")
                     mIsServiceConnected = true
+                    loadProduct()
                 } else {
                     println("BILLING | startConnection | RESULT: "+billingResult?.responseCode)
                 }
@@ -34,8 +38,7 @@ class BillingManager(var context: Activity): PurchasesUpdatedListener {
         })
     }
 
-    fun loadProduct(): MutableList<SkuDetails>{
-        var skuDetails: MutableList<SkuDetails> = ArrayList()
+    private fun loadProduct(){
         if (billingClient.isReady) {
             val params = SkuDetailsParams
                 .newBuilder()
@@ -46,7 +49,9 @@ class BillingManager(var context: Activity): PurchasesUpdatedListener {
                 if (responseCode.responseCode == BillingClient.BillingResponseCode.OK) {
                     println("querySkuDetailsAsync, responseCode: $responseCode")
                     //println(skuDetailsList)
-                    skuDetails = skuDetailsList
+                    for(skuDetail in skuDetailsList){
+                        productList.add(skuDetail)
+                    }
                     //var f = fragment1 as HomeFragment
                     //f.initProductData(skuDetailsList)
                 } else {
@@ -56,7 +61,6 @@ class BillingManager(var context: Activity): PurchasesUpdatedListener {
         } else {
             println("Billing Client not ready")
         }
-        return skuDetails
     }
 
     fun initiatePurchaseFlow(skuDetails: SkuDetails){
@@ -67,7 +71,7 @@ class BillingManager(var context: Activity): PurchasesUpdatedListener {
     }
 
     override fun onPurchasesUpdated(billingResult: BillingResult?, purchases: MutableList<Purchase>?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        println("onPurchase")
     }
 
 }
