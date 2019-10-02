@@ -51,6 +51,13 @@
         Sie sich bei Ihrer Gemeinde.
     </string>
 
+    <!-- Purchase Popup text-->
+    <string name="purchase_title">Pro version</string>
+    <string name="purchase_content">Möchten Sie die Pro Version erwerben, um den Link zu aktivieren und die Werbung zu stoppen?
+        Sie unterstützen dadurch unsere Arbeit und helfen uns, die Daten der Wasserversorger regelmäßig in die App einfliessen zu lassen.
+        Vielen Dank!</string>
+    <string name="purchase_button">Kaufen - %s</string>
+
     <!--No data/no hardness page-->
     <string name="title_nodata">Tut uns leid</string>
     <string name="empty">\?</string>

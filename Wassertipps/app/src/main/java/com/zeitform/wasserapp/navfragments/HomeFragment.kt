@@ -335,10 +335,10 @@ class HomeFragment : Fragment() {
         val alertDialog: AlertDialog? = activity?.let {
             val builder = AlertDialog.Builder(it)
             builder.apply {
-                builder.setTitle(R.string.dialog_title_2)
-                builder.setMessage(R.string.dialog_message_2)
+                builder.setTitle(R.string.purchase_title)
+                builder.setMessage(R.string.purchase_content)
                 setPositiveButton(
-                    R.string.dialog_button_yes
+                    context.getString(R.string.purchase_button,productList[0].price)
                 ) { _, _ ->
 
                 }
