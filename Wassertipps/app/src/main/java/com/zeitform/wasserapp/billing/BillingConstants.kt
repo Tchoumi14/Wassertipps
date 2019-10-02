@@ -18,6 +18,6 @@ object BillingConstants {
      * Returns the list of all SKUs for the billing type specified
      */
     fun getSkuList(): List<String> {
-        return IN_APP_SKUS.toList()
+           return IN_APP_SKUS.toList()
     }
 }

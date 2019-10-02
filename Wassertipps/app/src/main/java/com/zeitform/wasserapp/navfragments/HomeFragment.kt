@@ -16,10 +16,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.android.billingclient.api.SkuDetails
 import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.prefmanagers.DataManager
 import com.zeitform.wasserapp.R
-import com.zeitform.wasserapp.internalfragments.TippsHaerteFragment
 import com.zeitform.wasserapp.viewmodel.SharedViewModel
 import org.json.JSONObject
 
@@ -41,6 +41,7 @@ private const val ARG_PARAM2 = "param2"
 class HomeFragment : Fragment() {
 
     private var sharedViewModel: SharedViewModel? = null
+    private lateinit var productList:  MutableList<SkuDetails>
     private lateinit var mainLayout: RelativeLayout
     private lateinit var nohardnessLayout: RelativeLayout
     private var jsonResult: JSONArray? = null
@@ -93,9 +94,9 @@ class HomeFragment : Fragment() {
         nearText = rootView.findViewById(R.id.near_text)
         dataTable = rootView.findViewById(R.id.nodata_table)
         tippsHaerteBtn = rootView.findViewById(R.id.tipps_haerte)
-        tippsHaerteBtn.setOnClickListener { listener!!.openTippsHaerte() }
+        tippsHaerteBtn.setOnClickListener { /*listener!!.openTippsHaerte()*/ checkAppPaymentStatus() }
         tippsNitratBtn = rootView.findViewById(R.id.tipps_nitrat)
-        tippsNitratBtn.setOnClickListener { listener!!.openTippsNitrat() }
+        tippsNitratBtn.setOnClickListener { /*listener!!.openTippsNitrat()*/ checkAppPaymentStatus() }
         return rootView
     }
 
@@ -324,6 +325,35 @@ class HomeFragment : Fragment() {
     }
 
     /**
+     * If the app is free, opens purchase prompt
+     * else opens nitrat/härte page
+     */
+    private fun checkAppPaymentStatus(){
+        purchasePopup()
+    }
+    private fun purchasePopup(){
+        val alertDialog: AlertDialog? = activity?.let {
+            val builder = AlertDialog.Builder(it)
+            builder.apply {
+                builder.setTitle(R.string.dialog_title_2)
+                builder.setMessage(R.string.dialog_message_2)
+                setPositiveButton(
+                    R.string.dialog_button_yes
+                ) { _, _ ->
+
+                }
+                setNegativeButton(
+                    R.string.dialog_button_no
+                ) { dialog, id ->
+                    // User cancelled the dialog
+                }
+            }
+            // Create the AlertDialog
+            builder.create()
+        }
+        alertDialog?.show()
+    }
+    /**
      * Wasserhärtungsanlage popup.
      */
     private fun wasserPopUp(){
@@ -376,7 +406,9 @@ class HomeFragment : Fragment() {
 
         }
     }
-
+    fun initProductData(data: MutableList<SkuDetails>){
+        productList = data
+    }
     /**
      * Updates serverData and saves it to sharedPreferences for when the app restarts
      */

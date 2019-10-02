@@ -29,6 +29,8 @@ import org.json.JSONObject
 import java.net.URL
 import java.util.concurrent.Executors
 
+
+
 private const val PERMISSION_REQUEST = 10
 
 class MainActivity : AppCompatActivity(), PurchasesUpdatedListener, HomeFragment.OnFragmentInteractionListener,
@@ -397,8 +399,9 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             billingClient.querySkuDetailsAsync(params) { responseCode, skuDetailsList ->
                 if (responseCode.responseCode == BillingClient.BillingResponseCode.OK) {
                     println("querySkuDetailsAsync, responseCode: $responseCode")
-                    println(skuDetailsList)
-                    //initProductAdapter(skuDetailsList)
+                    //println(skuDetailsList)
+                    var f = fragment1 as HomeFragment
+                    f.initProductData(skuDetailsList)
                 } else {
                     println("Can't querySkuDetailsAsync, responseCode: $responseCode")
                 }
