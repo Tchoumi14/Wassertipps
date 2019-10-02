@@ -21,7 +21,6 @@ class NotifReceiver: BroadcastReceiver() {
             val min = current.minute
             val timeId = Integer.parseInt(String.format("%02d", hour)+""+String.format("%02d", min))
             checkNotificationValidity(context, timeId, intentId)
-
         } else {
             val date = Calendar.getInstance(Locale.getDefault())
             val hour = date.get(Calendar.HOUR_OF_DAY)
@@ -29,24 +28,24 @@ class NotifReceiver: BroadcastReceiver() {
             val timeId = Integer.parseInt(String.format("%02d", hour)+""+String.format("%02d", min))
             checkNotificationValidity(context, timeId, intentId)
         }
-
-
     }
 
     private fun checkNotificationValidity(context: Context, timeId: Int, intentId: Int){
         Log.d("At notifReceiver", intentId.toString())
         Log.d("Time id", timeId.toString())
         Log.d("intent id", intentId.toString())
-        val alarmArray = AlarmDataManagerHelper.getFromAlarmDataManager(context)
-        if(alarmArray.size!=0){
-            for(alarmData in alarmArray){
-                if(alarmData.id == intentId){
-                    NotificationHelper.createNotification(context, alarmData.waterMl)
+        if(intentId >= timeId - 10 && intentId <= timeId){
+            val alarmArray = AlarmDataManagerHelper.getFromAlarmDataManager(context)
+            if(alarmArray.size!=0){
+                for(alarmData in alarmArray){
+                    if(alarmData.id == intentId){
+                        NotificationHelper.createNotification(context, alarmData.waterMl)
+                    }
                 }
+                checkEndOfAlarms(context, alarmArray, intentId)
+            } else {
+                Log.d("Array null ", "at notifReceiver ")
             }
-            checkEndOfAlarms(context, alarmArray, intentId)
-        } else {
-            Log.d("Array null ", "at notifReceiver ")
         }
     }
     /**
