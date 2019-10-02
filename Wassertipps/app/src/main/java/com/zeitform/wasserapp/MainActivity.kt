@@ -4,7 +4,6 @@ import android.Manifest
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.pm.PackageManager
-import android.content.res.TypedArray
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -14,10 +13,11 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.text.HtmlCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import android.text.Html
 import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
+import com.android.billingclient.api.*
+import com.zeitform.wasserapp.billing.BillingConstants
 import com.zeitform.wasserapp.internalfragments.*
 import com.zeitform.wasserapp.location.LocationCheck
 import com.zeitform.wasserapp.navfragments.*
@@ -31,12 +31,14 @@ import java.util.concurrent.Executors
 
 private const val PERMISSION_REQUEST = 10
 
-class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionListener,
+class MainActivity : AppCompatActivity(), PurchasesUpdatedListener, HomeFragment.OnFragmentInteractionListener,
     WasserinfoFragment.OnFragmentInteractionListener,
     FaqFragment.OnFragmentInteractionListener,
     RechnerFragment.OnFragmentInteractionListener, KontaktFragment.OnFragmentInteractionListener, TippsHaerteFragment.OnFragmentInteractionListener,
 TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, KontaktSubFragment.OnFragmentInteractionListener{
 
+
+    private lateinit var billingClient: BillingClient
     var hart: Int = 1
     var nitrat: Int = 1
     private lateinit var savedResponse: JSONObject
@@ -287,6 +289,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupBillingClient()
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
 
@@ -358,7 +361,51 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             Toast.makeText(this, "Android < 6", Toast.LENGTH_SHORT).show()
         }
     }
+    private fun setupBillingClient() {
+        billingClient = BillingClient
+            .newBuilder(this)
+            .setListener(this)
+            .enablePendingPurchases()
+            .build()
 
+        billingClient.startConnection(object : BillingClientStateListener {
+            override fun onBillingSetupFinished(billingResult: BillingResult?) {
+                if (billingResult?.responseCode == BillingClient.BillingResponseCode.OK) {
+                    println("BILLING | startConnection | RESULT OK - 1")
+                    loadProduct()
+                } else {
+                    println("BILLING | startConnection | RESULT: "+billingResult?.responseCode)
+                }
+
+            }
+            override fun onBillingServiceDisconnected() {
+                println("BILLING | onBillingServiceDisconnected | DISCONNECTED")
+            }
+        })
+    }
+    override fun onPurchasesUpdated(billingResult: BillingResult?, purchases: MutableList<Purchase>?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    private fun loadProduct(){
+        if (billingClient.isReady) {
+            val params = SkuDetailsParams
+                .newBuilder()
+                .setSkusList(BillingConstants.getSkuList())
+                .setType(BillingClient.SkuType.INAPP)
+                .build()
+            billingClient.querySkuDetailsAsync(params) { responseCode, skuDetailsList ->
+                if (responseCode.responseCode == BillingClient.BillingResponseCode.OK) {
+                    println("querySkuDetailsAsync, responseCode: $responseCode")
+                    //initProductAdapter(skuDetailsList)
+                } else {
+                    println("Can't querySkuDetailsAsync, responseCode: $responseCode")
+                }
+            }
+        } else {
+            println("Billing Client not ready")
+        }
+    }
     private fun checkPermission(permissionArray: Array<String>): Boolean {
         var allSuccess = true
         for (i in permissionArray.indices) {
