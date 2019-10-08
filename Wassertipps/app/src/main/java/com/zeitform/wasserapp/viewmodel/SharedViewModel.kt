@@ -3,6 +3,7 @@ package com.zeitform.wasserapp.viewmodel
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import android.text.Spanned
+import com.android.billingclient.api.Purchase
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -19,4 +20,9 @@ class SharedViewModel: ViewModel() {
     //kontaktSubFragment
     val kontaktSubContent = MutableLiveData<Spanned>()
     val url = MutableLiveData<String>()
+
+
+    //Purchase data
+    val purchaseData = MutableLiveData<MutableList<Purchase>?>()  //MutableLiveData of type 'MutableList<Purchase>'
+
 }

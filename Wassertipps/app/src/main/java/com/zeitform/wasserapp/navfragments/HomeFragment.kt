@@ -3,6 +3,8 @@ package com.zeitform.wasserapp.navfragments
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
+import android.content.DialogInterface
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -18,10 +20,12 @@ import android.view.ViewGroup
 import android.widget.*
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingFlowParams
+import com.android.billingclient.api.Purchase
 import com.android.billingclient.api.SkuDetails
 import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.prefmanagers.DataManager
 import com.zeitform.wasserapp.R
+import com.zeitform.wasserapp.billing.BillingConstants
 import com.zeitform.wasserapp.billing.BillingManager
 import com.zeitform.wasserapp.viewmodel.SharedViewModel
 import org.json.JSONObject
@@ -44,7 +48,8 @@ private const val ARG_PARAM2 = "param2"
 class HomeFragment : Fragment() {
 
     private lateinit var billingManager: BillingManager
-    private var sharedViewModel: SharedViewModel? = null
+    private var purchasedItems: MutableList<Purchase> = ArrayList()
+    private lateinit var sharedViewModel: SharedViewModel
     private lateinit var mainLayout: RelativeLayout
     private lateinit var nohardnessLayout: RelativeLayout
     private var jsonResult: JSONArray? = null
@@ -73,7 +78,6 @@ class HomeFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
         }
         dataManager = DataManager(activity!!.applicationContext)
-        sharedViewModel = ViewModelProviders.of(this).get(SharedViewModel::class.java)
 
     }
 
@@ -97,9 +101,9 @@ class HomeFragment : Fragment() {
         nearText = rootView.findViewById(R.id.near_text)
         dataTable = rootView.findViewById(R.id.nodata_table)
         tippsHaerteBtn = rootView.findViewById(R.id.tipps_haerte)
-        tippsHaerteBtn.setOnClickListener { /*listener!!.openTippsHaerte()*/ checkAppPaymentStatus() }
+        tippsHaerteBtn.setOnClickListener { /*listener!!.openTippsHaerte()*/if(checkAppPaymentStatus()) listener!!.openTippsHaerte() else purchasePopup() }
         tippsNitratBtn = rootView.findViewById(R.id.tipps_nitrat)
-        tippsNitratBtn.setOnClickListener { /*listener!!.openTippsNitrat()*/ checkAppPaymentStatus() }
+        tippsNitratBtn.setOnClickListener { /*listener!!.openTippsNitrat()*/ if(checkAppPaymentStatus()) listener!!.openTippsNitrat() else purchasePopup() }
         return rootView
     }
 
@@ -114,6 +118,16 @@ class HomeFragment : Fragment() {
 
             observeInput(sharedViewModel)
         }
+        sharedViewModel = ViewModelProviders.of(this).get(SharedViewModel::class.java)
+        billingManager = BillingManager(activity!!)
+        billingManager.setupBillingClient()
+        billingManager.setViewModel(sharedViewModel)
+        billingManager.refreshListListeners.add(object : BillingManager.InterfaceRefreshList {
+            override fun refreshListRequest() {
+                update()
+            }
+        })
+
     }
 
     private fun observeInput(sharedViewModel: SharedViewModel) {
@@ -136,6 +150,12 @@ class HomeFragment : Fragment() {
         sharedViewModel.completeData.observe(this, Observer {
             it?.let {
                 jsonResult = it
+            }
+        })
+        sharedViewModel.purchaseData.observe(this, Observer {
+            it?.let {
+                println("Purchased items "+it)
+                purchasedItems = it
             }
         })
     }
@@ -282,6 +302,10 @@ class HomeFragment : Fragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        //updatePurchasedItems()
+    }
     override fun onDetach() {
         super.onDetach()
         listener = null
@@ -326,13 +350,57 @@ class HomeFragment : Fragment() {
                 }
             }
     }
+    private fun updatePurchasedItems(){
+        var purchases = billingManager.mPurchases
+        if (purchases != null) {
+            //if array not empty, check if purchased item matches.
+            for(purchase in purchases){
+                if(purchase.sku == BillingConstants.SKU_PRO){
+                    //items unlocked
+                    tippsHaerteBtn.setBackgroundResource(R.drawable.button_background)
+                    tippsNitratBtn.setBackgroundResource(R.drawable.button_background)
+                    println("unlocked")
+                }
+                else {
+                    //items locked
+                    tippsHaerteBtn.setBackgroundResource(R.drawable.button_background_locked)
+                    tippsNitratBtn.setBackgroundResource(R.drawable.button_background_locked)
+                    println("Locked 2")
+                }
+            }
+        } else {
+            tippsHaerteBtn.setBackgroundResource(R.drawable.button_background_locked)
+            tippsNitratBtn.setBackgroundResource(R.drawable.button_background_locked)
+            println("Locked 1")
+        }
 
+    }
+    private fun update(){
+        if(billingManager.isProPurchased){
+            tippsHaerteBtn.setBackgroundResource(R.drawable.button_background)
+            tippsNitratBtn.setBackgroundResource(R.drawable.button_background)
+            println("unlocked")
+        } else {
+            tippsHaerteBtn.setBackgroundResource(R.drawable.button_background_locked)
+            tippsNitratBtn.setBackgroundResource(R.drawable.button_background_locked)
+            println("Locked 1")
+        }
+    }
     /**
      * If the app is free, opens purchase prompt
      * else opens nitrat/härte page
      */
-    private fun checkAppPaymentStatus(){
-        purchasePopup()
+    private fun checkAppPaymentStatus(): Boolean {
+        //If the array is empty, assumed that no purchase has been made
+        var result = false
+        if(billingManager.mPurchases?.size==0){
+            result = false
+        }
+        //if array not empty, check if purchased item matches.
+        for(purchase in billingManager.mPurchases!!){
+            result = purchase.sku == BillingConstants.SKU_PRO
+        }
+        return result
     }
     private fun purchasePopup(){
         val alertDialog: AlertDialog? = activity?.let {
@@ -354,6 +422,7 @@ class HomeFragment : Fragment() {
             // Create the AlertDialog
             builder.create()
         }
+        
         alertDialog?.show()
     }
     /**
@@ -411,6 +480,8 @@ class HomeFragment : Fragment() {
     }
     fun initBillingManager(billingManager: BillingManager){
         this.billingManager = billingManager
+
+        billingManager.setViewModel(sharedViewModel)
     }
     /**
      * Updates serverData and saves it to sharedPreferences for when the app restarts

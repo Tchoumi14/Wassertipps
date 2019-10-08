@@ -294,11 +294,6 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        billingManager = BillingManager(this)
-        billingManager.setupBillingClient()
-        var f = fragment1 as HomeFragment
-        f.initBillingManager(billingManager)
-
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
 

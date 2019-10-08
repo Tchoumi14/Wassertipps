@@ -53,9 +53,12 @@
 
     <!-- Purchase Popup text-->
     <string name="purchase_title">Pro version</string>
-    <string name="purchase_content">Möchten Sie die Pro Version erwerben, um den Link zu aktivieren und die Werbung zu stoppen?
-        Sie unterstützen dadurch unsere Arbeit und helfen uns, die Daten der Wasserversorger regelmäßig in die App einfliessen zu lassen.
-        Vielen Dank!</string>
+    <string name="purchase_content">Möchten Sie die Pro Version erwerben, um den Link zu aktivieren und die Werbung zu
+        stoppen?
+        Sie unterstützen dadurch unsere Arbeit und helfen uns, die Daten der Wasserversorger regelmäßig in die App
+        einfliessen zu lassen.
+        Vielen Dank!
+    </string>
     <string name="purchase_button">Kaufen - %s</string>
 
     <!--No data/no hardness page-->
@@ -155,7 +158,9 @@
     <string name="aufwachen">Aufwachen</string>
     <string name="einschlafen">Einschlafen</string>
     <string name="erinnerungen">Erinnerungen</string>
-    <string name="wasser_pro_tag_text">Ihr empfohlener Wasserbedarf pro Tag ist %1$s ml. Dieser Wert ist jederzeit nur eine Empfehlung. Sie können diesen Wert ändern, die Benachrichtigungen werden dann angepasst.</string>
+    <string name="wasser_pro_tag_text">Ihr empfohlener Wasserbedarf pro Tag ist %1$s ml. Dieser Wert ist jederzeit nur
+        eine Empfehlung. Sie können diesen Wert ändern, die Benachrichtigungen werden dann angepasst.
+    </string>
     <string name="mitteilungen_active_title">Mitteilungen aktiviert!</string>
     <string name="mitteilungen_active_text">%dml Wasser alle %d minuten.</string>
     <!--Notification texts-->

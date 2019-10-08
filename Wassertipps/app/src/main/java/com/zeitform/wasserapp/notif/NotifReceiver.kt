@@ -43,25 +43,9 @@ class NotifReceiver: BroadcastReceiver() {
                         NotificationHelper.createNotification(context, alarmData.waterMl)
                     }
                 }
-                checkEndOfAlarms(context, alarmArray, intentId)
             } else {
                 Log.d("Array null ", "at notifReceiver ")
             }
-        }
-    }
-    /**
-     * Checks if the broadcast received is from the last intent (last notification).
-     * If yes, clears the saved alarm data and turns the Mitteilung switch off.
-     * @param context
-     * @param alarmArray - saved alarm data
-     * @param intentId   - id of the intent
-     */
-    private fun checkEndOfAlarms(context: Context, alarmArray: ArrayList<AlarmData>, intentId: Int){
-        if(alarmArray[alarmArray.size-1].id == intentId){
-            Log.d("Last intent id", intentId.toString())
-            Log.d("Last entry", alarmArray[alarmArray.size-1].id.toString())
-            AlarmDataManagerHelper.clearSavedData(context)
-            RechnerDataManager(context).mitteilungenSwitch = false
         }
     }
 
