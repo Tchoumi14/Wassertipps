@@ -41,8 +41,8 @@ class MainActivity : AppCompatActivity(), PurchasesUpdatedListener, HomeFragment
 TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, KontaktSubFragment.OnFragmentInteractionListener{
 
 
-    private lateinit var billingManager: BillingManager
-    private lateinit var billingClient: BillingClient
+
+    private var isProPurchased: Boolean = false
     var hart: Int = 1
     var nitrat: Int = 1
     private lateinit var savedResponse: JSONObject
@@ -75,11 +75,12 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     private lateinit var wasserInfoList: Array<String>
     private lateinit var wasserInfoTitlebarText: Array<String>
     private lateinit var kontaktList: Array<String>
-    private val fragment1: Fragment = HomeFragment()
-    private val fragment2: Fragment = WasserinfoFragment()
-    private val fragment3: Fragment = FaqFragment()
-    private val fragment4: Fragment = RechnerFragment()
-    private val fragment5: Fragment = KontaktFragment()
+    private lateinit var billingManager: BillingManager
+    private var fragment1: Fragment = HomeFragment()
+    private var fragment2: Fragment = WasserinfoFragment()
+    private var fragment3: Fragment = FaqFragment()
+    private var fragment4: Fragment = RechnerFragment()
+    private var fragment5: Fragment = KontaktFragment()
     private val fragmentHaerte: Fragment = TippsHaerteFragment()
     private val fragmentNitrat: Fragment = TippsNitratFragment()
     private val fragmentTipps: Fragment = TippsFragment()
@@ -93,6 +94,17 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     override fun onFragmentInteraction(uri: Uri) {
         // TODO Implement
         System.out.println(uri.toString())
+    }
+    override fun setBillingManager(billingManager: BillingManager) {
+        println("Billing manager set at main")
+        this.billingManager = billingManager
+    }
+    override fun getBillingManager(): BillingManager {
+        return billingManager
+    }
+    override fun updateRechnerStatus(isVisible: Boolean) {
+        val f = fm.findFragmentByTag("4") as RechnerFragment
+        f.updateVisibility(isVisible)
     }
     override fun openTippsHaerte() {
         if(sharedViewModel?.serverData?.value==null){
@@ -294,6 +306,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
 
@@ -367,11 +380,10 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
 
     }
 
+
     override fun onPurchasesUpdated(billingResult: BillingResult?, purchases: MutableList<Purchase>?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        println("Purchase updated!")
     }
-
-
     private fun checkPermission(permissionArray: Array<String>): Boolean {
         var allSuccess = true
         for (i in permissionArray.indices) {

@@ -122,7 +122,7 @@ class HomeFragment : Fragment() {
         sharedViewModel = ViewModelProviders.of(this).get(SharedViewModel::class.java)
         billingManager = BillingManager(activity!!)
         billingManager.setupBillingClient()
-        billingManager.setViewModel(sharedViewModel)
+        listener!!.setBillingManager(billingManager)
         billingManager.refreshListListeners.add(object : BillingManager.InterfaceRefreshList {
             override fun refreshListRequest() {
                 update()
@@ -151,12 +151,6 @@ class HomeFragment : Fragment() {
         sharedViewModel.completeData.observe(this, Observer {
             it?.let {
                 jsonResult = it
-            }
-        })
-        sharedViewModel.purchaseData.observe(this, Observer {
-            it?.let {
-                println("Purchased items "+it)
-                purchasedItems = it
             }
         })
     }
@@ -303,10 +297,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        //updatePurchasedItems()
-    }
     override fun onDetach() {
         super.onDetach()
         listener = null
@@ -331,6 +321,8 @@ class HomeFragment : Fragment() {
         fun onFragmentInteraction(uri: Uri)
         fun openTippsHaerte()
         fun openTippsNitrat()
+        fun setBillingManager(billingManager: BillingManager)
+        fun updateRechnerStatus(isVisible: Boolean)
     }
 
     companion object {
@@ -380,10 +372,12 @@ class HomeFragment : Fragment() {
         if(billingManager.isProPurchased){
             tippsHaerteBtn.setBackgroundResource(R.drawable.button_background)
             tippsNitratBtn.setBackgroundResource(R.drawable.button_background)
+            listener!!.updateRechnerStatus(true)
             println("unlocked")
         } else {
             tippsHaerteBtn.setBackgroundResource(R.drawable.button_background_locked)
             tippsNitratBtn.setBackgroundResource(R.drawable.button_background_locked)
+            listener!!.updateRechnerStatus(false)
             println("Locked 1")
         }
     }
@@ -497,11 +491,6 @@ class HomeFragment : Fragment() {
             alertDialog?.show()
 
         }
-    }
-    fun initBillingManager(billingManager: BillingManager){
-        this.billingManager = billingManager
-
-        billingManager.setViewModel(sharedViewModel)
     }
     /**
      * Updates serverData and saves it to sharedPreferences for when the app restarts

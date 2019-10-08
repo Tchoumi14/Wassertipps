@@ -152,7 +152,7 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
             if (purchases != null) {
                 for (purchase in purchases) {
                     handlePurchase(purchase)
-                    consumeAsync(purchase.purchaseToken)
+                    //consumeAsync(purchase.purchaseToken)
                 }
             }
             //mBillingUpdatesListener.onPurchasesUpdated(mPurchases)

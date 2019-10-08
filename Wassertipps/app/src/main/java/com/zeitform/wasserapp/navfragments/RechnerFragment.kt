@@ -21,11 +21,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.android.billingclient.api.SkuDetails
 import com.google.gson.Gson
 import com.zeitform.wasserapp.InputFilterMinMax
 import com.zeitform.wasserapp.MainActivity
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.SelectorType
+import com.zeitform.wasserapp.billing.BillingConstants
+import com.zeitform.wasserapp.billing.BillingManager
 import com.zeitform.wasserapp.notif.AlarmScheduler
 import com.zeitform.wasserapp.notif.NotificationHelper
 import com.zeitform.wasserapp.notif.AlarmData
@@ -56,6 +59,8 @@ class RechnerFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var lockedLayout: FrameLayout
+    private lateinit var rechnerLayout: ScrollView
     private var rechnerDataManager: RechnerDataManager? = null
     private lateinit var aufwachenText: TextView
     private lateinit var einschlafenText: TextView
@@ -75,6 +80,10 @@ class RechnerFragment : Fragment() {
     private lateinit var consumptionTimes: ArrayList<Int>
     private lateinit var alarmTimes: ArrayList<AlarmData>
     private var alarmDataManager: AlarmDataManager? = null
+
+    private lateinit var purchaseButton: Button
+    private lateinit var billingManager: BillingManager
+    private lateinit var productToBuy: SkuDetails
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,6 +103,8 @@ class RechnerFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         var rootView = inflater.inflate(R.layout.fragment_rechner, container, false)
+        lockedLayout = rootView.findViewById(R.id.locked_layout)
+        rechnerLayout = rootView.findViewById(R.id.rechner_layout)
         gewichtField = rootView.findViewById(R.id.gewicht_field)
         alterField = rootView.findViewById(R.id.alter_field)
         wasserProTagField = rootView.findViewById(R.id.wasserprotag_field)
@@ -105,6 +116,10 @@ class RechnerFragment : Fragment() {
         alterField.setText("29",TextView.BufferType.EDITABLE)
         wasserProTagField.setText("0",TextView.BufferType.EDITABLE)
         wasserProTagField.filters = arrayOf<InputFilter>(InputFilterMinMax(800, 10000))
+
+        purchaseButton = rootView.findViewById(R.id.purchase_button)
+        purchaseButton.setOnClickListener { initiatePurchaseFlow() }
+
         //erinnerungenField.setText("0",TextView.BufferType.EDITABLE)
 
         sportSwitch = rootView.findViewById(R.id.sport_switch)
@@ -159,6 +174,25 @@ class RechnerFragment : Fragment() {
             openEinschlafenTimePicker(hour, min)
         }
         return rootView
+    }
+
+    private fun initiatePurchaseFlow() {
+        var bm = listener!!.getBillingManager()
+        for(product in bm.productList){
+            if(product.sku == BillingConstants.SKU_PRO){
+                productToBuy = product
+            }
+        }
+        bm.initiatePurchaseFlow(productToBuy)
+    }
+    fun updateVisibility(isVisible: Boolean){
+        if(isVisible){
+            lockedLayout.visibility = View.INVISIBLE
+            rechnerLayout.visibility = View.VISIBLE
+        } else {
+            lockedLayout.visibility = View.VISIBLE
+            rechnerLayout.visibility = View.INVISIBLE
+        }
     }
     private fun openDialog(selectorType: SelectorType, currentValue: String){
         val dialog = AlertDialog.Builder(activity!!)
@@ -515,6 +549,7 @@ class RechnerFragment : Fragment() {
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
+        fun getBillingManager():BillingManager
     }
 
     companion object {
