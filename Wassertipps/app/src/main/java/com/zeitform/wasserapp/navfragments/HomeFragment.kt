@@ -431,8 +431,8 @@ class HomeFragment : Fragment() {
             positive.setTextColor(Color.WHITE)
             positive.isAllCaps = false
             var scale = resources.displayMetrics.density
-            var padding_16dp = (16 * scale + 0.5f).toInt()
-            positive.setPadding(padding_16dp,0,padding_16dp,0)
+            var padding16dp = (16 * scale + 0.5f).toInt()
+            positive.setPadding(padding16dp,0,padding16dp,0)
         }
         var negative = alertDialog?.getButton(DialogInterface.BUTTON_NEGATIVE)
         if(negative!=null){

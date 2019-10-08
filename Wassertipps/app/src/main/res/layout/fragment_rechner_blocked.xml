@@ -8,19 +8,34 @@
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_marginEnd="@dimen/activity_vertical_margin"
                     android:layout_gravity="center">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
+                android:textSize="@dimen/title_font_size"
+                android:id="@+id/rechner_locked_title"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:text="@string/purchase_locked_title"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/rechner_locked_title"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:id="@+id/rechner_locked_text"
-                android:text="@string/hello_blank_fragment"/>
+                android:textAlignment="center"
+                android:text="@string/purchase_locked_text"/>
         <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/purchase_button_selector"
+                android:textColor="?attr/appBackgroundColor"
                 android:paddingStart="@dimen/basic_text_padding"
                 android:paddingEnd="@dimen/basic_text_padding"
                 android:layout_below="@id/rechner_locked_text"
