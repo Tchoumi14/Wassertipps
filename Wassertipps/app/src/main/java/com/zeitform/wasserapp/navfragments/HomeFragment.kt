@@ -49,6 +49,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var billingManager: BillingManager
     private var purchasedItems: MutableList<Purchase> = ArrayList()
+    private lateinit var productToBuy: SkuDetails
     private lateinit var sharedViewModel: SharedViewModel
     private lateinit var mainLayout: RelativeLayout
     private lateinit var nohardnessLayout: RelativeLayout
@@ -403,6 +404,11 @@ class HomeFragment : Fragment() {
         return result
     }
     private fun purchasePopup(){
+        for(product in billingManager.productList){
+            if(product.sku == BillingConstants.SKU_PRO){
+                productToBuy = product
+            }
+        }
         val alertDialog: AlertDialog? = activity?.let {
             val builder = AlertDialog.Builder(it)
             builder.apply {
@@ -410,9 +416,9 @@ class HomeFragment : Fragment() {
                 builder.setMessage(R.string.purchase_content)
 
                 setPositiveButton(
-                    context.getString(R.string.purchase_button,billingManager.productList[0].price)
+                    context.getString(R.string.purchase_button,productToBuy.price)
                 ) { _, _ ->
-                    billingManager.initiatePurchaseFlow(billingManager.productList[0])
+                    billingManager.initiatePurchaseFlow(productToBuy)
                 }
                 setNegativeButton(
                     R.string.dialog_button_no

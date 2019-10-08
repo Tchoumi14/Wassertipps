@@ -7,8 +7,12 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import com.android.billingclient.api.SkuDetails
 
 import com.zeitform.wasserapp.R
+import com.zeitform.wasserapp.billing.BillingConstants
+import com.zeitform.wasserapp.billing.BillingManager
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +32,9 @@ class RechnerBlockedFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var purchaseButton: Button
+    private lateinit var billingManager: BillingManager
+    private lateinit var productToBuy: SkuDetails
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +43,7 @@ class RechnerBlockedFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        billingManager = BillingManager(activity!!)
     }
 
     override fun onCreateView(
@@ -43,7 +51,19 @@ class RechnerBlockedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rechner_blocked, container, false)
+        var rootView = inflater.inflate(R.layout.fragment_rechner_blocked, container, false)
+        purchaseButton = rootView.findViewById(R.id.purchase_button)
+        purchaseButton.setOnClickListener { initiatePurchaseFlow() }
+        return rootView
+    }
+
+    private fun initiatePurchaseFlow() {
+        for(product in billingManager.productList){
+            if(product.sku == BillingConstants.SKU_PRO){
+                productToBuy = product
+            }
+        }
+        billingManager.initiatePurchaseFlow(productToBuy)
     }
 
     // TODO: Rename method, update argument and hook method into UI event
