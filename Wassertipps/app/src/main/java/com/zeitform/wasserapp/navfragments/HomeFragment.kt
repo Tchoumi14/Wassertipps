@@ -1,17 +1,17 @@
 package com.zeitform.wasserapp.navfragments
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.DialogInterface
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AlertDialog
+import androidx.fragment.app.Fragment
+import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AlertDialog
 import org.json.JSONArray
-import android.support.v7.widget.CardView
+import androidx.cardview.widget.CardView
 import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -65,7 +65,7 @@ class HomeFragment : Fragment() {
     private lateinit var nitratText: TextView
     private lateinit var haerteUnit: TextView
     private lateinit var nearText: TextView
-    private lateinit var nearCard: CardView
+    private lateinit var nearCard: androidx.cardview.widget.CardView
     private lateinit var dataTable: TableLayout
     private lateinit var infoIcon: ImageView
     private lateinit var tippsHaerteBtn: Button

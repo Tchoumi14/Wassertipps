@@ -2,8 +2,8 @@ package com.zeitform.wasserapp.adapters
 
 import android.content.Context
 import android.graphics.Color
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.CardView
+import androidx.core.content.ContextCompat
+import androidx.cardview.widget.CardView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,7 +43,7 @@ class TippsHaerteAdapter (private val context: Context, private val listener: Ti
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         // Get view for row item
         val rowView = inflater.inflate(R.layout.box_item, parent, false)
-        val boxCard = rowView.findViewById<CardView>(R.id.box_item_card)
+        val boxCard = rowView.findViewById<androidx.cardview.widget.CardView>(R.id.box_item_card)
         boxCard.setOnClickListener {
             listener!!.generateHaerteTipps(getItem(position))
           }

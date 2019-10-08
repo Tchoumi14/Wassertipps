@@ -1,22 +1,25 @@
 package com.zeitform.wasserapp
 
 import android.Manifest
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.text.HtmlCompat
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.core.text.HtmlCompat
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import com.android.billingclient.api.*
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.MobileAds
 import com.zeitform.wasserapp.billing.BillingConstants
 import com.zeitform.wasserapp.billing.BillingManager
 import com.zeitform.wasserapp.internalfragments.*
@@ -33,6 +36,7 @@ import java.util.concurrent.Executors
 
 
 private const val PERMISSION_REQUEST = 10
+const val AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
 
 class MainActivity : AppCompatActivity(), PurchasesUpdatedListener, HomeFragment.OnFragmentInteractionListener,
     WasserinfoFragment.OnFragmentInteractionListener,
@@ -42,7 +46,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
 
 
 
-    private var isProPurchased: Boolean = false
+    private lateinit var mInterstitialAd: InterstitialAd
     var hart: Int = 1
     var nitrat: Int = 1
     private lateinit var savedResponse: JSONObject
@@ -305,7 +309,29 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        // Initialize the Mobile Ads SDK.
+        MobileAds.initialize(this) {}
 
+        // Create the InterstitialAd and set it up.
+        mInterstitialAd = InterstitialAd(this).apply {
+            adUnitId = AD_UNIT_ID
+            adListener = (object : AdListener() {
+                override fun onAdLoaded() {
+                    Toast.makeText(this@MainActivity, "onAdLoaded()", Toast.LENGTH_SHORT).show()
+                    showInterstitial()
+                }
+
+                override fun onAdFailedToLoad(errorCode: Int) {
+                    Toast.makeText(this@MainActivity,
+                        "onAdFailedToLoad() with error code: $errorCode",
+                        Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onAdClosed() {
+                    //
+                }
+            })
+        }
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
@@ -443,6 +469,16 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             } else {
                 Log.d("Data fetch failed -2", "Check internet connection or the server status.")
             }
+        }
+    }
+
+    // Show the ad if it's ready. Otherwise toast and restart the game.
+    private fun showInterstitial() {
+        if (mInterstitialAd.isLoaded) {
+            mInterstitialAd.show()
+        } else {
+            Toast.makeText(this, "Ad wasn't loaded.", Toast.LENGTH_SHORT).show()
+            //startGame()
         }
     }
 }

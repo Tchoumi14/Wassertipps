@@ -2,22 +2,22 @@ package com.zeitform.wasserapp
 
 import android.Manifest
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.widget.TextView
 import android.widget.LinearLayout
-import android.support.v4.view.ViewPager
+import androidx.viewpager.widget.ViewPager
 import android.widget.Button
 import android.view.ViewGroup
 import android.view.LayoutInflater
-import android.support.v4.view.PagerAdapter
+import androidx.viewpager.widget.PagerAdapter
 import android.view.WindowManager
 import android.os.Build
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.text.Html
 import android.util.TypedValue
 import android.view.View

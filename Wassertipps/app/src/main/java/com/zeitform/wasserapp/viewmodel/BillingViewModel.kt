@@ -2,8 +2,8 @@ package com.zeitform.wasserapp.viewmodel
 
 import android.app.Activity
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import com.android.billingclient.api.Purchase
 import com.zeitform.wasserapp.billing.BillingManager
 
