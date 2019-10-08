@@ -13,4 +13,6 @@
     <attr name="lightBorderColor" format="reference" />
     <attr name="textWhite" format="reference" />
     <attr name="appBackgroundColor" format="reference" />
+    <attr name="colorAppPrimaryGreen" format="reference"/>
+    <attr name="colorAppPrimaryGreenDark" format="reference"/>
 </resources>

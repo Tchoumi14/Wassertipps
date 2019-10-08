@@ -420,10 +420,21 @@ class HomeFragment : Fragment() {
                 }
             }
             // Create the AlertDialog
+
             builder.create()
         }
-        
         alertDialog?.show()
+        var positive = alertDialog?.getButton(DialogInterface.BUTTON_POSITIVE)
+        if(positive != null) {
+            positive.background = ContextCompat.getDrawable(context!!.applicationContext, R.drawable.purchase_button_selector)
+            positive.setTextColor(Color.WHITE)
+            positive.isAllCaps = false
+            positive.setPadding(3,0,3,0)
+        }
+        var negative = alertDialog?.getButton(DialogInterface.BUTTON_NEGATIVE)
+        if(negative!=null){
+            negative.isAllCaps = false
+        }
     }
     /**
      * Wasserhärtungsanlage popup.

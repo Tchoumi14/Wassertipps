@@ -15,6 +15,8 @@
     <color name="textWhite">#FFFFFF</color>
     <color name="appBackground_light">#FFFFFF</color>
 
+    <color name="colorPrimary_green">#82c052</color>
+    <color name="colorPrimary_greendark">#598239</color>
     <!--Dark theme colors-->
     <color name="colorPrimary_dark">#1974b2</color>
     <color name="colorPrimaryFocus_dark">#0C3C63</color>
