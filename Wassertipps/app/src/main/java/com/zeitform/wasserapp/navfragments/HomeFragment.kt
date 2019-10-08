@@ -429,7 +429,11 @@ class HomeFragment : Fragment() {
             positive.background = ContextCompat.getDrawable(context!!.applicationContext, R.drawable.purchase_button_selector)
             positive.setTextColor(Color.WHITE)
             positive.isAllCaps = false
-            positive.setPadding(3,0,3,0)
+            var scale = resources.displayMetrics.density
+            var padding_5dp = (10 * scale + 0.5f).toInt()
+            positive.setPadding(padding_5dp,0,padding_5dp,0)
+
+
         }
         var negative = alertDialog?.getButton(DialogInterface.BUTTON_NEGATIVE)
         if(negative!=null){

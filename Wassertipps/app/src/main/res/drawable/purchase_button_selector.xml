@@ -4,30 +4,30 @@
 
     <item android:state_pressed="true" >
         <shape>
-            <corners android:radius="10dp" />
+            <corners android:radius="2dp" />
             <gradient
-                    android:startColor="?attr/colorAppPrimaryGreenDark"
-                    android:endColor="?attr/colorAppPrimaryGreenDark"
+                    android:startColor="@color/colorPrimary_greendark"
+                    android:endColor="@color/colorPrimary_greendark"
                     android:angle="270" />
         </shape>
     </item>
 
     <item android:state_focused="true" >
         <shape>
-            <corners android:radius="10dp" />
+            <corners android:radius="2dp" />
             <gradient
-                    android:endColor="?attr/colorAppPrimaryGreenDark"
-                    android:startColor="?attr/colorAppPrimaryGreenDark"
+                    android:startColor="@color/colorPrimary_greendark"
+                    android:endColor="@color/colorPrimary_greendark"
                     android:angle="270" />
         </shape>
     </item>
 
     <item>
         <shape>
-            <corners android:radius="10dp" />
+            <corners android:radius="2dp" />
             <gradient
-                    android:startColor="?attr/colorAppPrimaryGreen"
-                    android:endColor="?attr/colorAppPrimaryGreen"
+                    android:startColor="@color/colorPrimary_green"
+                    android:endColor="@color/colorPrimary_green"
                     android:angle="270" />
         </shape>
     </item>
