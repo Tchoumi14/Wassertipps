@@ -12,7 +12,7 @@
     <dimen name="slide_desc">16dp</dimen>
     <dimen name="desc_padding">40dp</dimen>
 
-    <dimen name="intro_text_padding">30dp</dimen>
+    <dimen name="intro_text_padding">20dp</dimen>
     <dimen name="image_horizontal_padding">50dp</dimen>
     <dimen name="image_bottom_margin">60dp</dimen>
     <dimen name="basic_text_padding">10dp</dimen>

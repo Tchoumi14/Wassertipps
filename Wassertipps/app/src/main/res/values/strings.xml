@@ -45,8 +45,10 @@
         Diese App ersetzt keinesfalls die fachliche Beratung durch einen Arzt oder Apotheker und darf nicht als
         Grundlage zur eigenständigen Diagnose bei medizinischen Problemen verwendet werden.
     </string>
-    <string name="intro5_text4">Bitte lesen Sie dazu auch unsere Datenschutzerklärung und die Nutzungsbedingungen
-    </string>
+    <string name="intro5_text4">Bitte lesen Sie dazu auch unsere </string>
+    <string name="intro5_text5">und die </string>
+    <string name="intro5_text4btn1">Datenschutzerklärung</string>
+    <string name="intro5_text4btn2">Nutzungsbedingungen</string>
     <string name="intro5_btnText">Ich habe verstanden und stimme zu</string>
 
     <!-- Menu icon titles -->

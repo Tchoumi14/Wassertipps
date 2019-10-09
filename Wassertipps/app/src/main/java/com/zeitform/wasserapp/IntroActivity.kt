@@ -14,13 +14,17 @@ import androidx.viewpager.widget.PagerAdapter
 import android.view.WindowManager
 import android.os.Build
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import androidx.core.content.ContextCompat
 import android.text.Html
+import android.text.Spanned
 import android.util.TypedValue
 import android.view.View
+import androidx.appcompat.app.AlertDialog
+import androidx.core.text.HtmlCompat
 import com.zeitform.wasserapp.prefmanagers.PrefManager
 
 private const val PERMISSION_REQUEST = 10
@@ -35,6 +39,8 @@ class IntroActivity : AppCompatActivity() {
     private var layouts: IntArray? = null
     private var btnNext:Button? = null
     private var prefManager: PrefManager? = null
+    private lateinit var datenschutzBtn: TextView
+    private lateinit var nutzungsbedingungBtn: TextView
     private var zustimmen: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -213,6 +219,15 @@ class IntroActivity : AppCompatActivity() {
             var view: View?
             if(position == 4){
                 view = layoutInflater!!.inflate(layouts!![position], container, false)
+                datenschutzBtn = view.findViewById(R.id.datenschutz_Text)
+                datenschutzBtn.setOnClickListener {  }
+                nutzungsbedingungBtn = view.findViewById(R.id.nutzungsbedingung_text)
+                nutzungsbedingungBtn.setOnClickListener {
+                    var kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
+                    val title = "Nutzungsbedingungen"
+                    val content = HtmlCompat.fromHtml(kontaktContentArray[1], HtmlCompat.FROM_HTML_MODE_COMPACT)
+                    createAlert(title, content)
+                }
                 zustimmen = view.findViewById<Button>(R.id.zustimmen)
                 zustimmen!!.setOnClickListener {
                     launchHomeScreen()
@@ -240,6 +255,29 @@ class IntroActivity : AppCompatActivity() {
             container.removeView(view)
         }
 
+        private fun createAlert(title: String, content: Spanned){
+            val alertDialog: AlertDialog? = this@IntroActivity?.let {
+                val builder = AlertDialog.Builder(it)
+                builder.apply {
+                    builder.setTitle(title)
+                    builder.setMessage(content)
+
+                    setPositiveButton(
+                        "Ok"
+                    ) { _, _ ->
+                        //close
+                    }
+                }
+                // Create the AlertDialog
+
+                builder.create()
+            }
+            alertDialog?.show()
+            var positive = alertDialog?.getButton(DialogInterface.BUTTON_POSITIVE)
+            if(positive != null) {
+                positive.isAllCaps = false
+            }
+        }
 
     }
 
