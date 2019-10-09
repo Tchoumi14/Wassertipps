@@ -1,9 +1,11 @@
 package com.zeitform.wasserapp
 
 import android.Manifest
+import android.content.DialogInterface
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -16,6 +18,8 @@ import androidx.appcompat.widget.Toolbar
 import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import com.android.billingclient.api.*
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
@@ -425,6 +429,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         if(jsonArray!!.length()==0){
             println("Außerhalb Deutschland")
             //show location popup
+            sharedViewModel?.isOutsideDeutschland?.postValue(true) //triggers popup in HomeFragment
         } else {
             Log.d("Response ",jsonArray!!.optJSONObject(0).toString())
             val city =jsonArray!!.optJSONObject(0).optString("city")
@@ -473,6 +478,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             } else {
                 Log.d("Data fetch failed -2", "Check internet connection or the server status."+responseText)
                 //show internet popup
+                sharedViewModel?.isInternetUnavailable?.postValue(true) //triggers popup in HomeFragment
             }
         }
     }
@@ -486,5 +492,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             //startGame()
         }
     }
+
+
 }
 

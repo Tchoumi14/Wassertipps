@@ -11,6 +11,10 @@ class SharedViewModel: ViewModel() {
     val serverData = MutableLiveData<JSONObject>()
     val completeData = MutableLiveData<JSONArray>()
     val isReduced = MutableLiveData<Boolean>()
+
+    val isInternetUnavailable = MutableLiveData<Boolean>()
+    val isOutsideDeutschland = MutableLiveData<Boolean>()
+
     //tippsFragment
     val tippsTitle = MutableLiveData<Spanned>()
     val tippsContent = MutableLiveData<Spanned>()

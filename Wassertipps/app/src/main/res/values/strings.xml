@@ -8,6 +8,22 @@
     <string name="title_tipps_haerte">Tipps für Ihre Wasserhärte</string>
     <string name="title_tipps_nitrat">Tipps zu Ihrem Nitratwert</string>
 
+    <!--Geolocation popup text-->
+    <string name="geolocation_title">Geolocation</string>
+    <string name="geolocation_content"><![CDATA[<h4>Es tut uns leid!</h4>
+          <p>
+              Diese App benötigt zwingend eine Geo-Position in Deutschland, Österreich oder der Schweiz. Außerhalb dieser Länder funktioniert die App nur eingeschränkt. <br>Sie können die allgemeinen Informationen über das Wasser abrufen und auch den Wasserbedarfsrechner verwenden, wenn Sie ihn frei geschaltet haben.
+          </p>
+          <br>
+          <h4>We are sorry!</h4>
+          <p>
+            This app requires a Geo-Position in Germany, Austria or Switzerland. Outside these countries the app works only limited. <br>You can access the general information about the water and also use the water demand calculator, if you have activated it.
+          </p>]]></string>
+
+    <!--No internet access warning popup text-->
+    <string name="no_internet_title">Internet</string>
+    <string name="no_internet_content">Die App benötigt eine Internet Verbindung, um Ihnen die aktuellen Wasserwerte anzeigen zu können.</string>
+
     <!--Intro page-->
     <string name="btn_standort">Strandort Freigeben</string>
     <string name="btn_weiter">Weiter</string>

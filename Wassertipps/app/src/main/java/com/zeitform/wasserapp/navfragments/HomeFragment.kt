@@ -18,6 +18,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.text.HtmlCompat
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingFlowParams
 import com.android.billingclient.api.Purchase
@@ -151,6 +152,25 @@ class HomeFragment : Fragment() {
         sharedViewModel.completeData.observe(this, Observer {
             it?.let {
                 jsonResult = it
+            }
+        })
+        sharedViewModel.isInternetUnavailable.observe(this, Observer {
+            it?.let {
+                if(it){
+                    val title = resources.getString(R.string.no_internet_title)
+
+                    val content = resources.getString(R.string.no_internet_content)
+                    createAlert(title, content)
+                }
+            }
+        })
+        sharedViewModel.isOutsideDeutschland.observe(this, Observer {
+            it?.let {
+                if(it){
+                    val title = resources.getString(R.string.geolocation_title)
+                    val content = HtmlCompat.fromHtml(resources.getString(R.string.geolocation_content), HtmlCompat.FROM_HTML_MODE_COMPACT).toString()
+                    createAlert(title, content)
+                }
             }
         })
     }
@@ -546,5 +566,28 @@ class HomeFragment : Fragment() {
         }
         dataTable.invalidate()
         dataTable.refreshDrawableState()
+    }
+    private fun createAlert(title: String, content: String){
+        val alertDialog: AlertDialog? = activity?.let {
+            val builder = AlertDialog.Builder(it)
+            builder.apply {
+                builder.setTitle(title)
+                builder.setMessage(content)
+
+                setPositiveButton(
+                    "Ok"
+                ) { _, _ ->
+                    //close
+                }
+            }
+            // Create the AlertDialog
+
+            builder.create()
+        }
+        alertDialog?.show()
+        var positive = alertDialog?.getButton(DialogInterface.BUTTON_POSITIVE)
+        if(positive != null) {
+            positive.isAllCaps = false
+        }
     }
 }
