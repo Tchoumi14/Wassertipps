@@ -112,6 +112,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         return billingManager
     }
     override fun updateRechnerStatus(isVisible: Boolean) {
+        println("At update rechner")
         val f = fm.findFragmentByTag("4") as RechnerFragment
         f.updateVisibility(isVisible)
         updateRechnerNavIcon(isVisible) //update rechner bottomnav icon
@@ -409,6 +410,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         }
     }
     private fun updateRechnerNavIcon(value: Boolean){
+        println("At update rechner navicon")
         var item = navView.menu.findItem(R.id.navigation_wasserbedarf)
         if(value){
             item.icon = ContextCompat.getDrawable(this,R.drawable.icon_trinken_color)
