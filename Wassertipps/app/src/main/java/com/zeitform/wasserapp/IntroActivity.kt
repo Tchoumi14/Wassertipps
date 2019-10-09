@@ -220,7 +220,12 @@ class IntroActivity : AppCompatActivity() {
             if(position == 4){
                 view = layoutInflater!!.inflate(layouts!![position], container, false)
                 datenschutzBtn = view.findViewById(R.id.datenschutz_Text)
-                datenschutzBtn.setOnClickListener {  }
+                datenschutzBtn.setOnClickListener {
+                    var kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
+                    val title = "Datenschutzerkärung"
+                    val content = HtmlCompat.fromHtml(kontaktContentArray[2], HtmlCompat.FROM_HTML_MODE_COMPACT)
+                    createAlert(title, content)
+                }
                 nutzungsbedingungBtn = view.findViewById(R.id.nutzungsbedingung_text)
                 nutzungsbedingungBtn.setOnClickListener {
                     var kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
@@ -261,11 +266,15 @@ class IntroActivity : AppCompatActivity() {
                 builder.apply {
                     builder.setTitle(title)
                     builder.setMessage(content)
-
                     setPositiveButton(
-                        "Ok"
+                        "Zustimmen"
                     ) { _, _ ->
                         //close
+                    }
+                    setNegativeButton("Abbrechen")
+                    { _, _ ->
+                        //close
+
                     }
                 }
                 // Create the AlertDialog
@@ -273,9 +282,20 @@ class IntroActivity : AppCompatActivity() {
                 builder.create()
             }
             alertDialog?.show()
+            var msg = alertDialog?.findViewById<TextView>(android.R.id.message)
+            msg?.textSize = 12f
             var positive = alertDialog?.getButton(DialogInterface.BUTTON_POSITIVE)
             if(positive != null) {
+                positive.background = ContextCompat.getDrawable(this@IntroActivity, R.drawable.purchase_button_selector)
+                positive.setTextColor(Color.WHITE)
                 positive.isAllCaps = false
+                var scale = resources.displayMetrics.density
+                var padding16dp = (16 * scale + 0.5f).toInt()
+                positive.setPadding(padding16dp,0,padding16dp,0)
+            }
+            var negative = alertDialog?.getButton(DialogInterface.BUTTON_NEGATIVE)
+            if(negative != null) {
+                negative.isAllCaps = false
             }
         }
 
