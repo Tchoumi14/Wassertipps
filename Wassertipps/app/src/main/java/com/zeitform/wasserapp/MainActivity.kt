@@ -97,7 +97,6 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
 
 
     override fun onFragmentInteraction(uri: Uri) {
-        // TODO Implement
         System.out.println(uri.toString())
     }
     override fun setBillingManager(billingManager: BillingManager) {
@@ -421,13 +420,17 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     }
 
     private fun parseJson(jsonResponse: String){
+
         jsonArray = JSONArray(jsonResponse) //has all the response
-        Log.d("Response ",jsonArray!!.optJSONObject(0).toString())
-        val city =jsonArray!!.optJSONObject(0).optString("city")
-        val max = jsonArray!!.optJSONObject(0).optString("max")
-        val nmax = jsonArray!!.optJSONObject(0).optString("nmax")
-        val desc = jsonArray!!.optJSONObject(0).optString("desc")
-        if(jsonArray!!.length()!=0){
+        if(jsonArray!!.length()==0){
+            println("Außerhalb Deutschland")
+        } else {
+            Log.d("Response ",jsonArray!!.optJSONObject(0).toString())
+            val city =jsonArray!!.optJSONObject(0).optString("city")
+            val max = jsonArray!!.optJSONObject(0).optString("max")
+            val nmax = jsonArray!!.optJSONObject(0).optString("nmax")
+            val desc = jsonArray!!.optJSONObject(0).optString("desc")
+
             sharedViewModel?.completeData?.postValue(jsonArray) //saves the complete result
             if(savedCity!= null && savedCity == city && savedMax == max && savedNmax == nmax && savedDesc == desc){
                 sharedViewModel?.serverData?.postValue(savedResponse) //use saved data
@@ -449,9 +452,8 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 Log.d("Max!= 0","Water hardness available!")
                 //show data
             }
-        } else {
-            //Show location popup
         }
+
     }
     fun createToast(text: String) {
         Toast.makeText(this@MainActivity, text, Toast.LENGTH_SHORT).show()
@@ -461,15 +463,16 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             var responseText = ""
             try {
                 responseText = URL("https://wassertipps.de/cgi-bin/server.pl?json_data={\"lon\":" + longitude + ",\"lat\":" + latitude + '}').readText()
-            } catch (e: AccessDeniedException){
+            } catch (e: Exception){
                 Log.d("Data fetch failed", "Check internet connection or the server status.")
             }
             if(responseText!=""){
-                Log.d("Result:", responseText)
+                Log.d("-Result:", responseText)
                 parseJson(responseText)
             } else {
-                Log.d("Data fetch failed -2", "Check internet connection or the server status.")
+                Log.d("Data fetch failed -2", "Check internet connection or the server status."+responseText)
             }
+            Log.d("Result global:", responseText)
         }
     }
 
@@ -478,7 +481,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         if (mInterstitialAd.isLoaded) {
             mInterstitialAd.show()
         } else {
-            Toast.makeText(this, "Ad wasn't loaded.", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Ad wasn't loaded.", Toast.LENGTH_SHORT).show()
             //startGame()
         }
     }

@@ -289,6 +289,11 @@ class RechnerFragment : Fragment() {
         timeInNumber = (hour * 60) + min
         return timeInNumber
     }
+
+    /**
+     * @param hourInput hour value from the text label
+     * @param minInput min value from the text label
+     */
     private fun openAufwachenTimePicker(hourInput: Int, minInput: Int){
         val timePickerListener = TimePickerDialog.OnTimeSetListener{ view, h, m ->
             Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
@@ -453,7 +458,7 @@ class RechnerFragment : Fragment() {
             rechnerDataManager!!.erinnerungen = value.toInt()
         }
         Log.d("ConsumptionTimes", consumptionTimes.toString())
-        updateAlarms()
+        //updateAlarms()
     }
     /**
      * Updates alarms if switch is already turned on
