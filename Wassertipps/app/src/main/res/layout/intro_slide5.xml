@@ -2,19 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingStart="@dimen/intro_text_padding"
-                android:paddingEnd="@dimen/intro_text_padding"
-                android:paddingTop="@dimen/intro_text_padding">
+                android:paddingStart="@dimen/intro_side_padding"
+                android:paddingEnd="@dimen/intro_side_padding"
+                android:paddingTop="@dimen/intro_top_padding">
     <ScrollView android:layout_width="wrap_content"
                 android:layout_height="500dp"
                 android:layout_alignParentTop="true"
-                android:padding="@dimen/activity_vertical_margin"
+                android:padding="@dimen/basic_text_padding"
                 android:background="@drawable/text_layout_bg">
 
         <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="@dimen/intro_text_padding"
+                android:paddingBottom="@dimen/intro_top_padding"
                 android:layout_alignParentTop="true">
             <TextView
                     android:layout_width="wrap_content"
@@ -33,6 +33,7 @@
                     android:id="@+id/intro5_text1"
                     android:layout_below="@id/intro5_title"
                     android:textAlignment="textStart"
+                    android:textSize="@dimen/intro_general_font_size"
                     android:paddingBottom="@dimen/activity_vertical_margin"/>
             <TextView
                     android:text="@string/intro5_text2"
@@ -41,6 +42,7 @@
                     android:id="@+id/intro5_text2"
                     android:layout_below="@id/intro5_text1"
                     android:textAlignment="textStart"
+                    android:textSize="@dimen/intro_general_font_size"
                     android:paddingBottom="@dimen/activity_vertical_margin"/>
             <TextView
                     android:text="@string/intro5_text3"
@@ -48,6 +50,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/intro5_text3"
                     android:layout_below="@id/intro5_text2"
+                    android:textSize="@dimen/intro_general_font_size"
                     android:textAlignment="textStart"
                     android:paddingBottom="@dimen/activity_vertical_margin"/>
 
@@ -57,6 +60,7 @@
                         android:layout_below="@id/intro5_text3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textSize="@dimen/intro_general_font_size"
                         android:paddingBottom="@dimen/activity_vertical_margin"/>
             <LinearLayout android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
@@ -67,6 +71,7 @@
                           android:layout_height="wrap_content"
                           android:textColor="?attr/colorAppPrimary"
                           android:text="@string/intro5_text4btn1"
+                          android:textSize="@dimen/intro_general_font_size"
                           android:id="@+id/datenschutz_Text"/>
                 <TextView
                         android:text="@string/intro5_text5"
@@ -75,10 +80,12 @@
                         android:textAlignment="textStart"
                         android:paddingStart="3sp"
                         android:paddingEnd="2sp"
+                        android:textSize="@dimen/intro_general_font_size"
                         android:paddingBottom="@dimen/activity_vertical_margin"/>
                 <TextView android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
                           android:textColor="?attr/colorAppPrimary"
+                          android:textSize="@dimen/intro_general_font_size"
                           android:text="@string/intro5_text4btn2"
                           android:id="@+id/nutzungsbedingung_text"/>
 
