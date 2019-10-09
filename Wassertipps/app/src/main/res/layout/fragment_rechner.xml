@@ -45,9 +45,10 @@
             android:textColor="?attr/appBackgroundColor"
             android:paddingStart="@dimen/basic_text_padding"
             android:paddingEnd="@dimen/basic_text_padding"
+            android:textAllCaps="false"
             android:layout_below="@id/rechner_locked_text"
             android:id="@+id/purchase_button"
-            android:text="Pro kaufen"/>
+            android:text="Pro version kaufen"/>
 </RelativeLayout>
 
 </FrameLayout>

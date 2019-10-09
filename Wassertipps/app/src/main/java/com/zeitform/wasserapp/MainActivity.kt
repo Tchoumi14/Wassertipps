@@ -43,7 +43,7 @@ import java.util.concurrent.Executors
 private const val PERMISSION_REQUEST = 10
 const val AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
 
-class MainActivity : AppCompatActivity(), PurchasesUpdatedListener, HomeFragment.OnFragmentInteractionListener,
+class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionListener,
     WasserinfoFragment.OnFragmentInteractionListener,
     FaqFragment.OnFragmentInteractionListener,
     RechnerFragment.OnFragmentInteractionListener, KontaktFragment.OnFragmentInteractionListener, TippsHaerteFragment.OnFragmentInteractionListener,
@@ -76,6 +76,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     private var near: Int? = 0
     private var zip: String? = null
     private var permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
+    private lateinit var navView: BottomNavigationView
     private lateinit var textMessage: TextView
     private lateinit var toolbar: Toolbar
     private lateinit var toolbarText: TextView
@@ -113,6 +114,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     override fun updateRechnerStatus(isVisible: Boolean) {
         val f = fm.findFragmentByTag("4") as RechnerFragment
         f.updateVisibility(isVisible)
+        updateRechnerNavIcon(isVisible) //update rechner bottomnav icon
     }
     override fun openTippsHaerte() {
         if(sharedViewModel?.serverData?.value==null){
@@ -321,14 +323,12 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             adUnitId = AD_UNIT_ID
             adListener = (object : AdListener() {
                 override fun onAdLoaded() {
-                    Toast.makeText(this@MainActivity, "onAdLoaded()", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this@MainActivity, "onAdLoaded()", Toast.LENGTH_SHORT).show()
                     showInterstitial()
                 }
 
                 override fun onAdFailedToLoad(errorCode: Int) {
-                    Toast.makeText(this@MainActivity,
-                        "onAdFailedToLoad() with error code: $errorCode",
-                        Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this@MainActivity, "onAdFailedToLoad() with error code: $errorCode",Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onAdClosed() {
@@ -337,7 +337,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             })
         }
         mInterstitialAd.loadAd(AdRequest.Builder().build())
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        navView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
 
         dataManager = DataManager(this)
@@ -394,7 +394,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         })
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkPermission(permissions)) {
-                Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show()
                 //getLocation()
                 val locData = LocationCheck(this.applicationContext).checkLocation()
                 val lat = locData.getLocation().latitude
@@ -405,14 +405,16 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 requestPermissions(permissions, PERMISSION_REQUEST)
             }
         } else {
-            Toast.makeText(this, "Android < 6", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Android < 6", Toast.LENGTH_SHORT).show()
         }
-
     }
-
-
-    override fun onPurchasesUpdated(billingResult: BillingResult?, purchases: MutableList<Purchase>?) {
-        println("Purchase updated!")
+    private fun updateRechnerNavIcon(value: Boolean){
+        var item = navView.menu.findItem(R.id.navigation_wasserbedarf)
+        if(value){
+            item.icon = ContextCompat.getDrawable(this,R.drawable.icon_trinken_color)
+        } else {
+            item.icon = ContextCompat.getDrawable(this,R.drawable.icon_trinken_grey)
+        }
     }
     private fun checkPermission(permissionArray: Array<String>): Boolean {
         var allSuccess = true

@@ -118,13 +118,6 @@ class RechnerFragment : Fragment() {
         wasserProTagField.filters = arrayOf<InputFilter>(InputFilterMinMax(800, 10000))
 
         purchaseButton = rootView.findViewById(R.id.purchase_button)
-        if(billingManager.productList.size!=0){
-            for(product in billingManager.productList){
-                if(product.sku == BillingConstants.SKU_PRO){
-                    purchaseButton.text = context?.getString(R.string.purchase_button,product.price)
-                }
-            }
-        }
 
         purchaseButton.setOnClickListener { initiatePurchaseFlow() }
 
