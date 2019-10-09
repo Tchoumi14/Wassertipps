@@ -424,6 +424,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         jsonArray = JSONArray(jsonResponse) //has all the response
         if(jsonArray!!.length()==0){
             println("Außerhalb Deutschland")
+            //show location popup
         } else {
             Log.d("Response ",jsonArray!!.optJSONObject(0).toString())
             val city =jsonArray!!.optJSONObject(0).optString("city")
@@ -471,8 +472,8 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 parseJson(responseText)
             } else {
                 Log.d("Data fetch failed -2", "Check internet connection or the server status."+responseText)
+                //show internet popup
             }
-            Log.d("Result global:", responseText)
         }
     }
 
