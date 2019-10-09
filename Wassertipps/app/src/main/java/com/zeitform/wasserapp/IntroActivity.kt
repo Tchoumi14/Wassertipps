@@ -270,6 +270,7 @@ class IntroActivity : AppCompatActivity() {
                         "Zustimmen"
                     ) { _, _ ->
                         //close
+                        launchHomeScreen()
                     }
                     setNegativeButton("Abbrechen")
                     { _, _ ->
