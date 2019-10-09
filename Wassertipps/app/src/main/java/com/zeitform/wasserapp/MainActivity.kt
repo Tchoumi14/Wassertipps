@@ -18,6 +18,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.android.billingclient.api.*
 import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.zeitform.wasserapp.billing.BillingConstants
@@ -332,7 +333,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 }
             })
         }
-
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
 
