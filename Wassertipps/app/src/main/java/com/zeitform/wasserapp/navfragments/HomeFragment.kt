@@ -7,6 +7,7 @@ import android.content.DialogInterface
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.text.Spanned
 import androidx.fragment.app.Fragment
 import androidx.core.content.ContextCompat
 import androidx.appcompat.app.AlertDialog
@@ -168,7 +169,7 @@ class HomeFragment : Fragment() {
             it?.let {
                 if(it){
                     val title = resources.getString(R.string.geolocation_title)
-                    val content = HtmlCompat.fromHtml(resources.getString(R.string.geolocation_content), HtmlCompat.FROM_HTML_MODE_COMPACT).toString()
+                    val content = HtmlCompat.fromHtml(resources.getString(R.string.geolocation_content), HtmlCompat.FROM_HTML_MODE_COMPACT)
                     createAlert(title, content)
                 }
             }
@@ -568,6 +569,29 @@ class HomeFragment : Fragment() {
         dataTable.refreshDrawableState()
     }
     private fun createAlert(title: String, content: String){
+        val alertDialog: AlertDialog? = activity?.let {
+            val builder = AlertDialog.Builder(it)
+            builder.apply {
+                builder.setTitle(title)
+                builder.setMessage(content)
+
+                setPositiveButton(
+                    "Ok"
+                ) { _, _ ->
+                    //close
+                }
+            }
+            // Create the AlertDialog
+
+            builder.create()
+        }
+        alertDialog?.show()
+        var positive = alertDialog?.getButton(DialogInterface.BUTTON_POSITIVE)
+        if(positive != null) {
+            positive.isAllCaps = false
+        }
+    }
+    private fun createAlert(title: String, content: Spanned){
         val alertDialog: AlertDialog? = activity?.let {
             val builder = AlertDialog.Builder(it)
             builder.apply {
