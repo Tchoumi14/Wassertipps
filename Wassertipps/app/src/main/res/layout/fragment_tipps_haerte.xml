@@ -3,13 +3,13 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="24dp"
-                android:paddingBottom="24dp"
                 android:background="?attr/appBackgroundColor"
                 tools:context=".internalfragments.TippsHaerteFragment">
 
     <GridView android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:layout_marginTop="@dimen/basic_text_padding"
+              android:layout_marginBottom="@dimen/basic_text_padding"
               android:gravity="center"
               android:columnWidth="160dp"
               android:numColumns="2"

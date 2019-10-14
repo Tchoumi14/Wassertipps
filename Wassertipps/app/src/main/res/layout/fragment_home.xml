@@ -42,7 +42,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true">
+                        android:layout_alignParentBottom="true"
+                        android:id="@+id/haerte_row">
                     <FrameLayout android:layout_width="wrap_content" android:layout_height="match_parent">
                         <TextView
                                 android:layout_width="60dp"
@@ -71,6 +72,12 @@
                             android:gravity="center"
                             android:background="?attr/colorDarkTint"/>
                 </LinearLayout>
+                <Button android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/consume_btn"
+                        android:layout_alignParentEnd="true"
+                        android:layout_above="@id/haerte_row"
+                        android:text="In-app consume (zum testen)"/>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
         <Button

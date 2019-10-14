@@ -8,6 +8,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/box_item_card"
+            android:padding="5dp"
+            android:background="@drawable/rounded_shape_box"
             app:cardCornerRadius="8dp">
         <ImageView
                 android:id="@+id/box_image"

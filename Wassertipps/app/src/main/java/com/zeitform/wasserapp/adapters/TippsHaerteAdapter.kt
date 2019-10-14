@@ -2,6 +2,7 @@ package com.zeitform.wasserapp.adapters
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.os.Handler
 import androidx.core.content.ContextCompat
 import androidx.cardview.widget.CardView
@@ -51,7 +52,10 @@ class TippsHaerteAdapter (private val context: Context, private val listener: Ti
         val boxText = rowView.findViewById<TextView>(R.id.box_text)
         boxText.text = getItem(position)
         val boxImage = rowView.findViewById<ImageView>(R.id.box_image)
-        boxCard.setBackgroundColor(Color.parseColor(getColor(position)))
+        //boxCard.setBackgroundColor(Color.parseColor(getColor(position)))
+        boxCard.setBackgroundResource(R.drawable.rounded_shape_box)
+        val drawable = boxCard.background as GradientDrawable
+        drawable.setColor(Color.parseColor(getColor(position)))
         boxImage.setImageResource(getImage(position))
         return rowView
     }

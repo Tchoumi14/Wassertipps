@@ -99,6 +99,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     private lateinit var prevFragment: Fragment
     private val fm: FragmentManager = supportFragmentManager
     var active = fragment1
+    private val mHandler: Handler = Handler()
 
 
     override fun onFragmentInteraction(uri: Uri) {
@@ -245,6 +246,8 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         fm.beginTransaction().hide(active).show(fragmentKontaktSub).commit()
         active=fragmentKontaktSub
     }
+    private val mRunnable = Runnable { doubleBackToExitPressedOnce = false }
+
     override fun onBackPressed() {
         Log.d("Back", "On back pressed!")
         if(active==fragmentHaerte || active == fragmentNitrat){
@@ -269,7 +272,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             this.doubleBackToExitPressedOnce = true
             Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
 
-            Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
+            Handler().postDelayed(Runnable { mRunnable }, 2000)
         }
 
     }
@@ -419,6 +422,16 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             }
         } else {
             //Toast.makeText(this, "Android < 6", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    /**
+     * remove runnable from handler
+     */
+    override fun onDestroy(){
+        super.onDestroy()
+        if(mHandler!=null){
+            mHandler.removeCallbacks(mRunnable)
         }
     }
     private fun updateRechnerNavIcon(value: Boolean){
