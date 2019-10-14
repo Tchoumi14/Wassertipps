@@ -111,6 +111,7 @@ class HomeFragment : Fragment() {
 
         // TEST
         consumeBtn = rootView.findViewById(R.id.consume_btn)
+        consumeBtn.visibility = View.INVISIBLE
         consumeBtn.setOnClickListener {
             billingManager.consumeAsync(billingManager.mPurchases?.get(0)!!.purchaseToken)
         }
