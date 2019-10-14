@@ -156,7 +156,7 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
             if (purchases != null) {
                 for (purchase in purchases) {
                     handlePurchase(purchase)
-                    consumeAsync(purchase.purchaseToken)
+                    //consumeAsync(purchase.purchaseToken)
                 }
             }
             //mBillingUpdatesListener.onPurchasesUpdated(mPurchases)
@@ -242,7 +242,7 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
         }
 
     }
-    private fun consumeAsync(purchaseToken: String){
+    fun consumeAsync(purchaseToken: String){
         // Generating Consume Response listener
         val onConsumeListener = object : ConsumeResponseListener {
             override fun onConsumeResponse(billingResult: BillingResult?, purchaseToken: String?) {
