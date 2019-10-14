@@ -5,34 +5,39 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
-    <uses-permission android:name="android.permission.VIBRATE" />
     <application
-            android:allowBackup="true"
+            android:allowBackup="false"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity
-                android:name=".IntroActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".IntroActivity"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTop">
+        </activity>
         <activity
                 android:name=".MainActivity"
                 android:label="@string/app_name"
                 android:launchMode="singleTop">
         </activity>
-        <receiver android:name=".notif.NotifReceiver" />
-        <receiver android:name=".notif.BootReceiver" >
+
+        <receiver android:name=".notif.NotifReceiver"/>
+        <receiver android:name=".notif.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
+
         <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
                 android:value="ca-app-pub-2652102329017603~7046217590"/>

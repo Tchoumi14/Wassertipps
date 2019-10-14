@@ -2,6 +2,7 @@ package com.zeitform.wasserapp.adapters
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,7 +39,7 @@ class KontaktAdapter (private val context: Context, private val listener: Kontak
         val rowView = inflater.inflate(R.layout.list_item, parent, false)
         val item = getItem(position)
         val listContainer = rowView.findViewById<LinearLayout>(R.id.list_item)
-        listContainer.setOnClickListener { listener!!.generateKontaktSubPage(item) }
+        listContainer.setOnClickListener { Handler().postDelayed(Runnable { listener!!.generateKontaktSubPage(item) }, 2000) }
         val leftIcon = rowView.findViewById<ImageView>(R.id.list_item_icon)
         leftIcon.setImageDrawable(getIcon())
         val listText = rowView.findViewById<TextView>(R.id.list_item_text)

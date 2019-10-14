@@ -460,6 +460,12 @@ class RechnerFragment : Fragment() {
         }
         Log.d("ConsumptionTimes", consumptionTimes.toString())
         //updateAlarms()
+        //to set the text, if the switch is active
+        val duration = einschlafenTimeInt - aufwachenTimeInt
+        val times = Integer.parseInt(erinnerungenField.text.toString().trim())
+        val interval = Math.round((duration/times).toDouble()).toInt()
+        var waterMl = Integer.parseInt(wasserProTagField.text.toString().trim())/times
+        setMitteilungActiveText(waterMl,interval)
     }
     /**
      * Updates alarms if switch is already turned on
@@ -507,12 +513,13 @@ class RechnerFragment : Fragment() {
     }
 
     private fun setMitteilungActiveText(waterMl: Int, interval: Int){
-
-        var handler = Handler()
-        handler.postAtTime({
-            mitteilungActiveTextBox.visibility = View.VISIBLE
-            mitteilungActiveText.text = resources.getString(R.string.mitteilungen_active_text, waterMl, interval)
-        },1000)
+        if( mitteilungenSwitch.isChecked){
+            var handler = Handler()
+            handler.postAtTime({
+                mitteilungActiveTextBox.visibility = View.VISIBLE
+                mitteilungActiveText.text = resources.getString(R.string.mitteilungen_active_text, waterMl, interval)
+            },1000)
+        }
     }
 
     private fun disableMitteilungActiveText(){

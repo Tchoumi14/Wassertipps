@@ -9,6 +9,7 @@ import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -49,8 +50,7 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionList
     RechnerFragment.OnFragmentInteractionListener, KontaktFragment.OnFragmentInteractionListener, TippsHaerteFragment.OnFragmentInteractionListener,
 TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, KontaktSubFragment.OnFragmentInteractionListener{
 
-
-
+    private var doubleBackToExitPressedOnce = false
     private lateinit var mInterstitialAd: InterstitialAd
     var hart: Int = 1
     var nitrat: Int = 1
@@ -262,7 +262,14 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             }
         }else
         {
-            super.onBackPressed()
+            if (doubleBackToExitPressedOnce){
+                super.onBackPressed()
+            }
+
+            this.doubleBackToExitPressedOnce = true
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
+
+            Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
         }
 
     }
@@ -316,6 +323,11 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+            this.window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
+        }
+
         // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this) {}
 
@@ -411,11 +423,12 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     }
     private fun updateRechnerNavIcon(value: Boolean){
         println("At update rechner navicon")
-        var item = navView.menu.findItem(R.id.navigation_wasserbedarf)
+        val item = navView.menu.findItem(R.id.navigation_wasserbedarf)
         if(value){
             item.icon = ContextCompat.getDrawable(this,R.drawable.icon_trinken_color)
         } else {
             item.icon = ContextCompat.getDrawable(this,R.drawable.icon_trinken_grey)
+            item.icon.alpha = 5
         }
     }
     private fun checkPermission(permissionArray: Array<String>): Boolean {
@@ -489,7 +502,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
 
     // Show the ad if it's ready. Otherwise toast and restart the game.
     private fun showInterstitial() {
-        if (mInterstitialAd.isLoaded) {
+        if (mInterstitialAd.isLoaded && !billingManager.isProPurchased) {
             mInterstitialAd.show()
         } else {
             //Toast.makeText(this, "Ad wasn't loaded.", Toast.LENGTH_SHORT).show()

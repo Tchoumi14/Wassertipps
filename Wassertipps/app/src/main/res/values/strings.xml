@@ -22,7 +22,9 @@
 
     <!--No internet access warning popup text-->
     <string name="no_internet_title">Internet</string>
-    <string name="no_internet_content">Die App benötigt eine Internet Verbindung, um Ihnen die aktuellen Wasserwerte anzeigen zu können.</string>
+    <string name="no_internet_content">Die App benötigt eine Internet Verbindung, um Ihnen die aktuellen Wasserwerte
+        anzeigen zu können.
+    </string>
 
     <!--Intro page-->
     <string name="btn_standort">Strandort Freigeben</string>
@@ -45,8 +47,8 @@
         Diese App ersetzt keinesfalls die fachliche Beratung durch einen Arzt oder Apotheker und darf nicht als
         Grundlage zur eigenständigen Diagnose bei medizinischen Problemen verwendet werden.
     </string>
-    <string name="intro5_text4">Bitte lesen Sie dazu auch unsere </string>
-    <string name="intro5_text5">und die </string>
+    <string name="intro5_text4">Bitte lesen Sie dazu auch unsere</string>
+    <string name="intro5_text5">und die</string>
     <string name="intro5_text4btn1">Datenschutzerklärung</string>
     <string name="intro5_text4btn2">Nutzungsbedingungen</string>
     <string name="intro5_btnText">Ich habe verstanden und stimme zu</string>
@@ -184,11 +186,13 @@
 
     <!--Wasserbedarfrechner gesperrt-->
     <string name="purchase_locked_title">Nicht verfügbar!</string>
-    <string name="purchase_locked_text">Möchten Sie die Pro Version erwerben, um Wasserbedarf rechner zu aktivieren?</string>
+    <string name="purchase_locked_text">Möchten Sie die Pro Version erwerben, um Wasserbedarf rechner zu aktivieren?
+    </string>
 
     <!--Notification texts-->
     <string name="group_notification_for">This is the %s notification group.</string>
     <string name="notification_title">Erinnerung</string>
     <string name="notification_group">wasserbedarf</string>
     <string name="notification_trink_wasser_text">Trink %sml wasser!</string>
+    <string name="title_activity_splash">SplashActivity</string>
 </resources>

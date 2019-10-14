@@ -116,7 +116,7 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
             val purchasesResult = billingClient.queryPurchases(SkuType.INAPP)
             Log.i(TAG, "Querying purchases elapsed time: " + (System.currentTimeMillis() - time) + "ms")
            if (purchasesResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                Log.i(TAG, "purchase code OK")
+                Log.i(TAG, "purchase code OK"+BillingClient.BillingResponseCode.OK)
             } else {
                 Log.w(TAG, "queryPurchases() got an error response code: " + purchasesResult.getResponseCode())
             }
@@ -141,9 +141,13 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
         Log.d(TAG, "Query inventory was successful.")
 
         // Update the UI and purchases inventory with new list of purchases
-
         onPurchasesUpdated(result.billingResult, result.purchasesList)
     }
+
+    /**
+     * Update purchase
+     *
+     */
     override fun onPurchasesUpdated(billingResult: BillingResult?, purchases: MutableList<Purchase>?) {
         println("onPurchase")
         println("Billing result :"+billingResult)
@@ -173,6 +177,9 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
      * @param purchase Purchase to be handled
      */
     private fun handlePurchase(purchase: Purchase) {
+        val acknowledgePurchaseResponseListener = AcknowledgePurchaseResponseListener {
+                billingResult -> println("Purchase acknowledgement : $billingResult")
+        }
         if (!verifyValidSignature(purchase.originalJson, purchase.signature)) {
             Log.i(TAG, "Got a purchase: $purchase; but signature is bad. Skipping...")
             return
@@ -181,12 +188,23 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
         Log.d(TAG, "Got a verified purchase: $purchase")
         mPurchases?.clear()
         mPurchases?.add(purchase)
+        println("Purchases :"+purchase.originalJson)
         if(purchase.sku==BillingConstants.SKU_PRO){
             setIsProPurchased(true)
         } else {
             setIsProPurchased(false)
         }
+        // Acknowledge the purchase if it hasn't already been acknowledged.
+        if (!purchase.isAcknowledged) {
+            val acknowledgePurchaseParams = AcknowledgePurchaseParams.newBuilder()
+                .setPurchaseToken(purchase.purchaseToken)
+                .build()
+            billingClient.acknowledgePurchase(acknowledgePurchaseParams, acknowledgePurchaseResponseListener)
+        }
+
     }
+
+
     /**
      * Runs the thread
      */
