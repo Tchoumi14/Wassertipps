@@ -39,7 +39,7 @@ class KontaktAdapter (private val context: Context, private val listener: Kontak
         val rowView = inflater.inflate(R.layout.list_item, parent, false)
         val item = getItem(position)
         val listContainer = rowView.findViewById<LinearLayout>(R.id.list_item)
-        listContainer.setOnClickListener { Handler().postDelayed(Runnable { listener!!.generateKontaktSubPage(item) }, 2000) }
+        listContainer.setOnClickListener { Handler().postDelayed(Runnable { listener!!.generateKontaktSubPage(item) }, 500) }
         val leftIcon = rowView.findViewById<ImageView>(R.id.list_item_icon)
         leftIcon.setImageDrawable(getIcon())
         val listText = rowView.findViewById<TextView>(R.id.list_item_text)
