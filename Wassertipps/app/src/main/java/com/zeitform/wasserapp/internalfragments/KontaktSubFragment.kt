@@ -64,7 +64,7 @@ class KontaktSubFragment : Fragment() {
         //sharedViewModel.serverData.removeObservers(this)
         sharedViewModel.kontaktSubContent.observe(this, Observer {
             it?.let {
-                Log.d("Text DATA", it.toString())
+                //Log.d("Text DATA", it.toString())
                 textContent.text = it
             }
         })
