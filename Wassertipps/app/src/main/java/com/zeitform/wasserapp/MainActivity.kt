@@ -5,6 +5,8 @@ import android.content.DialogInterface
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import android.content.pm.PackageManager
+import android.content.res.ColorStateList
+import android.content.res.Resources
 import android.graphics.Color
 import android.net.Uri
 import android.os.Build
@@ -36,6 +38,7 @@ import com.zeitform.wasserapp.viewmodel.SharedViewModel
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import org.xmlpull.v1.XmlPullParser
 import java.net.URL
 import java.util.concurrent.Executors
 
@@ -106,14 +109,14 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         System.out.println(uri.toString())
     }
     override fun setBillingManager(billingManager: BillingManager) {
-        println("Billing manager set at main")
+        //println("Billing manager set at main")
         this.billingManager = billingManager
     }
     override fun getBillingManager(): BillingManager {
         return billingManager
     }
     override fun updateRechnerStatus(isVisible: Boolean) {
-        println("At update rechner")
+        //println("At update rechner")
         val f = fm.findFragmentByTag("4") as RechnerFragment
         f.updateVisibility(isVisible)
         updateRechnerNavIcon(isVisible) //update rechner bottomnav icon
@@ -137,39 +140,22 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         }
     }
     override fun generateHaerteTipps(button: String) {
-        Log.d("Tipps", "Härte"+listHaerteItem.indexOf(button)+" - "+hart)
         var index = listHaerteItem.indexOf(button)
-        var hartArrayTitle:Array<String>
         var hartArrayContent:Array<String>
         when(hart){
             1 -> {
-                hartArrayTitle= resources.getStringArray(R.array.hart_1_title)
                 hartArrayContent= resources.getStringArray(R.array.hart_1_content)
 
-                Log.d("Hart1","Hart1")
-                Log.d("title",hartArrayTitle[index])
-                Log.d("text",hartArrayContent[index])
-                //toolbarText.text = hartArrayTitle[index]
                 sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
             2 -> {
-                hartArrayTitle= resources.getStringArray(R.array.hart_2_title)
                 hartArrayContent= resources.getStringArray(R.array.hart_2_content)
 
-                Log.d("Hart2","Hart2")
-                Log.d("title",hartArrayTitle[index])
-                Log.d("text",hartArrayContent[index])
-                //toolbarText.text = hartArrayTitle[index]
                 sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
             3 -> {
-                hartArrayTitle= resources.getStringArray(R.array.hart_3_title)
                 hartArrayContent= resources.getStringArray(R.array.hart_3_content)
 
-                Log.d("Hart3","Hart3")
-                Log.d("title",hartArrayTitle[index])
-                Log.d("text",hartArrayContent[index])
-                //toolbarText.text = hartArrayTitle[index]
                 sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
         }
@@ -181,39 +167,22 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         //generate tipps page
     }
     override fun generateNitratTipps(button: String) {
-        Log.d("Tipps", "Nitrat"+listNitratItem.indexOf(button)+" - "+nitrat)
-        var index = listNitratItem.indexOf(button)
-        var nitratArrayTitle:Array<String>
-        var nitratArrayContent:Array<String>
+        val index = listNitratItem.indexOf(button)
+        val nitratArrayContent:Array<String>
         when(nitrat){
             1 -> {
-                nitratArrayTitle= resources.getStringArray(R.array.nitrat_1_title)
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_1_content)
 
-                Log.d("nitrat1","nitrat1")
-                Log.d("title",nitratArrayTitle[index])
-                Log.d("text",nitratArrayContent[index])
-                //toolbarText.text = hartArrayTitle[index]
                 sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
             2 -> {
-                nitratArrayTitle= resources.getStringArray(R.array.nitrat_2_title)
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_2_content)
 
-                Log.d("nitrat1","nitrat1")
-                Log.d("title",nitratArrayTitle[index])
-                Log.d("text",nitratArrayContent[index])
-                //toolbarText.text = hartArrayTitle[index]
                 sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
             3 -> {
-                nitratArrayTitle= resources.getStringArray(R.array.nitrat_3_title)
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_3_content)
 
-                Log.d("nitrat1","nitrat1")
-                Log.d("title",nitratArrayTitle[index])
-                Log.d("text",nitratArrayContent[index])
-                //toolbarText.text = hartArrayTitle[index]
                 sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
         }
@@ -223,10 +192,10 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         //generate tipps page
     }
     override fun generateWasserinfos(buttonBox: String) {
-        Log.d("Info", "Wasserinfo"+wasserInfoList.indexOf(buttonBox)+" - ")
-        var index = wasserInfoList.indexOf(buttonBox)
-        var infoTitleArray:Array<String> = resources.getStringArray(R.array.wasserinfos_titles)
-        var infoContentArray:Array<String> = resources.getStringArray(R.array.wasserinfos_content)
+        //Log.d("Info", "Wasserinfo"+wasserInfoList.indexOf(buttonBox)+" - ")
+        val index = wasserInfoList.indexOf(buttonBox)
+        val infoTitleArray:Array<String> = resources.getStringArray(R.array.wasserinfos_titles)
+        val infoContentArray:Array<String> = resources.getStringArray(R.array.wasserinfos_content)
         toolbarText.text = wasserInfoTitlebarText[index]
         sharedViewModel?.infoTitle?.postValue(HtmlCompat.fromHtml(infoTitleArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
         sharedViewModel?.infoContent?.postValue(HtmlCompat.fromHtml(infoContentArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
@@ -236,9 +205,9 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         active=fragmentInfos
     }
     override fun generateKontaktSubPage(buttonBox: String) {
-        var index = kontaktList.indexOf(buttonBox)
-        var kontaktTitleArray:Array<String> = resources.getStringArray(R.array.kontakt_titlebar_text)
-        var kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
+        val index = kontaktList.indexOf(buttonBox)
+        val kontaktTitleArray:Array<String> = resources.getStringArray(R.array.kontakt_titlebar_text)
+        val kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
         toolbarText.text = kontaktTitleArray[index]
         sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(kontaktContentArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
 
@@ -249,7 +218,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     private val mRunnable = Runnable { doubleBackToExitPressedOnce = false }
 
     override fun onBackPressed() {
-        Log.d("Back", "On back pressed!")
+        //Log.d("Back", "On back pressed!")
         if(active==fragmentHaerte || active == fragmentNitrat){
             fm.beginTransaction().hide(active).show(fragment1).commit()
             active = fragment1
@@ -370,7 +339,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 Log.d("Exception", e.toString())
             }
         } else {
-            Log.d("Saved data", "empty")
+            //Log.d("Saved data", "empty")
         }
         textMessage = findViewById(R.id.appbar_message)
         toolbar = findViewById(R.id.toolbar)
@@ -439,7 +408,6 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             item.icon = ContextCompat.getDrawable(this,R.drawable.icon_trinken_color)
         } else {
             item.icon = ContextCompat.getDrawable(this,R.drawable.icon_trinken_grey)
-            item.icon.alpha = 5
         }
     }
     private fun checkPermission(permissionArray: Array<String>): Boolean {

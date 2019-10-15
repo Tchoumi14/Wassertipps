@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
 
-    private val SPLASH_TIME_OUT:Long=3000 // 3 sec
+    private val SPLASH_TIME_OUT:Long=2000 // 2 sec
     private lateinit var prefManager: PrefManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

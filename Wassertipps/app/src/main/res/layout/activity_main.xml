@@ -79,7 +79,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:menu="@menu/bottom_nav_menu"
             app:itemIconTint="@color/colorPrimaryDark"
-            app:itemTextColor="@color/colorPrimary"
+            app:itemTextColor="?attr/colorDarkTint"
             app:itemBackground="?attr/navBarGrey"
             />
 
