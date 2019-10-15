@@ -95,7 +95,7 @@ class KontaktFragment : Fragment() {
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
-        fun generateKontaktSubPage(Button: String)
+        fun generateKontaktSubPage(buttonBox: String)
     }
 
     companion object {

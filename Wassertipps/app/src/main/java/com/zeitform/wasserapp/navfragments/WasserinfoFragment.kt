@@ -95,7 +95,7 @@ class WasserinfoFragment : Fragment() {
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
-        fun generateWasserinfos(button: String)
+        fun generateWasserinfos(buttonBox: String)
     }
 
     companion object {
