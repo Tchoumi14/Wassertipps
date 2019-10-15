@@ -270,7 +270,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             }
 
             this.doubleBackToExitPressedOnce = true
-            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Bitte klicken Sie erneut auf ZURÜCK zum Beenden", Toast.LENGTH_SHORT).show()
 
             Handler().postDelayed(Runnable { mRunnable }, 2000)
         }
