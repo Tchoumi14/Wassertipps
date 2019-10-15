@@ -148,7 +148,7 @@ class IntroActivity : AppCompatActivity() {
         dotsLayout?.removeAllViews()
         for (i in 0 until dots!!.size) {
             dots?.set(i, TextView(this))
-            dots!![i]?.text = Html.fromHtml("&#8226;")
+            dots!![i]?.text = HtmlCompat.fromHtml("&#8226;", HtmlCompat.FROM_HTML_MODE_COMPACT)
             dots!![i]?.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 35F)
             dots!![i]?.setTextColor(colorInactive)
             dotsLayout?.addView(dots!![i])
@@ -261,7 +261,7 @@ class IntroActivity : AppCompatActivity() {
         }
 
         private fun createAlert(title: String, content: Spanned){
-            val alertDialog: AlertDialog? = this@IntroActivity?.let {
+            val alertDialog: AlertDialog? = this@IntroActivity.let {
                 val builder = AlertDialog.Builder(it)
                 builder.apply {
                     builder.setTitle(title)

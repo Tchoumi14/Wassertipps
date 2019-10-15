@@ -448,7 +448,7 @@ class HomeFragment : Fragment() {
                 }
                 setNegativeButton(
                     R.string.dialog_button_no
-                ) { dialog, id ->
+                ) { _, _ ->
                     // User cancelled the dialog
                 }
             }
@@ -511,7 +511,7 @@ class HomeFragment : Fragment() {
 
                     setNegativeButton(
                         R.string.dialog_button_no
-                    ) { dialog, id ->
+                    ) { _, _ ->
                         // User cancelled the dialog
                     }
                 }

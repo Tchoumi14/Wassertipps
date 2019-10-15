@@ -136,7 +136,7 @@ class RechnerFragment : Fragment() {
         alterField.setOnClickListener { openDialog(SelectorType.ALTER,alterField.text.toString()) }
         erinnerungenField.setOnClickListener { openDialog(SelectorType.ERINNERUNGEN,erinnerungenField.text.toString()) }
 
-        mitteilungenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+        mitteilungenSwitch.setOnCheckedChangeListener { _, isChecked ->
             rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
             //Set alarms
             if(isChecked) {
@@ -152,11 +152,11 @@ class RechnerFragment : Fragment() {
         gewichtField.addTextChangedListener(myTextWatcher)
         alterField.addTextChangedListener(myTextWatcher)
         wasserProTagField.addTextChangedListener(wasserProTagWatcher)
-        sportSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+        sportSwitch.setOnCheckedChangeListener { _, isChecked ->
             rechnerDataManager!!.sport = isChecked //save to data manager
             calculateWasser()
         }
-        stillendeFrauenSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+        stillendeFrauenSwitch.setOnCheckedChangeListener { _, isChecked ->
             rechnerDataManager!!.stillendefrauen = isChecked //save to data manager
             calculateWasser()
         }
@@ -283,10 +283,10 @@ class RechnerFragment : Fragment() {
      * @return timeInNumber - (hh * 60) + mm
      */
     private fun timetoNumber(timeAsString: String): Int {
-        var timeInNumber = 0
-        var time = timeAsString.split(" : ")
-        var hour = time[0].toInt()
-        var min = time[1].toInt()
+        val timeInNumber: Int
+        val time = timeAsString.split(" : ")
+        val hour = time[0].toInt()
+        val min = time[1].toInt()
         timeInNumber = (hour * 60) + min
         return timeInNumber
     }
@@ -296,7 +296,7 @@ class RechnerFragment : Fragment() {
      * @param minInput min value from the text label
      */
     private fun openAufwachenTimePicker(hourInput: Int, minInput: Int){
-        val timePickerListener = TimePickerDialog.OnTimeSetListener{ view, h, m ->
+        val timePickerListener = TimePickerDialog.OnTimeSetListener{ _, h, m ->
             Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
             var hour = h.toString()
             var min = m.toString()
@@ -317,7 +317,7 @@ class RechnerFragment : Fragment() {
         timePicker.show()
     }
     private fun openEinschlafenTimePicker(hourInput: Int, minInput: Int){
-        val timePickerListener = TimePickerDialog.OnTimeSetListener{ view, h, m ->
+        val timePickerListener = TimePickerDialog.OnTimeSetListener{ _, h, m ->
             Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
             var hour = h.toString()
             var min = m.toString()
@@ -440,7 +440,7 @@ class RechnerFragment : Fragment() {
                 consumptionTimes.add(i)
             }
         }
-        var value = "0"
+        val value:String
         if(consumptionTimes.size>2){
             val index = Math.round((consumptionTimes.size/2).toDouble())
             value = consumptionTimes.get(index.toInt()).toString()
@@ -451,7 +451,7 @@ class RechnerFragment : Fragment() {
             value = consumptionTimes.get(0).toString()
             Log.d("Cant be less", "that 200")
         }
-        var savedValue = rechnerDataManager!!.erinnerungen
+        val savedValue = rechnerDataManager!!.erinnerungen
         if(savedValue!= -1 && consumptionTimes.indexOf(savedValue)!=-1){
                 erinnerungenField.text = savedValue.toString()
         } else {
@@ -464,7 +464,7 @@ class RechnerFragment : Fragment() {
         val duration = einschlafenTimeInt - aufwachenTimeInt
         val times = Integer.parseInt(erinnerungenField.text.toString().trim())
         val interval = Math.round((duration/times).toDouble()).toInt()
-        var waterMl = Integer.parseInt(wasserProTagField.text.toString().trim())/times
+        val waterMl = Integer.parseInt(wasserProTagField.text.toString().trim())/times
         setMitteilungActiveText(waterMl,interval)
     }
     /**
@@ -488,14 +488,14 @@ class RechnerFragment : Fragment() {
         val duration = einschlafenTimeInt - aufwachenTimeInt
         val times = Integer.parseInt(erinnerungenField.text.toString().trim())
         val interval = Math.round((duration/times).toDouble()).toInt()
-        var waterMl = Integer.parseInt(wasserProTagField.text.toString().trim())/times
+        val waterMl = Integer.parseInt(wasserProTagField.text.toString().trim())/times
         Log.d("Time interval", interval.toString()+"mins")
         alarmTimes = ArrayList()
         for(i in 1 until times+1){
-            var t = aufwachenTimeInt + (i * interval)
-            var mins = t%60
-            var hour = t/60
-            var id = Integer.parseInt(String.format("%02d", hour)+""+String.format("%02d", mins))  //format hour and mins to two digits
+            val t = aufwachenTimeInt + (i * interval)
+            val mins = t%60
+            val hour = t/60
+            val id = Integer.parseInt(String.format("%02d", hour)+""+String.format("%02d", mins))  //format hour and mins to two digits
             alarmTimes.add(AlarmData(id, hour, mins, waterMl))
             Log.d("Times", times.toString())
         }

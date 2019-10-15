@@ -222,9 +222,9 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         active=fragmentTipps
         //generate tipps page
     }
-    override fun generateWasserinfos(button: String) {
-        Log.d("Info", "Wasserinfo"+wasserInfoList.indexOf(button)+" - ")
-        var index = wasserInfoList.indexOf(button)
+    override fun generateWasserinfos(buttonBox: String) {
+        Log.d("Info", "Wasserinfo"+wasserInfoList.indexOf(buttonBox)+" - ")
+        var index = wasserInfoList.indexOf(buttonBox)
         var infoTitleArray:Array<String> = resources.getStringArray(R.array.wasserinfos_titles)
         var infoContentArray:Array<String> = resources.getStringArray(R.array.wasserinfos_content)
         toolbarText.text = wasserInfoTitlebarText[index]
@@ -235,8 +235,8 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         fm.beginTransaction().hide(active).show(fragmentInfos).commit()
         active=fragmentInfos
     }
-    override fun generateKontaktSubPage(button: String) {
-        var index = kontaktList.indexOf(button)
+    override fun generateKontaktSubPage(buttonBox: String) {
+        var index = kontaktList.indexOf(buttonBox)
         var kontaktTitleArray:Array<String> = resources.getStringArray(R.array.kontakt_titlebar_text)
         var kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
         toolbarText.text = kontaktTitleArray[index]
@@ -426,13 +426,11 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     }
 
     /**
-     * remove runnable from handler
+     * remove runnable from handler before closing the app
      */
     override fun onDestroy(){
         super.onDestroy()
-        if(mHandler!=null){
-            mHandler.removeCallbacks(mRunnable)
-        }
+        mHandler.removeCallbacks(mRunnable)
     }
     private fun updateRechnerNavIcon(value: Boolean){
         println("At update rechner navicon")
