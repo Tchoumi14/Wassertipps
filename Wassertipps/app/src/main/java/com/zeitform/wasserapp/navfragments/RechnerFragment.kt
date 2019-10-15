@@ -187,6 +187,7 @@ class RechnerFragment : Fragment() {
         bm.initiatePurchaseFlow(productToBuy)
     }
     fun updateVisibility(isVisible: Boolean){
+        println("isVisible"+isVisible)
         if(isVisible){
             lockedLayout.visibility = View.INVISIBLE
             rechnerLayout.visibility = View.VISIBLE

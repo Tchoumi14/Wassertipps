@@ -116,7 +116,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         return billingManager
     }
     override fun updateRechnerStatus(isVisible: Boolean) {
-        //println("At update rechner")
+        println("At update rechner")
         val f = fm.findFragmentByTag("4") as RechnerFragment
         f.updateVisibility(isVisible)
         updateRechnerNavIcon(isVisible) //update rechner bottomnav icon
