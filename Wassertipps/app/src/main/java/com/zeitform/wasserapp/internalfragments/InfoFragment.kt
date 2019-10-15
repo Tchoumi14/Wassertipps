@@ -67,14 +67,14 @@ class InfoFragment : Fragment() {
         //sharedViewModel.serverData.removeObservers(this)
         sharedViewModel.infoContent.observe(this, Observer {
             it?.let {
-                Log.d("Text DATA", it.toString())
+                //Log.d("Text DATA", it.toString())
                 infoContent.text = it
             }
         })
         //sharedViewModel.isReduced.removeObservers(this)
         sharedViewModel.infoTitle.observe(this, Observer {
             it?.let {
-                Log.d("Title DATA", it.toString())
+                //Log.d("Title DATA", it.toString())
                 infoTitle.text = it
             }
         })

@@ -83,12 +83,12 @@ class TippsFragment : Fragment() {
         })
         sharedViewModel.tippsTitle.observe(this, Observer {
             it?.let {
-                Log.d("Image DATA", it.toString())
+                //Log.d("Image DATA", it.toString())
             }
         })
         sharedViewModel.url.observe(this, Observer {
             it?.let {
-                Log.d("URL", it.toString())
+                //Log.d("URL", it.toString())
                 url = it.toString()
             }
         })
