@@ -25,6 +25,7 @@
             android:layout_centerHorizontal="true"
             android:textSize="@dimen/title_font_size"
             android:id="@+id/rechner_locked_title"
+            android:textColor="?attr/colorAppTextPrimary"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:text="@string/purchase_locked_title"/>
     <TextView
@@ -36,6 +37,7 @@
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:id="@+id/rechner_locked_text"
             android:textAlignment="center"
+            android:textColor="?attr/colorAppTextPrimary"
             android:text="@string/purchase_locked_text"/>
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
