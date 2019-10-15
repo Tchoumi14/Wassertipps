@@ -1,6 +1,7 @@
 package com.zeitform.wasserapp.navfragments
 
 import android.content.Context
+import android.graphics.Canvas
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,6 +16,12 @@ import android.widget.ScrollView
 import android.widget.TextView
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout
 import com.zeitform.wasserapp.R
+import androidx.constraintlayout.solver.widgets.WidgetContainer.getBounds
+import java.util.Collections.rotate
+import android.graphics.drawable.LayerDrawable
+import android.graphics.drawable.Drawable
+
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -189,6 +196,7 @@ class FaqFragment : Fragment() {
             textArray[i].text = HtmlCompat.fromHtml(contentArray[i], HtmlCompat.FROM_HTML_MODE_COMPACT)
         }
     }
+
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)

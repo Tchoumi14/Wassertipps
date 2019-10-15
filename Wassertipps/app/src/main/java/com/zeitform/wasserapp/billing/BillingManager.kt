@@ -50,7 +50,6 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
             loadProduct()
             queryPurchases()
         })
-
     }
     private fun startServiceConnection(executeOnSuccess: Runnable){
         billingClient.startConnection(object : BillingClientStateListener {
