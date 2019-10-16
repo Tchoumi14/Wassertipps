@@ -17,6 +17,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/intro1_title"
                 android:id="@+id/intro1_title"
+                android:textColor="?attr/colorAppTextPrimary"
                 android:layout_centerInParent="true"
                 android:layout_alignParentTop="true"
                 android:textSize="24sp" android:fontFamily="sans-serif" android:layout_centerVertical="true"/>
@@ -25,6 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/intro1_text"
+                android:textColor="?attr/colorAppTextPrimary"
                 android:textSize="@dimen/intro_general_font_size"
                 android:layout_below="@id/intro1_title"
                 android:textAlignment="center"/>

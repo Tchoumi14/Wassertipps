@@ -10,6 +10,7 @@
     <color name="colorTextSecondary">#6B6B6B</color>
     <color name="colorDarkTint">#989999</color>
     <color name="navbarGrey">#F2F2F2</color>
+    <color name="textLayoutBg">#efe6f1</color>
 
     <color name="lightBorderColor">#ddd</color>
     <color name="textWhite">#FFFFFF</color>
@@ -28,6 +29,7 @@
     <color name="colorTextSecondary_dark">#757575</color>
     <color name="colorDarkTint_dark">#222729</color>
     <color name="navbarGrey_dark">#222729</color>
+    <color name="textLayoutBg_dark">#7E7D8A</color>
     <color name="appBackground_dark">#444e53</color>
 
     <!--bottom nav icon tint-->

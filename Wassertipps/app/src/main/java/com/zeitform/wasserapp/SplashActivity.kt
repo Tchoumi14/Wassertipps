@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate
 import com.zeitform.wasserapp.prefmanagers.PrefManager
 
 import kotlinx.android.synthetic.main.activity_splash.*
@@ -14,6 +15,7 @@ class SplashActivity : AppCompatActivity() {
     private val SPLASH_TIME_OUT:Long=2000 // 2 sec
     private lateinit var prefManager: PrefManager
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         prefManager = PrefManager(this)

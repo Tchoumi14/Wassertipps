@@ -24,6 +24,7 @@ import android.text.Spanned
 import android.util.TypedValue
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.text.HtmlCompat
 import com.zeitform.wasserapp.prefmanagers.PrefManager
 
@@ -44,6 +45,7 @@ class IntroActivity : AppCompatActivity() {
     private var zustimmen: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         super.onCreate(savedInstanceState)
 
         // Checking for first time launch - before calling setContentView()

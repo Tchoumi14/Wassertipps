@@ -15,4 +15,5 @@
     <attr name="appBackgroundColor" format="reference" />
     <attr name="colorAppPrimaryGreen" format="reference"/>
     <attr name="colorAppPrimaryGreenDark" format="reference"/>
+    <attr name="textLayoutBg" format="reference"/>
 </resources>
