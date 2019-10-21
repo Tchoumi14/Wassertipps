@@ -17,16 +17,15 @@
             android:id="@+id/list_item_text"
             android:layout_weight=".80"
             android:text="Test"
+            android:textColor="@color/colorTextSecondary_dark"
             android:fontFamily="sans-serif"
             android:textFontWeight="800"
             android:gravity="center_vertical"
             android:layout_marginStart="@dimen/activity_horizontal_margin"/>
-<!--
     <ImageView android:layout_width="16dp"
-               android:layout_height="match_parent"
+               android:layout_height="16dp"
                android:id="@+id/list_item_right_icon"
                android:src="@drawable/ic_icon_forward_grey"
                android:layout_gravity="center"
                android:layout_marginRight="@dimen/activity_horizontal_margin"/>
--->
 </LinearLayout>

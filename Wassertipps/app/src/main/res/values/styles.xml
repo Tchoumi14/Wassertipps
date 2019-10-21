@@ -9,6 +9,8 @@
         <item name="colorAppPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorSwitchTrackActive">@color/colorSwitchTrackActive</item>
         <item name="colorSwitchTrackInactive">@color/colorSwitchTrackInactive</item>
+        <item name="colorSwitchTrackDisabled">@color/colorSwitchTrackDisabled</item>
+        <item name="switchThumbDisabled">@color/switchThumbDisabled</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorAppSecondary">@color/colorSecondary</item>
         <item name="colorAppTextPrimary">@color/colorTextPrimary</item>
@@ -53,6 +55,8 @@
         <item name="colorAppPrimaryDark">@color/colorPrimaryFocus_dark</item>
         <item name="colorSwitchTrackActive">@color/colorSwitchTrackActive_dark</item>
         <item name="colorSwitchTrackInactive">@color/colorSwitchTrackInactive_dark</item>
+        <item name="colorSwitchTrackDisabled">@color/colorSwitchTrackDisabled_dark</item>
+        <item name="switchThumbDisabled">@color/switchThumbDisabled_dark</item>
         <item name="colorAccent">@color/colorAccent_dark</item>
         <item name="colorAppSecondary">@color/colorSecondary_dark</item>
         <item name="colorAppTextPrimary">@color/colorTextPrimary_dark</item>
@@ -78,10 +82,7 @@
         <item name="android:track">@drawable/switch_track_inactive</item>
         <item name="colorControlActivated">@color/colorPrimary</item>
     </style>
-    <style name="myDialog" parent="Theme.AppCompat.Dialog">
-        <item name="android:windowNoTitle">true</item>
-        ...
-    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

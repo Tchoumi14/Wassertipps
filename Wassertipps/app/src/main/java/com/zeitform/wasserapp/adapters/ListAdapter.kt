@@ -43,7 +43,6 @@ class ListAdapter (private val context: Context, private val listener: Wasserinf
         leftIcon.setImageDrawable(getIcon())
         val listText = rowView.findViewById<TextView>(R.id.list_item_text)
 
-
         listText.text = item
         return rowView
     }

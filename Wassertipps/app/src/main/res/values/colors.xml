@@ -2,17 +2,19 @@
 <resources>
     <color name="colorPrimary">#4795D2</color>
     <color name="colorPrimaryDark">#214f73</color>
-    <color name="colorSwitchTrackActive">#6B8AA2</color>
-    <color name="colorSwitchTrackInactive">#8D8D8D</color>
+    <color name="colorSwitchTrackActive">#72A7D1</color>
+    <color name="colorSwitchTrackInactive">#707070</color>
+    <color name="colorSwitchTrackDisabled">#CFCFCF</color>
+    <color name="switchThumbDisabled">#C7C7C7</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorSecondary">#e4e5e5</color>
     <color name="colorTextPrimary">#464646</color>
     <color name="colorTextSecondary">#6B6B6B</color>
     <color name="colorDarkTint">#989999</color>
     <color name="navbarGrey">#F2F2F2</color>
-    <color name="textLayoutBg">#efe6f1</color>
+    <color name="textLayoutBg">#AC94B1</color>
 
-    <color name="borderColor">#292929</color>
+    <color name="borderColor">#ACACAC</color>
     <color name="textWhite">#FFFFFF</color>
     <color name="appBackground_light">#FFFFFF</color>
 
@@ -24,15 +26,17 @@
     <color name="colorPrimaryFocus_dark">#0C3C63</color>
     <color name="colorSwitchTrackActive_dark">#6B98CE</color>
     <color name="colorSwitchTrackInactive_dark">#B4B4B4</color>
+    <color name="colorSwitchTrackDisabled_dark">#4D4C4C</color>
+    <color name="switchThumbDisabled_dark">#636363</color>
     <color name="colorAccent_dark">#D81B60</color>
     <color name="colorSecondary_dark">#444e53</color>
     <color name="colorTextPrimary_dark">#F2F2F2</color>
     <color name="colorTextSecondary_dark">#757575</color>
     <color name="colorDarkTint_dark">#222729</color>
-    <color name="navbarGrey_dark">#222729</color>
-    <color name="textLayoutBg_dark">#7E7D8A</color>
+    <color name="navbarGrey_dark">#3C3F41</color>
+    <color name="textLayoutBg_dark">#443852</color>
     <color name="borderColor_dark">#9B9B9B</color>
-    <color name="appBackground_dark">#373E44</color>
+    <color name="appBackground_dark">#313335</color>
 
     <!--bottom nav icon tint-->
     <color name="app_icon">#866eff</color>

@@ -3,7 +3,6 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:textColor="?attr/colorAppTextPrimary"
              android:background="?attr/appBackgroundColor"
              tools:context=".navfragments.WasserinfoFragment">
 
@@ -11,7 +10,6 @@
             android:id="@+id/wasserinfo_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?attr/appBackgroundColor"
             android:divider="?attr/borderColor"
             android:dividerHeight="1dp">
     </ListView>

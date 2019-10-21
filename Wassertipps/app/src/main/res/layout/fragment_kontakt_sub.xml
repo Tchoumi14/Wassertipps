@@ -10,7 +10,7 @@
             android:layout_height="match_parent"
             android:padding="@dimen/basic_text_padding"
             android:id="@+id/kontakt_sub_text"
-            android:background="?attr/colorAppTextPrimary"
+            android:textColor="?attr/colorAppTextPrimary"
             android:text="@string/hello_blank_fragment"
             android:autoLink="web"
             android:linksClickable="true"/>

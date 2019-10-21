@@ -8,6 +8,8 @@
         <item name="colorAppPrimaryDark">@color/colorPrimaryFocus_dark</item>
         <item name="colorSwitchTrackActive">@color/colorSwitchTrackActive_dark</item>
         <item name="colorSwitchTrackInactive">@color/colorSwitchTrackInactive_dark</item>
+        <item name="colorSwitchTrackDisabled">@color/colorSwitchTrackDisabled_dark</item>
+        <item name="switchThumbDisabled">@color/switchThumbDisabled_dark</item>
         <item name="colorAccent">@color/colorAccent_dark</item>
         <item name="colorAppSecondary">@color/colorSecondary_dark</item>
         <item name="colorAppTextPrimary">@color/colorTextPrimary_dark</item>
