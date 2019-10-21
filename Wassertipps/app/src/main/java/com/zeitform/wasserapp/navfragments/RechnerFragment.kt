@@ -197,7 +197,7 @@ class RechnerFragment : Fragment() {
         }
     }
     private fun openDialog(selectorType: SelectorType, currentValue: String){
-        val dialog = AlertDialog.Builder(activity!!)
+        val dialog = AlertDialog.Builder(activity!!,R.style.Theme_AppCompat_Dialog)
         val alert = dialog.create()
         val view = layoutInflater.inflate(R.layout.number_picker_dialog, null)
 
