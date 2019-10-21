@@ -34,7 +34,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/haerte_text"
-                        android:text="test string"
                         android:textColor="?attr/colorAppTextPrimary"
                         android:layout_marginStart="10dp"
                         android:layout_below="@id/haerte_title"/>
@@ -120,7 +119,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/nitrat_text"
-                        android:text="test string"
                         android:textColor="?attr/colorAppTextPrimary"
                         android:layout_marginStart="10dp"
                         android:layout_below="@id/nitrat_title"/>

@@ -383,19 +383,23 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             if (checkPermission(permissions)) {
                 //Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show()
                 //getLocation()
-                val locData = LocationCheck(this.applicationContext).checkLocation()
-                val lat = locData.getLocation().latitude
-                val lon = locData.getLocation().longitude
-                Log.d("Lat - Lon :", " "+lat+" - "+lon+"")
-                getData(lat, lon)
+                fetchLocation()
             } else {
                 requestPermissions(permissions, PERMISSION_REQUEST)
             }
         } else {
             //Toast.makeText(this, "Android < 6", Toast.LENGTH_SHORT).show()
+            fetchLocation()
         }
     }
 
+    private fun fetchLocation(){
+        val locData = LocationCheck(this.applicationContext).checkLocation()
+        val lat = locData.getLocation().latitude
+        val lon = locData.getLocation().longitude
+        Log.d("Lat - Lon :", " "+lat+" - "+lon+"")
+        getData(lat, lon)
+    }
     /**
      * remove runnable from handler before closing the app
      */
