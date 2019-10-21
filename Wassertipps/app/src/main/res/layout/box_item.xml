@@ -13,22 +13,25 @@
             app:cardCornerRadius="8dp">
         <ImageView
                 android:id="@+id/box_image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="3dp"
+                android:layout_marginEnd="3dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/bg_erklaerung"
-                android:scaleType="fitCenter"
+                android:scaleType="centerInside"
                 android:hint="Box background"/>
 
         <TextView
                 android:id="@+id/box_text"
+                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_marginBottom="3dp"
-                android:layout_marginEnd="3dp"
-                android:textColor="@color/cardview_dark_background"
-                android:text="Text"/>
+                android:layout_gravity="top|start"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="3dp"
+                android:textColor="#FFFFFF"/>
     </androidx.cardview.widget.CardView>
 
     </FrameLayout>
