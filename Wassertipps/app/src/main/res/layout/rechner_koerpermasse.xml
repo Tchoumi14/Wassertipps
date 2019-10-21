@@ -35,7 +35,8 @@
                   android:layout_weight=".60"
                   android:layout_height="wrap_content"
                   android:layout_gravity="start"
-                    android:text="@string/gewicht"/>
+                  android:textColor="?attr/colorAppTextPrimary"
+                  android:text="@string/gewicht"/>
         <TextView android:layout_width="0dp"
                   android:layout_weight=".20"
                   android:layout_height="wrap_content"
@@ -43,6 +44,7 @@
                   android:textSize="7pt"
                   android:layout_gravity="end"
                   android:id="@+id/gewicht_field"
+                  android:textColor="?attr/colorAppTextPrimary"
                   android:background="@drawable/erinnerung_textview"/>
         <!--<LinearLayout android:layout_width="0dp"
                       android:layout_weight=".40"
@@ -88,12 +90,14 @@
                   android:layout_weight=".60"
                   android:layout_height="wrap_content"
                   android:layout_gravity="start"
+                  android:textColor="?attr/colorAppTextPrimary"
                   android:text="@string/alter"/>
         <TextView android:layout_width="0dp"
                   android:layout_weight=".20"
                   android:layout_height="wrap_content"
                   android:textAlignment="center"
                   android:textSize="7pt"
+                  android:textColor="?attr/colorAppTextPrimary"
                   android:id="@+id/alter_field"
                   android:layout_gravity="end"
                   android:background="@drawable/erinnerung_textview"/>

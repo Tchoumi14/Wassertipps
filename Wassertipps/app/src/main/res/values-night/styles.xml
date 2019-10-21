@@ -4,8 +4,8 @@
         <!-- Customize your theme here. -->
 
         <item name="android:windowBackground">@color/appBackground_dark</item>
-        <item name="colorPrimary">@color/colorPrimary_dark</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryFocus_dark</item>
+        <item name="colorAppPrimary">@color/colorPrimary_dark</item>
+        <item name="colorAppPrimaryDark">@color/colorPrimaryFocus_dark</item>
         <item name="colorSwitchTrackActive">@color/colorSwitchTrackActive_dark</item>
         <item name="colorSwitchTrackInactive">@color/colorSwitchTrackInactive_dark</item>
         <item name="colorAccent">@color/colorAccent_dark</item>
@@ -14,7 +14,7 @@
         <item name="colorAppTextSecondary">@color/colorTextSecondary_dark</item>
         <item name="colorDarkTint">@color/colorDarkTint_dark</item>
         <item name="navBarGrey">@color/navbarGrey_dark</item>
-        <item name="lightBorderColor">@color/lightBorderColor</item>
+        <item name="borderColor">@color/borderColor_dark</item>
         <item name="textWhite">@color/textWhite</item>
         <item name="appBackgroundColor">@color/appBackground_dark</item>
         <item name="colorAppPrimaryGreen">@color/colorPrimary_green</item>

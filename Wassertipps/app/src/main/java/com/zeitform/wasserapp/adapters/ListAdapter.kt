@@ -47,7 +47,7 @@ class ListAdapter (private val context: Context, private val listener: Wasserinf
         listText.text = item
         return rowView
     }
-    fun getIcon(): Drawable?{
+    private fun getIcon(): Drawable?{
         return icon
     }
 }

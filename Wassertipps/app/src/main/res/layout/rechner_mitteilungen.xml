@@ -41,6 +41,7 @@
                         android:id="@+id/mitteilung_row1">
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
+                      android:textColor="?attr/colorAppTextPrimary"
                       android:layout_alignParentStart="true"
                       android:text="@string/aufwachen"/>
             <TextView
@@ -59,6 +60,7 @@
                         android:layout_below="@+id/mitteilung_row1">
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
+                      android:textColor="?attr/colorAppTextPrimary"
                       android:layout_alignParentStart="true"
                       android:text="@string/einschlafen"/>
             <TextView
@@ -78,6 +80,7 @@
             <TextView android:layout_width="0dp"
                       android:layout_weight=".60"
                       android:layout_height="wrap_content"
+                      android:textColor="?attr/colorAppTextPrimary"
                       android:layout_alignParentStart="true"
                       android:text="@string/erinnerungen"/>
             <TextView android:layout_width="0dp"
@@ -85,6 +88,7 @@
                       android:layout_height="match_parent"
                       android:textSize="7pt"
                       android:gravity="center"
+                      android:textColor="?attr/colorAppTextPrimary"
                       android:id="@+id/erinnerungen_field"
                       android:background="@drawable/erinnerung_textview"/>
          <!-- <LinearLayout android:layout_width="0dp"

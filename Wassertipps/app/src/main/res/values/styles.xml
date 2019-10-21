@@ -15,7 +15,7 @@
         <item name="colorAppTextSecondary">@color/colorTextSecondary</item>
         <item name="colorDarkTint">@color/colorDarkTint</item>
         <item name="navBarGrey">@color/navbarGrey</item>
-        <item name="lightBorderColor">@color/lightBorderColor</item>
+        <item name="borderColor">@color/borderColor</item>
         <item name="textWhite">@color/textWhite</item>
         <item name="appBackgroundColor">@color/appBackground_light</item>
         <item name="colorAppPrimaryGreen">@color/colorPrimary_green</item>
@@ -59,7 +59,7 @@
         <item name="colorAppTextSecondary">@color/colorTextSecondary_dark</item>
         <item name="colorDarkTint">@color/colorDarkTint_dark</item>
         <item name="navBarGrey">@color/navbarGrey_dark</item>
-        <item name="lightBorderColor">@color/lightBorderColor</item>
+        <item name="borderColor">@color/borderColor_dark</item>
         <item name="textWhite">@color/textWhite</item>
         <item name="appBackgroundColor">@color/appBackground_dark</item>
         <item name="colorAppPrimaryGreen">@color/colorPrimary_green</item>

@@ -10,7 +10,7 @@
     <attr name="colorAppTextSecondary" format="reference"/>
     <attr name="colorDarkTint" format="reference" />
     <attr name="navBarGrey" format="reference" />
-    <attr name="lightBorderColor" format="reference" />
+    <attr name="borderColor" format="reference" />
     <attr name="textWhite" format="reference" />
     <attr name="appBackgroundColor" format="reference" />
     <attr name="colorAppPrimaryGreen" format="reference"/>
