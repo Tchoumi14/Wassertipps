@@ -14,6 +14,7 @@ import androidx.appcompat.app.AlertDialog
 import org.json.JSONArray
 import androidx.cardview.widget.CardView
 import android.util.Log
+import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -534,6 +535,10 @@ class HomeFragment : Fragment() {
         }
     }
     private fun createTable(){
+        val typedValue = TypedValue()
+        val theme = context!!.theme
+        theme.resolveAttribute(R.attr.colorAppTextPrimary, typedValue, true)
+        var color = typedValue.data
         var jsonObj:JSONObject
         var row: TableRow
         var ort: TextView
@@ -553,18 +558,22 @@ class HomeFragment : Fragment() {
             row.layoutParams = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.MATCH_PARENT)
             row.setPadding(5,5,5,5)
             ort = TextView(activity)
+            ort.setTextColor(color)
             ort.text = jsonObj.optString("city")
             ort.layoutParams = lp1
             ort.gravity = Gravity.LEFT
             entf = TextView(activity)
+            entf.setTextColor(color)
             entf.text = jsonObj.optString("distance")
             entf.layoutParams = lp2
             entf.gravity = Gravity.CENTER
             haerte = TextView(activity)
+            haerte.setTextColor(color)
             haerte.text = jsonObj.optString("max")
             haerte.layoutParams = lp2
             haerte.gravity = Gravity.CENTER
             nitrat = TextView(activity)
+            nitrat.setTextColor(color)
             nitrat.text = jsonObj.optString("nmax")
             nitrat.layoutParams = lp2
             nitrat.gravity = Gravity.END

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools"
-                android:background="@drawable/app_background"
+                android:background="?attr/appBackgroundColor"
                 android:id="@+id/nodata_layout">
     <TableLayout
             android:layout_width="match_parent"
@@ -10,7 +10,8 @@
             android:id="@+id/nodata_table"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginEnd="@dimen/activity_horizontal_margin">
-        <TableRow android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/header_row">
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:id="@+id/header_row">
 
                 <TextView
                         android:layout_width="0dp"

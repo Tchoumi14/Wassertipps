@@ -34,6 +34,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/haerte_text"
+                        android:text="test string"
                         android:textColor="?attr/colorAppTextPrimary"
                         android:layout_marginStart="10dp"
                         android:layout_below="@id/haerte_title"/>
@@ -119,6 +120,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/nitrat_text"
+                        android:text="test string"
                         android:textColor="?attr/colorAppTextPrimary"
                         android:layout_marginStart="10dp"
                         android:layout_below="@id/nitrat_title"/>
@@ -185,7 +187,7 @@
             android:layout_width="match_parent"
                      android:layout_height="match_parent"
                     android:visibility="invisible"
-                    android:background="@drawable/app_background"
+                    android:background="?attr/appBackgroundColor"
                      android:id="@+id/nohardness_layout">
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -198,12 +200,14 @@
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:scaleType="fitCenter"/>
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="?attr/colorAppSecondary">
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/title_nodata"
+                    android:textColor="?attr/colorAppTextPrimary"
                     android:textSize="24sp" android:textStyle="bold"/>
 
             <LinearLayout
@@ -214,7 +218,7 @@
                 <TextView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:textColor="?attr/colorAppTextPrimary"
+                        android:textColor="?attr/textWhite"
                         android:text="@string/empty"
                         android:gravity="center"
                         android:background="@color/haerte2"/>
@@ -231,6 +235,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nodata_text"
+            android:background="?attr/appBackgroundColor"
+            android:textColor="?attr/colorAppTextPrimary"
             android:text="@string/text1_nodata"
             android:layout_below="@+id/nodata_card"
             android:padding="@dimen/basic_text_padding"/>
