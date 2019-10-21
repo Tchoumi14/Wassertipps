@@ -4,13 +4,14 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:textColor="?attr/colorAppTextPrimary"
-             android:background="?attr/appBackgroundColor"
+
              tools:context=".navfragments.KontaktFragment">
 
     <ListView
             android:id="@+id/kontakt_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:divider="?attr/borderColor"
             android:dividerHeight="1dp">
     </ListView>
