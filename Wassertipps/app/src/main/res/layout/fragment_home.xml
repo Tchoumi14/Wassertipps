@@ -166,7 +166,7 @@
                 android:paddingBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                app:cardBackgroundColor="?attr/colorAccent"
+                app:cardBackgroundColor="?attr/colorAppNotice"
                 android:textAlignment="center"
                 android:id="@+id/near_card"
                 android:layout_below="@id/card_nitrat" android:layout_centerInParent="true"

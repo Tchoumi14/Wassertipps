@@ -6,6 +6,7 @@
     <attr name="colorSwitchTrackInactive" format="reference"/>
     <attr name="colorSwitchTrackDisabled" format="reference"/>
     <attr name="switchThumbDisabled" format="reference"/>
+    <attr name="colorAppNotice" format="reference"/>
     <attr name="colorAppAccent" format="reference"/>
     <attr name="colorAppSecondary" format="reference"/>
     <attr name="colorAppTextPrimary" format="reference"/>

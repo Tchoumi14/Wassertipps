@@ -6,7 +6,8 @@
     <color name="colorSwitchTrackInactive">#707070</color>
     <color name="colorSwitchTrackDisabled">#CFCFCF</color>
     <color name="switchThumbDisabled">#C7C7C7</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAppNotice">#D81B60</color>
+    <color name="colorAccent">#255B97</color>
     <color name="colorSecondary">#e4e5e5</color>
     <color name="colorTextPrimary">#464646</color>
     <color name="colorTextSecondary">#6B6B6B</color>
@@ -28,7 +29,8 @@
     <color name="colorSwitchTrackInactive_dark">#B4B4B4</color>
     <color name="colorSwitchTrackDisabled_dark">#4D4C4C</color>
     <color name="switchThumbDisabled_dark">#636363</color>
-    <color name="colorAccent_dark">#D81B60</color>
+    <color name="colorAppNotice_dark">#D81B60</color>
+    <color name="colorAccent_dark">#3A7BC2</color>
     <color name="colorSecondary_dark">#444e53</color>
     <color name="colorTextPrimary_dark">#F2F2F2</color>
     <color name="colorTextSecondary_dark">#757575</color>
