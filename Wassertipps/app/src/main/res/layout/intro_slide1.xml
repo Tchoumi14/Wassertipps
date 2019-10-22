@@ -10,8 +10,7 @@
             android:layout_centerInParent="true"
             android:padding="@dimen/activity_vertical_margin"
             android:alpha=".6"
-            android:background="@drawable/text_layout_bg"
-    >
+            android:background="@drawable/text_layout_bg">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -20,7 +19,14 @@
                 android:textColor="?attr/colorAppTextPrimary"
                 android:layout_centerInParent="true"
                 android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
                 android:textSize="24sp" android:fontFamily="sans-serif" android:layout_centerVertical="true"/>
+        <!--Border bottom -->
+        <View android:background="?attr/colorAppTextPrimary" android:layout_width="match_parent" android:layout_height="1px"
+              android:layout_below="@id/intro1_title"
+              android:paddingBottom="@dimen/activity_vertical_margin"/>
+        <!--Border bottom -->
         <TextView
                 android:text="@string/intro1_text"
                 android:layout_width="wrap_content"
@@ -29,6 +35,8 @@
                 android:textColor="?attr/colorAppTextPrimary"
                 android:textSize="@dimen/intro_general_font_size"
                 android:layout_below="@id/intro1_title"
+                android:layout_marginTop="@dimen/basic_text_padding"
+                android:layout_marginBottom="@dimen/basic_text_padding"
                 android:textAlignment="center"/>
     </RelativeLayout>
 

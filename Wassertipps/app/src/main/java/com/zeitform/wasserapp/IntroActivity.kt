@@ -268,12 +268,12 @@ class IntroActivity : AppCompatActivity() {
                 builder.apply {
                     builder.setTitle(title)
                     builder.setMessage(content)
-                    setPositiveButton(
+                    /*setPositiveButton(
                         "Zustimmen"
                     ) { _, _ ->
                         //close
                         launchHomeScreen()
-                    }
+                    }*/
                     setNegativeButton("Abbrechen")
                     { _, _ ->
                         //close

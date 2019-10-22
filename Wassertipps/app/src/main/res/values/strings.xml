@@ -35,23 +35,19 @@
         aktiviert sein.
     </string>
     <string name="intro5_title">Einverständniserklärung</string>
-    <string name="intro5_text1">Die Aufnahme von Nitrat durch das Trinkwasser oder nitrathaltige Lebensmittel kann für
-        Sie und Ihr Kind mit gesundheitlichen Risiken verbunden sein, wie mehrere Studien aus Amerika und Europa in den
-        letzten Jahren gezeigt haben.
+    <string name="intro5_text1_header">Gesundheitsbezogene Hinweise</string>
+    <string name="intro5_text1">Unsere App vermittelt standortbezogen Wasserwerte der lokalen Wasserversorger. Die Werte wurden nicht von uns selbst ermittelt, sondern beruhen auf Analysen im Auftrag des lokalen Wasserversorgers. Ob die vermittelten Wasserwerte zutreffend sind, wird von uns nicht überprüft. Soweit in der App gesundheitsbezogene Empfehlungen ausgesprochen werden, stellen diese keine individuelle auf Sie abgestimmte Therapie oder medizinische Einschätzung dar. Diese App ersetzt keinesfalls die fachliche Beratung durch einen Arzt oder Apotheker. Bei gesundheitlichen Beschwerden wenden Sie sich bitte sofort an einen Arzt.
     </string>
-    <string name="intro5_text2">Nähere Informationen dazu und zu den Studien finden Sie in der App.</string>
-    <string name="intro5_text3">Haftungsausschluss und allgemeiner Hinweis zu medizinischen Themen: Sämtliche in der App
-        dargestellten Inhalte dienen ausschließlich der neutralen Information. Sie stellen keinerlei
-        Handlungsempfehlungen oder Bewerbung einzelner Produkte dar. Diese App erhebt weder einen Anspruch auf
-        Vollständigkeit, noch kann die Aktualität und Richtigkeit der hier dargebotenen Information garantiert werden.
-        Diese App ersetzt keinesfalls die fachliche Beratung durch einen Arzt oder Apotheker und darf nicht als
-        Grundlage zur eigenständigen Diagnose bei medizinischen Problemen verwendet werden.
-    </string>
-    <string name="intro5_text4">Bitte lesen Sie dazu auch unsere</string>
+    <string name="intro5_text2_header">Datenschutz</string>
+    <string name="intro5_text2">Ihre personenbezogenen Daten unterliegen den geltenden Datenschutzgesetzen. Über unseren Umgang mit Ihren Daten und Ihre Rechte informieren wir Sie in unserer </string>
+    <string name="intro5_text3_header">Nutzungsbedingungen</string>
+    <string name="intro5_text3_1">Für die vorliegenden </string>
+
+    <string name="intro5_text3_2">bitten wir Sie uns Ihr Einverständnis zu bestätigen.</string>
     <string name="intro5_text5">und die</string>
     <string name="intro5_text4btn1">Datenschutzerklärung</string>
     <string name="intro5_text4btn2">Nutzungsbedingungen</string>
-    <string name="intro5_btnText">Ich habe verstanden und stimme zu</string>
+    <string name="intro5_btnText">Ich erkläre mich mit der Geltung der Nutzungsbedingungen einverstanden. Die gesundheitsbezogenen Hinweise habe ich gelesen und verstanden.</string>
 
     <!-- Menu icon titles -->
     <string name="icon_home">Home</string>
