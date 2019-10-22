@@ -55,6 +55,8 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionList
 TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, KontaktSubFragment.OnFragmentInteractionListener{
 
     private var doubleBackToExitPressedOnce = false
+    private var datenschutzText: String = "Daten konnten nicht geladen werden. Bitte überprüfen Sie Ihre Internetverbindung."
+    private var nutzungsbedingungText:String = "Daten konnten nicht geladen werden. Bitte überprüfen Sie Ihre Internetverbindung."
     private lateinit var mInterstitialAd: InterstitialAd
     var hart: Int = 1
     var nitrat: Int = 1
@@ -210,7 +212,15 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         val kontaktTitleArray:Array<String> = resources.getStringArray(R.array.kontakt_titlebar_text)
         val kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
         toolbarText.text = kontaktTitleArray[index]
-        sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(kontaktContentArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+        if(index == 0){
+            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(kontaktContentArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+        }
+        if(index == 1){
+            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(datenschutzText, HtmlCompat.FROM_HTML_MODE_COMPACT))
+        }
+        if(index == 2){
+            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(nutzungsbedingungText, HtmlCompat.FROM_HTML_MODE_COMPACT))
+        }
 
         prevFragment = active
         fm.beginTransaction().hide(active).show(fragmentKontaktSub).commit()
@@ -301,6 +311,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
 
             this.window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
         }
+        loadText()
 
         // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this) {}
@@ -399,6 +410,23 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         val lon = locData.getLocation().longitude
         Log.d("Lat - Lon :", " "+lat+" - "+lon+"")
         getData(lat, lon)
+    }
+    private fun loadText(){
+        Executors.newSingleThreadExecutor().execute {
+            try{
+                datenschutzText = URL("https://app.wassertipps.de/app/datenschutz-app.html").readText()
+            } catch (e: Exception){
+                Log.d("Data fetch failed", "Check internet connection or the server status.")
+            }
+        }
+        Executors.newSingleThreadExecutor().execute {
+            try{
+                nutzungsbedingungText = URL("https://app.wassertipps.de/app/nutzungsbedingungen-app.html").readText()
+            } catch (e: Exception){
+                Log.d("Data fetch failed", "Check internet connection or the server status.")
+            }
+
+        }
     }
     /**
      * remove runnable from handler before closing the app

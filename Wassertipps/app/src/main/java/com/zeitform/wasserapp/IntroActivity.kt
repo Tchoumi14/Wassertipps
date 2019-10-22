@@ -21,18 +21,23 @@ import android.graphics.Color
 import androidx.core.content.ContextCompat
 import android.text.Html
 import android.text.Spanned
+import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.text.HtmlCompat
 import com.zeitform.wasserapp.prefmanagers.PrefManager
+import java.net.URL
+import java.util.concurrent.Executors
 
 private const val PERMISSION_REQUEST = 10
 
 class IntroActivity : AppCompatActivity() {
 
     private var permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
+    private var datenschutzText: String = ""
+    private var nutzungsbedingungText: String = ""
     private var viewPager: ViewPager? = null
     private var myViewPagerAdapter: MyViewPagerAdapter? = null
     private var dotsLayout: LinearLayout? = null
@@ -54,7 +59,7 @@ class IntroActivity : AppCompatActivity() {
             launchHomeScreen()
             finish()
         }
-
+        loadText()
         // Making notification bar transparent
         if (Build.VERSION.SDK_INT >= 21) {
             window.decorView.systemUiVisibility =
@@ -107,6 +112,23 @@ class IntroActivity : AppCompatActivity() {
                     launchHomeScreen()
                 }
             }
+        }
+    }
+    private fun loadText(){
+        Executors.newSingleThreadExecutor().execute {
+            try{
+                datenschutzText = URL("https://app.wassertipps.de/app/datenschutz-app.html").readText()
+            } catch (e: Exception){
+                Log.d("Data fetch failed", "Check internet connection or the server status.")
+            }
+        }
+        Executors.newSingleThreadExecutor().execute {
+            try{
+                nutzungsbedingungText = URL("https://app.wassertipps.de/app/nutzungsbedingungen-app.html").readText()
+            } catch (e: Exception){
+                Log.d("Data fetch failed", "Check internet connection or the server status.")
+            }
+
         }
     }
     private fun requestLocationPermission(){
@@ -224,15 +246,16 @@ class IntroActivity : AppCompatActivity() {
                 datenschutzBtn = view.findViewById(R.id.datenschutz_Text)
                 datenschutzBtn.setOnClickListener {
                     var kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
+
                     val title = "Datenschutzerkärung"
-                    val content = HtmlCompat.fromHtml(kontaktContentArray[2], HtmlCompat.FROM_HTML_MODE_COMPACT)
+                    val content = HtmlCompat.fromHtml(datenschutzText, HtmlCompat.FROM_HTML_MODE_COMPACT)
                     createAlert(title, content)
                 }
                 nutzungsbedingungBtn = view.findViewById(R.id.nutzungsbedingung_text)
                 nutzungsbedingungBtn.setOnClickListener {
                     var kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
                     val title = "Nutzungsbedingungen"
-                    val content = HtmlCompat.fromHtml(kontaktContentArray[1], HtmlCompat.FROM_HTML_MODE_COMPACT)
+                    val content = HtmlCompat.fromHtml(nutzungsbedingungText, HtmlCompat.FROM_HTML_MODE_COMPACT)
                     createAlert(title, content)
                 }
                 zustimmen = view.findViewById<Button>(R.id.zustimmen)
