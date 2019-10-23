@@ -6,7 +6,8 @@
         <item name="babynahrung_title">Wasser für Babynahrung</item>
         <item name="ernaehrung_title">Wasser für das Aquarium</item>
         <item name="gartenteich_title">Wasser für Ihren Gartenteich</item>
-        <item name="trinkwasser_title">Wasser für Haut und Haar</item>
+        <item name="trinkwasser_title">Tipps für Ihren Nitratwert</item>
+        <item name="studien_title">Wissenschaftliche Studien</item>
     </string-array>
 
     <string-array name="nitrat_3_content">
@@ -118,5 +119,48 @@
                 <li>(6) <a href="https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html">oekotest.de/Test_109918_1.html</a></li>
                 <li>(7) <a href="https://www.test.de/Natuerliches-Mineralwasser-im-Test-4258945-0/">test.de/Natuerliches-Mineralwasser-im-Test-4258945-0</a></li>
             </ul>]]></item>
+        <item name="studien"><![CDATA[ <p>Über die potenziell negativen Auswirkungen von Nitrat auf die menschliche Gesundheit wird international seit vielen Jahren geforscht.
+                      Schon im Jahr 1982 wurde in einer dänischen Studie ein Zusammenhang zwischen Nitrat im Trinkwasser und einem erhöhtem Auftreten von Magenkrebs vermutet<sup>(1)</sup>.
+                      </p>
+                      <p>Im Jahr 1994 eine Studie in den USA zu dem Ergebnis, dass Trinkwasser mit einem Nitratgehalt von mehr als 50mg/l zu einer übermässigen Vergrößerung der Schilddrüse führt<sup>(2</sup>).
+                      </p>
+                      <p>Eine amerikanische Studie aus dem Jahr 2001 konnte Zusammenhänge zwischen einem erhöhten Nitratgehalt im Trinkwasser und Blasenkrebs sowie Einerstockkrdbs bei älteren Frauen finden, in derselben Studie konnten aber keinerlei Auswirkungen auf Gebärmutter- und Rektumkrebs  gefunden werden<sup>(3)</sup>.
+                      </p>
+                      <p>Auch der Zusammenhang von erhöhter Nitrataufnahme während Schwangerschaft und angeborenen Missbildungen wird seit vielen Jahren untersucht. Eine australische Studie aus dem Jahr 1984<sup>(4)</sup> oder aus Kanada 1988<sup>(5)</sup>.
+                      </p>
+                      <p>In einer anderen Studie aus dem jähr 2004 wurde eine verstärkende Wirkung von nitrathaltigem Trinkwasser mit nitrosierbaren Verbindungen wie amin- und amidhaltigen Arzneimitteln festgestellt<sup>(6)</sup>.
+                      </p>
+                      <p>In den letzten Jahren kamen mehrerer Studien aus Europa zum Ergebnis, dass bereits relativ niedrige Nitratkonzentrationen, die weit unter den gesetzlich festgelegten Grenzwerten von 50mg/l (bzw. 40mg/l in der Schweiz) liegen, zu einem erhöhten Risiko für verschiedene Darmkrebsarten führen.
+                      </p>
+                      <p>Im Jahr 2016 veröffentlichte ein spanisch/italienisches Team eine Studie, die über einen 5-jährigen Zeitraum 1869 Darmkrebsfälle in verschiedenen Regionen in Spanien und Italien auf den Zusammenhang zu unterschiedlichen Nitratkonzentrationen im Trinkwasser untersucht hat<sup>(7)</sup>. Hier wurde eine durchschnittlich 1,5 fache Häufigkeit der Darmkrebsfälle bei Teilnehmern ermittelt, deren Trinkwasser einen Nitratgehalt von mehr als 10mg/l aufwies gegenüber denen, die maximal 5mg/l ausgesetzt waren. Bei Männern war das Risiko größer als bei Frauen, ebenso bei Teilnehmern, die zusätzlich viel rotes Fleisch zu sich genommen haben.
+                      </p>
+                      <p>Im Jahr 2018 wurde eine viel beachtete Studie aus Dänemark veröffentlicht<sup>(8)</sup>, in der über einen Zeitraum von über 30 Jahren (1978-2011) anhand von Trinkwasseranalysen aus öffentlichen Wasserwerken und privaten Brunnen die individuelle durchschnittliche Nitratbelastung für 1,7 Millionen Menschen berechnet wurde und mit 11952 Darmkrebsfällen in diesem Zeitraum verglichen.
+                      </p>
+                      <p>Die Studie konnte einen eindeutigen Zusammenhang feststellen.<br>
+                      So hatten die Teilnehmer, die über den gesamten Zeitraum der Studie mehr als 16 mg/l Nitrat ausgesetzt waren, ein beinahe 20 Prozent höheres Darmkrebsrisiko als die, die weniger als 0,7 mg/l Nitrat über das Trinkwasser aufgenommen hatten.
+                      </p>
+                      <p>Bereits ab einem Wert von 3,87 mg Nitrat pro Liter konnte die Studie einen signifikanten Anstieg des Risikos an Darmkrebs (CRC) zu erkranken nachweisen.
+                      </p>
+                      <p>Die Studienautoren betonen, es sei besonders bedenklich, dass ein Risikoanstieg bereits bei Nitratkonzentrationen zu verzeichnen war, die deutlich unter den gesetzlich vorgeschriebenen Grenzwerten liegen, deshalb sei es sinnvoll über eine Reduzierung der Trinkwassergrenzwerte nachzudenken, unabhängig davon, dass das Thema weitere Studien erfordert.
+                      </p>
+                      <p>Die aktuellen Studien haben uns bewogen, eine eigene Studie zu der Verteilung der Nitratkonzentrationen in Deutschland und Österreich und der Anzahl der betroffenen Personen in diesen Gebieten zu veröffentlichen(9). Sehr deutlich wird, dass besonders in Norddeutschland und dem nördlichen Teil Ostdeutschlands viele Regionen mit einem sehr niedrigen Nitratgehalt &lt;10mg/l liegen (90% der Bevölkerung in Norddeutschland), während in den westlichen Bundesländern Nordrhein-Westfalen, Rheinland-Pfalz, Hessen und Saarland nur für 40% der Menschen Trinkwasser mit diesem niedrigen Nitratgehalt zur Verfügung steht.
+                      </p>
+                      <p>Gleichzeitig sind in diesen deutschen Bundesländern etwa 20% der Bevölkerung einem Nitratgehalt von mehr als 20mg/l ausgesetzt (Deutschland und Österreich ohne Norddeutschland: 10%, Norddeutschland 3,5%).
+                      </p>
+                      <h5>Zusammenfassung:</h5>
+                      <p>Auch wenn in den letzten Jahren immer deutlicher wurde, dass bereits relativ niedrige Nitratkonzentrationen im Trinkwasser verschiedene negative Auswirkungen auf die menschliche Gesundheit haben können, betonen alle Studienautoren, dass die Thematik weitere Untersuchungen erfordert. Das Zusammenhänge existieren, kann aber inzwischen nicht mehr ignoriert werden und sollte auch bei den verantwortlichen Stellen in der Regierung zu einer Diskussion über eine Anpassung der Grenzwerte führen.
+                      </p>
+
+                      <ul class="footnote">
+                          <li>(1) <a href="https://www.sciencedirect.com/science/article/pii/0147651382900161?via%3Dihub">Nitrat in Trinkwasser und Krebs in Nordjütland, Dänemark, unter besonderer Berücksichtigung von Magenkrebs</a></li>
+                          <li>(2) <a href="https://www.sciencedirect.com/science/article/pii/0378427494900507?via%3Dihub">Der Konsum von Trinkwasser mit hohen Nitratwerten führt zu einer Hypertrophie der Schilddrüse</a></li>
+                          <li>(3) <a href="https://insights.ovid.com/article/00001648-200105000-00013">Kommunaler Trinkwassernitratspiegel und Krebsrisiko bei älteren Frauen: Die Iowa Women's Health Study</a></li>
+                          <li>(4) <a href="https://www.ncbi.nlm.nih.gov/pubmed/6711537?dopt=Abstract">Angeborene Missbildungen und mütterliche Trinkwasserversorgung im ländlichen Südaustralien: eine Fall-Kontroll-Studie.</a></li>
+                          <li>(5) <a href="https://www.ncbi.nlm.nih.gov/pubmed/3377550?dopt=Abstract">Geburtsfehler von Wassernitraten und ZNS: eine populationsbasierte Fall-Kontroll-Studie.</a></li>
+                          <li>(6) <a href="https://www.ncbi.nlm.nih.gov/pubmed/15097014?dopt=Abstract">Nahrungsnitrite und -nitrate, nitrosierbare Arzneimittel und Neuralrohrdefekte</a></li>
+                          <li>(7) <a href=" https://onlinelibrary.wiley.com/doi/full/10.1002/ijc.30083">Darmkrebsrisiko und Nitratbelastung durch Trinkwasser und Ernährung</a></li>
+                          <li>(8) <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/ijc.31306">Nitrat in Trinkwasser und Darmkrebsrisiko: Eine landesweite bevölkerungsbezogene Kohortenstudie</a></li>
+                          <li>(9) <a href="https://wassertipps.de/nitrat_studie-verteilung.html">Verteilung der Nitratkonzentrationen im öffentlichen Trinkwasser in Deutschland und Österreich</a></li>
+                        </ul>]]></item>
     </string-array>
 </resources>
