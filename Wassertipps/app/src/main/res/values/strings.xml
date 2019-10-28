@@ -187,7 +187,7 @@
 
     <!--Notification texts-->
     <string name="group_notification_for">This is the %s notification group.</string>
-    <string name="notification_title">Erinnerung</string>
+    <string name="notification_title">Deine persönliche Wassererinnerung</string>
     <string name="notification_group">wasserbedarf</string>
     <string name="notification_trink_wasser_text">Trink %sml wasser!</string>
     <string name="title_activity_splash">SplashActivity</string>

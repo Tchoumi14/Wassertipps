@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="notification_text">
+        <item>Deine nächste Trinkerinnerung</item>
+        <item>Du solltest jetzt wieder ein Glas Wasser trinken</item>
+        <item>Gönn deinem Körper etwas zu trinken</item>
+        <item>Es ist wieder so weit, trink ein wenig</item>
+        <item>&#8230;ein Glas Wasser wartet schon auf dich</item>
+        <item>&#8230;huups, wie die Zeit vergeht&#8230;</item>
+        <item>Mach mal Pause, trink etwas</item>
+        <item>Trink ein Glas Wasser</item>
+        <item>Die nächste Trinkpause bitte</item>
+        <item>Fühlst du dich auch so ausgetrocknet?</item>
+        <item>Wie siehts mit deinem Durst aus?</item>
+    </string-array>
+</resources>

@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.util.Log
+import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
 import java.time.Clock
 import java.time.LocalDateTime
@@ -40,7 +41,13 @@ class NotifReceiver: BroadcastReceiver() {
             if(alarmArray.size!=0){
                 for(alarmData in alarmArray){
                     if(alarmData.id == intentId){
-                        NotificationHelper.createNotification(context, alarmData.waterMl)
+                        val notificationTextArray = context.resources.getStringArray(R.array.notification_text)
+                        var notificationText = "Du solltest jetzt wieder ein Glas Wasser trinken"
+                        if(alarmArray.indexOf(alarmData)!=0){
+                            val index = (Math.floor(Math.random() * (alarmArray.size - 0) + 0)).toInt()
+                            notificationText = notificationTextArray[index]
+                        }
+                        NotificationHelper.createNotification(context, notificationText, alarmData.waterMl)
                     }
                 }
             } else {
