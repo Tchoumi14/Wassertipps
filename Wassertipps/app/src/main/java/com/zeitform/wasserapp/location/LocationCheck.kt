@@ -30,6 +30,7 @@ class LocationCheck(val mContext: Context) {
                     locationGps = location
                 }
                 Log.d("Location from GPS ",locationGps.toString())
+                locationManager.removeUpdates(this)
             }
 
             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
@@ -51,6 +52,7 @@ class LocationCheck(val mContext: Context) {
                     locationNetwork = location
                 }
                 Log.d("Location from network ",locationNetwork.toString())
+                locationManager.removeUpdates(this)
             }
 
             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
@@ -128,8 +130,7 @@ class LocationCheck(val mContext: Context) {
             //Handle no location data
             Log.d("NO LOCATION" ,"no location data")
         }
-        //locationManager.removeUpdates(gpsListener)
-        //locationManager.removeUpdates(networkListener)
+
         return LocationData(latitude, longitude)
     }
 }
