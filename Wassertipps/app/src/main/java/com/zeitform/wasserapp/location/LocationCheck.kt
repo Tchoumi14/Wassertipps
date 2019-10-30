@@ -29,6 +29,7 @@ class LocationCheck(val mContext: Context) {
                 if (location != null) {
                     locationGps = location
                 }
+                Log.d("Location from GPS ",locationGps.toString())
             }
 
             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
@@ -49,6 +50,7 @@ class LocationCheck(val mContext: Context) {
                 if (location != null) {
                     locationNetwork = location
                 }
+                Log.d("Location from network ",locationNetwork.toString())
             }
 
             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
@@ -71,7 +73,7 @@ class LocationCheck(val mContext: Context) {
                 locationManager.requestLocationUpdates(
                     LocationManager.GPS_PROVIDER,
                     5000,
-                    0F,
+                    200F,
                     gpsListener)
                 val localGpsLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
                 if (localGpsLocation != null)
@@ -85,7 +87,7 @@ class LocationCheck(val mContext: Context) {
                 locationManager.requestLocationUpdates(
                     LocationManager.NETWORK_PROVIDER,
                     5000,
-                    0F,
+                    200F,
                     networkListener)
                 val localNetworkLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
                 if (localNetworkLocation != null)
@@ -95,7 +97,7 @@ class LocationCheck(val mContext: Context) {
 
                 //locationManager.removeUpdates(networkListener)
             }
-            if (locationGps != null && locationNetwork != null) {
+           if (locationGps != null && locationNetwork != null) {
                 if (locationGps!!.accuracy > locationNetwork!!.accuracy) {
                     Log.d("CodeAndroidLocation", " Network Latitude : " + locationNetwork!!.latitude)
                     Log.d("CodeAndroidLocation", " Network Longitude : " + locationNetwork!!.longitude)
@@ -126,8 +128,8 @@ class LocationCheck(val mContext: Context) {
             //Handle no location data
             Log.d("NO LOCATION" ,"no location data")
         }
-        locationManager.removeUpdates(gpsListener)
-        locationManager.removeUpdates(networkListener)
+        //locationManager.removeUpdates(gpsListener)
+        //locationManager.removeUpdates(networkListener)
         return LocationData(latitude, longitude)
     }
 }

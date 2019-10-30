@@ -72,6 +72,8 @@
                     android:layout_alignParentEnd="true"
                     android:gravity="end"/>
         </RelativeLayout>
+        <!--nicht benutzt-->
+        <!--
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:padding="@dimen/basic_text_padding"
                         android:background="@drawable/grey_row"
@@ -91,40 +93,7 @@
                       android:textColor="?attr/colorAppTextPrimary"
                       android:id="@+id/erinnerungen_field"
                       android:background="@drawable/erinnerung_textview"/>
-         <!-- <LinearLayout android:layout_width="0dp"
-                          android:layout_weight=".40"
-                          android:layout_height="35dp"
-                          android:layout_alignParentEnd="true"
-                          android:orientation="horizontal">
-                <Button android:layout_width="0dp"
-                        android:layout_weight=".25"
-                        android:textAlignment="center"
-                        android:textSize="9pt"
-                        android:textStyle="bold"
-                        android:background="@drawable/button_minus_selector"
-                        android:textColor="?attr/textWhite"
-                        android:layout_height="match_parent"
-                        android:id="@+id/erinnerungen_minus"
-                        android:text="-"/>
-                <TextView android:layout_width="0dp"
-                          android:layout_weight=".50"
-                          android:layout_height="match_parent"
-                          android:textSize="7pt"
-                          android:gravity="center"
-                          android:id="@+id/erinnerungen_field"
-                          android:background="@drawable/erinnerung_textview"/>
-                <Button android:layout_width="0dp"
-                        android:layout_weight=".25"
-                        android:textAlignment="center"
-                        android:textSize="9pt"
-                        android:textStyle="bold"
-                        android:background="@drawable/button_plus_selector"
-                        android:textColor="?attr/textWhite"
-                        android:layout_height="match_parent"
-                        android:id="@+id/erinnerungen_plus"
-                        android:text="+"/>
-            </LinearLayout> -->
         </LinearLayout>
-
+        -->
     </RelativeLayout>
 </RelativeLayout>

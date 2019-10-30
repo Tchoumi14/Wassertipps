@@ -71,7 +71,7 @@ class RechnerFragment : Fragment() {
     private lateinit var alterField: TextView
     private lateinit var wasserProTagField: EditText
     private lateinit var wasserProTagText: TextView
-    private lateinit var erinnerungenField: TextView
+    //private lateinit var erinnerungenField: TextView
     private lateinit var sportSwitch: SwitchCompat
     private lateinit var stillendeFrauenSwitch: SwitchCompat
     private lateinit var mitteilungenSwitch: SwitchCompat
@@ -109,7 +109,7 @@ class RechnerFragment : Fragment() {
         alterField = rootView.findViewById(R.id.alter_field)
         wasserProTagField = rootView.findViewById(R.id.wasserprotag_field)
         wasserProTagText = rootView.findViewById(R.id.wasserprotag_text)
-        erinnerungenField = rootView.findViewById(R.id.erinnerungen_field)
+        //erinnerungenField = rootView.findViewById(R.id.erinnerungen_field)
         aufwachenText = rootView.findViewById(R.id.aufwachen_text)
         einschlafenText = rootView.findViewById(R.id.einschlafen_text)
         gewichtField.setText("70",TextView.BufferType.EDITABLE)
@@ -134,7 +134,7 @@ class RechnerFragment : Fragment() {
         //TextView number, onClick opens Dialog with NumberPicker
         gewichtField.setOnClickListener { openDialog(SelectorType.GEWICHT,gewichtField.text.toString()) }
         alterField.setOnClickListener { openDialog(SelectorType.ALTER,alterField.text.toString()) }
-        erinnerungenField.setOnClickListener { openDialog(SelectorType.ERINNERUNGEN,erinnerungenField.text.toString()) }
+        //erinnerungenField.setOnClickListener { openDialog(SelectorType.ERINNERUNGEN,erinnerungenField.text.toString()) }
 
         mitteilungenSwitch.setOnCheckedChangeListener { _, isChecked ->
             rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
@@ -237,7 +237,7 @@ class RechnerFragment : Fragment() {
                 numPicker.maxValue=consumptionTimes[consumptionTimes.size-1]
                 numPicker.value = currentValue.toInt()
                 buttonSet.setOnClickListener {
-                    erinnerungenField.text = numPicker.value.toString()
+                    //erinnerungenField.text = numPicker.value.toString()
                     rechnerDataManager!!.erinnerungen = numPicker.value
                     Log.d("Selected value", numPicker.value.toString())
                     updateAlarms()
@@ -267,7 +267,7 @@ class RechnerFragment : Fragment() {
 
         val wasserProTagValue = rechnerDataManager!!.wasserProTag.trim()
         wasserProTagField.setText(wasserProTagValue,TextView.BufferType.EDITABLE)
-        erinnerungenField.text = rechnerDataManager!!.erinnerungen.toString()
+        //erinnerungenField.text = rechnerDataManager!!.erinnerungen.toString()
 
 
         if(wasserProTagValue=="-1" ){
@@ -452,18 +452,20 @@ class RechnerFragment : Fragment() {
             value = consumptionTimes.get(0).toString()
             Log.d("Cant be less", "that 200")
         }
+        rechnerDataManager!!.erinnerungen = value.toInt()
         val savedValue = rechnerDataManager!!.erinnerungen
-        if(savedValue!= -1 && consumptionTimes.indexOf(savedValue)!=-1){
+        /*if(savedValue!= -1 && consumptionTimes.indexOf(savedValue)!=-1){
                 erinnerungenField.text = savedValue.toString()
         } else {
             erinnerungenField.text = value
             rechnerDataManager!!.erinnerungen = value.toInt()
-        }
+        }*/
         Log.d("ConsumptionTimes", consumptionTimes.toString())
+        Log.d("Times", rechnerDataManager!!.erinnerungen.toString())
         //updateAlarms()
         //to set the text, if the switch is active
         val duration = einschlafenTimeInt - aufwachenTimeInt
-        val times = Integer.parseInt(erinnerungenField.text.toString().trim())
+        val times = rechnerDataManager!!.erinnerungen
         val interval = Math.round((duration/times).toDouble()).toInt()
         val waterMl = Integer.parseInt(wasserProTagField.text.toString().trim())/times
         setMitteilungActiveText(waterMl,interval)
@@ -487,7 +489,7 @@ class RechnerFragment : Fragment() {
             getString(R.string.app_name), "App notification channel.")
 
         val duration = einschlafenTimeInt - aufwachenTimeInt
-        val times = Integer.parseInt(erinnerungenField.text.toString().trim())
+        val times = rechnerDataManager!!.erinnerungen
         val interval = Math.round((duration/times).toDouble()).toInt()
         val waterMl = Integer.parseInt(wasserProTagField.text.toString().trim())/times
         Log.d("Time interval", interval.toString()+"mins")

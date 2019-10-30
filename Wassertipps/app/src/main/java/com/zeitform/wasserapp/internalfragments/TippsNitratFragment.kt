@@ -82,7 +82,7 @@ class TippsNitratFragment : Fragment() {
             wideGridImage.setImageResource(gridDrawables[endIndex])
         } else {
             adapter = TippsNitratAdapter(activity!!.applicationContext,listener, listItem, gridDrawables, gridColors)
-        } */
+        }*/
         adapter = TippsNitratAdapter(activity!!.applicationContext,listener, listItem, gridDrawables, gridColors)
         gridView!!.adapter = adapter
         return rootView
