@@ -8,7 +8,6 @@
         <item name="android:windowTitleBackgroundStyle">@color/appBackground_light</item>
         <item name="android:textColorAlertDialogListItem">@color/colorTextPrimary</item>
         <item name="android:windowBackground">@color/appBackground_light</item>
-        <item name="android:alertDialogStyle">@style/LightDialogStyle</item>
         <item name="colorAppPrimary">@color/colorPrimary</item>
         <item name="colorAppPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorSwitchTrackActive">@color/colorSwitchTrackActive</item>
@@ -59,7 +58,6 @@
         <item name="android:headerBackground">@color/appBackground_dark</item>
         <item name="android:windowTitleBackgroundStyle">@color/appBackground_dark</item>
         <item name="android:textColorAlertDialogListItem">@color/colorTextPrimary_dark</item>
-        <item name="android:alertDialogStyle">@style/DarkDialogStyle</item>
         <item name="colorAppPrimary">@color/colorPrimary_dark</item>
         <item name="colorAppPrimaryDark">@color/colorPrimaryFocus_dark</item>
         <item name="colorSwitchTrackActive">@color/colorSwitchTrackActive_dark</item>

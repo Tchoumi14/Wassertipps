@@ -405,9 +405,11 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     }
 
     private fun fetchLocation(){
-        val locData = LocationCheck(this.applicationContext).checkLocation()
-        val lat = locData.getLocation().latitude
-        val lon = locData.getLocation().longitude
+        val locData = LocationCheck(this.applicationContext)
+        locData.checkLocation()
+        val location = locData.getLocation()
+        val lat = location.latitude
+        val lon = location.longitude
         Log.d("Lat - Lon :", " "+lat+" - "+lon+"")
         getData(lat, lon)
     }

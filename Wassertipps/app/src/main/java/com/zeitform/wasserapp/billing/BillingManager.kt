@@ -29,7 +29,7 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
     }
     var refreshListListeners = ArrayList<InterfaceRefreshList>()
     // fires off every time value of the property changes
-    var isProPurchased: Boolean by Delegates.observable(false) { property, oldValue, newValue ->
+    var isProPurchased: Boolean by Delegates.observable(false) { _, _, _ ->
         // do your stuff here
         refreshListListeners.forEach {
             it.refreshListRequest()
@@ -79,7 +79,7 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
                     .build()
                 billingClient.querySkuDetailsAsync(params) { responseCode, skuDetailsList ->
                     if (responseCode.responseCode == BillingClient.BillingResponseCode.OK) {
-                        println("querySkuDetailsAsync, responseCode: $responseCode")
+                        //println("querySkuDetailsAsync, responseCode: $responseCode")
                         //println(skuDetailsList)
                         for(skuDetail in skuDetailsList){
                             productList.add(skuDetail)
@@ -87,7 +87,7 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
                         //var f = fragment1 as HomeFragment
                         //f.initProductData(skuDetailsList)
                     } else {
-                        println("Can't querySkuDetailsAsync, responseCode: $responseCode")
+                        //println("Can't querySkuDetailsAsync, responseCode: $responseCode")
                     }
                 }
             } else {
@@ -115,9 +115,9 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
             val purchasesResult = billingClient.queryPurchases(SkuType.INAPP)
             Log.i(TAG, "Querying purchases elapsed time: " + (System.currentTimeMillis() - time) + "ms")
            if (purchasesResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                Log.i(TAG, "purchase code OK"+BillingClient.BillingResponseCode.OK)
+                //Log.i(TAG, "purchase code OK"+BillingClient.BillingResponseCode.OK)
             } else {
-                Log.w(TAG, "queryPurchases() got an error response code: " + purchasesResult.getResponseCode())
+                //Log.w(TAG, "queryPurchases() got an error response code: " + purchasesResult.getResponseCode())
             }
             onQueryPurchasesFinished(purchasesResult)
         }
@@ -130,10 +130,7 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
     private fun onQueryPurchasesFinished(result: PurchasesResult) {
         // Have we been disposed of in the meantime? If so, or bad result code, then quit
         if (result.responseCode != BillingClient.BillingResponseCode.OK) {
-            Log.w(
-                TAG, "Billing client was null or result code (" + result.responseCode
-                        + ") was bad - quitting"
-            )
+            Log.w(TAG, "Billing client was null or result code (" + result.responseCode + ") was bad - quitting")
             return
         }
 
@@ -149,9 +146,9 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
      */
     override fun onPurchasesUpdated(billingResult: BillingResult?, purchases: MutableList<Purchase>?) {
         println("onPurchase")
-        println("Billing result :"+billingResult)
-        println("purchases made :"+purchases)
-        if(billingResult!!.responseCode == BillingClient.BillingResponseCode.OK) {
+        //println("Billing result :"+billingResult)
+        //println("purchases made :"+purchases)
+        if(billingResult?.responseCode == BillingClient.BillingResponseCode.OK) {
             if (purchases != null) {
                 for (purchase in purchases) {
                     handlePurchase(purchase)
@@ -159,7 +156,7 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
                 }
             }
             //mBillingUpdatesListener.onPurchasesUpdated(mPurchases)
-        } else if (billingResult.responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
+        } else if (billingResult?.responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
             Log.i(TAG, "onPurchasesUpdated() - user cancelled the purchase flow - skipping")
         } else {
             Log.w(TAG, "onPurchasesUpdated() got unknown resultCode: "+billingResult!!.responseCode)
@@ -184,10 +181,9 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
             return
         }
 
-        Log.d(TAG, "Got a verified purchase: $purchase")
+        //Log.d(TAG, "Got a verified purchase: $purchase")
         mPurchases?.clear()
         mPurchases?.add(purchase)
-        println("Purchases :"+purchase.originalJson)
         if(purchase.sku==BillingConstants.SKU_PRO){
             setIsProPurchased(true)
         } else {

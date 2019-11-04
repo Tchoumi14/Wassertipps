@@ -298,7 +298,7 @@ class RechnerFragment : Fragment() {
      */
     private fun openAufwachenTimePicker(hourInput: Int, minInput: Int){
         val timePickerListener = TimePickerDialog.OnTimeSetListener{ _, h, m ->
-            Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
+            //Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
             var hour = h.toString()
             var min = m.toString()
             if(hour.length<2) hour = "0"+hour
@@ -311,7 +311,7 @@ class RechnerFragment : Fragment() {
                 updateAlarms()
                 Log.d("Aufwachen", "updated")
             }
-            Log.d("wake up time as number", aufwachenTimeInt.toString())
+            //Log.d("wake up time as number", aufwachenTimeInt.toString())
         }
         timePicker = TimePickerDialog(this.activity, timePickerListener,hourInput,minInput,true)
 
@@ -319,7 +319,7 @@ class RechnerFragment : Fragment() {
     }
     private fun openEinschlafenTimePicker(hourInput: Int, minInput: Int){
         val timePickerListener = TimePickerDialog.OnTimeSetListener{ _, h, m ->
-            Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
+            //Toast.makeText(activity?.applicationContext, h.toString() + " : " + m +" : " , Toast.LENGTH_LONG).show()
             var hour = h.toString()
             var min = m.toString()
             if(hour.length<2) hour = "0"+hour
@@ -334,7 +334,7 @@ class RechnerFragment : Fragment() {
                 updateAlarms()
                 Log.d("Einschlafen", "updated")
             }
-            Log.d("Sleep time as number", einschlafenTimeInt.toString())
+            //Log.d("Sleep time as number", einschlafenTimeInt.toString())
         }
         timePicker = TimePickerDialog(this.activity, timePickerListener,hourInput,minInput,true)
 
@@ -453,7 +453,7 @@ class RechnerFragment : Fragment() {
             Log.d("Cant be less", "that 200")
         }
         rechnerDataManager!!.erinnerungen = value.toInt()
-        val savedValue = rechnerDataManager!!.erinnerungen
+        //val savedValue = rechnerDataManager!!.erinnerungen
         /*if(savedValue!= -1 && consumptionTimes.indexOf(savedValue)!=-1){
                 erinnerungenField.text = savedValue.toString()
         } else {

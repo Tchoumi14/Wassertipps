@@ -73,7 +73,7 @@ class HomeFragment : Fragment() {
     private lateinit var infoIcon: ImageView
     private lateinit var tippsHaerteBtn: Button
     private lateinit var tippsNitratBtn: Button
-    private lateinit var consumeBtn: Button
+    //private lateinit var consumeBtn: Button
     private var isReduced: Boolean = false
     private var listener: OnFragmentInteractionListener? = null
 
@@ -110,12 +110,13 @@ class HomeFragment : Fragment() {
         tippsNitratBtn = rootView.findViewById(R.id.tipps_nitrat)
         tippsNitratBtn.setOnClickListener { /*listener!!.openTippsNitrat()*/ if(checkAppPaymentStatus()) listener!!.openTippsNitrat() else purchasePopup() }
 
-        // TEST
+        // CONSUME PURCHASE- FOR TEST
+        /*
         consumeBtn = rootView.findViewById(R.id.consume_btn)
         consumeBtn.visibility = View.INVISIBLE
         consumeBtn.setOnClickListener {
             billingManager.consumeAsync(billingManager.mPurchases?.get(0)!!.purchaseToken)
-        }
+        } */
         //TEST
         return rootView
     }
@@ -404,13 +405,13 @@ class HomeFragment : Fragment() {
             tippsHaerteBtn.setBackgroundResource(R.drawable.button_background)
             tippsNitratBtn.setBackgroundResource(R.drawable.button_background)
             listener!!.updateRechnerStatus(true)
-            consumeBtn.visibility = View.VISIBLE
+            //consumeBtn.visibility = View.VISIBLE
             println("unlocked")
         } else {
             tippsHaerteBtn.setBackgroundResource(R.drawable.button_background_locked)
             tippsNitratBtn.setBackgroundResource(R.drawable.button_background_locked)
             listener!!.updateRechnerStatus(false)
-            consumeBtn.visibility = View.INVISIBLE
+            //consumeBtn.visibility = View.INVISIBLE
             println("Locked 1")
         }
     }

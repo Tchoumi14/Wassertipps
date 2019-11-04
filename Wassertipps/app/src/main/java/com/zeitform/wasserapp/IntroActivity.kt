@@ -245,7 +245,7 @@ class IntroActivity : AppCompatActivity() {
                 view = layoutInflater!!.inflate(layouts!![position], container, false)
                 datenschutzBtn = view.findViewById(R.id.datenschutz_Text)
                 datenschutzBtn.setOnClickListener {
-                    var kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
+                    //var kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
 
                     val title = "Datenschutzerkärung"
                     val content = HtmlCompat.fromHtml(datenschutzText, HtmlCompat.FROM_HTML_MODE_COMPACT)
@@ -253,7 +253,7 @@ class IntroActivity : AppCompatActivity() {
                 }
                 nutzungsbedingungBtn = view.findViewById(R.id.nutzungsbedingung_text)
                 nutzungsbedingungBtn.setOnClickListener {
-                    var kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
+                    //var kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
                     val title = "Nutzungsbedingungen"
                     val content = HtmlCompat.fromHtml(nutzungsbedingungText, HtmlCompat.FROM_HTML_MODE_COMPACT)
                     createAlert(title, content)
