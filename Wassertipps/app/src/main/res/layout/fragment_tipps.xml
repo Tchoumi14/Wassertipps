@@ -20,7 +20,7 @@
                       android:paddingBottom="@dimen/basic_text_padding"
                       android:layout_below="@+id/tipps_image_card"
                       android:text="@string/test_string"
-                      android:autoLink="web"
+                      android:autoLink="all"
                       android:linksClickable="true"/>
             <Button android:layout_width="100dp"
                     android:layout_height="100dp"

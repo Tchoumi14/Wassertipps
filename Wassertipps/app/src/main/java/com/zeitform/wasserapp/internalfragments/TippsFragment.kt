@@ -20,7 +20,7 @@ import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.viewmodel.SharedViewModel
 import org.w3c.dom.Text
 import android.content.Intent
-
+import android.text.method.LinkMovementMethod
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -61,6 +61,7 @@ class TippsFragment : Fragment() {
         // Inflate the layout for this fragment
         var rootView = inflater.inflate(R.layout.fragment_tipps, container, false)
         text = rootView.findViewById(R.id.tipps_text)
+        text.movementMethod = LinkMovementMethod.getInstance()
         urlButton = rootView.findViewById(R.id.url_Button)
         urlButton.setOnClickListener {
             val uri = Uri.parse(url) // missing 'http://' will cause crashed

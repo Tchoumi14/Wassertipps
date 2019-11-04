@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
@@ -32,7 +33,7 @@ class TippsNitratFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var gridView: GridView? = null
+    private lateinit var gridView: GridView
     private lateinit var listItem: Array<String>
     private var gridDrawables = ArrayList<Int>()
     private lateinit var gridColors: Array<String>

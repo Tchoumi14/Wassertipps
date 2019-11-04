@@ -6,41 +6,41 @@
               android:orientation="vertical"
                 android:background="?attr/appBackgroundColor"
                 tools:context=".internalfragments.TippsHaerteFragment">
+    <GridView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:columnWidth="160dp"
+              android:numColumns="2"
+              android:verticalSpacing="10dp"
+              android:clipToPadding="false"
+              android:stretchMode="spacingWidthUniform"
+              android:id="@+id/grid_tips">
+    </GridView>
 
-            <GridView android:layout_width="fill_parent"
-                      android:layout_height="fill_parent"
-                      android:gravity="center"
-                      android:columnWidth="160dp"
-                      android:numColumns="2"
-                      android:verticalSpacing="10dp"
-                      android:clipToPadding="false"
-                      android:stretchMode="spacingWidthUniform"
-                      android:id="@+id/grid_tips"/>
-
-        <RelativeLayout android:layout_width="match_parent"
-                        android:layout_height="160dp"
-                        android:orientation="horizontal"
-                        android:background="@drawable/rounded_shape_box"
-                        android:padding="@dimen/basic_text_padding"
-                        android:layout_marginTop="@dimen/basic_text_padding"
-                        android:layout_marginBottom="@dimen/basic_text_padding"
-                        android:id="@+id/wide_grid_layout"
-                        android:layout_below="@+id/grid_tips"
-                        android:visibility="visible">
-            <TextView android:layout_width="wrap_content"
-                      android:layout_height="match_parent"
-                      android:layout_alignParentStart="true"
-                      android:layout_alignParentTop="true"
-                      android:text="@string/test_string"
-                      android:id="@+id/wide_grid_layout_text"/>
-            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                       android:layout_alignParentEnd="true"
-                       android:layout_alignParentBottom="true"
-                       android:scaleType="centerInside"
-                       android:src="@drawable/tipps_studien"
-                       android:contentDescription="@string/test_string"
-                       android:id="@+id/wide_grid_layout_image"/>
-        </RelativeLayout>
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_shape_box"
+                    android:padding="@dimen/basic_text_padding"
+                    android:layout_marginTop="@dimen/basic_text_padding"
+                    android:layout_marginBottom="@dimen/basic_text_padding"
+                    android:id="@+id/wide_grid_layout"
+                    android:layout_below="@+id/grid_tips"
+                    android:visibility="visible">
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:layout_alignParentStart="true"
+                  android:layout_alignParentTop="true"
+                  android:text="@string/test_string"
+                  android:id="@+id/wide_grid_layout_text"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"
+                   android:layout_alignParentBottom="true"
+                   android:scaleType="centerInside"
+                   android:src="@drawable/tipps_studien"
+                   android:contentDescription="@string/test_string"
+                   android:id="@+id/wide_grid_layout_image"/>
+    </RelativeLayout>
 
 
 </RelativeLayout>
