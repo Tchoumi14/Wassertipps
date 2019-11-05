@@ -114,8 +114,10 @@ object NotificationHelper {
             // get a drawable reference for the LargeIcon
             color = ContextCompat.getColor(context.applicationContext, R.color.colorPrimary)
             setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.app_icon))
-            setContentText(notificationString)
-            setStyle(NotificationCompat.BigTextStyle().bigText(notificationString))
+            //setContentText(notificationString)
+            setStyle(NotificationCompat.BigTextStyle()
+                .setSummaryText("Erinnerung!")
+                .bigText(notificationString))
             setGroup("Wassertipps")
             setAutoCancel(true)
             // note is not important so if it doesn't exist no big deal
