@@ -107,7 +107,6 @@ object NotificationHelper {
         return NotificationCompat.Builder(context, channelId).apply {
             setSmallIcon(R.drawable.icon_status)
             setContentTitle(context.getString(R.string.notification_title))
-            setAutoCancel(true)
             setDefaults(Notification.DEFAULT_VIBRATE)
             setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
             setDefaults(Notification.DEFAULT_SOUND)
@@ -116,9 +115,9 @@ object NotificationHelper {
             color = ContextCompat.getColor(context.applicationContext, R.color.colorPrimary)
             setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.app_icon))
             setContentText(notificationString)
-            //setStyle(NotificationCompat.BigTextStyle().bigText(notificationString))
+            setStyle(NotificationCompat.BigTextStyle().bigText(notificationString))
             setGroup("Wassertipps")
-
+            setAutoCancel(true)
             // note is not important so if it doesn't exist no big deal
            /* if (reminderData.note != null) {
                 setStyle(NotificationCompat.BigTextStyle().bigText(reminderData.note))
