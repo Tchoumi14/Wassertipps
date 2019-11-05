@@ -21,6 +21,7 @@ import com.zeitform.wasserapp.viewmodel.SharedViewModel
 import org.w3c.dom.Text
 import android.content.Intent
 import android.text.method.LinkMovementMethod
+import android.webkit.WebSettings
 import android.webkit.WebView
 
 
@@ -42,7 +43,6 @@ class TippsFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var text: TextView
     private lateinit var webView: WebView
     private lateinit var urlButton: Button
     private lateinit var url: String
@@ -61,12 +61,12 @@ class TippsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var rootView = inflater.inflate(R.layout.fragment_tipps, container, false)
-        text = rootView.findViewById(R.id.tipps_text)
+        val rootView = inflater.inflate(R.layout.fragment_tipps, container, false)
         webView = rootView.findViewById(R.id.tipps_web)
-        var webSettings = webView.settings
-        webSettings.defaultFontSize = resources.getDimension(R.dimen.tipps_content_font_size).toInt()
-        text.movementMethod = LinkMovementMethod.getInstance()
+        webView.isHorizontalScrollBarEnabled = false
+        webView.isVerticalScrollBarEnabled = false
+        val webSettings = webView.settings
+        webSettings.defaultFontSize = 13
         urlButton = rootView.findViewById(R.id.url_Button)
         urlButton.setOnClickListener {
             val uri = Uri.parse(url) // missing 'http://' will cause crashed
@@ -84,7 +84,6 @@ class TippsFragment : Fragment() {
     private fun observeInput(sharedViewModel: SharedViewModel) {
         sharedViewModel.tippsContent.observe(this, Observer {
             it?.let {
-                //text.text = it
                 webView.loadData(it,"text/html","UTF-8")
             }
         })

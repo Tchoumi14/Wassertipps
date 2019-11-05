@@ -12,16 +12,7 @@
             <androidx.cardview.widget.CardView android:layout_width="match_parent"
                                                android:layout_height="wrap_content"
                                                android:id="@+id/tipps_image_card"/>
-            <TextView android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:id="@+id/tipps_text"
 
-                      android:textColor="?attr/colorAppTextPrimary"
-                      android:paddingTop="@dimen/basic_text_padding"
-                      android:paddingBottom="@dimen/basic_text_padding"
-                      android:layout_below="@+id/tipps_image_card"
-                      android:autoLink="all"
-                      android:linksClickable="true"/>
             <WebView android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:id="@+id/tipps_web"
