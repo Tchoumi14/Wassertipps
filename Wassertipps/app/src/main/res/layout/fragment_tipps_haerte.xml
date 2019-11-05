@@ -6,7 +6,7 @@
               android:orientation="vertical"
                 android:background="?attr/appBackgroundColor"
                 tools:context=".internalfragments.TippsHaerteFragment">
-    <GridView android:layout_width="fill_parent"
+   <!-- <GridView android:layout_width="fill_parent"
               android:layout_height="wrap_content"
               android:gravity="center"
               android:columnWidth="160dp"
@@ -15,9 +15,13 @@
               android:clipToPadding="false"
               android:stretchMode="spacingWidthUniform"
               android:id="@+id/grid_tips">
-    </GridView>
+    </GridView> -->
+    <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+    android:id="@+id/grid_recyclerview">
 
-    <RelativeLayout android:layout_width="match_parent"
+    </androidx.recyclerview.widget.RecyclerView>
+   <!-- <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:orientation="horizontal"
                     android:background="@drawable/rounded_shape_box"
@@ -41,6 +45,6 @@
                    android:contentDescription="@string/test_string"
                    android:id="@+id/wide_grid_layout_image"/>
     </RelativeLayout>
-
+-->
 
 </RelativeLayout>

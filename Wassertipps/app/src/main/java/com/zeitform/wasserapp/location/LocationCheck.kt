@@ -30,7 +30,7 @@ class LocationCheck(val mContext: Context) {
                 Log.d("CodeAndroidLocation", "hasGps")
                 locationManager.requestLocationUpdates(
                     LocationManager.GPS_PROVIDER,
-                    5000,
+                    1000,
                     200F,
                     gpsListener)
                 val localGpsLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
@@ -44,7 +44,7 @@ class LocationCheck(val mContext: Context) {
                 Log.d("CodeAndroidLocation", "hasNetwork")
                 locationManager.requestLocationUpdates(
                     LocationManager.NETWORK_PROVIDER,
-                    5000,
+                    1000,
                     200F,
                     networkListener)
                 val localNetworkLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)

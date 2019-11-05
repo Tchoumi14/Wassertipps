@@ -19,6 +19,7 @@ import androidx.core.content.ContextCompat
 object NotificationHelper {
 
     private const val ADMINISTER_REQUEST_CODE = 2019
+    private const val CHANNEL_ID = "Wassertipps_channel_1"
 
     /**
      * Sets up the notification channels for API 26+.
@@ -36,7 +37,8 @@ object NotificationHelper {
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
-            val channelId = "${context.packageName}-$name"
+            val channelId = CHANNEL_ID
+            println("Channel id at channel creation :"+channelId)
             val channel = NotificationChannel(channelId, name, importance)
             channel.description = description
             channel.setShowBadge(showBadge)
@@ -79,7 +81,7 @@ object NotificationHelper {
      * @param reminderData ReminderData for this notification
      */
     private fun buildGroupNotification(context: Context): NotificationCompat.Builder {
-        val channelId = "${context.packageName}-wasserbedarf"
+        val channelId = CHANNEL_ID
         return NotificationCompat.Builder(context, channelId).apply {
             setSmallIcon(R.drawable.icon_status)
             setContentTitle(context.getString(R.string.notification_title))
@@ -99,16 +101,16 @@ object NotificationHelper {
      */
     private fun buildNotificationForWasserbedarf(context: Context,notificationString: String, waterMl: Int): NotificationCompat.Builder {
 
+        val channelId = CHANNEL_ID
 
-        val channelId = "${context.packageName}-wasserbedarf"
-
+        println("Channel id at notification :"+channelId)
         return NotificationCompat.Builder(context, channelId).apply {
             setSmallIcon(R.drawable.icon_status)
             setContentTitle(context.getString(R.string.notification_title))
             setAutoCancel(true)
             setDefaults(Notification.DEFAULT_VIBRATE)
             setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-            //setDefaults(Notification.DEFAULT_SOUND)
+            setDefaults(Notification.DEFAULT_SOUND)
             setDefaults(Notification.DEFAULT_LIGHTS)
             // get a drawable reference for the LargeIcon
             color = ContextCompat.getColor(context.applicationContext, R.color.colorPrimary)

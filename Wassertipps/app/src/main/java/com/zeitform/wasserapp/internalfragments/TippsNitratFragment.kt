@@ -10,8 +10,12 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 import com.zeitform.wasserapp.R
+import com.zeitform.wasserapp.adapters.GridRecyclerViewAdapter
+import com.zeitform.wasserapp.adapters.GridSpaceItemDecoration
 import com.zeitform.wasserapp.adapters.TippsHaerteAdapter
 import com.zeitform.wasserapp.adapters.TippsNitratAdapter
 
@@ -30,10 +34,13 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class TippsNitratFragment : Fragment() {
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var gridView: GridView
+    private lateinit var gridLayoutManager: GridLayoutManager
+    private lateinit var gridRecyclerView: RecyclerView
     private lateinit var listItem: Array<String>
     private var gridDrawables = ArrayList<Int>()
     private lateinit var gridColors: Array<String>
@@ -56,10 +63,10 @@ class TippsNitratFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_tipps_haerte, container, false)
-        wideGridLayout = rootView.findViewById(R.id.wide_grid_layout)
-        wideGridText = rootView.findViewById(R.id.wide_grid_layout_text)
-        wideGridImage = rootView.findViewById(R.id.wide_grid_layout_image)
-        gridView = rootView.findViewById(R.id.grid_tips)
+        //wideGridLayout = rootView.findViewById(R.id.wide_grid_layout)
+        //wideGridText = rootView.findViewById(R.id.wide_grid_layout_text)
+        //wideGridImage = rootView.findViewById(R.id.wide_grid_layout_image)
+        //gridView = rootView.findViewById(R.id.grid_tips)
         listItem = resources.getStringArray(R.array.nitrat_tipps)
         var gridImagesString = resources.getStringArray(R.array.nitrat_box_images)
         gridColors = resources.getStringArray(R.array.nitrat_box_colors)
@@ -67,7 +74,7 @@ class TippsNitratFragment : Fragment() {
             // Log.d("Images", resources.getIdentifier(gridImagesString[i],"drawable",activity!!.applicationContext.packageName))
             gridDrawables.add(resources.getIdentifier(gridImagesString[i],"drawable",activity!!.applicationContext.packageName))
         }
-        val adapter: Adapter
+        //val adapter: Adapter
         /*if(listItem.size % 2 != 0){
             //odd number of items
             val endIndex = listItem.size-1
@@ -84,8 +91,25 @@ class TippsNitratFragment : Fragment() {
         } else {
             adapter = TippsNitratAdapter(activity!!.applicationContext,listener, listItem, gridDrawables, gridColors)
         }*/
-        adapter = TippsNitratAdapter(activity!!.applicationContext,listener, listItem, gridDrawables, gridColors)
-        gridView!!.adapter = adapter
+        //adapter = TippsNitratAdapter(activity!!.applicationContext,listener, listItem, gridDrawables, gridColors)
+        //gridView!!.adapter = adapter
+
+        gridRecyclerView = rootView.findViewById(R.id.grid_recyclerview)
+        gridRecyclerView.addItemDecoration(GridSpaceItemDecoration(10))
+        gridLayoutManager = GridLayoutManager(context,2)
+        if(listItem.size % 2 != 0){
+            println("ODD")
+            gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+
+                override fun getSpanSize(position: Int): Int {
+                    return if (position == listItem.size-1) { // totalRowCount : How many item you want to show
+                        2 // the item in position now takes up 4 spans
+                    } else 1
+                }
+            }
+        }
+        gridRecyclerView.layoutManager = gridLayoutManager
+        gridRecyclerView.adapter = GridRecyclerViewAdapter(activity!!.applicationContext,listener,listItem,gridDrawables,gridColors)
         return rootView
     }
 

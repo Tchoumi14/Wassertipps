@@ -484,10 +484,6 @@ class RechnerFragment : Fragment() {
      */
     private fun setAlarms(){
 
-        NotificationHelper.createNotificationChannel(activity!!.applicationContext,
-            NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
-            getString(R.string.app_name), "App notification channel.")
-
         val duration = einschlafenTimeInt - aufwachenTimeInt
         val times = rechnerDataManager!!.erinnerungen
         val interval = Math.round((duration/times).toDouble()).toInt()

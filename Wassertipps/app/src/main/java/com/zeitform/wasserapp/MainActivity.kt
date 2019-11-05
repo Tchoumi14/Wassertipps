@@ -23,6 +23,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.android.billingclient.api.*
 import com.google.android.gms.ads.AdListener
@@ -34,6 +35,7 @@ import com.zeitform.wasserapp.billing.BillingManager
 import com.zeitform.wasserapp.internalfragments.*
 import com.zeitform.wasserapp.location.LocationCheck
 import com.zeitform.wasserapp.navfragments.*
+import com.zeitform.wasserapp.notif.NotificationHelper
 import com.zeitform.wasserapp.prefmanagers.DataManager
 import com.zeitform.wasserapp.viewmodel.SharedViewModel
 import org.json.JSONArray
@@ -307,8 +309,9 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //Create notification channel
+        NotificationHelper.createNotificationChannel(this, NotificationManagerCompat.IMPORTANCE_HIGH, false, getString(R.string.app_name), "Wassertipps app notification channel.")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-
             this.window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
         }
         loadText()

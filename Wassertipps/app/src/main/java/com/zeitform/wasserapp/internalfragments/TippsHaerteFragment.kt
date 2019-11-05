@@ -53,7 +53,7 @@ class TippsHaerteFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_tipps_haerte, container, false)
-        gridView = rootView.findViewById(R.id.grid_tips)
+        /*gridView = rootView.findViewById(R.id.grid_tips)
         listItem = resources.getStringArray(R.array.haerte_tipps)
         var gridImagesString = resources.getStringArray(R.array.haerte_box_images)
         gridColors = resources.getStringArray(R.array.haerte_box_colors)
@@ -62,7 +62,7 @@ class TippsHaerteFragment : Fragment() {
             gridDrawables.add(resources.getIdentifier(gridImagesString[i],"drawable",activity!!.applicationContext.packageName))
         }
         val adapter = TippsHaerteAdapter(activity!!.applicationContext, listener,  listItem, gridDrawables, gridColors)
-        gridView!!.adapter = adapter
+        gridView!!.adapter = adapter*/
         return rootView
     }
 
