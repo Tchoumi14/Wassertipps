@@ -17,7 +17,7 @@ class SharedViewModel: ViewModel() {
 
     //tippsFragment
     val tippsTitle = MutableLiveData<Spanned>()
-    val tippsContent = MutableLiveData<Spanned>()
+    val tippsContent = MutableLiveData<String>()
     //infoFragment
     val infoTitle = MutableLiveData<Spanned>()
     val infoContent = MutableLiveData<Spanned>()

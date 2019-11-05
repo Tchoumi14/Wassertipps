@@ -116,7 +116,8 @@ object NotificationHelper {
             color = ContextCompat.getColor(context.applicationContext, R.color.colorPrimary)
             setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.app_icon))
             setContentText(notificationString)
-            setGroup("wasserbedarf")
+            //setStyle(NotificationCompat.BigTextStyle().bigText(notificationString))
+            setGroup("Wassertipps")
 
             // note is not important so if it doesn't exist no big deal
            /* if (reminderData.note != null) {

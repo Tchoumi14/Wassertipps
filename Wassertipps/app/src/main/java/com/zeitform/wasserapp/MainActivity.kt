@@ -150,18 +150,18 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         when(hart){
             1 -> {
                 hartArrayContent= resources.getStringArray(R.array.hart_1_content)
-
-                sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
             2 -> {
                 hartArrayContent= resources.getStringArray(R.array.hart_2_content)
-
-                sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
             3 -> {
                 hartArrayContent= resources.getStringArray(R.array.hart_3_content)
-
-                sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
         }
 
@@ -177,18 +177,18 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         when(nitrat){
             1 -> {
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_1_content)
-
-                sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
             2 -> {
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_2_content)
-
-                sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
             3 -> {
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_3_content)
-
-                sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
             }
         }
         prevFragment = active
