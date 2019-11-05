@@ -40,9 +40,6 @@ class TippsNitratFragment : Fragment() {
     private lateinit var listItem: Array<String>
     private var gridDrawables = ArrayList<Int>()
     private lateinit var gridColors: Array<String>
-    private lateinit var wideGridLayout: RelativeLayout
-    private lateinit var wideGridText: TextView
-    private lateinit var wideGridImage: ImageView
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,36 +56,12 @@ class TippsNitratFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_tipps_layout, container, false)
-        //wideGridLayout = rootView.findViewById(R.id.wide_grid_layout)
-        //wideGridText = rootView.findViewById(R.id.wide_grid_layout_text)
-        //wideGridImage = rootView.findViewById(R.id.wide_grid_layout_image)
-        //gridView = rootView.findViewById(R.id.grid_tips)
         listItem = resources.getStringArray(R.array.nitrat_tipps)
         var gridImagesString = resources.getStringArray(R.array.nitrat_box_images)
         gridColors = resources.getStringArray(R.array.nitrat_box_colors)
         for(i in 0 until gridImagesString.size){
-            // Log.d("Images", resources.getIdentifier(gridImagesString[i],"drawable",activity!!.applicationContext.packageName))
             gridDrawables.add(resources.getIdentifier(gridImagesString[i],"drawable",activity!!.applicationContext.packageName))
         }
-        //val adapter: Adapter
-        /*if(listItem.size % 2 != 0){
-            //odd number of items
-            val endIndex = listItem.size-1
-            val gridImagesTemp = gridDrawables
-            gridImagesTemp.remove(endIndex)
-            val gridColorsTemp = gridColors.sliceArray(IntRange(0,endIndex))
-            adapter = TippsNitratAdapter(activity!!.applicationContext,listener, listItem.copyOfRange(0, endIndex), gridImagesTemp, gridColorsTemp)
-            wideGridLayout.visibility = View.VISIBLE
-            wideGridLayout.setBackgroundResource(R.drawable.rounded_shape_box)
-            wideGridLayout.setBackgroundColor(Color.parseColor(gridColors.get(endIndex)))
-            wideGridText.text = listItem.get(endIndex)
-            println("text "+listItem.get(endIndex))
-            wideGridImage.setImageResource(gridDrawables[endIndex])
-        } else {
-            adapter = TippsNitratAdapter(activity!!.applicationContext,listener, listItem, gridDrawables, gridColors)
-        }*/
-        //adapter = TippsNitratAdapter(activity!!.applicationContext,listener, listItem, gridDrawables, gridColors)
-        //gridView!!.adapter = adapter
 
         gridRecyclerView = rootView.findViewById(R.id.grid_recyclerview)
         gridRecyclerView.addItemDecoration(GridSpaceItemDecoration(15))

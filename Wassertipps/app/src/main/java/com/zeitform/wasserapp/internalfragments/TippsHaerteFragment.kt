@@ -61,7 +61,6 @@ class TippsHaerteFragment : Fragment() {
         var gridImagesString = resources.getStringArray(R.array.haerte_box_images)
         gridColors = resources.getStringArray(R.array.haerte_box_colors)
         for(i in 0 until gridImagesString.size){
-           // Log.d("Images", resources.getIdentifier(gridImagesString[i],"drawable",activity!!.applicationContext.packageName))
             gridDrawables.add(resources.getIdentifier(gridImagesString[i],"drawable",activity!!.applicationContext.packageName))
         }
 
