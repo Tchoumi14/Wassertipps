@@ -14,9 +14,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.adapters.GridSpaceItemDecoration
 import com.zeitform.wasserapp.adapters.HaerteGridRecyclerViewAdapter
-import com.zeitform.wasserapp.adapters.NitratGridRecyclerViewAdapter
-import com.zeitform.wasserapp.adapters.TippsHaerteAdapter
-
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -59,8 +56,7 @@ class TippsHaerteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val rootView = inflater.inflate(R.layout.fragment_tipps_haerte, container, false)
-        /*gridView = rootView.findViewById(R.id.grid_tips)
+        val rootView = inflater.inflate(R.layout.fragment_tipps_layout, container, false)
         listItem = resources.getStringArray(R.array.haerte_tipps)
         var gridImagesString = resources.getStringArray(R.array.haerte_box_images)
         gridColors = resources.getStringArray(R.array.haerte_box_colors)
@@ -68,8 +64,7 @@ class TippsHaerteFragment : Fragment() {
            // Log.d("Images", resources.getIdentifier(gridImagesString[i],"drawable",activity!!.applicationContext.packageName))
             gridDrawables.add(resources.getIdentifier(gridImagesString[i],"drawable",activity!!.applicationContext.packageName))
         }
-        val adapter = TippsHaerteAdapter(activity!!.applicationContext, listener,  listItem, gridDrawables, gridColors)
-        gridView!!.adapter = adapter*/
+
         gridRecyclerView = rootView.findViewById(R.id.grid_recyclerview)
         gridRecyclerView.addItemDecoration(GridSpaceItemDecoration(15))
         gridLayoutManager = GridLayoutManager(context,2)

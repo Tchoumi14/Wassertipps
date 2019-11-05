@@ -58,7 +58,7 @@ class TippsNitratFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val rootView = inflater.inflate(R.layout.fragment_tipps_haerte, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_tipps_layout, container, false)
         //wideGridLayout = rootView.findViewById(R.id.wide_grid_layout)
         //wideGridText = rootView.findViewById(R.id.wide_grid_layout_text)
         //wideGridImage = rootView.findViewById(R.id.wide_grid_layout_image)

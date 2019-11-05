@@ -13,6 +13,19 @@ class GridSpaceItemDecoration(spacing: Int):  RecyclerView.ItemDecoration(){
             left =  spacing
             right = spacing
             bottom = spacing
+            if (parent.getChildAdapterPosition(view) % 2 == 0) {
+                left =  spacing + 5
+            } else {
+                right = spacing + 5
+            }
+
+            if(parent.childCount % 2 !=0){
+                if(parent.getChildAdapterPosition(view) == parent.childCount-1){
+                    println("Last item")
+                    left =  spacing + 5
+                    right = spacing + 5
+                }
+            }
         }
     }
 
