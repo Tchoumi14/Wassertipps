@@ -95,7 +95,7 @@ class TippsNitratFragment : Fragment() {
         //gridView!!.adapter = adapter
 
         gridRecyclerView = rootView.findViewById(R.id.grid_recyclerview)
-        gridRecyclerView.addItemDecoration(GridSpaceItemDecoration(10))
+        gridRecyclerView.addItemDecoration(GridSpaceItemDecoration(15))
         gridLayoutManager = GridLayoutManager(context,2)
         if(listItem.size % 2 != 0){
             println("ODD")
