@@ -8,8 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.GridView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 import com.zeitform.wasserapp.R
+import com.zeitform.wasserapp.adapters.GridSpaceItemDecoration
+import com.zeitform.wasserapp.adapters.HaerteGridRecyclerViewAdapter
+import com.zeitform.wasserapp.adapters.NitratGridRecyclerViewAdapter
 import com.zeitform.wasserapp.adapters.TippsHaerteAdapter
 
 
@@ -34,6 +39,8 @@ class TippsHaerteFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var gridView: GridView? = null
+    private lateinit var gridRecyclerView: RecyclerView
+    private lateinit var gridLayoutManager: GridLayoutManager
     private lateinit var listItem: Array<String>
     private var gridDrawables = ArrayList<Int>()
     private lateinit var gridColors: Array<String>
@@ -63,6 +70,22 @@ class TippsHaerteFragment : Fragment() {
         }
         val adapter = TippsHaerteAdapter(activity!!.applicationContext, listener,  listItem, gridDrawables, gridColors)
         gridView!!.adapter = adapter*/
+        gridRecyclerView = rootView.findViewById(R.id.grid_recyclerview)
+        gridRecyclerView.addItemDecoration(GridSpaceItemDecoration(15))
+        gridLayoutManager = GridLayoutManager(context,2)
+        if(listItem.size % 2 != 0){
+            println("ODD")
+            gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+
+                override fun getSpanSize(position: Int): Int {
+                    return if (position == listItem.size-1) { // totalRowCount : How many item you want to show
+                        2 // the item in position now takes up 4 spans
+                    } else 1
+                }
+            }
+        }
+        gridRecyclerView.layoutManager = gridLayoutManager
+        gridRecyclerView.adapter = HaerteGridRecyclerViewAdapter(activity!!.applicationContext,listener,listItem,gridDrawables,gridColors)
         return rootView
     }
 

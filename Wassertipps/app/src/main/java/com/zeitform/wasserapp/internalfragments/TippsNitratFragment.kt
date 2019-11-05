@@ -1,12 +1,10 @@
 package com.zeitform.wasserapp.internalfragments
 
 import android.content.Context
-import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
@@ -14,10 +12,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.zeitform.wasserapp.R
-import com.zeitform.wasserapp.adapters.GridRecyclerViewAdapter
+import com.zeitform.wasserapp.adapters.NitratGridRecyclerViewAdapter
 import com.zeitform.wasserapp.adapters.GridSpaceItemDecoration
-import com.zeitform.wasserapp.adapters.TippsHaerteAdapter
-import com.zeitform.wasserapp.adapters.TippsNitratAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -109,7 +105,7 @@ class TippsNitratFragment : Fragment() {
             }
         }
         gridRecyclerView.layoutManager = gridLayoutManager
-        gridRecyclerView.adapter = GridRecyclerViewAdapter(activity!!.applicationContext,listener,listItem,gridDrawables,gridColors)
+        gridRecyclerView.adapter = NitratGridRecyclerViewAdapter(activity!!.applicationContext,listener,listItem,gridDrawables,gridColors)
         return rootView
     }
 

@@ -9,7 +9,7 @@ import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.internalfragments.TippsNitratFragment
 import kotlinx.android.synthetic.main.box_item.view.*
 
-class GridViewHolder(itemView: View, private val listener: TippsNitratFragment.OnFragmentInteractionListener?) : RecyclerView.ViewHolder(itemView) {
+class NitratGridViewHolder(itemView: View, private val listener: TippsNitratFragment.OnFragmentInteractionListener?) : RecyclerView.ViewHolder(itemView) {
     var textView = itemView.box_text
     var imageView = itemView.box_image
     var cardView = itemView.box_item_card
@@ -18,7 +18,7 @@ class GridViewHolder(itemView: View, private val listener: TippsNitratFragment.O
         textView.text = text
         imageView.setImageResource(image)
         cardView.setOnClickListener {
-                Handler().postDelayed(Runnable { listener!!.generateNitratTipps(text) }, 500)
+                Handler().postDelayed(Runnable { listener!!.generateNitratTipps(text) }, 300)
             }
         cardView.setBackgroundResource(R.drawable.rounded_shape_box)
         val drawable = cardView.background as GradientDrawable

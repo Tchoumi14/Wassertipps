@@ -6,15 +6,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.zeitform.wasserapp.R
+import com.zeitform.wasserapp.internalfragments.TippsHaerteFragment
 import com.zeitform.wasserapp.internalfragments.TippsNitratFragment
 
-class GridRecyclerViewAdapter(private val context: Context, private val listener: TippsNitratFragment.OnFragmentInteractionListener?, private val dataSource: Array<String>, private val imgSource: ArrayList<Int>, private val colorSource: Array<String>): RecyclerView.Adapter<GridViewHolder>(){
+class HaerteGridRecyclerViewAdapter(private val context: Context, private val listener: TippsHaerteFragment.OnFragmentInteractionListener?, private val dataSource: Array<String>, private val imgSource: ArrayList<Int>, private val colorSource: Array<String>): RecyclerView.Adapter<HaerteGridViewHolder>(){
     private val inflater: LayoutInflater
             = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GridViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HaerteGridViewHolder {
         val boxView = inflater.inflate(R.layout.box_item, parent, false)
-        return GridViewHolder(boxView, listener)
+        return HaerteGridViewHolder(boxView, listener)
     }
 
     override fun getItemCount(): Int {
@@ -30,11 +31,11 @@ class GridRecyclerViewAdapter(private val context: Context, private val listener
     private fun getColor(position: Int): String {
         return colorSource[position]
     }
-    override fun onBindViewHolder(holder: GridViewHolder, position: Int) {
+    override fun onBindViewHolder(holderHaerte: HaerteGridViewHolder, position: Int) {
         val text = getItem(position)
         val image = getImage(position)
         val color= Color.parseColor(getColor(position))
-        holder.updateHolder(text, image, color)
+        holderHaerte.updateHolder(text, image, color)
     }
 
 }
