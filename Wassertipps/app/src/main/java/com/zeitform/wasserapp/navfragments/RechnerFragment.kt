@@ -5,6 +5,7 @@ import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
@@ -21,6 +22,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.content.ContextCompat
 import com.android.billingclient.api.SkuDetails
 import com.google.gson.Gson
 import com.zeitform.wasserapp.InputFilterMinMax
@@ -114,8 +116,8 @@ class RechnerFragment : Fragment() {
         einschlafenText = rootView.findViewById(R.id.einschlafen_text)
         gewichtField.setText("70",TextView.BufferType.EDITABLE)
         alterField.setText("29",TextView.BufferType.EDITABLE)
-        wasserProTagField.setText("0",TextView.BufferType.EDITABLE)
-        wasserProTagField.filters = arrayOf<InputFilter>(InputFilterMinMax(800, 10000))
+        wasserProTagField.setText("1",TextView.BufferType.EDITABLE)
+        wasserProTagField.filters = arrayOf<InputFilter>(InputFilterMinMax(0, 10000))
 
         purchaseButton = rootView.findViewById(R.id.purchase_button)
 
@@ -138,6 +140,10 @@ class RechnerFragment : Fragment() {
 
         mitteilungenSwitch.setOnCheckedChangeListener { _, isChecked ->
             rechnerDataManager!!.mitteilungenSwitch = isChecked //save to data manager
+            val watermlValue = Integer.parseInt(wasserProTagField.text.toString().trim())
+            if(watermlValue < 800){
+                mitteilungenSwitch.isChecked = false
+            }
             //Set alarms
             if(isChecked) {
                 mitteilungActiveTextBox.visibility = View.VISIBLE
@@ -368,7 +374,11 @@ class RechnerFragment : Fragment() {
 
         override fun afterTextChanged(s: Editable?) {
             if(s.toString().trim()!=""){
-                calculateErinnerung(Integer.parseInt(s.toString().trim()))
+                if(Integer.parseInt(s.toString().trim())>=250){
+                    calculateErinnerung(Integer.parseInt(s.toString().trim()))
+                } else {
+                    mitteilungenSwitch.isChecked = false
+                }
             }
         }
 
@@ -441,6 +451,7 @@ class RechnerFragment : Fragment() {
                 consumptionTimes.add(i)
             }
         }
+        println("cons times :"+consumptionTimes)
         val value:String
         if(consumptionTimes.size>2){
             val index = Math.round((consumptionTimes.size/2).toDouble())
@@ -448,21 +459,28 @@ class RechnerFragment : Fragment() {
         } else if(consumptionTimes.size in 1..2) {
             value = consumptionTimes.get(consumptionTimes.size-1).toString()
         } else {
-            consumptionTimes.add(0)
+            var tempWaterMl = waterml
+            var tempCount = 0
+            for(i in 1 until 20){
+                if(tempWaterMl >= 250){
+                    tempWaterMl -= 250
+                    tempCount++
+                }
+            }
+            consumptionTimes.add(tempCount)
             value = consumptionTimes.get(0).toString()
-            Log.d("Cant be less", "that 200")
         }
         rechnerDataManager!!.erinnerungen = value.toInt()
-        //val savedValue = rechnerDataManager!!.erinnerungen
-        /*if(savedValue!= -1 && consumptionTimes.indexOf(savedValue)!=-1){
-                erinnerungenField.text = savedValue.toString()
+        val savedValue = rechnerDataManager!!.erinnerungen
+        if(savedValue!= -1 && consumptionTimes.indexOf(savedValue)!=-1){
+                //erinnerungenField.text = savedValue.toString()
         } else {
-            erinnerungenField.text = value
+            //erinnerungenField.text = value
             rechnerDataManager!!.erinnerungen = value.toInt()
-        }*/
+        }
         Log.d("ConsumptionTimes", consumptionTimes.toString())
         Log.d("Times", rechnerDataManager!!.erinnerungen.toString())
-        //updateAlarms()
+        updateAlarms()
         //to set the text, if the switch is active
         val duration = einschlafenTimeInt - aufwachenTimeInt
         val times = rechnerDataManager!!.erinnerungen

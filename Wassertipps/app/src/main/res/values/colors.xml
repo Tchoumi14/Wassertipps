@@ -61,5 +61,5 @@
 
     <!-- dots active color -->
     <color name="dot_inactive">@color/colorPrimaryDark</color>
-
+    <color name="warning">#F35656</color>
 </resources>
