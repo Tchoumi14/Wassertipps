@@ -315,7 +315,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             this.window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
         }
         loadText()
-
+/*
         // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this) {}
 
@@ -337,7 +337,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 }
             })
         }
-        mInterstitialAd.loadAd(AdRequest.Builder().build())
+        mInterstitialAd.loadAd(AdRequest.Builder().build()) */
         navView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
 

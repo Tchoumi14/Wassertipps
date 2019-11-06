@@ -106,10 +106,11 @@ class HomeFragment : Fragment() {
         nearText = rootView.findViewById(R.id.near_text)
         dataTable = rootView.findViewById(R.id.nodata_table)
         tippsHaerteBtn = rootView.findViewById(R.id.tipps_haerte)
-        tippsHaerteBtn.setOnClickListener { /*listener!!.openTippsHaerte()*/if(checkAppPaymentStatus()) listener!!.openTippsHaerte() else purchasePopup() }
+        tippsHaerteBtn.setOnClickListener { listener!!.openTippsHaerte() /*if(checkAppPaymentStatus()) listener!!.openTippsHaerte() else purchasePopup() */}
         tippsNitratBtn = rootView.findViewById(R.id.tipps_nitrat)
-        tippsNitratBtn.setOnClickListener { /*listener!!.openTippsNitrat()*/ if(checkAppPaymentStatus()) listener!!.openTippsNitrat() else purchasePopup() }
-
+        tippsNitratBtn.setOnClickListener { listener!!.openTippsNitrat() /* if(checkAppPaymentStatus()) listener!!.openTippsNitrat() else purchasePopup() */}
+        tippsHaerteBtn.setBackgroundResource(R.drawable.button_background)
+        tippsNitratBtn.setBackgroundResource(R.drawable.button_background)
         // CONSUME PURCHASE- FOR TEST
         /*
         consumeBtn = rootView.findViewById(R.id.consume_btn)
@@ -133,6 +134,7 @@ class HomeFragment : Fragment() {
             observeInput(sharedViewModel)
         }
         sharedViewModel = ViewModelProviders.of(this).get(SharedViewModel::class.java)
+        /*
         billingManager = BillingManager(activity!!)
         billingManager.setupBillingClient()
         listener!!.setBillingManager(billingManager)
@@ -141,7 +143,8 @@ class HomeFragment : Fragment() {
                 update()
             }
         })
-
+*/
+        listener!!.updateRechnerStatus(true) //enable rechner
     }
 
     private fun observeInput(sharedViewModel: SharedViewModel) {

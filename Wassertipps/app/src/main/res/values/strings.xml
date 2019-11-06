@@ -112,7 +112,7 @@
     </string>
     <string name="dialog_message_2">Wollen Sie auf die Ursprungswerte zurücksetzen?</string>
     <string name="dialog_button_yes">Ja</string>
-    <string name="dialog_button_no">Nien</string>
+    <string name="dialog_button_no">Nein</string>
 
     <!--Wasserbedarfrechner string-->
     <string name="rechner_text_1">Entsprechend den Referenzwerten der Deutschen Gesellschaft für Ernährung (DGE), können
