@@ -114,6 +114,11 @@
     <string name="dialog_button_yes">Ja</string>
     <string name="dialog_button_no">Nein</string>
 
+    <!--Location access popup-->
+    <string name="location_setting_title">Standort</string>
+    <string name="location_setting_content">Standort ist deaktiviert! Möchten Sie die Standort einschalten?</string>
+    <string name="location_setting">Einstellung</string>
+
     <!--Wasserbedarfrechner string-->
     <string name="rechner_text_1">Entsprechend den Referenzwerten der Deutschen Gesellschaft für Ernährung (DGE), können
         Sie hier die Flüssigkeitsmenge ausrechnen, die Ihr Körper täglich an Getränken benötigt (ohne Oxidationswasser

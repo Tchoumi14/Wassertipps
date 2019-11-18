@@ -1,17 +1,21 @@
 package com.zeitform.wasserapp
 
 import android.Manifest
+import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.Color
+import android.location.LocationManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.provider.Settings
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -56,7 +60,9 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionList
     RechnerFragment.OnFragmentInteractionListener, KontaktFragment.OnFragmentInteractionListener, TippsHaerteFragment.OnFragmentInteractionListener,
 TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, KontaktSubFragment.OnFragmentInteractionListener{
 
+    private var isLocationFetched: Boolean = false
     private var doubleBackToExitPressedOnce = false
+    private lateinit var locManager: LocationManager
     private var datenschutzText: String = "Daten konnten nicht geladen werden. Bitte überprüfen Sie Ihre Internetverbindung."
     private var nutzungsbedingungText:String = "Daten konnten nicht geladen werden. Bitte überprüfen Sie Ihre Internetverbindung."
     private lateinit var mInterstitialAd: InterstitialAd
@@ -84,6 +90,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     private var near: Int? = 0
     private var zip: String? = null
     private var permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
+    private lateinit var locData: LocationCheck
     private lateinit var navView: BottomNavigationView
     private lateinit var textMessage: TextView
     private lateinit var toolbar: Toolbar
@@ -393,29 +400,49 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 }
             }
         })
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkPermission(permissions)) {
-                //Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show()
-                //getLocation()
-                fetchLocation()
+        locManager = this.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        checkLocationPermission()
+    }
+
+    /**
+     * Check location status and permission
+     */
+    private fun checkLocationPermission(){
+        if(locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (checkPermission(permissions)) {
+                    //Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show()
+                    fetchLocation()
+                } else {
+                    requestPermissions(permissions, PERMISSION_REQUEST)
+                }
             } else {
-                requestPermissions(permissions, PERMISSION_REQUEST)
+                //Toast.makeText(this, "Android < 6", Toast.LENGTH_SHORT).show()
+                fetchLocation()
             }
         } else {
-            //Toast.makeText(this, "Android < 6", Toast.LENGTH_SHORT).show()
-            fetchLocation()
+            locationSettingPopup()
+            //startActivity(Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS))
         }
     }
 
+    /**
+     * Fetch location using LocationCheck
+     */
     private fun fetchLocation(){
-        val locData = LocationCheck(this.applicationContext)
+        locData = LocationCheck(this.applicationContext)
         locData.checkLocation()
+        isLocationFetched = true
         val location = locData.getLocation()
         val lat = location.latitude
         val lon = location.longitude
         Log.d("Lat - Lon :", " "+lat+" - "+lon+"")
         getData(lat, lon)
     }
+
+    /**
+     * Fetch webpage data from the URL
+     */
     private fun loadText(){
         Executors.newSingleThreadExecutor().execute {
             try{
@@ -440,6 +467,18 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         super.onDestroy()
         mHandler.removeCallbacks(mRunnable)
     }
+
+    override fun onResume() {
+        super.onResume()
+        if(!isLocationFetched && locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            Log.d("Location ", "on resume")
+            checkLocationPermission()
+        }
+    }
+
+    /**
+     * Update Wasserbedarfrechner navbar icon
+     */
     private fun updateRechnerNavIcon(value: Boolean){
         println("At update rechner navicon")
         val item = navView.menu.findItem(R.id.navigation_wasserbedarf)
@@ -449,6 +488,10 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             item.icon = ContextCompat.getDrawable(this,R.drawable.icon_trinken_grey)
         }
     }
+
+    /**
+     * Check location permission
+     */
     private fun checkPermission(permissionArray: Array<String>): Boolean {
         var allSuccess = true
         for (i in permissionArray.indices) {
@@ -458,8 +501,10 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         return allSuccess
     }
 
+    /**
+     * Parse JSON response
+     */
     private fun parseJson(jsonResponse: String){
-
         jsonArray = JSONArray(jsonResponse) //has all the response
         if(jsonArray!!.length()==0){
             println("Außerhalb Deutschland")
@@ -499,6 +544,10 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     fun createToast(text: String) {
         Toast.makeText(this@MainActivity, text, Toast.LENGTH_SHORT).show()
     }
+
+    /**
+     * get water data for the given location
+     */
     private fun getData(latitude: Double?, longitude:Double?){
         Executors.newSingleThreadExecutor().execute {
             var responseText = ""
@@ -528,6 +577,38 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         }
     }
 
+    private fun locationSettingPopup(){
+        val alertDialog: AlertDialog? = this?.let {
+            val builder = AlertDialog.Builder(it)
+            builder.apply {
+                builder.setTitle(R.string.location_setting_title)
+                builder.setMessage(R.string.location_setting_content)
+
+                setPositiveButton(
+                    context.getString(R.string.location_setting)
+                ) { _, _ ->
+                    startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+                }
+                setNegativeButton(
+                    R.string.dialog_button_no
+                ) { _, _ ->
+                    // User cancelled the dialog
+                }
+            }
+            // Create the AlertDialog
+
+            builder.create()
+        }
+        alertDialog?.show()
+        var positive = alertDialog?.getButton(DialogInterface.BUTTON_POSITIVE)
+        if(positive != null) {
+            positive.isAllCaps = false
+        }
+        var negative = alertDialog?.getButton(DialogInterface.BUTTON_NEGATIVE)
+        if(negative!=null){
+            negative.isAllCaps = false
+        }
+    }
 
 }
 
