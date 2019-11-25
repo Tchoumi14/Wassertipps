@@ -211,7 +211,7 @@
         <div class="col-xs-12">
           <div class="text-left tipp">
              <p>Sie haben relativ hartes Wasser. Es enthält sehr viele Mineralien, was beim Erhitzen dazu führt, das Kalk auf den Heizstäben Ihrer Waschmaschine abgelagert wird.</p>
-             <img src=\"app_icon\" alt="Beispielhafte Dosierung bei hartem Wasser" class="img-responsive">
+             <img style="max-width: 100%;" src="https://app.wassertipps.de/app/images/tipps/bsp-dosierung_hart3.png" alt="Beispielhafte Dosierung bei hartem Wasser" class="img-responsive">
             <p>
               Deshalb sollten Sie bei der Dosieranweisung, die auf jeder Waschmittel-Packung abgedruckt ist, die Mengenangaben für hartes Wasser (Härtebereich 3) befolgen, damit eine ausreichende Menge an Enthärter, der in jedem Waschmittel enthalten ist, Ihre Maschine vor dem Verkalken schützt.</p>
           </div>

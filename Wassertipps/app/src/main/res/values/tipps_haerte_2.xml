@@ -205,7 +205,7 @@
         <div class="col-xs-12">
           <div class="text-left tipp">
              <p>Sie haben mittelhartes Wasser. Es enthält viele Mineralien, was beim Erhitzen dazu führt, das Kalk auf den Heizstäben Ihrer Waschmaschine abgelagert wird.</p>
-             <img src=\"app_icon\" alt="Beispielhafte Dosierung bei mittelhartem Wasser" class="img-responsive">
+             <img style="max-width: 100%;" src="https://app.wassertipps.de/app/images/tipps/bsp-dosierung_hart2.png" alt="Beispielhafte Dosierung bei mittelhartem Wasser" class="img-responsive">
             <p>
               Deshalb sollten Sie bei der Dosieranweisung, die auf jeder Waschmittel-Packung abgedruckt ist, die Mengenangaben für mittelhartes Wasser (Härtebereich 2) befolgen, damit eine ausreichende Menge an Enthärter, der in jedem Waschmittel enthalten ist, Ihre Maschine vor dem Verkalken schützt.</p>
           </div>

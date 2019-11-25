@@ -81,7 +81,7 @@ class LocationCheck(val mContext: Context, sharedViewModel: SharedViewModel?) {
                 locationGps = location
             }
             Log.d("Location from GPS ",locationGps.toString())
-            Toast.makeText(mContext, "Location from GPS "+locationGps.toString(), Toast.LENGTH_LONG).show()
+            //Toast.makeText(mContext, "Location from GPS "+locationGps.toString(), Toast.LENGTH_LONG).show()
             locationManager.removeUpdates(this)
             checkBestLocation()
         }
@@ -105,7 +105,7 @@ class LocationCheck(val mContext: Context, sharedViewModel: SharedViewModel?) {
                 locationNetwork = location
             }
             Log.d("Location from network ",locationNetwork.toString())
-            Toast.makeText(mContext, "Location from Network "+locationNetwork.toString(), Toast.LENGTH_LONG).show()
+            //Toast.makeText(mContext, "Location from Network "+locationNetwork.toString(), Toast.LENGTH_LONG).show()
             locationManager.removeUpdates(this)
             checkBestLocation()
         }

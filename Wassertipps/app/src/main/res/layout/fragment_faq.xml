@@ -26,8 +26,7 @@
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textAllCaps="false"
                     android:textStyle="bold"
-                    android:textAlignment="textStart"
-            android:textFontWeight="800"/>
+                    android:textAlignment="textStart"/>
 
             <com.github.aakira.expandablelayout.ExpandableRelativeLayout
                     android:id="@+id/expandableLayout1"

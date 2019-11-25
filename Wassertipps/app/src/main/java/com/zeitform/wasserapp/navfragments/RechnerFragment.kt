@@ -509,7 +509,7 @@ class RechnerFragment : Fragment() {
         val waterMl = Integer.parseInt(wasserProTagField.text.toString().trim())/times
         Log.d("Time interval", interval.toString()+"mins")
         alarmTimes = ArrayList()
-        for(i in 1 until times+1){
+        for(i in 0 until times+1){
             val t = aufwachenTimeInt + (i * interval)
             val mins = t%60
             val hour = t/60
