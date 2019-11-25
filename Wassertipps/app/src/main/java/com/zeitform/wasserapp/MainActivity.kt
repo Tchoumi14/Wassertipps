@@ -159,16 +159,19 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 hartArrayContent= resources.getStringArray(R.array.hart_1_content)
                 sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                createToast("hart 1:"+hart)
             }
             2 -> {
                 hartArrayContent= resources.getStringArray(R.array.hart_2_content)
                 sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                createToast("hart 2:"+hart)
             }
             3 -> {
                 hartArrayContent= resources.getStringArray(R.array.hart_3_content)
                 sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                createToast("hart 3:"+hart)
             }
         }
 
@@ -186,16 +189,19 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_1_content)
                 sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                createToast("nitrat 1:"+nitrat)
             }
             2 -> {
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_2_content)
                 sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                createToast("nitrat 2:"+nitrat)
             }
             3 -> {
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_3_content)
                 sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+                createToast("nitrat 3:"+nitrat)
             }
         }
         prevFragment = active

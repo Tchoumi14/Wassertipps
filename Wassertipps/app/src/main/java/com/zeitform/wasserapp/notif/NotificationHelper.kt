@@ -130,7 +130,7 @@ object NotificationHelper {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 //putExtra(ReminderDialog.KEY_ID, reminderData.id)
             }
-
+            println("Notification fired ")
             val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
             setContentIntent(pendingIntent)
         }

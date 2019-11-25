@@ -11,115 +11,218 @@
     </string-array>
 
     <string-array name="nitrat_3_content">
-        <item name="allgemein"><![CDATA[<p>Der aktuelle Grenzwert für Nitrat im Trinkwasser liegt laut der deutschen und österreichischen Trinkwasserverordnung bei 50 mg/l, nach der schweizerischen Gewässerschutzverordnung bei 25 mg/l.</p>
-            <p>Dieser Grenzwert wird von den Wasserversorgern verpflichtend eingehalten. Im Jahre 1986 hatte das deutsche Bundesgesundheitsamt empfohlen, für die Zubereitung von Säuglingsnahrung einen Nitratgrenzwert von 10mg/l im Trinkwasser nicht zu überschreiten <sup>(1)</sup>.</p>
+        <item name="allgemein"><![CDATA[<div class="row white header">
+                <div class="col-xs-12 allgemein">
+                    <div style="background-image:url(/app/images/tipps/allgemein-nitrat.png)">
+                        <h3>Allgemeine Informationen über Nitrate</h3>
+                    </div>
+                </div>
+            </div>
 
-            <p>Viele Böden sind heute arm an Stickstoff und werden deshalb in der Landwirtschaft mit Gülle und stickstoffhaltigen Salzen gedüngt. Durch Nitrifikation entsteht im Boden unter Mitwirkung von Bakterien aus Ammoniumionen (NH4+) über die Zwischenstufe Nitrit das Nitrat.
-            </p>
-            <p>Die Ursache für gesundheitliche Risiken liegt in der Gefahr einer Reduktion des Nitrats zu Nitrit und der Bildung von krebserregenden Nitrosaminen. Eine solche Umwandlung findet zum einen im Darm durch entsprechende Bakterien statt, zum anderen können auch die Speicheldrüsen über den Blutweg angeschwemmtes Nitrat reduzieren. Die Darmflora des Säuglings kann (wie die Darmflora eines Erwachsenen) Nitrit bildende Bakterien enthalten. Das entstehende Nitrit oxidiert das Hämoglobin zu Methämoglobin, welches der Säugling aufgrund seiner noch nicht ausgereiften Reduktionskapazität nicht wieder zu Hämoglobin rückreduzieren kann.</p>
+            <div class="row white">
+                <div class="col-xs-12">
+                    <div class="text-left tipp">
+                        <p>Der aktuelle Grenzwert für Nitrat im Trinkwasser liegt laut der deutschen und österreichischen Trinkwasserverordnung bei 50 mg/l, nach der schweizerischen Gewässerschutzverordnung bei 25 mg/l.</p>
+                        <p>Dieser Grenzwert wird von den Wasserversorgern verpflichtend eingehalten. Im Jahre 1986 hatte das deutsche Bundesgesundheitsamt empfohlen, für die Zubereitung von Säuglingsnahrung einen Nitratgrenzwert von 10mg/l im Trinkwasser nicht zu überschreiten <sup>(1)</sup>.</p>
 
-            <p>Hämoglobin ist ein Eiweiß, das sich im Inneren der roten Blutkörperchen befindet und ihnen die rote Farbe verleiht. Es ist für den Transport des über die Lungen eingeatmeten Sauerstoffs zu den Zellen verantwortlich.
-            </p>
-            <p>Wenn Nitrit das Hämoglobin allerdings in das funktionsunfähige Methämoglobin umgewandelt hat, ist keine Sauerstoffabgabe an Gewebezellen mehr möglich und es besteht die Gefahr des inneren Ersticken, zu Erkennen an einer violetten bis bläulichen Verfärbung der Haut, der Schleimhäute, der Lippen und der Fingernägel. Besonders Säuglinge bis zum 6. Monat sind anfällig für diese Säuglings-Blausucht.
-            </p>
-            <p>Da der Mensch Nitrat nicht nur über das Trinkwasser sondern beispielsweise auch über verschiedene Gemüsesorten, die einen natürlichen, hohen Nitratgehalt aufweisen (Rucola und andere Blattsalate, Spinat, Kohlrabi, Rote Beete, Radieschen und Rettich) zu sich nimmt, sollte man besonders bei Kindern und älteren Menschen, die an bakteriellen Magen-Darm-Infektionen leiden, dem Nitratwert des Trinkwassers eine besondere Aufmerksamkeit widmen <sup>(2)</sup>.
-            </p>
+                        <p>Viele Böden sind heute arm an Stickstoff und werden deshalb in der Landwirtschaft mit Gülle und stickstoffhaltigen Salzen gedüngt. Durch Nitrifikation entsteht im Boden unter Mitwirkung von Bakterien aus Ammoniumionen (NH4+) über die Zwischenstufe Nitrit das Nitrat.
+                        </p>
+                        <p>Die Ursache für gesundheitliche Risiken liegt in der Gefahr einer Reduktion des Nitrats zu Nitrit und der Bildung von krebserregenden Nitrosaminen. Eine solche Umwandlung findet zum einen im Darm durch entsprechende Bakterien statt, zum anderen können auch die Speicheldrüsen über den Blutweg angeschwemmtes Nitrat reduzieren. Die Darmflora des Säuglings kann (wie die Darmflora eines Erwachsenen) Nitrit bildende Bakterien enthalten. Das entstehende Nitrit oxidiert das Hämoglobin zu Methämoglobin, welches der Säugling aufgrund seiner noch nicht ausgereiften Reduktionskapazität nicht wieder zu Hämoglobin rückreduzieren kann.</p>
 
-            <ul class="footnote">
-                <li>(1) Bekanntmachungen des Bundesgesundheitsamtes 1986; Bundesgesundheitsblatt 29 (6), 192-193</li>
-                <li>(2) <a href="http://www.bfr.bund.de/de/fragen_und_antworten_zu_nitrat_und_nitrit_in_lebensmitteln-187056.html">http://www.bfr.bund.de/de/fragen_und_antworten_zu_nitrat_und_nitrit_in_lebensmitteln-187056.html</a></li>
-            </ul>]]></item>
-        <item name="aquarium"><![CDATA[<p>Der Abbau von organischen Stickstoffverbindungen aus Kot, abgestorbenen Pflanzenteilen, Futterresten, etc. läuft in mehreren Stufen ab, für die das Vorhandensein bestimmter Bakterien im Aquariumwasser wichtig ist.
-        </p>
-            <p>Ein neu eingerichtetes Becken hat kaum Bakterien, diese werden erst durch den Besatz mit Pflanzen und Schnecken eingebracht und müssen sich zunächst vermehren. Die sogenannten Nitrosomonas-Bakterien wandeln die aus abgestorbenen Pflanzenteilen und Schnecken anfallenden Stoffe Ammonium/Ammoniak in Nitrit um. Da das Nitrit für Fische extrem giftig ist, dürfen sie in den ersten Wochen eines neu eingerichteten Beckens noch nicht eingesetzt werden. Für ein funktionierendes Ökosystem wird jetzt eine weitere Bakterienart benötigt, die bereits vorhanden ist aber ohne das jetzt gebildete Nitrit quasi in Wartestellung war. Diese Nitrobacter-Bakterien können sich nun langsam vermehren und das giftige Nitrit in das ungiftige Nitrat umwandeln, das von den Pflanzen wiederum als Dünger verwendet wird.
-            </p>
-            <p>Jetzt (also nach mehreren Wochen) erst sollte das Becken mit Fischen besetzt werden.</p>
-            <p>Durch die Fische und deren Kot gibt es nun eine weitere Quelle für Ammonium/Ammoniak aber solange sich das Verhältnis von Beckengröße, Fischbesatz und Bepflanzung in einem ausgewogenen Verhältnis befindet, sollte der Nitratgehalt nicht übermäßig ansteigen. Um das zu kontrollieren gibt es diverse Tests in Zoofachhandel.
-            </p>
-            <p>Der Nitratgehalt sollte in der Regel nicht über 25 mg/l liegen. Bei Werten über 100 mg/l ist ein sofortiges Einschreiten (Teilwasserwechsel mit nitratfreiem Wasser) notwendig, es droht unkontrollierte Reduktion zu Nitrit was zu einer Wachstumsschwäche oder sogar zum Tod der Fische führen kann. Wasserpflanzen nehmen Nitrate als Nährstoffe auf, allerdings ziehen viele Pflanzen das Ammonium dem Nitrat als Dünger<sup>1</sup> vor, d.h ein üppiger Pflanzenbewuchs ist keine Garantie für einen niedrigen Nitratwert im Wasser.
-            </p>
-            <p>Da Ihr Leitungswasser einen Nitratgehalt unter 10 mg/l aufweist, können Sie es für einen Teilwasserwechsel verwenden. Wenn weiterhin Probleme auftauchen sollten Sie über die Verringerung des Fischbesatzes nachdenken.
-            </p>
-            <p>Was Sie auch bedenken sollten: Der Nitrathaushalt des Aquarienwassers kann auch durch zu weiches Wasser gestört werden. Auch viele Wasserpflanzen gedeihen in salzarmem Wasser schlechter als in härterem Wasser<sup>2</sup>.
-            </p>
-            <ul class="footnote">
-                <li>(1) <a href="http://www.aqua4you.de/community_artikel184.html">http://www.aqua4you.de/community_artikel184.html</a></li>
-                <li>(2) <a href="http://www.weichwasserfische.de/weichwasser.htm">http://www.weichwasserfische.de/weichwasser.htm</a></li>
-            </ul>]]></item>
-        <item name="babynahrung"><![CDATA[<p><b>Ihr Leitungswasser weist einen niedrigen Nitratwert von unter 10 mg/l auf und ist damit nach Auffassung des Bundesamtes für Risikobewertung (BfR) auch für die Verwendung als Säuglingsnahrung geeignet <sup>(1)</sup>.</b>
-        </p>
-            <p>Ein spezielles Mineralwasser, das explizit für Säuglingsnahrung geeignet ist, ist von den Inhaltsstoffen nicht besser als Ihr Leitungswasser. Die Stiftung Warentest und die Zeitschrift Ökotest führen regelmässig Tests durch, über die Sie sich genau informieren können.
-            </p>
-            <p>Ein paar Dinge sollten Sie aber grundsätzlich beachten, wenn Sie Leitungswasser verwenden:</p>
-            <p>Lassen Sie das Standwasser immer ablaufen und verwenden Sie nur das frische (kühlere) Wasser.</p>
-            <p>Wenn Wasser über 4 Stunden oder länger (beispielsweise über Nacht) in der Hausleitung gestanden hat, kann es Inhaltsstoffe der Leitungsrohre, die für Babys schädlich sein können, aufnehmen.</p>
-            <p>Da warmes Wasser fast immer "Standwasser" ist, weil es in Warmwasserbehältern wie Beuler, Untertischgerät, Warmwasserbehälter der Heizung etc. warm gehalten wird, sollte es grundsätzlich NICHT verwendet werden.</p>
-            <p>Wer in Altbauten wohnt, in denen noch Blei- und Zinkrohre verbaut sind, sollte das Wasser sicherheitshalber nicht für Babynahrung verwenden, weil hier durch die Rohre dem Trinkwasser Metallverbindungen hinzu gefügt werden können, die nicht in der Verantwortung Ihres Wasserversorgers liegen<sup>2</sup>.</p>
-            <p>Wenn ihr Kind schon alt genug ist, um zusätzlich mit Obst oder Gemüse beigefüttert zu werden sollten Sie daran denken, dass viele Gemüsesorten eine hohen Nitratgehalt haben können.</p>
-            <p>Aus diesem Grund wurde in der deutschen Diätverordnung festgelegt, dass eine Höchstmenge 250 mg Nitrat/kg Fertignahrung im Gläschen vorliegen darf. Sie sollten allerdings darauf achten, beim Beifüttern auf Gläschen zurück zu greifen, die maximal 150 Gramm Nitrat/kg enthalten. </p>
-            <p>Die von der Weltgesundheitsorganisation empfohlene akzeptable tägliche Aufnahmemenge (ADI-Wert) von Nitrat (NO3-) liegt bei 0-3,7 mg/kg Körpergewicht.</p>
-            <p>Geht man davon aus, dass 12 Monate alte Kinder nur 100g Gemüse als Beikost verzehren, würde bei einer Nitrataufnahme von 10 mg/l im Wasser (für ein Kind mit seiner Altersgruppe entsprechendem durchschnittlichen Körpergewicht) und einer Höchstmenge von 150 mg Nitrat/kg Beikost der ADI von 3,7 mg/kg KG nicht überschritten werden.<sup>1</sup></p>
-            <ul class="footnote">
-                <li>(1) <a href="http://www.bfr.bund.de/cm/343/nitrat_in_diaetetischen_lebensmitteln.pdf">Stellungnahme des BfR zu Nitraten in Säuglinsnahrung (2003)</a></li>
-                <li>(2) <a href="http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html">http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html</a></li>
-            </ul>]]></item>
-        <item name="ernaehrung"><![CDATA[<p>Nitrat selbst ist für den Menschen an sich harmlos, aus Nitrat kann im Körper oder aber bei unsachgemäßer Lagerung, unsachgemäßem Transport oder Missachtung der gängigen Hygienepraxis bereits im Lebensmittel Nitrit gebildet werden. Zusammen mit körpereigenen oder ebenfalls mit der Nahrung aufgenommenen Aminen oder Amiden können daraus wiederum N-Nitrosoverbindungen entstehen. Die meisten dieser Verbindungen haben sich im Tierversuch als krebserregend erwiesen<sup>1</sup>.
-        </p>
-            <p>Für den Menschen gibt es 2 Hauptaufnahmequellen für Nitrat: Trinkwasser und frisches Gemüse.</p>
-            <p>Der Nitratgehalt von Gemüse hängt besonders von der Sonneneinstrahlung ab. Das von der Pflanze aufgenommene Nitrat wird hauptsächlich unter Sonneneinfluss überwiegend zu Eiweiß und anderen organischen Stickstoffverbindungen umgewandelt. Je weniger Licht und je niedriger die Temperaturen sind - wie vor allem im Winter in Gewächshäusern - desto unvollständiger wird das aufgenommene Nitrat abgebaut. Ein mehr oder weniger großer Teil des Nitrats wird aber auch in den Pflanzen gespeichert. Verschiedene Gemüsesorten wie z.B. Kopfsalat, Spinat, Rote Bete, Radieschen und Rettich reichern je nach Jahreszeit und Anbaugebiet auffallend hohe Gehalte an Nitrat an. Besonders Rucola und z.T. auch Feldsalat speichern im Wachstum mehr Nitrat als andere Salatarten und weisen deshalb zum Erntezeitpunkt in der Regel höhere Nitratwerte auf.</p>
-            <p>Geringe bis sehr geringe Nitratgehalte haben z.B. Rosenkohl, Chicorée, Kartoffeln, Möhren, Süßkartoffeln und Spargel. Ebenfalls als nitratarm gelten Obst und Fruchtgemüse (wie z.B. Tomaten, Paprika, Gurken, Erbsen, grüne Bohnen, Erdbeeren, Kürbis)<sup>2</sup>.
-            </p>
-            <p>Eine weitere Möglichkeit Nitrate zu sich zu nehmen sind gepökelte Fleischwaren wie Kassler oder Schinken.</p>
-            <p><b>Da Ihr Leitungswasser niedrigen Nitratwert aufweist, dient es kaum als zusätzliche Nitratquelle. Besonders bei Kindern und älteren Menschen, die an bakteriellen Magen-Darm-Infektionen leiden, sollten Sie versuchen, die Aufnahme von Nitrat zu minimieren<sup>2</sup> indem Sie auf Gemüse mit einem geringen Nitratwert ausweichen und gepökeltes Fleisch meiden.</b>
-            </p>
-            <ul class="footnote">
-                <li>(1) <a href="http://www.bfr.bund.de/de/fragen_und_antworten_zu_nitrat_und_nitrit_in_lebensmitteln-187056.html">http://www.bfr.bund.de/de/fragen_und_antworten_zu_nitrat_und_nitrit_in_lebensmitteln-187056.html</a></li>
-                <li>(2) <a href="https://www.laves.niedersachsen.de/lebensmittel/rueckstaende_verunreingungen/nitrat-in-lebensmitteln-147641.html"> Niedersächsisches Landesamt für Verbraucherschutz und Lebensmittelsicherheit</a></li>
-            </ul>]]></item>
-        <item name="gartenteich"><![CDATA[<p>Der Abbau von organischen Stickstoffverbindungen aus Kot, abgestorbenen Pflanzenteilen, Futterresten, etc. zu Nitraten und Phosphaten bilden die Nahrungsgrundlage für die Teichpflanzen. Ist das Nahrungsangebot jedoch zu hoch, führt das zwangsläufig zu Algenwachstum.</p>
-            <p>Andere Mikroorganismen können darüber hinaus Nitrate auch wieder zu Ammonium reduzieren, was dann bei Fischen zu einer Wachstumsschwäche oder sogar zum Tod führen kann<sup>1</sup></p>
-            <p>Der Nitratgehalt im Teich sollte in der Regel nicht über 25 mg/l liegen. Bei Werten über 100 mg/l ist ein sofortiges Einschreiten (Teilwasserwechsel mit nitratfreiem Wasser) notwendig.</p>
-            <p><b>Da Ihr Leitungswasser einen niedrigen Nitratgehalt unter 10 mg/l aufweist, können Sie es sehr gut für einen Teilwasserwechsel verwenden. Sie sollten aber auch die Wasserhärte und den PH-Wert im Blick behalten.</b></p>
-            <ul class="footnote">
-                <li>(1) <a href="http://www.gartenteich-ratgeber.com/betrieb/chem/stickstoffkreislauf.html">http://www.gartenteich-ratgeber.com/betrieb/chem/stickstoffkreislauf.html</a></li>
-            </ul>]]></item>
-        <item name="trinkwasser"><![CDATA[<p>Die hohe Qualität des Leitungswassers wird durch die Trinkwasserverordnung garantiert, für Mineralwasser gilt die Mineral- und Tafelwasserverordnung bzw. in Östereich die Mineralwasser- und Quellwasserverordnung.</p>
-            <p>Tatsächlich ist die Trinkwasserverordnung teilweise sogar strenger als die Mineralwasserverordnung, Leitungswasser kann also grundsätzlich bedenkenlos als Trinkwasser verwendet werden.
-            </p>
-            <p>Der aktuelle Grenzwert für Nitrat im Trinkwasser liegt laut der deutschen und österreichischen Trinkwasserverordnung bei 50 mg/l, nach der schweizerischen Gewässerschutzverordnung bei 25 mg/l.<br/>
-                Dieser Grenzwert muss von den Wasserversorgern verpflichtend eingehalten werden. </p>
-            <p>Im Jahre 1986 hatte das deutsche Bundesgesundheitsamt empfohlen, für die Zubereitung von Säuglingsnahrung einen Nitratgrenzwert von 10mg/l im Trinkwasser nicht zu überschreiten<sup>1</sup>. Im Jahr 2004 wurde diese Empfehlung dann wieder teilweise zurück genommen, wobei festgestellt wurde, dass eine tägliche Aufnahme von 13mg/l Nitrat der von der Weltgesundheitsorganisation WHO festgelegten \'lebenslang gesundheitlich duldbaren Exposition(ADI-Wert)\' für einen gesunden Erwachsenen entspricht<sup>2</sup>.</p>
-            <p>Durch die Düngung mit stickstoffhaltigen Düngern wird durch die Mitwirkung von Bakterien Nitrat im Boden gebildet, das durch den Regen langsam in das Grundwasser entweicht und Monate oder Jahre später im Trinkwasser wieder auftaucht.
-            </p>
-            <p>Solange der Nitratgehalt im Trinkwasser aber unterhalb des EU-weit festgelegten Grenzwertes von 50 mg/l liegt, besteht für einen gesunden Erwachsenen laut Umweltbundesamt keinerlei Gefahr.
-            </p>
-            <p>Anders sieht es für Säuglinge und Kinder bzw. ältere Erwachsene aus, die an einer Magen-Darm Infektion leiden<sup>1</sup>.</p>
+                        <p>Hämoglobin ist ein Eiweiß, das sich im Inneren der roten Blutkörperchen befindet und ihnen die rote Farbe verleiht. Es ist für den Transport des über die Lungen eingeatmeten Sauerstoffs zu den Zellen verantwortlich.
+                        </p>
+                        <p>Wenn Nitrit das Hämoglobin allerdings in das funktionsunfähige Methämoglobin umgewandelt hat, ist keine Sauerstoffabgabe an Gewebezellen mehr möglich und es besteht die Gefahr des inneren Ersticken, zu Erkennen an einer violetten bis bläulichen Verfärbung der Haut, der Schleimhäute, der Lippen und der Fingernägel. Besonders Säuglinge bis zum 6. Monat sind anfällig für diese Säuglings-Blausucht.
+                        </p>
+                        <p>Da der Mensch Nitrat nicht nur über das Trinkwasser sondern beispielsweise auch über verschiedene Gemüsesorten, die einen natürlichen, hohen Nitratgehalt aufweisen (Rucola und andere Blattsalate, Spinat, Kohlrabi, Rote Beete, Radieschen und Rettich) zu sich nimmt, sollte man besonders bei Kindern und älteren Menschen, die an bakteriellen Magen-Darm-Infektionen leiden, dem Nitratwert des Trinkwassers eine besondere Aufmerksamkeit widmen <sup>(2)</sup>.
+                        </p>
 
-            <p><b>Ihr Leitungswasser weist einen geringen Nitratgehalt unter 10mg/l auf. Sie können es also bedenkenlos trinken, auch wenn Sie zu einer der genannten Risikogruppen gehören.<br/>
-                Studien in Dänemark<sup>4</sup> und den USA<sup>5</sup> haben allerdings bereits bei mittleren und niedrigen Nitratwerten eine signifikante Zunahme an Darmkrebsfällen gegenüber Trinkwasser mit einem Nitratgehalt von weniger als 5mg/l festgestellt.<br/>
-                Alle Autoren betonen aber, dass die Nitratproblematik noch nicht ausreichend untersucht wurde, um hier eine abschliessende Beurteilung zu erlauben.</b>
-            </p>
+                        <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
+                            <li>(1) Bekanntmachungen des Bundesgesundheitsamtes 1986; Bundesgesundheitsblatt 29 (6), 192-193</li>
+                            <li>(2) <a href="http://www.bfr.bund.de/de/fragen_und_antworten_zu_nitrat_und_nitrit_in_lebensmitteln-187056.html">http://www.bfr.bund.de/de/fragen_und_antworten_zu_nitrat_und_nitrit_in_lebensmitteln-187056.html</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>]]></item>
+        <item name="aquarium"><![CDATA[<div class="row white header">
+                <div class="col-xs-12 aquarium">
+                    <div style="background-image:url(/app/images/tipps/aquarium-wide.png); background-size: cover">
+                        <h3>Wasser für das Aquarium</h3>
+                    </div>
+                </div>
+            </div>
 
-            <p>Einige Dinge sollten darüber hinaus beachtet werden.</p>
+            <div class="row white">
+                <div class="col-xs-12">
+                    <div class="text-left tipp">
+                        <p>Der Abbau von organischen Stickstoffverbindungen aus Kot, abgestorbenen Pflanzenteilen, Futterresten, etc. läuft in mehreren Stufen ab, für die das Vorhandensein bestimmter Bakterien im Aquariumwasser wichtig ist.
+                        </p>
+                        <p>Ein neu eingerichtetes Becken hat kaum Bakterien, diese werden erst durch den Besatz mit Pflanzen und Schnecken eingebracht und müssen sich zunächst vermehren. Die sogenannten Nitrosomonas-Bakterien wandeln die aus abgestorbenen Pflanzenteilen und Schnecken anfallenden Stoffe Ammonium/Ammoniak in Nitrit um. Da das Nitrit für Fische extrem giftig ist, dürfen sie in den ersten Wochen eines neu eingerichteten Beckens noch nicht eingesetzt werden. Für ein funktionierendes Ökosystem wird jetzt eine weitere Bakterienart benötigt, die bereits vorhanden ist aber ohne das jetzt gebildete Nitrit quasi in Wartestellung war. Diese Nitrobacter-Bakterien können sich nun langsam vermehren und das giftige Nitrit in das ungiftige Nitrat umwandeln, das von den Pflanzen wiederum als Dünger verwendet wird.
+                        </p>
+                        <p>Jetzt (also nach mehreren Wochen) erst sollte das Becken mit Fischen besetzt werden.</p>
+                        <p>Durch die Fische und deren Kot gibt es nun eine weitere Quelle für Ammonium/Ammoniak aber solange sich das Verhältnis von Beckengröße, Fischbesatz und Bepflanzung in einem ausgewogenen Verhältnis befindet, sollte der Nitratgehalt nicht übermäßig ansteigen. Um das zu kontrollieren gibt es diverse Tests in Zoofachhandel.
+                        </p>
+                        <p>Der Nitratgehalt sollte in der Regel nicht über 25 mg/l liegen. Bei Werten über 100 mg/l ist ein sofortiges Einschreiten (Teilwasserwechsel mit nitratfreiem Wasser) notwendig, es droht unkontrollierte Reduktion zu Nitrit was zu einer Wachstumsschwäche oder sogar zum Tod der Fische führen kann. Wasserpflanzen nehmen Nitrate als Nährstoffe auf, allerdings ziehen viele Pflanzen das Ammonium dem Nitrat als Dünger<sup>1</sup> vor, d.h ein üppiger Pflanzenbewuchs ist keine Garantie für einen niedrigen Nitratwert im Wasser.
+                        </p>
+                        <p><b>Da Ihr Leitungswasser einen Nitratgehalt über 25 mg/l aufweist, wird ein Teilwasserwechsel keinen großen Erfolg haben und Sie sollten über die Verringerung des Fischbesatzes, die Verwendung von Regenwasser oder eine Senkung des Nitratgehaltes durch spezielle Filter nachdenken.</b>
+                        </p>
+                        <p>Was Sie auch bedenken sollten: Der Nitrathaushalt des Aquarienwassers kann auch durch zu weiches Wasser gestört werden. Auch viele Wasserpflanzen gedeihen in salzarmem Wasser schlechter als in härterem Wasser<sup>2</sup>.
+                        </p>
+                        <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
+                            <li>(1) <a href="http://www.aqua4you.de/community_artikel184.html">http://www.aqua4you.de/community_artikel184.html</a></li>
+							 <li>(2) <a href="http://www.weichwasserfische.de/weichwasser.htm">http://www.weichwasserfische.de/weichwasser.htm</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>]]></item>
+        <item name="babynahrung"><![CDATA[<div>
+                <div>
+                    <div >
+                        <h3>Wasser für die Zubereitung von Babynahrung</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row white">
+                <div class="col-xs-12">
+                    <div class="text-left tipp">
+                        <p><b>Ihr Leitungswasser weist einen relativ hohen Nitratwert auf, der für einen gesunden Erwachsenen völlig ungefährlich ist, bei einem Säugling allerdings zu Problemen führen kann.</b></p>
+                         <p>Studien in Dänemark<sup>1</sup> und den USA<sup>2</sup> haben allerdings auch schon bei relativ geringen Nitratwerten von 10mg/l eine signifikante Zunahme an Darmkrebsfällen gegenüber Probanden festgestellt, deren Trinkwasser weniger als 5 mg/l Nitrat enthielt.<br>
+                        Alle Autoren betonen aber, dass die Nitratproblematik noch nicht ausreichend untersucht wurde, um hier eine abschliessende Beurteilung zu erlauben.</p>
+                        <p>Durch die Düngung mit stickstoffhaltigen Düngern wird durch die Mitwirkung von Bakterien Nitrat im Boden gebildet, das durch den Regen langsam in das Grundwasser entweicht. Dort taucht es dann irgendwann im Trinkwasser auf, wobei ein Grenzwert von 50mg/l Nitrat im Trinkwasser von den Wasserversorgern verpflichtend einzuhalten ist.                        </p>
+                        <p>Die Ursache für gesundheitliche Risiken liegt in der Gefahr einer Reduktion des Nitrats zu Nitrit und der Bildung von krebserregenden Nitrosaminen. Eine solche Umwandlung findet zum einen im Darm durch entsprechende Bakterien statt, zum anderen können auch die Speicheldrüsen über den Blutweg angeschwemmtes Nitrat reduzieren. Die Darmflora des Säuglings kann (wie die Darmflora eines Erwachsenen) Nitrit bildende Bakterien enthalten.</p>
+                        <p>Ausserdem oxidiert das entstehende Nitrit Hämoglobin, ein Eiweiß, das sich im Inneren der roten Blutkörperchen befindet und für den Transport des über die Lungen eingeatmeten Sauerstoffs zu den Zellen verantwortlich ist, zu Methämoglobin.</p>
+                        <p>Durch eine natürliche Enzymreaktion wird das Methämoglobin größtenteils wieder zu Hämoglobin reduziert, ein natürlicher Kreislauf, der bei einem Säugling jedoch noch nicht richtig funktioniert, da er eine noch nicht ausgereifte Reduktionskapazität hat.</p>
+                        <p>Wenn diese Rückreduzuerung aber unterbleibt und das funktionsuntüchtige Methämoglobin keinen Sauerstoff an die Gewebezellen abgeben kann, besteht die Gefahr des inneren Ersticken, zu Erkennen an einer violetten bis bläulichen Verfärbung der Haut, der Schleimhäute, der Lippen und der Fingernägel. Besonders Säuglinge bis zum 6. Monat sind anfällig für diese Säuglings-Blausucht.<sup>3</sup></p>
+                        <p>Die von der Weltgesundheitsorganisation empfohlene akzeptable tägliche Aufnahmemenge (ADI-Wert) von Nitrat (NO3-) liegt bei 0-3,7 mg/kg Körpergewicht.</p>
+                        <p>Das Bundesamt für Risikobewertung (BfR) hat verschiedenen Szenarien durch gerechnet und ist zu dem Schluss gekommen, dass bei 3 Monate alten Säuglingen der Nitratgehalt bei maximal 23 mg/l, bei einem 6 Monate alten Säugling bei 33 mg/l liegen darf, um die maximal zulässige Aufnahmemenge einzuhalten, wenn man den jeweiligen Maxiamlwert des Körpergewichtes der Altersgruppe heran zieht.</p>
+                        <p>Dies immer unter der Annahme, dass nicht mit Obst oder Gemüse beigefüttert wird.</p>
+                        <p>Da Gemüse teilweise sehr hohe Nitratwerte aufweisen kann, wurde in der deutschen Diätverordnung festgelegt, dass eine Höchstmenge 250 mg Nitrat/kg Fertignahrung im Gläschen vorliegen darf. Sie sollten allerdings darauf achten, beim Beifüttern auf Gläschen zurück zu greifen, die maximal 150 Gramm Nitrat/kg enthalten. </p>
+                        <p>Geht man davon aus, dass 12 Monate alte Kinder nur 100g Gemüse als Beikost verzehren, würde bei einer Nitrataufnahme von 10 mg/l im Wasser (für ein Kind mit seiner Altersgruppe entsprechends durchschnittlichen Körpergewicht) und einer Höchstmenge von 150 mg Nitrat/kg Beikost der ADI von 3,7 mg/kg KG nicht überschritten werden.<sup>4</sup></p>
+                        <p><b>Ihr Trinkwasser liegt teilweise deutlich über diesem Grenzwert, Sie sollten darüber nachdenken ein spezielles Mineralwasser zu verwenden, das explizit für die Zubereitung von Säuglingsnahrung geeignet ist. Ein Wasser, das diesen geschützten Begriff verwendet, muss sehr strenge Vorgaben bezüglich der Inhaltsstoffe erfüllen. Die Zeitschrift Ökotest<sup>5</sup> und die Stiftung Warentest<sup>6</sup> führen regelmässig Tests durch, über die Sie sich genauer informieren können.</b></p>
+                        <p>Spezielle Babywässer sind zusätzlich keimfrei abgefüllt, im Prinzip aber nicht besser als für Säuglingsnahrung geeignete Mineralwässer. Sie können eine angebrochene Flasche zwar 24 Stunden im Kühlschrank aufbewahren, müssen es dann aber ebenfalls vor dem Gebrauch abkochen. Dafür sind sie aber noch einmal deutlich teurer. </p>
+                        <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
+                          <li>(1)  <a href="https://www.aerztezeitung.de/extras/druckansicht/?sid=960620&amp;pid=950033">Nitrat im Trinkwasser erhöht Darmkrebs-Gefahr</a></li>
+                          <li>(2) <a href="https://journals.lww.com/epidem/fulltext/2003/11000/Nitrate_in_Public_Water_Supplies_and_the_Risk_of.4.aspx">Nitrate in Public Water Supplies and the Risk of Colon and Rectum Cancers</a></li>
+                          <li>(3) <a href="https://www.umweltbundesamt.de/sites/default/files/medien/374/dokumente/nitrat_im_trinkwasser_2004_10.pdf">Empfehlung des Umweltbundesamtes zu Nitat im Trinkwasser (2014)</a></li>
+                          <li>(4) <a href="http://www.bfr.bund.de/cm/343/nitrat_in_diaetetischen_lebensmitteln.pdf">Stellungnahme des BfR zu Nitraten in Säuglinsnahrung (2003)</a></li>
+                          <li>(5) <a href="https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html">oekotest.de/Test_109918_1.html</a></li>
+                          <li>(6) <a href="https://www.test.de/Natuerliches-Mineralwasser-im-Test-4258945-0/">test.de/Natuerliches-Mineralwasser-im-Test-4258945-0</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>]]></item>
+        <item name="ernaehrung"><![CDATA[<div>
+                <div>
+                    <div>
+                        <h3>Nitrate in der Ernährung</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row white">
+                <div class="col-xs-12">
+                    <div class="text-left tipp">
+                        <p>Nitrat selbst ist für den Menschen an sich harmlos, aus Nitrat kann im Körper oder aber bei unsachgemäßer Lagerung, unsachgemäßem Transport oder Missachtung der gängigen Hygienepraxis bereits im Lebensmittel Nitrit gebildet werden. Zusammen mit körpereigenen oder ebenfalls mit der Nahrung aufgenommenen Aminen oder Amiden können daraus wiederum N-Nitrosoverbindungen entstehen. Die meisten dieser Verbindungen haben sich im Tierversuch als krebserregend erwiesen<sup>1</sup>.
+                        </p>
+                        <p>Für den Menschen gibt es 2 Hauptaufnahmequellen für Nitrat: Trinkwasser und frisches Gemüse.</p>
+                        <p>Der Nitratgehalt von Gemüse hängt besonders von der Sonneneinstrahlung ab. Das von der Pflanze aufgenommene Nitrat wird hauptsächlich unter Sonneneinfluss, überwiegend zu Eiweiß und anderen organischen Stickstoffverbindungen umgewandelt. Je weniger Licht und je niedriger die Temperaturen sind - wie vor allem im Winter in Gewächshäusern - desto unvollständiger wird das aufgenommene Nitrat abgebaut. Ein mehr oder weniger großer Teil des Nitrats wird aber auch in den Pflanzen gespeichert. Verschiedene Gemüsesorten wie z.B. Kopfsalat, Spinat, Rote Bete, Radieschen und Rettich reichern je nach Jahreszeit und Anbaugebiet auffallend hohe Gehalte an Nitrat an. Besonders Rucola und z.T. auch Feldsalat speichern im Wachstum mehr Nitrat als andere Salatarten und weisen deshalb zum Erntezeitpunkt in der Regel höhere Nitratwerte auf.</p>
+                        <p>Geringe bis sehr geringe Nitratgehalte haben z.B. Rosenkohl, Chicorée, Kartoffeln, Möhren, Süßkartoffeln und Spargel. Ebenfalls als nitratarm gelten Obst und Fruchtgemüse (wie z.B. Tomaten, Paprika, Gurken, Erbsen, grüne Bohnen, Erdbeeren, Kürbis)<sup>3</sup>.
+                        </p>
+                        <p>Eine weitere Möglichkeit Nitrate zu sich zu nehmen sind gepökelte Fleischwaren wie Kassler oder Schinken.</p>
+                        <p><strong>Da Ihr Leitungswasser einen hohen Nitratwert aufweist, sollten Sie besonders bei Kindern und älteren Menschen, die an bakteriellen Magen-Darm-Infektionen leiden versuchen, die Aufnahme von Nitrat zu minimieren<sup>2</sup>, indem Sie auf Gemüse mit einem geringen Nitratwert und auf ein Mineralwasser mit einem geringen Nitratwert<sup>3,4</sup> ausweichen sowie gepökelte Fleischwaren vermeiden.</strong> </p>
+                        <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
+                            <li>(1) <a href="http://www.bfr.bund.de/de/fragen_und_antworten_zu_nitrat_und_nitrit_in_lebensmitteln-187056.html">http://www.bfr.bund.de/de/fragen_und_antworten_zu_nitrat_und_nitrit_in_lebensmitteln-187056.html</a></li>
+                            <li>(2) <a href="https://www.laves.niedersachsen.de/lebensmittel/rueckstaende_verunreingungen/nitrat-in-lebensmitteln-147641.html"> Niedersächsisches Landesamt für Verbraucherschutz und Lebensmittelsicherheit</a></li>
+                            <li>(3) <a href="https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html">oekotest.de/Test_109918_1.html</a></li>
+                            <li>(4) <a href="https://www.test.de/Natuerliches-Mineralwasser-im-Test-4258945-0/">test.de/Natuerliches-Mineralwasser-im-Test-4258945-0</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>]]></item>
+        <item name="gartenteich"><![CDATA[<div class="row white header">
+                <div class="col-xs-12 gartenteich">
+                    <div style="background-image:url(/app/images/tipps/gartenteich-wide.png); background-size: cover">
+                        <h3>Wasser für den Gartenteich</h3>
+                    </div>
+                </div>
+            </div>
 
-            <p>Wenn Wasser über mehrere Stunden oder länger (beispielsweise über Nacht) in der Hausleitung gestanden hat, kann es Inhaltsstoffe der Leitungsrohre aufnehmen. Lassen Sie das Standwasser immer ablaufen und verwenden Sie nur das frische (kühlere) Wasser.</p>
-            <p>Da warmes Wasser fast immer "Standwasser" ist, weil es in Warmwasserbehältern wie Beuler, Untertischgerät, Warmwasserbehälter der Heizung etc. warm gehalten wird, sollten Sie es grundsätzlich nicht zum Trinken verwenden.</p>
-            <p>Wer in Altbauten wohnt, in denen noch Blei- und Zinkrohre verbaut sind, sollte das Wasser unbedingt länger ablaufen lassen, bevor es getrunken wird. Kinder, Schwangere und ältere Menschen sollten in diesem Fall lieber auf gekauftes Mineralwasser ausweichen<sup>3</sup>.</p>
-            <p> Die Zeitschrift Ökotest<sup>6</sup> und die Stiftung Warentest<sup>6</sup> testen regelmäßig Mineralwässer. </p>
-            <p>
-                Oder Sie achten beim Kauf auf das Siegel "Für die Zubereitung von Säuglingsnahrung geeignet". Diese Mineralwässer müssen strengere Anforderungen erüllen, u.a. muss der Nitratgehalt unter 10 mg/l liegen.
-            </p>
+            <div class="row white">
+                <div class="col-xs-12">
+                    <div class="text-left tipp">
+                        <p>Der Abbau von organischen Stickstoffverbindungen aus Kot, abgestorbenen Pflanzenteilen, Futterresten, etc. zu Nitraten und Phosphaten bildet die Nahrungsgrundlage für die Teichpflanzen. Ist das Nahrungsangebot jedoch zu hoch, führt das zwangsläufig zu Algenwachstum.</p>
+                        <p>Andere Mikroorganismen können darüber hinaus Nitrate auch wieder zu Ammonium reduzieren, was dann bei Fischen zu einer Wachstumsschwäche oder sogar zum Tod führen kann<sup>1</sup></p>
+                        <p>Der Nitratgehalt im Teich sollte in der Regel nicht über 25 mg/l liegen. Bei Werten über 100 mg/l ist ein sofortiges Einschreiten (Teilwasserwechsel mit nitratfreiem Wasser) notwendig.</p>
+                        <p><b>Da Ihr Leitungswasser einen Nitratgehalt über 25 mg/l aufweist, wird ein Teilwasserwechsel keinen großen Erfolg haben und Sie sollten über die Verringerung des Fischbesatzes, die Verwendung von Regenwasser oder eine Senkung des Nitratgehaltes durch spezielle Filter nachdenken.</b></p>
+                        <p>Behalten Sie aber auch die Wasserhärte und den PH-Wert im Blick.</p>
+                        <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
+                            <li>(1) <a href="http://www.gartenteich-ratgeber.com/betrieb/chem/stickstoffkreislauf.html">http://www.gartenteich-ratgeber.com/betrieb/chem/stickstoffkreislauf.html</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>]]></item>
+        <item name="trinkwasser"><![CDATA[<div class="row white header">
+                <div class="col-xs-12">
+                    <div style="background-image:url(/app/images/tipps/wasser.png)">
+                        <h3>Mineralwasser und Nitrate</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row white">
+                <div class="col-xs-12 wasser">
+                    <div class="text-left tipp">
+                        <p>Die hohe Qualität des Leitungswassers wird durch die Trinkwasserverordnung garantiert, für Mineralwasser gilt die Mineral- und Tafelwasserverordnung bzw. in Östereich die Mineralwasser- und Quellwasserverordnung.</p>
+                        <p>Tatsächlich ist die Trinkwasserverordnung teilweise sogar strenger als die Mineralwasserverordnung, Leitungswasser kann also grundsätzlich bedenkenlos als Trinkwasser verwendet werden.
+                        </p>
 
-            <ul class="footnote">
-                <li>(1) <a href="https://www.bfr.bund.de/cm/343/nitrat_in_diaetetischen_lebensmitteln.pdf">Stellungnahme des BfR zu Nitraten in Säuglingsnahrung (2003)</a></li>
-                <li>(2) <a href="https://www.umweltbundesamt.de/sites/default/files/medien/374/dokumente/nitrat_im_trinkwasser_2004_10.pdf">Empfehlung des Umweltbundesamtes zu Nitat im Trinkwasser (2004)</a></li>
-                <li>(3) <a href="http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html">spiegel.de/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html</a></li>
-                <li>(4)  <a href="https://www.aerztezeitung.de/extras/druckansicht/?sid=960620&amp;pid=950033">Nitrat im Trinkwasser erhöht Darmkrebs-Gefahr</a></li>
-                <li>(5) <a href="https://journals.lww.com/epidem/fulltext/2003/11000/Nitrate_in_Public_Water_Supplies_and_the_Risk_of.4.aspx">Nitrate in Public Water Supplies and the Risk of Colon and Rectum Cancers</a></li>
-                <li>(6) <a href="https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html">oekotest.de/Test_109918_1.html</a></li>
-                <li>(7) <a href="https://www.test.de/Natuerliches-Mineralwasser-im-Test-4258945-0/">test.de/Natuerliches-Mineralwasser-im-Test-4258945-0</a></li>
-            </ul>]]></item>
-        <item name="studien"><![CDATA[ <div>
+                        <p>Der aktuelle Grenzwert für Nitrat im Trinkwasser liegt laut der deutschen und österreichischen Trinkwasserverordnung bei 50 mg/l, nach der schweizerischen Gewässerschutzverordnung bei 25 mg/l.<br> Dieser Grenzwert wird von den Wasserversorgern verpflichtend eingehalten.
+                        </p>
+                        <p>Im Jahre 1986 hatte das deutsche Bundesgesundheitsamt empfohlen, für die Zubereitung von Säuglingsnahrung einen Nitratgrenzwert von 10mg/l im Trinkwasser nicht zu überschreiten<sup>1</sup>. Im Jahr 2004 wurde diese Empfehlung dann wieder teilweise zurück genommen, wobei festgestellt wurde, dass eine tägliche Aufnahme von 13mg/l Nitrat der von der Weltgesundheitsorganisation WHO festgelegten 'lebenslang gesundheitlich duldbaren Exposition(ADI-Wert)' für einen gesunden Erwachsenen entspricht<sup>2</sup>.</p>
+                        <p>Durch die Düngung mit stickstoffhaltigen Düngern wird durch die Mitwirkung von Bakterien Nitrat im Boden gebildet, das durch den Regen langsam in das Grundwasser entweicht und Monate oder Jahre später im Trinkwasser wieder auftaucht.
+                        </p>
+                        <p>Solange der Nitratgehalt im Trinkwasser aber unterhalb des EU-weit festgelegten Grenzwertes von 50 mg/l liegt, besteht für einen gesunden Erwachsenen laut Umweltbundesamt keinerlei Gefahr.
+                        </p>
+                        <p>Anders sieht es für Säuglinge und Kinder bzw. ältere Erwachsene aus, die an einer Magen-Darm Infektion leiden<sup>1</sup>.</p>
+
+                        <p><b>Ihr Leitungswasser weist einen relativ hohen Nitratwert auf. Sie sollten es in größeren Mengen nur trinken, wenn Sie nicht zu einer der genannten Risikogruppen gehören.<br>
+                        Studien in Dänemark<sup>4</sup> und den USA<sup>5</sup> haben bereits bei mittleren und niedrigen Nitratwerten eine signifikante Zunahme an Darmkrebsfällen gegenüber Trinkwasser mit einem Nitratgehalt von weniger als 5mg/l festgestellt.<br>
+                        Alle Autoren betonen aber, dass die Nitratproblematik noch nicht ausreichend untersucht wurde, um hier eine abschliessende Beurteilung zu erlauben.</b></p>
+
+                        <p>Einige Dinge sollten darüber hinaus beachtet werden.</p>
+
+                        <p>Wenn Wasser über mehrere Stunden oder länger (beispielsweise über Nacht) in der Hausleitung gestanden hat, kann es Inhaltsstoffe der Leitungsrohre aufnehmen. Lassen Sie das Standwasser immer ablaufen und verwenden Sie nur das frische (kühlere) Wasser.</p>
+
+                        <p>Da warmes Wasser fast immer "Standwasser" ist, weil es in Warmwasserbehältern wie Boilern, Untertischgeräten, Warmwasserbehältern der Heizung etc. warm gehalten wird, sollten Sie es grundsätzlich nicht zum Trinken verwenden.</p>
+                        <p>Wer in Altbauten wohnt, in denen noch Blei- und Zinkrohre verbaut sind, sollte das Wasser unbedingt länger ablaufen lassen, bevor es getrunken wird. Kinder, Schwangere und ältere Menschen sollten in diesem Fall lieber auf gekauftes Mineralwasser ausweichen<sup>3</sup>.
+                        </p>
+                        <p>
+                            Die Zeitschrift Ökotest<sup>6</sup> und die Stiftung Warentest<sup>7</sup> testen regelmäßig Mineralwässer.
+                        </p>
+                        <p>
+                            Oder Sie achten beim Kauf auf das Siegel "Für die Zubereitung von Säuglingsnahrung geeignet". Diese Mineralwässer müssen strengere Anforderungen erfüllen, u.a. muss der Nitratgehalt unter 10 mg/l liegen.
+                        </p>
+
+                        <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
+                            <li><a href="http://www.bfr.bund.de/cm/343/nitrat_in_diaetetischen_lebensmitteln.pdf">(1) Bekanntmachungen des Bundesgesundheitsamtes 1986; Bundesgesundheitsblatt 29 (6), 192-193</a></li>
+                            <li>(2) <a href="https://www.umweltbundesamt.de/sites/default/files/medien/374/dokumente/nitrat_im_trinkwasser_2004_10.pdf">umweltbundesamt.de/nitrat_im_trinkwasser_2004_10.pdf</a></li>
+                            <li>(3) <a href="http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html">spiegel.de/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html</a></li>
+                            <li>(4)  <a href="https://www.aerztezeitung.de/extras/druckansicht/?sid=960620&amp;pid=950033">Nitrat im Trinkwasser erhöht Darmkrebs-Gefahr</a></li>
+                            <li>(5) <a href="https://journals.lww.com/epidem/fulltext/2003/11000/Nitrate_in_Public_Water_Supplies_and_the_Risk_of.4.aspx">Nitrate in Public Water Supplies and the Risk of Colon and Rectum Cancers</a></li>
+                            <li>(6) <a href="https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html">oekotest.de/Test_109918_1.html</a></li>
+                            <li>(7) <a href="https://www.test.de/Natuerliches-Mineralwasser-im-Test-4258945-0/">test.de/Natuerliches-Mineralwasser-im-Test-4258945-0</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>]]></item>
+        <item name="studien"><![CDATA[<div>
+                <div>
+                    <div>
+                        <h3>Wissenschaftliche Studien zu Nitrat und Ernährung</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row white">
+                <div class="col-xs-12">
+                    <div class="text-left tipp">
 
                       <p>Über die potenziell negativen Auswirkungen von Nitrat auf die menschliche Gesundheit wird international seit vielen Jahren geforscht.
                       Schon im Jahr 1982 wurde in einer dänischen Studie ein Zusammenhang zwischen Nitrat im Trinkwasser und einem erhöhtem Auftreten von Magenkrebs vermutet<sup>(1)</sup>.
@@ -153,7 +256,7 @@
                       <p>Auch wenn in den letzten Jahren immer deutlicher wurde, dass bereits relativ niedrige Nitratkonzentrationen im Trinkwasser verschiedene negative Auswirkungen auf die menschliche Gesundheit haben können, betonen alle Studienautoren, dass die Thematik weitere Untersuchungen erfordert. Die Existenz dieser Zusammenhänge kann aber inzwischen nicht mehr ignoriert werden und sollte auch bei den verantwortlichen Stellen in der Regierung zu einer Diskussion über eine Anpassung der Grenzwerte führen.
                       </p>
 
-                      <ul class="footnote">
+                      <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
                           <li>(1) <a href="https://www.sciencedirect.com/science/article/pii/0147651382900161?via%3Dihub">Nitrat in Trinkwasser und Krebs in Nordjütland, Dänemark, unter besonderer Berücksichtigung von Magenkrebs</a></li>
                           <li>(2) <a href="https://www.sciencedirect.com/science/article/pii/0378427494900507?via%3Dihub">Der Konsum von Trinkwasser mit hohen Nitratwerten führt zu einer Hypertrophie der Schilddrüse</a></li>
                           <li>(3) <a href="https://insights.ovid.com/article/00001648-200105000-00013">Kommunaler Trinkwassernitratspiegel und Krebsrisiko bei älteren Frauen: Die Iowa Women's Health Study</a></li>
@@ -164,6 +267,8 @@
                           <li>(8) <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/ijc.31306">Nitrat in Trinkwasser und Darmkrebsrisiko: Eine landesweite bevölkerungsbezogene Kohortenstudie</a></li>
                           <li>(9) <a href="https://wassertipps.de/nitrat_studie-verteilung.html">Verteilung der Nitratkonzentrationen im öffentlichen Trinkwasser in Deutschland und Österreich</a></li>
                         </ul>
-                    </div>]]></item>
+                    </div>
+                </div>
+            </div>]]></item>
     </string-array>
 </resources>
