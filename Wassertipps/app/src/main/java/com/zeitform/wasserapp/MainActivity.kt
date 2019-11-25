@@ -90,7 +90,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     private var near: Int? = 0
     private var zip: String? = null
     private var permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
-    private lateinit var locData: LocationCheck
+    private lateinit var locCheckManager: LocationCheck
     private lateinit var navView: BottomNavigationView
     private lateinit var textMessage: TextView
     private lateinit var toolbar: Toolbar
@@ -400,6 +400,11 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 }
             }
         })
+        sharedViewModel!!.locationData.observe(this, Observer {
+            it?.let {
+                getData(it.latitude, it.longitude)  //check data for the given location
+            }
+        })
         locManager = this.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         checkLocationPermission()
     }
@@ -430,14 +435,14 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
      * Fetch location using LocationCheck
      */
     private fun fetchLocation(){
-        locData = LocationCheck(this.applicationContext)
-        locData.checkLocation()
+        locCheckManager = LocationCheck(this.applicationContext, sharedViewModel)
+        locCheckManager.checkLocation()
         isLocationFetched = true
-        val location = locData.getLocation()
+        /*val location = locData.getLocation()
         val lat = location.latitude
         val lon = location.longitude
         Log.d("Lat - Lon :", " "+lat+" - "+lon+"")
-        getData(lat, lon)
+        getData(lat, lon)*/
     }
 
     /**
@@ -466,6 +471,9 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     override fun onDestroy(){
         super.onDestroy()
         mHandler.removeCallbacks(mRunnable)
+        if(locCheckManager!=null){
+            locCheckManager.removeListeners()
+        }
     }
 
     override fun onResume() {

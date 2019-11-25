@@ -21,12 +21,12 @@
                     android:contentDescription="@string/wasserhaerte"
                     android:layout_width="10dp"
                     android:layout_height="match_parent" android:id="@+id/bghaerte"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="centerInside"/>
             <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="20dp"
                         android:textColor="?attr/colorAppTextPrimary"
                         android:id="@+id/haerte_title"
                         android:text="@string/wasserhaerte" android:textSize="24sp" android:textStyle="bold"/>
@@ -35,7 +35,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/haerte_text"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="20dp"
                         android:layout_below="@id/haerte_title"/>
 
                 <LinearLayout
@@ -88,7 +88,7 @@
                 android:layout_gravity="bottom"
                 android:text="@string/haerte_button"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="150dp"
                 android:background="@drawable/button_background_locked"
                 android:textAllCaps="false"
@@ -107,7 +107,7 @@
                     android:contentDescription="@string/nitrat"
                     android:layout_width="10dp"
                     android:layout_height="match_parent" android:id="@+id/bgnitrat"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="centerInside"/>
             <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
                         android:layout_width="match_parent"
@@ -115,13 +115,13 @@
                         android:id="@+id/nitrat_title"
                         android:textColor="?attr/colorAppTextPrimary"
                         android:text="@string/nitrat" android:textSize="24sp" android:fontFamily="sans-serif"
-                        android:textStyle="bold" android:layout_marginStart="10dp"/>
+                        android:textStyle="bold" android:layout_marginStart="20dp"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/nitrat_text"
                         android:textColor="?attr/colorAppTextPrimary"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="20dp"
                         android:layout_below="@id/nitrat_title"/>
                 <LinearLayout
                         android:layout_width="wrap_content"
@@ -153,7 +153,7 @@
                 android:id="@+id/tipps_nitrat"
                 android:layout_gravity="bottom"
                 android:text="@string/nitrat_button"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="330dp"
                 android:background="@drawable/button_background_locked"
                 android:textColor="?attr/textWhite"
@@ -204,7 +204,7 @@
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="15dp"
                     android:text="@string/title_nodata"
                     android:textColor="?attr/colorAppTextPrimary"
                     android:textSize="24sp" android:textStyle="bold"/>

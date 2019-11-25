@@ -3,17 +3,21 @@ package com.zeitform.wasserapp.location
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.location.Criteria
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
+import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
+import androidx.lifecycle.ViewModelProviders
+import com.zeitform.wasserapp.viewmodel.SharedViewModel
 
-class LocationCheck(val mContext: Context) {
+class LocationCheck(val mContext: Context, sharedViewModel: SharedViewModel?) {
 
-
+    private var sharedViewModel: SharedViewModel? = null
     private var latitude: Double? = 0.0
     private var longitude: Double? = 0.0
     lateinit var locationManager: LocationManager
@@ -22,8 +26,14 @@ class LocationCheck(val mContext: Context) {
     private var locationGps: Location? = null
     private var locationNetwork: Location? = null
 
+    init {
+        this.sharedViewModel = sharedViewModel
+    }
     @SuppressLint("MissingPermission")
      fun checkLocation(){
+        var criteria = Criteria()
+        criteria.accuracy = Criteria.ACCURACY_FINE
+        criteria.powerRequirement = Criteria.POWER_HIGH
         locationManager = mContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         hasGps = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
         hasNetwork = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
@@ -32,11 +42,12 @@ class LocationCheck(val mContext: Context) {
 
                 Log.d("CodeAndroidLocation", "hasGps")
                 locationManager.requestLocationUpdates(
-                    LocationManager.GPS_PROVIDER,
                     1000,
-                    200F,
-                    gpsListener)
-                val localGpsLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+                    100F,
+                    criteria,
+                    gpsListener,
+                    null)
+               val localGpsLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
                 if (localGpsLocation != null)
                     locationGps = localGpsLocation
                 Log.d("Loc GPS",locationGps.toString())
@@ -48,7 +59,7 @@ class LocationCheck(val mContext: Context) {
                 locationManager.requestLocationUpdates(
                     LocationManager.NETWORK_PROVIDER,
                     1000,
-                    200F,
+                    100F,
                     networkListener)
                 val localNetworkLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
                 if (localNetworkLocation != null)
@@ -70,18 +81,21 @@ class LocationCheck(val mContext: Context) {
                 locationGps = location
             }
             Log.d("Location from GPS ",locationGps.toString())
+            Toast.makeText(mContext, "Location from GPS "+locationGps.toString(), Toast.LENGTH_LONG).show()
+            locationManager.removeUpdates(this)
+            checkBestLocation()
         }
 
         override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
-
+            //println("GPS status| Provider:"+provider+"- Status:"+status)
         }
 
         override fun onProviderEnabled(provider: String?) {
-
+            //println("GPS status| Provider enabled:"+provider)
         }
 
         override fun onProviderDisabled(provider: String?) {
-
+            //println("GPS status| Provider disabled:"+provider)
         }
 
     }
@@ -91,23 +105,26 @@ class LocationCheck(val mContext: Context) {
                 locationNetwork = location
             }
             Log.d("Location from network ",locationNetwork.toString())
+            Toast.makeText(mContext, "Location from Network "+locationNetwork.toString(), Toast.LENGTH_LONG).show()
+            locationManager.removeUpdates(this)
+            checkBestLocation()
         }
 
         override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
-
+            //println("Network status| Provider:"+provider+"- Status:"+status)
         }
 
         override fun onProviderEnabled(provider: String?) {
-
+            //println("Network status| Provider enabled:"+provider)
         }
 
         override fun onProviderDisabled(provider: String?) {
-
+            //println("Network status| Provider disabled:"+provider)
         }
 
     }
 
-    fun getLocation(): LocationData {
+    fun checkBestLocation() {
         if (locationGps != null && locationNetwork != null) {
             if (locationGps!!.accuracy > locationNetwork!!.accuracy) {
                 Log.d("CodeAndroidLocation", " Network Latitude : " + locationNetwork!!.latitude)
@@ -133,10 +150,12 @@ class LocationCheck(val mContext: Context) {
             latitude = locationGps!!.latitude
             longitude = locationGps!!.longitude
         }
-        removeListeners()
-        return LocationData(latitude, longitude)
+        updateLocationViewModel(LocationData(latitude, longitude))
     }
 
+    private fun updateLocationViewModel(locationData: LocationData) {
+        sharedViewModel?.locationData?.postValue(locationData)
+    }
     fun removeListeners(){
         locationManager.removeUpdates(gpsListener)
         locationManager.removeUpdates(networkListener)
