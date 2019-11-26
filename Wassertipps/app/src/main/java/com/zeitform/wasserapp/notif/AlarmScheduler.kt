@@ -53,10 +53,9 @@ object AlarmScheduler {
         // create the intent using a unique type
         val intent = Intent(context, NotifReceiver::class.java).apply {
             action = context.getString(R.string.app_name)
-            //type = "$day-${reminderData.name}-${reminderData.medicine}-${reminderData.type.name}"
             putExtra("ID", alarmData.id)
         }
-        return PendingIntent.getBroadcast(context, alarmData.id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        return PendingIntent.getBroadcast(context, alarmData.id, intent, PendingIntent.FLAG_CANCEL_CURRENT)
     }
 
     /**
@@ -66,12 +65,20 @@ object AlarmScheduler {
      * @param reminderData ReminderData for the notification
      */
     fun removeAlarmsForReminder(context: Context) {
-        val intent = Intent(context.applicationContext, NotifReceiver::class.java)
         Log.d("removeAlarms", AlarmDataManagerHelper.getFromAlarmDataManager(context).size.toString())
         if(AlarmDataManagerHelper.getFromAlarmDataManager(context).size != 0){
             var alarmTimes = AlarmDataManagerHelper.getFromAlarmDataManager(context)
+            println("Alarm times"+alarmTimes)
             for(alarmTime in alarmTimes){
-                var alarmIntent = PendingIntent.getBroadcast(context, alarmTime.id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+                val intent = Intent(context, NotifReceiver::class.java).apply {
+                    action = context.getString(R.string.app_name)
+                    putExtra("ID", alarmTime.id)
+                }
+                var alarmIntent = PendingIntent.getBroadcast(context, alarmTime.id, intent, PendingIntent.FLAG_CANCEL_CURRENT)
+                // Check PendintIntent exists
+                if(PendingIntent.getBroadcast(context, alarmTime.id, intent, PendingIntent.FLAG_NO_CREATE) != null){
+                    println("Intent before cancel :"+alarmTime.id)
+                }
                 val alarmMgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
                 alarmMgr.cancel(alarmIntent)
             }

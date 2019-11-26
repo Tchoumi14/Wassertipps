@@ -482,6 +482,7 @@ class RechnerFragment : Fragment() {
         Log.d("ConsumptionTimes", consumptionTimes.toString())
         Log.d("Times", rechnerDataManager!!.erinnerungen.toString())
         updateAlarms()
+        isFirstRun = false
         //to set the text, if the switch is active
         val duration = einschlafenTimeInt - aufwachenTimeInt
         val times = rechnerDataManager!!.erinnerungen
@@ -493,10 +494,12 @@ class RechnerFragment : Fragment() {
      * Updates alarms if switch is already turned on
      */
     private fun updateAlarms(){
-        if(rechnerDataManager!!.mitteilungenSwitch){
+        if(rechnerDataManager!!.mitteilungenSwitch && !isFirstRun){
+            println("Alarms set")
             clearAlarms()
             setAlarms()
         }
+        if(isFirstRun) println("Ran first time") else println("not first time")
     }
     /**
      * Create alarms at regular intervals between aufwachen and einschlafen time.

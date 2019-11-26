@@ -10,8 +10,9 @@ android:orientation="vertical">
 
     <ScrollView android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_weight="80"
-                android:layout_alignParentTop="true"
+                android:layout_weight="85"
+                android:overScrollMode="ifContentScrolls"
+                android:scrollbarDefaultDelayBeforeFade="1000"
                 android:padding="@dimen/activity_vertical_margin"
                 android:background="@drawable/text_layout_bg">
 
@@ -31,7 +32,8 @@ android:orientation="vertical">
                     android:paddingBottom="@dimen/activity_vertical_margin"
                     android:textSize="24sp" android:fontFamily="sans-serif" android:layout_centerVertical="true"/>
             <!--Border bottom -->
-            <View android:background="?attr/colorAppTextPrimary" android:layout_width="match_parent" android:layout_height="1dp"
+            <View android:background="?attr/colorAppTextPrimary" android:layout_width="match_parent"
+                  android:layout_height="1dp"
                   android:layout_below="@id/intro5_title"
                   android:paddingBottom="@dimen/activity_vertical_margin"/>
             <!--Border bottom -->
@@ -95,7 +97,8 @@ android:orientation="vertical">
                     android:layout_below="@id/datenschutz_Text"
                     android:textSize="@dimen/intro_general_font_size"
                     android:textAlignment="textStart"/>
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/text_container2" android:layout_below="@id/intro5_text3_header">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/text_container2" android:layout_below="@id/intro5_text3_header">
                 <TextView
                         android:text="@string/intro5_text3_1"
                         android:layout_width="wrap_content"
@@ -169,6 +172,7 @@ android:orientation="vertical">
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/intro5_text3_2"
+                    android:padding="@dimen/basic_text_padding"
                     android:id="@+id/zustimmen"
                     android:background="@drawable/green_button_selector"
                     android:textAllCaps="false"

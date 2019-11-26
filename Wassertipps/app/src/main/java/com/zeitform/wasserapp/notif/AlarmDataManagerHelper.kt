@@ -27,7 +27,7 @@ object AlarmDataManagerHelper {
         }.type
         return gson.fromJson(arrayAsString, type)
     }
-    fun clearSavedData(context: Context){
+    fun clearSavedAlarmDataManager(context: Context){
         val alarmDataManager = AlarmDataManager(context)
         alarmDataManager.alarmArrayString= ""
         Log.d("clear saved data",alarmDataManager.alarmArrayString )

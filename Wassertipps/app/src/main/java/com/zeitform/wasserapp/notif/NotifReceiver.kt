@@ -34,7 +34,7 @@ class NotifReceiver: BroadcastReceiver() {
     private fun checkNotificationValidity(context: Context, timeId: Int, intentId: Int){
         Log.d("At notifRec :intid:", intentId.toString())
         Log.d("At notifRec :timeId:", timeId.toString())
-        if(intentId >= timeId - 3 && intentId <= timeId + 3){
+        if(intentId >= timeId - 2 && intentId <= timeId){
             Log.d("Time id", timeId.toString())
             //Log.d("intent id", intentId.toString())
             val alarmArray = AlarmDataManagerHelper.getFromAlarmDataManager(context)
@@ -44,8 +44,10 @@ class NotifReceiver: BroadcastReceiver() {
                         val notificationTextArray = context.resources.getStringArray(R.array.notification_text)
                         var notificationText = "Du solltest jetzt wieder ein Glas Wasser trinken"
                         if(alarmArray.indexOf(alarmData)!=0){
-                            val index = (Math.floor(Math.random() * (alarmArray.size - 0) + 0)).toInt()
-                            notificationText = notificationTextArray[index]
+                            val index = (Math.floor(Math.random() * (alarmArray.size - 1) + 0)).toInt()
+                            if(index < notificationTextArray.size){
+                                notificationText = notificationTextArray[index]
+                            }
                         }
                         NotificationHelper.createNotification(context, notificationText, alarmData.waterMl)
                     }

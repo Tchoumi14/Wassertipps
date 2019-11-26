@@ -126,7 +126,7 @@ class LocationCheck(val mContext: Context, sharedViewModel: SharedViewModel?) {
 
     fun checkBestLocation() {
         if (locationGps != null && locationNetwork != null) {
-            if (locationGps!!.accuracy > locationNetwork!!.accuracy) {
+            if (locationGps!!.accuracy > locationNetwork!!.accuracy) {-
                 Log.d("CodeAndroidLocation", " Network Latitude : " + locationNetwork!!.latitude)
                 Log.d("CodeAndroidLocation", " Network Longitude : " + locationNetwork!!.longitude)
                 latitude = locationNetwork!!.latitude
