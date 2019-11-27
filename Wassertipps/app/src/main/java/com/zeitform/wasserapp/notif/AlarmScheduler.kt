@@ -8,7 +8,6 @@ import android.util.Log
 import com.zeitform.wasserapp.R
 import java.util.*
 import java.util.Calendar.*
-import kotlin.collections.ArrayList
 
 
 object AlarmScheduler {

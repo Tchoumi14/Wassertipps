@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.zeitform.wasserapp">
+          xmlns:tools="http://schemas.android.com/tools" package="com.zeitform.wasserapp">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -35,10 +36,16 @@
                 android:launchMode="singleTop">
         </activity>
 
-        <receiver android:name=".notif.NotifReceiver"/>
-        <receiver android:name=".notif.BootReceiver">
+        <receiver android:name=".notif.NotifReceiver"
+                  android:directBootAware="true" tools:targetApi="n"
+                  android:enabled="true" />
+        <receiver android:name=".notif.BootReceiver"
+                  android:directBootAware="true"
+                  android:enabled="true" tools:targetApi="n"
+                  android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 

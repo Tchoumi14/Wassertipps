@@ -322,12 +322,30 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        dataManager = DataManager(this)
+        if (dataManager!!.savedData != null) {
+            try {
+                savedResponse = JSONObject(dataManager!!.savedData)
+                savedCity = savedResponse.optString("city")
+                savedMax = savedResponse.optString("max")
+                savedNmax = savedResponse.optString("nmax")
+                savedDesc = savedResponse.optString("desc")
+
+                isReducedSaved = dataManager!!.isReduced
+            } catch (e: JSONException) {
+                Log.d("Exception", e.toString())
+            }
+        } else {
+            //Log.d("Saved data", "empty")
+        }
+
         //Create notification channel
         NotificationHelper.createNotificationChannel(this, NotificationManagerCompat.IMPORTANCE_HIGH, false, getString(R.string.app_name), "Wassertipps app notification channel.")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             this.window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
         }
         loadText()
+        //NEEDED
 /*
         // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this) {}
@@ -354,22 +372,6 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         navView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
 
-        dataManager = DataManager(this)
-        if (dataManager!!.savedData != null) {
-            try {
-                savedResponse = JSONObject(dataManager!!.savedData)
-                savedCity = savedResponse.optString("city")
-                savedMax = savedResponse.optString("max")
-                savedNmax = savedResponse.optString("nmax")
-                savedDesc = savedResponse.optString("desc")
-
-                isReducedSaved = dataManager!!.isReduced
-            } catch (e: JSONException) {
-                Log.d("Exception", e.toString())
-            }
-        } else {
-            //Log.d("Saved data", "empty")
-        }
         textMessage = findViewById(R.id.appbar_message)
         toolbar = findViewById(R.id.toolbar)
         toolbarText = findViewById(R.id.toolbar_text)

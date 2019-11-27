@@ -132,10 +132,19 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         activity?.let {
             val sharedViewModel = ViewModelProviders.of(it).get(SharedViewModel::class.java)
-
             observeInput(sharedViewModel)
+            if(dataManager!!.savedData != null) {
+                val savedResponse = JSONObject(dataManager!!.savedData)
+                val isReducedSaved = dataManager!!.isReduced
+                //Load saved data on startup until new data is available
+                println("Loaded saved data")
+                sharedViewModel.serverData.postValue(savedResponse) //use saved data
+                sharedViewModel.url.postValue(savedResponse.optString("url")) //saves URL
+                sharedViewModel.isReduced.postValue(isReducedSaved)
+            }
         }
         sharedViewModel = ViewModelProviders.of(this).get(SharedViewModel::class.java)
+        //NEEDED
         /*billingManager = BillingManager(activity!!)
         billingManager.setupBillingClient()
         listener!!.setBillingManager(billingManager)
