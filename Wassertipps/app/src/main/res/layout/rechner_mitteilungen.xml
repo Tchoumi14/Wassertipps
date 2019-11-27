@@ -35,42 +35,46 @@
                     android:padding="@dimen/basic_text_padding"
                     android:background="@drawable/rechner_content"
                     android:layout_below="@+id/box_title">
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:padding="@dimen/basic_text_padding"
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="@dimen/wasserbedarf_row_height"
                         android:background="@drawable/white_row"
                         android:id="@+id/mitteilung_row1">
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
+                      android:padding="@dimen/basic_text_padding"
                       android:textColor="?attr/colorAppTextPrimary"
                       android:layout_alignParentStart="true"
                       android:text="@string/aufwachen"/>
             <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingEnd="@dimen/basic_text_padding"
                     android:id="@+id/aufwachen_text"
                     android:text="00 : 00"
                     android:textColor="?attr/colorAppPrimary"
                     android:layout_alignParentEnd="true"
-                    android:gravity="end"/>
+                    android:gravity="center|end" android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp"/>
         </RelativeLayout>
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:padding="@dimen/basic_text_padding"
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="@dimen/wasserbedarf_row_height"
+
                         android:background="@drawable/white_row"
                         android:id="@+id/mitteilung_row2"
                         android:layout_below="@+id/mitteilung_row1">
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
+                      android:padding="@dimen/basic_text_padding"
                       android:textColor="?attr/colorAppTextPrimary"
                       android:layout_alignParentStart="true"
                       android:text="@string/einschlafen"/>
             <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingEnd="@dimen/basic_text_padding"
                     android:id="@+id/einschlafen_text"
                     android:text="00 : 00"
                     android:textColor="?attr/colorAppPrimary"
                     android:layout_alignParentEnd="true"
-                    android:gravity="end"/>
+                    android:gravity="center|end"/>
         </RelativeLayout>
         <!--nicht benutzt-->
         <!--

@@ -19,4 +19,6 @@
     <dimen name="image_bottom_margin">60dp</dimen>
     <dimen name="basic_text_padding">10dp</dimen>
     <dimen name="faq_contentbox_margin">6dp</dimen>
+
+    <dimen name="wasserbedarf_row_height">40dp</dimen>
 </resources>
