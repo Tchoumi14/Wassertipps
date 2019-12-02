@@ -18,6 +18,7 @@ class BootReceiver : BroadcastReceiver() {
         rechnerDataManager = RechnerDataManager(context)
         val alarmTimes = AlarmDataManagerHelper.getFromAlarmDataManager(context)
         if(alarmTimes.size!=0 && rechnerDataManager.mitteilungenSwitch){
+            println("Saved Alarms :"+alarmTimes)
             for(alarmTime in alarmTimes){
                 AlarmScheduler.scheduleAlarmsForReminder(context, alarmTime)
             }
