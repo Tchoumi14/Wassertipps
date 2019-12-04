@@ -3,8 +3,10 @@ package com.zeitform.wasserapp.navfragments
 import android.app.Dialog
 import android.app.PendingIntent
 import android.app.TimePickerDialog
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.net.Uri
 import android.os.Bundle
@@ -31,10 +33,7 @@ import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.SelectorType
 import com.zeitform.wasserapp.billing.BillingConstants
 import com.zeitform.wasserapp.billing.BillingManager
-import com.zeitform.wasserapp.notif.AlarmScheduler
-import com.zeitform.wasserapp.notif.NotificationHelper
-import com.zeitform.wasserapp.notif.AlarmData
-import com.zeitform.wasserapp.notif.AlarmDataManagerHelper
+import com.zeitform.wasserapp.notif.*
 import com.zeitform.wasserapp.prefmanagers.AlarmDataManager
 import com.zeitform.wasserapp.prefmanagers.RechnerDataManager
 
@@ -525,12 +524,27 @@ class RechnerFragment : Fragment() {
             AlarmScheduler.scheduleAlarmsForReminder(activity!!.applicationContext, alarmTime)
         }
         setMitteilungActiveText(waterMl,interval)
+        //ENABLE BootReceiver- set alarms on restart
+        /*@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val receiver = ComponentName(context, BootReceiver::class.java)
+        context?.packageManager?.setComponentEnabledSetting(
+            receiver,
+            PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+            PackageManager.DONT_KILL_APP
+        )
+        println("Component enabled: "+context?.packageManager?.getComponentEnabledSetting(receiver))*/
     }
     /**
      * Clear running alarms
      */
     private fun clearAlarms(){
         AlarmScheduler.removeAlarmsForReminder(activity!!.applicationContext)
+        /*@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val receiver = ComponentName(context, BootReceiver::class.java)
+        context?.packageManager?.setComponentEnabledSetting(
+            receiver,
+            PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+            PackageManager.DONT_KILL_APP
+        )
+        println("Component disabled: "+context?.packageManager?.getComponentEnabledSetting(receiver))*/
     }
 
     private fun setMitteilungActiveText(waterMl: Int, interval: Int){

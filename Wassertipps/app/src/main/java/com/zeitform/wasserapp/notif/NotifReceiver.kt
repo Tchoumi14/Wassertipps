@@ -70,7 +70,7 @@ class NotifReceiver: BroadcastReceiver() {
         private fun checkNotificationValidity(context: Context, timeId: Int, intentId: Int){
             Log.d("At notifRec :intid:", intentId.toString())
             Log.d("At notifRec :timeId:", timeId.toString())
-            if(intentId >= timeId - 2 && intentId <= timeId){
+            if(intentId >= timeId - 4 && intentId <= timeId){
                 Log.d("Time id", timeId.toString())
                 //Log.d("intent id", intentId.toString())
                 val alarmArray = AlarmDataManagerHelper.getFromAlarmDataManager(context)

@@ -1,6 +1,7 @@
 package com.zeitform.wasserapp
 
 import android.Manifest
+import android.content.ComponentName
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
@@ -15,6 +16,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.os.PowerManager
 import android.provider.Settings
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
@@ -39,6 +41,7 @@ import com.zeitform.wasserapp.billing.BillingManager
 import com.zeitform.wasserapp.internalfragments.*
 import com.zeitform.wasserapp.location.LocationCheck
 import com.zeitform.wasserapp.navfragments.*
+import com.zeitform.wasserapp.notif.BootReceiver
 import com.zeitform.wasserapp.notif.NotificationHelper
 import com.zeitform.wasserapp.prefmanagers.DataManager
 import com.zeitform.wasserapp.viewmodel.SharedViewModel

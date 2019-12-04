@@ -133,7 +133,8 @@ class HomeFragment : Fragment() {
         activity?.let {
             val sharedViewModel = ViewModelProviders.of(it).get(SharedViewModel::class.java)
             observeInput(sharedViewModel)
-            if(dataManager!!.savedData != null) {
+            println("SAVED DATA!!! :"+dataManager!!.savedData)
+            if(dataManager!!.savedData != "") {
                 val savedResponse = JSONObject(dataManager!!.savedData)
                 val isReducedSaved = dataManager!!.isReduced
                 //Load saved data on startup until new data is available
