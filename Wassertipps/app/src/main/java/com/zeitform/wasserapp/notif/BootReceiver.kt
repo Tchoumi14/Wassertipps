@@ -16,31 +16,36 @@ class BootReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent?) {
 
+
         if(intent?.action.equals(Intent.ACTION_LOCKED_BOOT_COMPLETED) || intent?.action.equals(Intent.ACTION_BOOT_COMPLETED) ||
             intent?.action.equals("android.intent.action.QUICKBOOT_POWERON") || intent?.action.equals("com.htc.intent.action.REBOOT")){
-            val rechnerDataManager: RechnerDataManager
-            println("Wasserapp - Device reboot Completed || Intent action :"+intent?.action)
-            rechnerDataManager = RechnerDataManager(context!!)
-            val alarmTimes = AlarmDataManagerHelper.getFromAlarmDataManager(context)
-            if(alarmTimes.size!=0 && rechnerDataManager.mitteilungenSwitch){
-                println("Saved Alarms :"+alarmTimes)
-                for(alarmTime in alarmTimes){
-                    AlarmScheduler.scheduleAlarmsForReminder(context, alarmTime)
-                }
+            if (intent != null) {
+                BootJobIntentService.enqueueWork(context,intent)
             }
 
-        } else {
-            println("Unrecognised boot action- Wasserapp")
-            val rechnerDataManager: RechnerDataManager
+            /*val rechnerDataManager: RechnerDataManager
             println("Wasserapp - Device reboot Completed || Intent action :"+intent?.action)
-            rechnerDataManager = RechnerDataManager(context!!)
+            rechnerDataManager = RechnerDataManager(context)
             val alarmTimes = AlarmDataManagerHelper.getFromAlarmDataManager(context)
             if(alarmTimes.size!=0 && rechnerDataManager.mitteilungenSwitch){
                 println("Saved Alarms :"+alarmTimes)
                 for(alarmTime in alarmTimes){
                     AlarmScheduler.scheduleAlarmsForReminder(context, alarmTime)
                 }
-            }
+            } */
+
+        } else {
+           /* println("Unrecognised boot action- Wasserapp")
+            val rechnerDataManager: RechnerDataManager
+            println("Wasserapp - Device reboot Completed || Intent action :"+intent?.action)
+            rechnerDataManager = RechnerDataManager(context)
+            val alarmTimes = AlarmDataManagerHelper.getFromAlarmDataManager(context)
+            if(alarmTimes.size!=0 && rechnerDataManager.mitteilungenSwitch){
+                println("Saved Alarms :"+alarmTimes)
+                for(alarmTime in alarmTimes){
+                    AlarmScheduler.scheduleAlarmsForReminder(context, alarmTime)
+                }
+            }*/
         }
 
     }
