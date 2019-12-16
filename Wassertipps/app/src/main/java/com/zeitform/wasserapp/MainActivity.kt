@@ -55,7 +55,7 @@ import java.util.concurrent.Executors
 
 
 private const val PERMISSION_REQUEST = 10
-const val AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
+const val AD_UNIT_ID = "ca-app-pub-2652102329017603/7708562572"    //TEST ID: "ca-app-pub-3940256099942544/1033173712"
 
 class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionListener,
     WasserinfoFragment.OnFragmentInteractionListener,
@@ -162,19 +162,16 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 hartArrayContent= resources.getStringArray(R.array.hart_1_content)
                 sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-                createToast("hart 1:"+hart)
             }
             2 -> {
                 hartArrayContent= resources.getStringArray(R.array.hart_2_content)
                 sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-                createToast("hart 2:"+hart)
             }
             3 -> {
                 hartArrayContent= resources.getStringArray(R.array.hart_3_content)
                 sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-                createToast("hart 3:"+hart)
             }
         }
 
@@ -192,19 +189,17 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_1_content)
                 sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-                createToast("nitrat 1:"+nitrat)
             }
             2 -> {
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_2_content)
                 sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-                createToast("nitrat 2:"+nitrat)
             }
             3 -> {
                 nitratArrayContent= resources.getStringArray(R.array.nitrat_3_content)
                 sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
                 //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-                createToast("nitrat 3:"+nitrat)
+
             }
         }
         prevFragment = active
@@ -349,7 +344,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         }
         loadText()
         //NEEDED
-/*
+
         // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this) {}
 
@@ -371,7 +366,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 }
             })
         }
-        mInterstitialAd.loadAd(AdRequest.Builder().build()) */
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
         navView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
 
@@ -502,8 +497,10 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         println("At update rechner navicon")
         val item = navView.menu.findItem(R.id.navigation_wasserbedarf)
         if(value){
+            println("Icon color")
             item.icon = ContextCompat.getDrawable(this,R.drawable.icon_trinken_color)
         } else {
+            println("icon grey")
             item.icon = ContextCompat.getDrawable(this,R.drawable.icon_trinken_grey)
         }
     }

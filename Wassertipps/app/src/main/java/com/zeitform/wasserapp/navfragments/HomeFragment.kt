@@ -73,7 +73,7 @@ class HomeFragment : Fragment() {
     private lateinit var infoIcon: ImageView
     private lateinit var tippsHaerteBtn: Button
     private lateinit var tippsNitratBtn: Button
-    //private lateinit var consumeBtn: Button
+    private lateinit var consumeBtn: Button
     private var isReduced: Boolean = false
     private var listener: OnFragmentInteractionListener? = null
 
@@ -106,15 +106,15 @@ class HomeFragment : Fragment() {
         nearText = rootView.findViewById(R.id.near_text)
         dataTable = rootView.findViewById(R.id.nodata_table)
         tippsHaerteBtn = rootView.findViewById(R.id.tipps_haerte)
-        tippsHaerteBtn.setOnClickListener { listener!!.openTippsHaerte()/*if(checkAppPaymentStatus()) listener!!.openTippsHaerte() else purchasePopup()*/ }
+        tippsHaerteBtn.setOnClickListener { if(checkAppPaymentStatus()) listener!!.openTippsHaerte() else purchasePopup()}
         tippsNitratBtn = rootView.findViewById(R.id.tipps_nitrat)
-        tippsNitratBtn.setOnClickListener { listener!!.openTippsNitrat() /*if(checkAppPaymentStatus()) listener!!.openTippsNitrat() else purchasePopup() */}
+        tippsNitratBtn.setOnClickListener { if(checkAppPaymentStatus()) listener!!.openTippsNitrat() else purchasePopup()}
 
-        tippsHaerteBtn.setBackgroundResource(R.drawable.button_background)
-        tippsNitratBtn.setBackgroundResource(R.drawable.button_background)
-        listener!!.updateRechnerStatus(true)
+        tippsHaerteBtn.setBackgroundResource(R.drawable.button_background_locked)
+        tippsNitratBtn.setBackgroundResource(R.drawable.button_background_locked)
+
         // CONSUME PURCHASE- FOR TEST
-        /*
+/*
         consumeBtn = rootView.findViewById(R.id.consume_btn)
         consumeBtn.visibility = View.INVISIBLE
         consumeBtn.setOnClickListener {
@@ -146,14 +146,15 @@ class HomeFragment : Fragment() {
         }
         sharedViewModel = ViewModelProviders.of(this).get(SharedViewModel::class.java)
         //NEEDED
-        /*billingManager = BillingManager(activity!!)
+        billingManager = BillingManager(activity!!)
         billingManager.setupBillingClient()
         listener!!.setBillingManager(billingManager)
         billingManager.refreshListListeners.add(object : BillingManager.InterfaceRefreshList {
             override fun refreshListRequest() {
                 update()
+                println("UPDATED!")
             }
-        })*/
+        })
 
     }
 
@@ -419,12 +420,14 @@ class HomeFragment : Fragment() {
             tippsNitratBtn.setBackgroundResource(R.drawable.button_background)
             listener!!.updateRechnerStatus(true)
             //consumeBtn.visibility = View.VISIBLE
+            updatePurchasedItems()
             println("unlocked")
         } else {
             tippsHaerteBtn.setBackgroundResource(R.drawable.button_background_locked)
             tippsNitratBtn.setBackgroundResource(R.drawable.button_background_locked)
             listener!!.updateRechnerStatus(false)
             //consumeBtn.visibility = View.INVISIBLE
+            updatePurchasedItems()
             println("Locked 1")
         }
     }

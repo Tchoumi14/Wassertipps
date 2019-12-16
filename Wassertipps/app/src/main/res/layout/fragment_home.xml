@@ -73,7 +73,7 @@
                             android:background="?attr/colorDarkTint"/>
                 </LinearLayout>
                <!--     "In-app consume (zum testen)"    -->
-             <!--    <Button android:layout_width="wrap_content"
+               <!-- <Button android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/consume_btn"
                         android:layout_alignParentEnd="true"

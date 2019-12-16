@@ -163,54 +163,64 @@
                 </div>
             </div>]]></item>
     <item name="trinkwasser"><![CDATA[<div>
+<div>
     <div>
         <div>
-             <h3>Mineralwasser und Nitrate</h3>
-       </div>
-</div>
+            <div>
+                <div>
+                        <h3>Mineralwasser und Nitrate</h3>
+                    </div>
+                </div>
             </div>
-            <div class="row white">
-                <div class="col-xs-12 wasser">
-                    <div class="text-left tipp">
+            <div>
+                <div>
+                    <div>
                       <p>Die hohe Qualität des Leitungswassers wird durch die Trinkwasserverordnung garantiert, für Mineralwasser gilt die Mineral- und Tafelwasserverordnung bzw. in Östereich die Mineralwasser- und Quellwasserverordnung.</p>
                       <p>Tatsächlich ist die Trinkwasserverordnung teilweise sogar strenger als die Mineralwasserverordnung, Leitungswasser kann also grundsätzlich bedenkenlos als Trinkwasser verwendet werden.
                         </p>
-                        <p>Der aktuelle Grenzwert für Nitrat im Trinkwasser liegt laut der deutschen und österreichischen Trinkwasserverordnung bei 50 mg/l, nach der schweizerischen Gewässerschutzverordnung bei 25 mg/l.<br>
-                          Dieser Grenzwert muss von den Wasserversorgern verpflichtend eingehalten werden. </p>
-						<p>Im Jahre 1986 hatte das deutsche Bundesgesundheitsamt empfohlen, für die Zubereitung von Säuglingsnahrung einen Nitratgrenzwert von 10mg/l im Trinkwasser nicht zu überschreiten<sup>1</sup>. Im Jahr 2004 wurde diese Empfehlung dann wieder teilweise zurück genommen, wobei festgestellt wurde, dass eine tägliche Aufnahme von 13mg/l Nitrat der von der Weltgesundheitsorganisation WHO festgelegten 'lebenslang gesundheitlich duldbaren Exposition(ADI-Wert)' für einen gesunden Erwachsenen entspricht<sup>2</sup>.</p>
                         <p>Durch die Düngung mit stickstoffhaltigen Düngern wird durch die Mitwirkung von Bakterien Nitrat im Boden gebildet, das durch den Regen langsam in das Grundwasser entweicht und Monate oder Jahre später im Trinkwasser wieder auftaucht.
                         </p>
-                        <p>Solange der Nitratgehalt im Trinkwasser aber unterhalb des EU-weit festgelegten Grenzwertes von 50 mg/l liegt, besteht für einen gesunden Erwachsenen laut Umweltbundesamt keinerlei Gefahr.
+                        <p>Solange der Nitratgehalt im Trinkwasser aber unterhalb des EU-weit festgelegten Grenzwertes von 50 mg/l liegt (Schweiz 40mg/l), besteht für einen gesunden Erwachsenen laut Umweltbundesamt keinerlei Gefahr. Dieser Grenzwert muss von den Wasserversorgern verpflichtend eingehalten werden.
                         </p>
                         <p>Anders sieht es für Säuglinge und Kinder bzw. ältere Erwachsene aus, die an einer Magen-Darm Infektion leiden<sup>1</sup>.</p>
-
-                        <p><b>Ihr Leitungswasser weist einen geringen Nitratgehalt unter 10mg/l auf. Sie können es also bedenkenlos trinken, auch wenn Sie zu einer der genannten Risikogruppen gehören.<br>
-                        Studien in Dänemark<sup>4</sup> und den USA<sup>5</sup> haben allerdings bereits bei mittleren und niedrigen Nitratwerten eine signifikante Zunahme an Darmkrebsfällen gegenüber Trinkwasser mit einem Nitratgehalt von weniger als 5mg/l festgestellt.<br>
+                        <p><b>Ihr Leitungswasser weist einen geringen Nitratgehalt unter 10mg/l auf. Sie sollten es also bedenkenlos trinken können, auch wenn Sie zu einer der genannten Risikogruppen gehören.<br>
+                        Studien in Dänemark<sup>2</sup> und den USA<sup>3</sup> haben allerdings bereits bei mittleren und niedrigen Nitratwerten eine signifikante Zunahme an Darmkrebsfällen gegenüber Trinkwasser mit einem Nitratgehalt von weniger als 5mg/l festgestellt.<br>
                         Alle Autoren betonen aber, dass die Nitratproblematik noch nicht ausreichend untersucht wurde, um hier eine abschliessende Beurteilung zu erlauben.</b>
+                        </p>
+                        <p>Wenn Sie sicher gehen wollen, können Sie ein sogenanntes Bio-Mineralwasser<sup>4</sup> verwenden. Neben den ökologischen Aspekten müssen zertifizierte Bio-Mineralwässer u.a. auch einen Nitratgehalt von weniger als 5 mg/l aufweisen.</p>
+                        <p>
+                            Oder Sie achten beim Kauf auf das Siegel "Für die Zubereitung von Säuglingsnahrung geeignet". Diese Mineralwässer müssen ebenafalls strengere Anforderungen als normale Mineralwässer erfüllen, u.a. muss der Nitratgehalt unter 10 mg/l liegen.
                         </p>
 
                         <p>Einige Dinge sollten darüber hinaus beachtet werden.</p>
 
                         <p>Wenn Wasser über mehrere Stunden oder länger (beispielsweise über Nacht) in der Hausleitung gestanden hat, kann es Inhaltsstoffe der Leitungsrohre aufnehmen. Lassen Sie das Standwasser immer ablaufen und verwenden Sie nur das frische (kühlere) Wasser.</p>
                         <p>Da warmes Wasser fast immer "Standwasser" ist, weil es in Warmwasserbehältern wie Beuler, Untertischgerät, Warmwasserbehälter der Heizung etc. warm gehalten wird, sollten Sie es grundsätzlich nicht zum Trinken verwenden.</p>
-                        <p>Wer in Altbauten wohnt, in denen noch Blei- und Zinkrohre verbaut sind, sollte das Wasser unbedingt länger ablaufen lassen, bevor es getrunken wird. Kinder, Schwangere und ältere Menschen sollten in diesem Fall lieber auf gekauftes Mineralwasser ausweichen<sup>3</sup>.</p>
-                        <p> Die Zeitschrift Ökotest<sup>6</sup> und die Stiftung Warentest<sup>6</sup> testen regelmäßig Mineralwässer. </p>
-                        <p>
-                            Oder Sie achten beim Kauf auf das Siegel "Für die Zubereitung von Säuglingsnahrung geeignet". Diese Mineralwässer müssen strengere Anforderungen erüllen, u.a. muss der Nitratgehalt unter 10 mg/l liegen.
-                        </p>
+                        <p>Wer in Altbauten wohnt, in denen noch Blei- und Zinkrohre verbaut sind, sollte das Wasser unbedingt länger ablaufen lassen, bevor es getrunken wird. Kinder, Schwangere und ältere Menschen sollten in diesem Fall lieber auf gekauftes Mineralwasser ausweichen<sup>5</sup>.</p>
+                        <p> Die Zeitschrift Ökotest<sup>6</sup> und die Stiftung Warentest<sup>7</sup> testen regelmäßig Mineralwässer. </p>
 
                         <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
                           <li>(1) <a href="https://www.bfr.bund.de/cm/343/nitrat_in_diaetetischen_lebensmitteln.pdf">Stellungnahme des BfR zu Nitraten in Säuglingsnahrung (2003)</a></li>
-                          <li>(2) <a href="https://www.umweltbundesamt.de/sites/default/files/medien/374/dokumente/nitrat_im_trinkwasser_2004_10.pdf">Empfehlung des Umweltbundesamtes zu Nitat im Trinkwasser (2004)</a></li>
-                            <li>(3) <a href="http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html">spiegel.de/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html</a></li>
-                            <li>(4)  <a href="https://www.aerztezeitung.de/extras/druckansicht/?sid=960620&amp;pid=950033">Nitrat im Trinkwasser erhöht Darmkrebs-Gefahr</a></li>
-                            <li>(5) <a href="https://journals.lww.com/epidem/fulltext/2003/11000/Nitrate_in_Public_Water_Supplies_and_the_Risk_of.4.aspx">Nitrate in Public Water Supplies and the Risk of Colon and Rectum Cancers</a></li>
+                            <li>(2)  <a href="https://www.aerztezeitung.de/extras/druckansicht/?sid=960620&pid=950033">Nitrat im Trinkwasser erhöht Darmkrebs-Gefahr</a></li>
+                            <li>(3) <a href="https://journals.lww.com/epidem/fulltext/2003/11000/Nitrate_in_Public_Water_Supplies_and_the_Risk_of.4.aspx">Nitrate in Public Water Supplies and the Risk of Colon and Rectum Cancers</a></li>
+                            <li>(4> <a href="https://www.bio-mineralwasser.de/bio-mineralwasser/was-ist-bio-mineralwasser.html">Was ist Bio-Mineralwasser</a></li>
+                            <li>(5) <a href="http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html">spiegel.de/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html</a></li>
                             <li>(6) <a href="https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html">oekotest.de/Test_109918_1.html</a></li>
                             <li>(7) <a href="https://www.test.de/Natuerliches-Mineralwasser-im-Test-4258945-0/">test.de/Natuerliches-Mineralwasser-im-Test-4258945-0</a></li>
                         </ul>
+
                     </div>
                 </div>
-            </div>]]></item>
+            </div>
+            <div>
+                <div>
+                    <div> <a href="{{url}}" class="btn btn-lg btn-default btn-circle">Link zur Gemeindeseite bzw. Analyse</a> </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>]]></item>
     <item name="studien"><![CDATA[<div>
                 <div>
                     <div>

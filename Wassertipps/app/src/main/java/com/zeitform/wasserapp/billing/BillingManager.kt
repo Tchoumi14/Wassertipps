@@ -146,8 +146,8 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
      */
     override fun onPurchasesUpdated(billingResult: BillingResult?, purchases: MutableList<Purchase>?) {
         println("onPurchase")
-        //println("Billing result :"+billingResult)
-        //println("purchases made :"+purchases)
+        println("Billing result :"+billingResult)
+        println("purchases made :"+purchases)
         if(billingResult?.responseCode == BillingClient.BillingResponseCode.OK) {
             if (purchases != null) {
                 for (purchase in purchases) {
@@ -181,13 +181,15 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
             return
         }
 
-        //Log.d(TAG, "Got a verified purchase: $purchase")
+        Log.d(TAG, "Got a verified purchase: $purchase")
         mPurchases?.clear()
         mPurchases?.add(purchase)
         if(purchase.sku==BillingConstants.SKU_PRO){
             setIsProPurchased(true)
+            println("Pro purchased")
         } else {
             setIsProPurchased(false)
+            println("Pro not purchased")
         }
         // Acknowledge the purchase if it hasn't already been acknowledged.
         if (!purchase.isAcknowledged) {
