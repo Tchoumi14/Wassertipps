@@ -146,8 +146,8 @@ class BillingManager(var activity: Activity): PurchasesUpdatedListener {
      */
     override fun onPurchasesUpdated(billingResult: BillingResult?, purchases: MutableList<Purchase>?) {
         println("onPurchase")
-        println("Billing result :"+billingResult)
-        println("purchases made :"+purchases)
+        //println("Billing result :"+billingResult)
+        //println("purchases made :"+purchases)
         if(billingResult?.responseCode == BillingClient.BillingResponseCode.OK) {
             if (purchases != null) {
                 for (purchase in purchases) {
