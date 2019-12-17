@@ -229,10 +229,10 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(kontaktContentArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
         }
         if(index == 1){
-            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(datenschutzText, HtmlCompat.FROM_HTML_MODE_COMPACT))
+            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(nutzungsbedingungText, HtmlCompat.FROM_HTML_MODE_COMPACT))
         }
         if(index == 2){
-            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(nutzungsbedingungText, HtmlCompat.FROM_HTML_MODE_COMPACT))
+            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(datenschutzText, HtmlCompat.FROM_HTML_MODE_COMPACT))
         }
 
         prevFragment = active
@@ -477,9 +477,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     override fun onDestroy(){
         super.onDestroy()
         mHandler.removeCallbacks(mRunnable)
-        if(locCheckManager!=null){
             locCheckManager.removeListeners()
-        }
     }
 
     override fun onResume() {
@@ -594,7 +592,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     }
 
     private fun locationSettingPopup(){
-        val alertDialog: AlertDialog? = this?.let {
+        val alertDialog: AlertDialog? = this.let {
             val builder = AlertDialog.Builder(it)
             builder.apply {
                 builder.setTitle(R.string.location_setting_title)
