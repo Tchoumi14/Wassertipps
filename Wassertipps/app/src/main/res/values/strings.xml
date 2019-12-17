@@ -60,7 +60,7 @@
     <string name="wasserhaerte">Wasserhärte</string>
     <string name="nitrat">Nitrat</string>
     <string name="haerte_button">Tipps zur Wasserhärte</string>
-    <string name="nitrat_button">Tipps zur Nitrat</string>
+    <string name="nitrat_button">Tipps zum Nitratgehalt</string>
     <string name="nitrat_unit">mg/l</string>
     <string name="near">Sie befinden sich an der Grenze mehrerer Versorgungszonen. Durch Ungenauigkeiten, die bei der
         GPS-Ortung auftreten können, werden Ihnen möglicherweise falsche Daten angezeigt. Um sicher zu gehen informieren
