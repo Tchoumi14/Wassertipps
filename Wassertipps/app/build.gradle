@@ -18,8 +18,8 @@ android {
         applicationId "com.zeitform.wasserapp"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 10017
-        versionName "1.0.17"
+        versionCode 100171
+        versionName "1.0.17.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
