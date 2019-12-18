@@ -187,7 +187,7 @@
 
     <!--Wasserbedarfrechner gesperrt-->
     <string name="purchase_locked_title">Nicht verfügbar!</string>
-    <string name="purchase_locked_text">Möchten Sie die Pro Version erwerben, um Wasserbedarf rechner zu aktivieren?
+    <string name="purchase_locked_text">Möchten Sie die Pro Version erwerben, um den Wasserbedarfrechner zu aktivieren?
     </string>
 
     <!--Notification texts-->
