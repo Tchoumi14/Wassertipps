@@ -319,6 +319,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     override fun onCreate(savedInstanceState: Bundle?) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         super.onCreate(savedInstanceState)
+        handleIntent(intent)
         setContentView(R.layout.activity_main)
         dataManager = DataManager(this)
         if (dataManager!!.savedData != null) {
@@ -337,6 +338,12 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             //Log.d("Saved data", "empty")
         }
 
+        /*if (key === products) {
+            //launch Fragment-B
+        } else {
+            //launch Fraagment-A
+        }
+        */
         //Create notification channel
         NotificationHelper.createNotificationChannel(this, NotificationManagerCompat.IMPORTANCE_HIGH, false, getString(R.string.app_name), "Wassertipps app notification channel.")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -414,7 +421,20 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         locManager = this.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         checkLocationPermission()
     }
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        handleIntent(intent)
+    }
+    private fun handleIntent(intent: Intent) {
+        val appLinkAction = intent.action
+        val appLinkData: Uri? = intent.data
+        if (Intent.ACTION_VIEW == appLinkAction) {
+            if(appLinkData?.getQueryParameter("open") == "nitrat") {
+                openTippsNitrat()
+            }
 
+        }
+    }
     /**
      * Check location status and permission
      */
