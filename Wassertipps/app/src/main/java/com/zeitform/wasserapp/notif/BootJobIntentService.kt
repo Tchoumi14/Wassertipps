@@ -32,14 +32,14 @@ class BootJobIntentService: JobIntentService() {
                 AlarmScheduler.scheduleAlarmsForReminder(this@BootJobIntentService, alarmTime)
             }
         }
-        NotificationHelper.createNotification(this@BootJobIntentService, "Boot complete!", 0)
+        //NotificationHelper.createNotification(this@BootJobIntentService, "Boot complete!", 0)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         Log.d("Boot complete!" , "complete")
         println("Boot complete!")
-        showToast("Boot complete!")
+        //showToast("Boot complete!")
     }
     // Helper for showing tests
     fun showToast(text: CharSequence) {
