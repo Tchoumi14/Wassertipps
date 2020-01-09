@@ -158,27 +158,17 @@
           </div>
         </div>
       </div>]]></item>
-        <item name="trinkwasser"><![CDATA[<div >
- <div>
-      <div>
-           <h3>Wasser ist gesund</h3>
-      </div>
-</div>
-            </div>
-            <div class="row white">
-                <div class="col-xs-12">
-                    <div class="text-left tipp">
-                        <p>Sie haben relativ hartes Wasser. Das bedeutet, dass Ihr Leitungswasser viele Mineralien enthält. Und was für Ihre Waschmaschine eher von Nachteil ist, ist für Sie von Vorteil.</p>
-                        <p>Für unser Herz scheint hartes Wasser ein wahrer Segen zu sein. Dies fanden zumindest finnische Wissenschaftler heraus und veröffentlichten ihre Erkenntnisse im "Journal of Epidemiology and Community Health".<br> Dort heißt es, dass je zusätzlichen Härtegrad des Wassers das Infarktrisiko um ca.1 Prozent sinkt.</p>
+        <item name="trinkwasser"><![CDATA[<p>Sie haben relativ hartes Wasser. Das bedeutet, dass Ihr Leitungswasser viele Mineralien enthält. Und was für Ihre Waschmaschine eher von Nachteil ist, ist für Sie von Vorteil.</p>
+                        <p>Für unser Herz scheint hartes Wasser ein wahrer Segen zu sein. Dies fanden zumindest finnische Wissenschaftler heraus und veröffentlichten ihre Erkenntnisse im &quot;Journal of Epidemiology and Community Health&quot;.<br> Dort heißt es, dass je zusätzlichen Härtegrad des Wassers das Infarktrisiko um ca.1 Prozent sinkt.</p>
                         <p>Man analysierte dazu Daten von 12.500 Grundwasserproben mit Daten von über 19.000 Erwachsenen, die innerhalb einer Zeitspanne von zehn Jahren (1983-93) in Finnland einen Herzinfarkt bekamen.<br> Und tatsächlich fanden die Forscher um Anne Kousa einen klaren Einfluss der Gesamthärte, einem Maß für den Gehalt des Wassers an Calcium- und Magnesiumionen, auf das Herzinfarktrisiko <sup>1</sup>.</p>
-                        <p><b>Umrechnung von mmol/l in mg/l</b></p>
+                        <p><strong>Umrechnung von mmol/l in mg/l</strong></p>
                         <p>Manche Wasserversorger geben in den Analysen den Mineraliengehalt in mmol/l an, die Mineralwasserhersteller aber in mg/l. Die Umrechnung dieser beiden Angaben ist nicht ganz einfach, sie hängt nämlich von der molaren Masse des Elementes an. Die gibt die Masse pro mol in [g/mol] an. Praktischerweise ist das Periodensystem der Elemente nach genau dieser geordnet.</p>
                         <p>Calcium beispielsweise hat die Ordnungszahl 20, setzt sich also aus 20 Elektronen, 20 Protonen und 20 Neutronen zusammen. Die Masse ergibt sich aus der Anzahl der Protonen und der Neutronen, bei Calcium also 40 (das Molekulargewicht liegt bei exakt 40.08 aber für die Umrechnung reicht der ungefähre Wert).<br>
                             1 mmol/l Calcium entspricht also 40 mg/l.<br>
                             Bei Magnesium (Ordnungszahl 12) müssen Sie demnach mit 24 multiplizieren, bei Natrium mit 22 (Ordnungszahl 11), wenn Sie Ihr Leitungswasser mit einem Mineralwasser vergleichen wollen.
                         </p>
                         <p>Es gibt also - von wenigen Ausnahmen abgesehen - keinen Grund, auf teure Mineralwässer auszuweichen.</p>
-                        <p>Ein Argument gegen Leitungswasser könnte dessen Nitratgehalt  sein. Wenn Ihr Leitungswasser viel Nitrat enthält, können Sie auf Mineralwasser ausweichen, das für Säuglingsnahrung geeignet ist. Genaueres zu diesem Thema erfahren Sie <a href="wasserapp://com.zeitform.wasserapp/myapp?open=nitrat">im Bereich "Tipps zu Ihrem Nitratwert"</a>.</p>
+                        <p>Ein Argument gegen Leitungswasser könnte dessen Nitratgehalt  sein. Wenn Ihr Leitungswasser viel Nitrat enthält, können Sie auf Mineralwasser ausweichen, das für Säuglingsnahrung geeignet ist. Genaueres zu diesem Thema erfahren Sie <a href="#/tipps_nitrat">im Bereich "Tipps zu Ihrem Nitratwert"</a>.</p>
                         <p>Ein paar Dinge sollten Sie aber grundsätzlich beachten:</p>
                         <p>Lassen Sie das Standwasser immer ablaufen und verwenden Sie nur das frische (kühlere) Wasser. Wenn Wasser über vier Stunden oder länger (beispielsweise über Nacht) in der Hausleitung gestanden hat, kann es Inhaltsstoffe der Leitungsrohre, die für Babys schädlich sein können, aufnehmen.</p>
                         <p>Da warmes Wasser fast immer “Standwasser” ist, weil es in Warmwasserbehältern wie Beuler, Untertischgerät, Warmwasserbehälter der Heizung etc. warm gehalten wird, sollte es grundsätzlich NICHT verwendet werden.</p>
@@ -190,16 +180,12 @@
                             Oder Sie achten beim Kauf auf das Siegel "Für die Zubereitung von Säuglingsnahrung geeignet". Diese Mineralwässer müssen strengere Anforderungen erfüllen, u.a. muss der Nitratgehalt unter 10 mg/l liegen.
                         </p>
 
-                        <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
+                        <ul class="footnote">
                            <li>(1) Anne Kousa, Geological Survey of Finland, Kuoio; und andere Veröffentlicht in Journal of Epidemiology and Community Health, Vol. 58, pp 136-9</li>
                             <li>(2) <a href="http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html">http://www.spiegel.de/gesundheit/ernaehrung/leitungswasser-wie-gefaehrlich-sind-bleirohre-a-1001044.html</a></li>
                             <li>(3) <a href="https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html">https://www.oekotest.de/kinder-familie/21-Stille-Mineralwaesser-zur-Zubereitung-von-Saeuglingsnahrung-im-Test_109918_1.html</a></li>
                             <li>(4) <a href="https://www.test.de/Leitungswasser-und-Mineralwasser-Der-grosse-Wassercheck-5049737-0/">https://www.test.de/Natuerliches-Mineralwasser-im-Test-4258945-tabelle/suche/</a></li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>]]></item>
+                        </ul>]]></item>
         <item name="waesche"><![CDATA[<div >
  <div>
      <div >
@@ -251,17 +237,7 @@
                     </div>
                 </div>
             </div>]]></item>
-        <item name="whiskey"><![CDATA[<div class="row white header">
-                <div class="col-xs-12 whiskey">
-                    <div style="background-image:url(/app/images/tipps/whiskey.png)">
-                        <h3>Whisky und<br> Whiskey</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row white">
-                <div class="col-xs-12">
-                    <div class="text-left tipp">
-                        <p>Vorab ein paar kurze Worte zur Benennung. Die Whiskysorten der meisten Länder werden in schottischer Tradition hergestellt und schreiben sich ohne "e". Ein irischer oder amerikanischer Whiskey hingegen zeichnet sich immer durch das zusätzliche "e" als solcher aus. Allerdings gibt es, wie meist, auch hier Ausnahmen <sup>1</sup>. </p>
+        <item name="whiskey"><![CDATA[<p>Vorab ein paar kurze Worte zur Benennung. Die Whiskysorten der meisten Länder werden in schottischer Tradition hergestellt und schreiben sich ohne "e". Ein irischer oder amerikanischer Whiskey hingegen zeichnet sich immer durch das zusätzliche "e" als solcher aus. Allerdings gibt es, wie meist, auch hier Ausnahmen <sup>1</sup>. </p>
                         <p>Grundsätzlich unterscheidet man in der Whiskyproduktion das „process water“, das zur Einmaischung der Gerste verwendet wird, vom „reduction water“, mit welchem der fertige Whisky vor der Abfüllung auf Trinkstärke herabgesetzt wird.</p>
                         <p>Für den Maischungs- und Fermentationsprozess ist die Härte des Wassers von entscheidender Bedeutung: Hartes Wasser mit hohem Kalziumgehalt verleiht den Enzymen, die Stärke in Zucker verwandeln, eine höhere Effektivität und kann während der Fermentation Hefen zu einer besseren Wirkung verhelfen, was wiederum eine größere Bandbreite an Aromen bedingt. Auf der anderen Seite maischt die Gerste in weichem Wasser besser ein, als in zu hartem Wasser <sup>2</sup>.</p>
                         <p>Da Schottland überwiegend aus Granitfelsen und Sandstein besteht, kann das Regenwasser hier nur wenig Mineralien aufnehmen, d.h. in schottischen Destillerien wird hauptsächlich weiches Wasser verwendet.</p>
@@ -271,18 +247,15 @@
                         <p>Whisky wird in der Regel mit 63,5 %Vol Alkohol in die Fässer zur Lagerung abgefüllt. Mit der Lagerung über viele Jahre verliert der Whisky an Alkoholstärke, da der Alkohol durch die Faßwand entweicht. Gleichzeitig nimmt der Whisky Inhaltsstoffe aus dem Holz auf, was ihm einen Teil seines Aromas verleiht. Jedes Jahr verliert der Whisky im Faß zwischen einem halben und einem Prozentpunkt an Alkoholstärke. Bei der Abfüllung hat der Whisky meist nur noch 50%Vol bis 60%Vol Alkohol. Dennoch würde in dieser Stärke der Alkohol unsere Geschmacksknospen auf der Zunge und im Mundraum immer noch betäuben. Unser Geschmacksempfinden wäre massiv beeinträchtigt. Wir müssen also verdünnen.</p>
                         <p>Hochwertige Whiskys werden immer öfter in Fassstärke abgefüllt, um es dem Genießer selbst zu überlassen, in welcher Verdünnung der Whisky genossen sein will. Beginnen Sie mit einer geringen Stärke (starken Verdünnung) und steigern Sie sie, wenn sich Ihr Gaumen an den Geschmack gewöhnt hat.</p>
                         <p>Schottische Whiskys, die mit 50%Vol bis 60%Vol Alkohol aus dem Fass kommen, werden mit destilliertem bzw. deionisiertem Wasser auf die geforderte Flaschenstärke reduziert. Das schottische Whisky Gesetz schreibt diese Vorgehensweise zwingend für die Flaschenabfüllung außerhalb der Brennereien vor.</p>
-                        <p><b>Ihr Wasser ist  sehr hart, d.h. es enthält deutlich mehr Mineralien als destilliertes Wasser. Es ist deshalb nicht so gut geeignet, um als Beigabe zu einem guten Whisky verwendet zu werden, da der Eigengeschmack des Whiskys hier verfälscht werden kann.</b></p>
+                        <p><strong>Ihr Wasser ist  sehr hart, d.h. es enthält deutlich mehr Mineralien als destilliertes Wasser. Es ist deshalb nicht so gut geeignet, um als Beigabe zu einem guten Whisky verwendet zu werden, da der Eigengeschmack des Whiskys hier verfälscht werden kann.</strong></p>
                         <p>Die große Vielzahl der im Handel erhältlichen Mineralwässer weist leider einen noch viel größeren Mineralgehalt auf. Wenn Sie also nicht mit Ihrem Leitungswasser verdünnen wollen, achten Sie bei der Auswahl Ihres Wasser auf die Analyseergebnisse auf der Flasche. Den größten Einfluß auf den Geschmack eines Mineralwassers hat das Salz und das Hydrogencarbonat. Vermeiden Sie Wässer, die hohe Gehalte davon aufweisen.</p>
                         <p>Verwenden Sie auch ausschließlich stille Mineralwässer, da sprudelnde Wässer den Whisky unruhig auf der Zunge machen und mit ihrer gelösten Kohlensäule den Geschmack negativ beeinflussen.</p>
                         <p>Am Besten eignen sich original schottische oder die bekannten französischen stillen und mineralstoffarmen Mineralwässer und natürlich destilliertes bzw. deionisiertes Wasser <sup>3</sup>.
                         </p>
-                        <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
+                        <ul class="footnote">
                             <li>(1) <a href="http://www.alkoblog.de/whisky-oder-whiskey-unterschied/">www.alkoblog.de/whisky-oder-whiskey-unterschied/</a></li>
                             <li>(2) <a href="https://whic.de/wissen/whisky-und-wasser">whic.de/wissen/whisky-und-wasser/</a></li>
                             <li>(3) <a href="https://www.whisky.de/whisky/wissen/geschmack/verkostung1/wasserundwhisky.html">whisky.de/whisky/wissen/geschmack/verkostung1/wasserundwhisky.html</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>]]></item>
+                        </ul>]]></item>
     </string-array>
 </resources>

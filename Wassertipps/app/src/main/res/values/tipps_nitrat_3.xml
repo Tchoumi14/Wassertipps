@@ -74,9 +74,9 @@
                     </div>
                 </div>
             </div>]]></item>
-        <item name="babynahrung"><![CDATA[<div>
-                <div>
-                    <div >
+        <item name="babynahrung"><![CDATA[<div class="row white header">
+                <div class="col-xs-12 babynahrung">
+                    <div style="background-image:url(/app/images/tipps/babynahrung.png)">
                         <h3>Wasser für die Zubereitung von Babynahrung</h3>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
             <div class="row white">
                 <div class="col-xs-12">
                     <div class="text-left tipp">
-                        <p><b>Ihr Leitungswasser weist einen relativ hohen Nitratwert auf, der für einen gesunden Erwachsenen völlig ungefährlich ist, bei einem Säugling allerdings zu Problemen führen kann.</b></p>
+                        <p><strong>Ihr Leitungswasser weist einen relativ hohen Nitratwert auf, der für einen gesunden Erwachsenen völlig ungefährlich ist, bei einem Säugling allerdings zu Problemen führen kann.</strong></p>
                          <p>Studien in Dänemark<sup>1</sup> und den USA<sup>2</sup> haben allerdings auch schon bei relativ geringen Nitratwerten von 10mg/l eine signifikante Zunahme an Darmkrebsfällen gegenüber Probanden festgestellt, deren Trinkwasser weniger als 5 mg/l Nitrat enthielt.<br>
                         Alle Autoren betonen aber, dass die Nitratproblematik noch nicht ausreichend untersucht wurde, um hier eine abschliessende Beurteilung zu erlauben.</p>
                         <p>Durch die Düngung mit stickstoffhaltigen Düngern wird durch die Mitwirkung von Bakterien Nitrat im Boden gebildet, das durch den Regen langsam in das Grundwasser entweicht. Dort taucht es dann irgendwann im Trinkwasser auf, wobei ein Grenzwert von 50mg/l Nitrat im Trinkwasser von den Wasserversorgern verpflichtend einzuhalten ist.                        </p>
@@ -97,10 +97,48 @@
                         <p>Dies immer unter der Annahme, dass nicht mit Obst oder Gemüse beigefüttert wird.</p>
                         <p>Da Gemüse teilweise sehr hohe Nitratwerte aufweisen kann, wurde in der deutschen Diätverordnung festgelegt, dass eine Höchstmenge 250 mg Nitrat/kg Fertignahrung im Gläschen vorliegen darf. Sie sollten allerdings darauf achten, beim Beifüttern auf Gläschen zurück zu greifen, die maximal 150 Gramm Nitrat/kg enthalten. </p>
                         <p>Geht man davon aus, dass 12 Monate alte Kinder nur 100g Gemüse als Beikost verzehren, würde bei einer Nitrataufnahme von 10 mg/l im Wasser (für ein Kind mit seiner Altersgruppe entsprechends durchschnittlichen Körpergewicht) und einer Höchstmenge von 150 mg Nitrat/kg Beikost der ADI von 3,7 mg/kg KG nicht überschritten werden.<sup>4</sup></p>
-                        <p><b>Ihr Trinkwasser liegt teilweise deutlich über diesem Grenzwert, Sie sollten darüber nachdenken ein spezielles Mineralwasser zu verwenden, das explizit für die Zubereitung von Säuglingsnahrung geeignet ist. Ein Wasser, das diesen geschützten Begriff verwendet, muss sehr strenge Vorgaben bezüglich der Inhaltsstoffe erfüllen. Die Zeitschrift Ökotest<sup>5</sup> und die Stiftung Warentest<sup>6</sup> führen regelmässig Tests durch, über die Sie sich genauer informieren können.</b></p>
+                        <p><strong>Ihr Trinkwasser liegt teilweise deutlich über diesem Grenzwert, Sie sollten darüber nachdenken ein spezielles Mineralwasser zu verwenden, das explizit für die Zubereitung von Säuglingsnahrung geeignet ist. Ein Wasser, das diesen geschützten Begriff verwendet, muss sehr strenge Vorgaben bezüglich der Inhaltsstoffe erfüllen. Die Zeitschrift Ökotest<sup>5</sup> und die Stiftung Warentest<sup>6</sup> führen regelmässig Tests durch, über die Sie sich genauer informieren können.</strong></p>
                         <p>Spezielle Babywässer sind zusätzlich keimfrei abgefüllt, im Prinzip aber nicht besser als für Säuglingsnahrung geeignete Mineralwässer. Sie können eine angebrochene Flasche zwar 24 Stunden im Kühlschrank aufbewahren, müssen es dann aber ebenfalls vor dem Gebrauch abkochen. Dafür sind sie aber noch einmal deutlich teurer. </p>
-                        <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
-                          <li>(1)  <a href="https://www.aerztezeitung.de/extras/druckansicht/?sid=960620&amp;pid=950033">Nitrat im Trinkwasser erhöht Darmkrebs-Gefahr</a></li>
+                        <p>Wenn Sie aber zusätzlich darauf achten, ein Wasser zu kaufen, das in Ihrer näheren Umgebung gewonnen wird, tun Sie auch der Umwelt noch etwas Gutes.</p>
+                        <h3>Für Säuglingsnahrung geeignete Mineralwässer (Auswahl Deutschland)</h3>
+                        <p>
+                        Schloss Quelle Naturelle, NRW (Essen)<br>
+                        Rhön Sprudel Naturell, Hessen (Ebersburg)<br>
+                        Elisabethen Quelle Pur, Hessen (Rosbach)<br>
+                        Bad Brückenauer Naturquell, Bayern (Bad Brückenau)<br>
+                        König Otto-Sprudel Piano Extrastill, Bayern (König Otto-Bad)<br>
+                        Bergische Waldquelle ohne Kohlensäure, NRW (Haan)<br>
+                        Eiszeit Quell Naturelle, Baden-Württemberg (Reutlingen)<br>
+                        Hochwald Premium Naturquell, Rheinland-Pfalz (Schwollen)<br>
+                        Viva con Aqua leise, Schleswig-Holstein (Mildstedt)<br>
+                        Black Forrest Still, Baden-Württemberg (Bad Peterstal)<br>
+                        WILDALP Babywasser, Bayern (Schwarzach)
+                        </p>
+
+                        <h3>Für Säuglingsnahrung geeignete Mineralwässer (Auswahl Österreich)</h3>
+                        <p>
+                        Frankenmarkter Mineralwasser Still, Oberösterreich (Frankenmarkt)<br>
+                        Vöslauer Baby, (Wien)
+                        </p>
+
+                        <h4>Für Säuglingsnahrung geeignete Mineralwässer (Auswahl Schweiz)</h4>
+                        <p>
+                        Elmer Mineral, Glarus (Elm)
+                        </p>
+
+                        <h3>Bio Mineralwasser Deutschland (Auswahl)</h3>
+                        <p>
+                        Neumarkter Lammsbräu BioKristall Still, Bayern (München)<br>
+                        Ensinger Gourmet Bio Mineralwasser, Baden-Württemberg (Vaihingen)<br>
+                        Preussenquelle Still, Brandenburg (Rheinsberg)<br>
+                        Landpark Bio-Quelle Naturell, NRW (Dorsten)<br>
+                        Bad Dürrheimer Naturell, Baden-Württemberg (Bad Dürrheim)<br>
+                        LABERTALER Stephanie Bio Mineralwasser, Bayern (Schierling)<br>
+                        Carolinen Bio-Mineralwasser Naturell, NRW (Bielefeld)
+                        </p>
+
+                        <ul class="footnote">
+                          <li>(1)  <a href="https://www.aerztezeitung.de/extras/druckansicht/?sid=960620&pid=950033">Nitrat im Trinkwasser erhöht Darmkrebs-Gefahr</a></li>
                           <li>(2) <a href="https://journals.lww.com/epidem/fulltext/2003/11000/Nitrate_in_Public_Water_Supplies_and_the_Risk_of.4.aspx">Nitrate in Public Water Supplies and the Risk of Colon and Rectum Cancers</a></li>
                           <li>(3) <a href="https://www.umweltbundesamt.de/sites/default/files/medien/374/dokumente/nitrat_im_trinkwasser_2004_10.pdf">Empfehlung des Umweltbundesamtes zu Nitat im Trinkwasser (2014)</a></li>
                           <li>(4) <a href="http://www.bfr.bund.de/cm/343/nitrat_in_diaetetischen_lebensmitteln.pdf">Stellungnahme des BfR zu Nitraten in Säuglinsnahrung (2003)</a></li>
@@ -139,7 +177,7 @@
             </div>]]></item>
         <item name="gartenteich"><![CDATA[<div class="row white header">
                 <div class="col-xs-12 gartenteich">
-                    <div style="background-image:url(/app/images/tipps/gartenteich-wide.png); background-size: cover">
+                    <div style="background-image:url(images/app/tipps/gartenteich-wide.png); background-size: cover">
                         <h3>Wasser für den Gartenteich</h3>
                     </div>
                 </div>
@@ -151,9 +189,9 @@
                         <p>Der Abbau von organischen Stickstoffverbindungen aus Kot, abgestorbenen Pflanzenteilen, Futterresten, etc. zu Nitraten und Phosphaten bildet die Nahrungsgrundlage für die Teichpflanzen. Ist das Nahrungsangebot jedoch zu hoch, führt das zwangsläufig zu Algenwachstum.</p>
                         <p>Andere Mikroorganismen können darüber hinaus Nitrate auch wieder zu Ammonium reduzieren, was dann bei Fischen zu einer Wachstumsschwäche oder sogar zum Tod führen kann<sup>1</sup></p>
                         <p>Der Nitratgehalt im Teich sollte in der Regel nicht über 25 mg/l liegen. Bei Werten über 100 mg/l ist ein sofortiges Einschreiten (Teilwasserwechsel mit nitratfreiem Wasser) notwendig.</p>
-                        <p><b>Da Ihr Leitungswasser einen Nitratgehalt über 25 mg/l aufweist, wird ein Teilwasserwechsel keinen großen Erfolg haben und Sie sollten über die Verringerung des Fischbesatzes, die Verwendung von Regenwasser oder eine Senkung des Nitratgehaltes durch spezielle Filter nachdenken.</b></p>
+                        <p><strong>Da Ihr Leitungswasser einen Nitratgehalt über 25 mg/l aufweist, wird ein Teilwasserwechsel keinen großen Erfolg haben und Sie sollten über die Verringerung des Fischbesatzes, die Verwendung von Regenwasser oder eine Senkung des Nitratgehaltes durch spezielle Filter nachdenken.</strong></p>
                         <p>Behalten Sie aber auch die Wasserhärte und den PH-Wert im Blick.</p>
-                        <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
+                        <ul class="footnote">
                             <li>(1) <a href="http://www.gartenteich-ratgeber.com/betrieb/chem/stickstoffkreislauf.html">http://www.gartenteich-ratgeber.com/betrieb/chem/stickstoffkreislauf.html</a></li>
                         </ul>
                     </div>
@@ -212,9 +250,9 @@
                     <div> <a href="{{url}}">Link zur Gemeindeseite bzw. Analyse</a> </div>
                 </div>
             </div>]]></item>
-        <item name="studien"><![CDATA[<div>
-                <div>
-                    <div>
+        <item name="studien"><![CDATA[<div class="row white header">
+                <div class="col-xs-12 allgemein">
+                    <div style="background-image:url(/app/images/tipps/allgemein-haerte.png)">
                         <h3>Wissenschaftliche Studien zu Nitrat und Ernährung</h3>
                     </div>
                 </div>
@@ -229,34 +267,37 @@
                       </p>
                       <p>Im Jahr 1994 eine Studie in den USA zu dem Ergebnis, dass Trinkwasser mit einem Nitratgehalt von mehr als 50mg/l zu einer übermässigen Vergrößerung der Schilddrüse führt<sup>(2</sup>).
                       </p>
-                      <p>Eine amerikanische Studie aus dem Jahr 2001 konnte Zusammenhänge zwischen einem erhöhten Nitratgehalt im Trinkwasser und Blasenkrebs sowie Einerstockkrdbs bei älteren Frauen finden, in derselben Studie konnten aber keinerlei Auswirkungen auf Gebärmutter- und Rektumkrebs  gefunden werden<sup>(3)</sup>.
+                      <p>Eine amerikanische Studie aus dem Jahr 2001 konnte Zusammenhänge zwischen einem erhöhten Nitratgehalt im Trinkwasser und Blasenkrebs sowie Einerstockkrebs bei älteren Frauen finden, in derselben Studie konnten aber keinerlei Auswirkungen auf Gebärmutter- und Rektumkrebs  gefunden werden<sup>(3)</sup>.
                       </p>
-                      <p>Auch der Zusammenhang von erhöhter Nitrataufnahme während Schwangerschaft und angeborenen Missbildungen wird seit vielen Jahren untersucht. Eine australische Studie aus dem Jahr 1984<sup>(4)</sup> oder aus Kanada 1988<sup>(5)</sup>.
+                      <p>Auch der Zusammenhang von erhöhter Nitrataufnahme während einer Schwangerschaft und angeborenen Missbildungen bei den geborenen Kindern wird seit vielen Jahren untersucht, beispielsweise in einer australischen Studie aus dem Jahr 1984<sup>(4)</sup> oder aus Kanada 1988<sup>(5)</sup>.
                       </p>
-                      <p>In einer anderen Studie aus dem jähr 2004 wurde eine verstärkende Wirkung von nitrathaltigem Trinkwasser mit nitrosierbaren Verbindungen wie amin- und amidhaltigen Arzneimitteln festgestellt<sup>(6)</sup>.
+                      <p>In einer anderen Studie aus dem Jahr 2004 wurde eine verstärkende Wirkung von nitrathaltigem Trinkwasser mit nitrosierbaren Verbindungen wie amin- und amidhaltigen Arzneimitteln festgestellt<sup>(6)</sup>.
                       </p>
-                      <p>In den letzten Jahren kamen mehrerer Studien aus Europa zum Ergebnis, dass bereits relativ niedrige Nitratkonzentrationen, die weit unter den gesetzlich festgelegten Grenzwerten von 50mg/l (bzw. 40mg/l in der Schweiz) liegen, zu einem erhöhten Risiko für verschiedene Darmkrebsarten führen.
+                      <p><strong>In den letzten Jahren kamen mehrerer Studien aus Europa zum Ergebnis, dass bereits relativ niedrige Nitratkonzentrationen, die weit unter den gesetzlich festgelegten Grenzwerten von 50mg/l (bzw. 40mg/l in der Schweiz) liegen, zu einem erhöhten Risiko für verschiedene Darmkrebsarten führen.</strong>
                       </p>
-                      <p>Im Jahr 2016 veröffentlichte ein spanisch/italienisches Team eine Studie, die über einen 5-jährigen Zeitraum 1869 Darmkrebsfälle in verschiedenen Regionen in Spanien und Italien auf den Zusammenhang zu unterschiedlichen Nitratkonzentrationen im Trinkwasser untersucht hat<sup>(7)</sup>. Hier wurde eine durchschnittlich 1,5 fache Häufigkeit der Darmkrebsfälle bei Teilnehmern ermittelt, deren Trinkwasser einen Nitratgehalt von mehr als 10mg/l aufwies gegenüber denen, die maximal 5mg/l ausgesetzt waren. Bei Männern war das Risiko größer als bei Frauen, ebenso bei Teilnehmern, die zusätzlich viel rotes Fleisch zu sich genommen haben.
+                      <p>Im Jahr 2016 veröffentlichte ein spanisch/italienisches Team eine Studie, die über einen 5-jährigen Zeitraum 1869 Darmkrebsfälle in verschiedenen Regionen in Spanien und Italien auf den Zusammenhang unterschiedlicher Nitratkonzentrationen im Trinkwasser untersucht hat<sup>(7)</sup>. Hier wurde eine durchschnittlich 1,5 fache Häufigkeit der Darmkrebsfälle bei Teilnehmern ermittelt, deren Trinkwasser einen Nitratgehalt von mehr als <strong>10mg/l</strong> aufwies gegenüber denen, die maximal 5mg/l ausgesetzt waren. Bei Männern war das Risiko größer als bei Frauen, ebenso bei Teilnehmern, die zusätzlich viel rotes Fleisch zu sich genommen haben.
                       </p>
                       <p>Im Jahr 2018 wurde eine viel beachtete Studie aus Dänemark veröffentlicht<sup>(8)</sup>, in der über einen Zeitraum von über 30 Jahren (1978-2011) anhand von Trinkwasseranalysen aus öffentlichen Wasserwerken und privaten Brunnen die individuelle durchschnittliche Nitratbelastung für 1,7 Millionen Menschen berechnet wurde und mit 11952 Darmkrebsfällen in diesem Zeitraum verglichen.
                       </p>
-                      <p>Die Studie konnte einen eindeutigen Zusammenhang feststellen.<br>
-                      So hatten die Teilnehmer, die über den gesamten Zeitraum der Studie mehr als 16 mg/l Nitrat ausgesetzt waren, ein beinahe 20 Prozent höheres Darmkrebsrisiko als die, die weniger als 0,7 mg/l Nitrat über das Trinkwasser aufgenommen hatten.
+                      <p>Die Studie konnte hier einen eindeutigen Zusammenhang feststellen.<br />
+                      So hatten die Teilnehmer, die über den gesamten Zeitraum der Studie mehr als <strong>16 mg/l</strong> Nitrat ausgesetzt waren, ein beinahe 20 Prozent höheres Darmkrebsrisiko als die, die weniger als 0,7 mg/l Nitrat über das Trinkwasser aufgenommen hatten.
                       </p>
-                      <p>Bereits ab einem Wert von 3,87 mg Nitrat pro Liter konnte die Studie einen signifikanten Anstieg des Risikos an Darmkrebs (CRC) zu erkranken nachweisen.
+                      <p>Bereits ab einem Wert von <strong>3,87 mg/l</strong> Nitrat pro Liter konnte die Studie einen signifikanten Anstieg des Risikos an Darmkrebs (CRC) zu erkranken nachweisen.
                       </p>
                       <p>Die Studienautoren betonen, es sei besonders bedenklich, dass ein Risikoanstieg bereits bei Nitratkonzentrationen zu verzeichnen war, die deutlich unter den gesetzlich vorgeschriebenen Grenzwerten liegen, deshalb sei es sinnvoll über eine Reduzierung der Trinkwassergrenzwerte nachzudenken, unabhängig davon, dass das Thema weitere Studien erfordert.
                       </p>
-                      <p>Die aktuellen Studien haben uns bewogen, eine eigene Studie zu der Verteilung der Nitratkonzentrationen in Deutschland und Österreich und der Anzahl der betroffenen Personen in diesen Gebieten zu veröffentlichen(9). Sehr deutlich wird, dass besonders in Norddeutschland und dem nördlichen Teil Ostdeutschlands viele Regionen mit einem sehr niedrigen Nitratgehalt &lt;10mg/l liegen (90% der Bevölkerung in Norddeutschland), während in den westlichen Bundesländern Nordrhein-Westfalen, Rheinland-Pfalz, Hessen und Saarland nur für 40% der Menschen Trinkwasser mit diesem niedrigen Nitratgehalt zur Verfügung steht.
+                      <h3>Die Situation in Deutschland und Österreich</h3>
+                      <p>Die aktuellen Ergebnisse haben uns bewogen, eine eigene Studie zu der Verteilung der Nitratkonzentrationen in Deutschland und Österreich und der Anzahl der betroffenen Personen in diesen Gebieten zu veröffentlichen<sup>(9)</sup>. Sehr deutlich wird, dass besonders in Norddeutschland und dem nördlichen Teil Ostdeutschlands viele Regionen mit einem sehr niedrigen Nitratgehalt von weniger als 10mg/l liegen (90% der Bevölkerung in Norddeutschland), während in den westlichen Bundesländern Nordrhein-Westfalen, Rheinland-Pfalz, Hessen und Saarland nur für 40% der Menschen Trinkwasser mit diesem niedrigen Nitratgehalt zur Verfügung steht.
                       </p>
                       <p>Gleichzeitig sind in diesen deutschen Bundesländern etwa 20% der Bevölkerung einem Nitratgehalt von mehr als 20mg/l ausgesetzt (Deutschland und Österreich ohne Norddeutschland: 10%, Norddeutschland 3,5%).
                       </p>
-                      <h5>Zusammenfassung:</h5>
-                      <p>Auch wenn in den letzten Jahren immer deutlicher wurde, dass bereits relativ niedrige Nitratkonzentrationen im Trinkwasser verschiedene negative Auswirkungen auf die menschliche Gesundheit haben können, betonen alle Studienautoren, dass die Thematik weitere Untersuchungen erfordert. Die Existenz dieser Zusammenhänge kann aber inzwischen nicht mehr ignoriert werden und sollte auch bei den verantwortlichen Stellen in der Regierung zu einer Diskussion über eine Anpassung der Grenzwerte führen.
+                      <h3>Zusammenfassung:</h3>
+                      <p>Auch wenn in den letzten Jahren immer deutlicher wurde, dass bereits relativ niedrige Nitratkonzentrationen im Trinkwasser verschiedene negative Auswirkungen auf die menschliche Gesundheit haben können, betonen alle Studienautoren, dass die Thematik weitere Untersuchungen erfordert. Das Zusammenhänge existieren, kann aber inzwischen nicht mehr ignoriert werden und sollte auch bei den verantwortlichen Stellen in der Regierung zu einer Diskussion über eine Anpassung der Grenzwerte führen.
                       </p>
+                      <p>Die Existenz dieser Zusammenhänge kann aber inzwischen nicht mehr ignoriert werden und sollte auch bei den verantwortlichen Stellen in der Regierung zu einer Diskussion über eine Anpassung der Grenzwerte führen.</p>
+                      <p>Die Verbraucher sollten sowohl die aktuelle Studienlage als auch die Nitratbelastung ihres Trink- und Grundwassers beobachten und ihr Verhalten gegebenenfalls anpassen.</p>
 
-                      <ul style="font-size: 90%; margin: 0; padding: 0; overflow: hidden;white-space: nowrap;">
+                      <ul class="footnote">
                           <li>(1) <a href="https://www.sciencedirect.com/science/article/pii/0147651382900161?via%3Dihub">Nitrat in Trinkwasser und Krebs in Nordjütland, Dänemark, unter besonderer Berücksichtigung von Magenkrebs</a></li>
                           <li>(2) <a href="https://www.sciencedirect.com/science/article/pii/0378427494900507?via%3Dihub">Der Konsum von Trinkwasser mit hohen Nitratwerten führt zu einer Hypertrophie der Schilddrüse</a></li>
                           <li>(3) <a href="https://insights.ovid.com/article/00001648-200105000-00013">Kommunaler Trinkwassernitratspiegel und Krebsrisiko bei älteren Frauen: Die Iowa Women's Health Study</a></li>
