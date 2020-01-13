@@ -36,18 +36,27 @@
     </string>
     <string name="intro5_title">Einverständniserklärung</string>
     <string name="intro5_text1_header">Gesundheitsbezogene Hinweise</string>
-    <string name="intro5_text1">Unsere App vermittelt standortbezogen Wasserwerte der lokalen Wasserversorger. Die Werte wurden nicht von uns selbst ermittelt, sondern beruhen auf Analysen im Auftrag des lokalen Wasserversorgers. Ob die vermittelten Wasserwerte zutreffend sind, wird von uns nicht überprüft. Soweit in der App gesundheitsbezogene Empfehlungen ausgesprochen werden, stellen diese keine individuelle auf Sie abgestimmte Therapie oder medizinische Einschätzung dar. Diese App ersetzt keinesfalls die fachliche Beratung durch einen Arzt oder Apotheker. Bei gesundheitlichen Beschwerden wenden Sie sich bitte sofort an einen Arzt.
+    <string name="intro5_text1">Unsere App vermittelt standortbezogen Wasserwerte der lokalen Wasserversorger. Die Werte
+        wurden nicht von uns selbst ermittelt, sondern beruhen auf Analysen im Auftrag des lokalen Wasserversorgers. Ob
+        die vermittelten Wasserwerte zutreffend sind, wird von uns nicht überprüft. Soweit in der App
+        gesundheitsbezogene Empfehlungen ausgesprochen werden, stellen diese keine individuelle auf Sie abgestimmte
+        Therapie oder medizinische Einschätzung dar. Diese App ersetzt keinesfalls die fachliche Beratung durch einen
+        Arzt oder Apotheker. Bei gesundheitlichen Beschwerden wenden Sie sich bitte sofort an einen Arzt.
     </string>
     <string name="intro5_text2_header">Datenschutz</string>
-    <string name="intro5_text2">Ihre personenbezogenen Daten unterliegen den geltenden Datenschutzgesetzen. Über unseren Umgang mit Ihren Daten und Ihre Rechte informieren wir Sie in unserer </string>
+    <string name="intro5_text2">Ihre personenbezogenen Daten unterliegen den geltenden Datenschutzgesetzen. Über unseren
+        Umgang mit Ihren Daten und Ihre Rechte informieren wir Sie in unserer
+    </string>
     <string name="intro5_text3_header">Nutzungsbedingungen</string>
-    <string name="intro5_text3_1">Für die vorliegenden </string>
+    <string name="intro5_text3_1">Für die vorliegenden</string>
 
     <string name="intro5_text3_2">bitten wir Sie uns Ihr Einverständnis zu bestätigen.</string>
     <string name="intro5_text5">und die</string>
     <string name="intro5_text4btn1">Datenschutzerklärung</string>
     <string name="intro5_text4btn2">Nutzungsbedingungen</string>
-    <string name="intro5_btnText">Ich erkläre mich mit der Geltung der Nutzungsbedingungen einverstanden. Die gesundheitsbezogenen Hinweise habe ich gelesen und verstanden.</string>
+    <string name="intro5_btnText">Ich erkläre mich mit der Geltung der Nutzungsbedingungen einverstanden. Die
+        gesundheitsbezogenen Hinweise habe ich gelesen und verstanden.
+    </string>
 
     <!-- Menu icon titles -->
     <string name="icon_home">Home</string>
