@@ -5,6 +5,10 @@
             android:id="@+id/navigation_home"
             android:icon="@drawable/icon_app_color"
             android:title="@string/icon_home"/>
+    <item
+            android:id="@+id/navigation_suche"
+            android:icon="@drawable/icon_search_color"
+            android:title="@string/icon_suche"/>
 
     <item
             android:id="@+id/navigation_wasserinfo"

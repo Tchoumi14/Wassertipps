@@ -105,6 +105,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     private lateinit var kontaktList: Array<String>
     private lateinit var billingManager: BillingManager
     private var fragment1: Fragment = HomeFragment()
+    private var fragmentSuche: Fragment = SucheFragment()
     private var fragment2: Fragment = WasserinfoFragment()
     private var fragment3: Fragment = FaqFragment()
     private var fragment4: Fragment = RechnerFragment()
@@ -284,6 +285,22 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 toolbarText.text= getString(R.string.title_home)+city
                 fm.beginTransaction().hide(active).show(fragment1).commit()
                 active = fragment1
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_suche -> {
+                textMessage.setText(R.string.title_search)
+                //toolbar.setTitle(R.string.title_wasserinfos)
+                toolbarText.text = resources.getString(R.string.title_search)
+                fm.beginTransaction().hide(active).show(fragmentSuche).commit()
+                active = fragmentSuche
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_wasserinfo -> {
+                textMessage.setText(R.string.title_wasserinfos)
+                //toolbar.setTitle(R.string.title_wasserinfos)
+                toolbarText.text = resources.getString(R.string.title_wasserinfos)
+                fm.beginTransaction().hide(active).show(fragment2).commit()
+                active = fragment2
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_wasserinfo -> {

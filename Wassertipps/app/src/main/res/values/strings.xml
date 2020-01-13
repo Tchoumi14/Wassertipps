@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Wassertipps</string>
     <string name="title_home">Wassertipps für&#160;</string>
+    <string name="title_search">Suche</string>
     <string name="title_wasserinfos">Informationen über unser Wasser</string>
     <string name="title_help">Wassertipps FAQ</string>
     <string name="title_wasserbedarf">Wasserbedarf</string>
@@ -60,6 +61,7 @@
 
     <!-- Menu icon titles -->
     <string name="icon_home">Home</string>
+    <string name="icon_suche">Suche</string>
     <string name="icon_wasserinfos">Wasserinfos</string>
     <string name="icon_help">FAQ</string>
     <string name="icon_wasserbedarf">Wasserbedarf</string>
