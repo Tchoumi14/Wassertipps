@@ -220,6 +220,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         fm.beginTransaction().hide(active).show(fragmentInfos).commit()
         active=fragmentInfos
     }
+    //generate kontakt pages
     override fun generateKontaktSubPage(buttonBox: String) {
         val index = kontaktList.indexOf(buttonBox)
         val kontaktTitleArray:Array<String> = resources.getStringArray(R.array.kontakt_titlebar_text)
@@ -234,10 +235,15 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         if(index == 2){
             sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(datenschutzText, HtmlCompat.FROM_HTML_MODE_COMPACT))
         }
-
-        prevFragment = active
-        fm.beginTransaction().hide(active).show(fragmentKontaktSub).commit()
-        active=fragmentKontaktSub
+        if(index == 3){
+            prevFragment = active
+            fm.beginTransaction().hide(active).show(fragment3).commit() //show FAQ fragment
+            active=fragment3
+        } else {
+            prevFragment = active
+            fm.beginTransaction().hide(active).show(fragmentKontaktSub).commit()
+            active=fragmentKontaktSub
+        }
     }
     private val mRunnable = Runnable { doubleBackToExitPressedOnce = false }
 
@@ -248,7 +254,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             active = fragment1
             var city = sharedViewModel?.serverData?.value?.optString("city")
             toolbarText.text= getString(R.string.title_home)+city
-        } else if(active == fragmentTipps|| active == fragmentInfos || active == fragmentKontaktSub){
+        } else if(active == fragmentTipps|| active == fragmentInfos || active == fragmentKontaktSub || active == fragment3){
             fm.beginTransaction().hide(active).show(prevFragment).commit()
             active = prevFragment
             if(active == fragment2){

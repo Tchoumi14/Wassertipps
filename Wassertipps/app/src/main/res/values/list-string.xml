@@ -15,11 +15,13 @@
         <item>Kontakt</item>
         <item>Nutzungsbedingungen</item>
         <item>Datenschutzerklärung</item>
+        <item>FAQ</item>
     </string-array>
     <string-array name="kontakt_titlebar_text">
         <item>Kontakt</item>
         <item>Impressum</item>
         <item>Datenschutzerklärung</item>
+        <item>FAQ</item>
     </string-array>
 
     <!--Tipps Härte-->
