@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionList
     WasserinfoFragment.OnFragmentInteractionListener,
     FaqFragment.OnFragmentInteractionListener,
     RechnerFragment.OnFragmentInteractionListener, KontaktFragment.OnFragmentInteractionListener, TippsHaerteFragment.OnFragmentInteractionListener,
-TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, KontaktSubFragment.OnFragmentInteractionListener{
+TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, KontaktSubFragment.OnFragmentInteractionListener, SucheFragment.OnFragmentInteractionListener{
 
     private var isLocationFetched: Boolean = false
     private var doubleBackToExitPressedOnce = false
@@ -303,14 +303,6 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 active = fragment2
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_wasserinfo -> {
-                textMessage.setText(R.string.title_wasserinfos)
-                //toolbar.setTitle(R.string.title_wasserinfos)
-                toolbarText.text = resources.getString(R.string.title_wasserinfos)
-                fm.beginTransaction().hide(active).show(fragment2).commit()
-                active = fragment2
-                return@OnNavigationItemSelectedListener true
-            }
             /*R.id.navigation_help -> {
                 textMessage.setText(R.string.title_help)
                 //toolbar.setTitle(R.string.title_help)
@@ -421,7 +413,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         fm.beginTransaction().add(R.id.main_container, fragmentNitrat, "6").hide(fragmentNitrat).commit()
         fm.beginTransaction().add(R.id.main_container, fragment5, "5").hide(fragment5).commit()
         fm.beginTransaction().add(R.id.main_container, fragment4, "4").hide(fragment4).commit()
-        fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit()
+        fm.beginTransaction().add(R.id.main_container, fragmentSuche, "suche").hide(fragmentSuche).commit()
         fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit()
         fm.beginTransaction().add(R.id.main_container, fragment1, "1").commit()
 
