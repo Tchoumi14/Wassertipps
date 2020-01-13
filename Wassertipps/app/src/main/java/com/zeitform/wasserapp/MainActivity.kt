@@ -311,14 +311,14 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 active = fragment2
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_help -> {
+            /*R.id.navigation_help -> {
                 textMessage.setText(R.string.title_help)
                 //toolbar.setTitle(R.string.title_help)
                 toolbarText.text = resources.getString(R.string.title_help)
                 fm.beginTransaction().hide(active).show(fragment3).commit()
                 active = fragment3
                 return@OnNavigationItemSelectedListener true
-            }
+            }*/
             R.id.navigation_wasserbedarf -> {
                 textMessage.setText(R.string.title_wasserbedarf)
                 //toolbar.setTitle(R.string.title_wasserbedarf)

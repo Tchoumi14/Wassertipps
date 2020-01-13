@@ -15,10 +15,10 @@
             android:icon="@drawable/icon_wasserinfo_color"
             android:title="@string/icon_wasserinfos"/>
 
-    <item
+    <!--<item
             android:id="@+id/navigation_help"
             android:icon="@drawable/icon_help_color"
-            android:title="@string/icon_help"/>
+            android:title="@string/icon_help"/> -->
     <item
             android:id="@+id/navigation_wasserbedarf"
             android:icon="@drawable/icon_trinken_grey"
