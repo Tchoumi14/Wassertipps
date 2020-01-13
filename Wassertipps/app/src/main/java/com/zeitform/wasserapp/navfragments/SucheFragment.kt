@@ -3,12 +3,26 @@ package com.zeitform.wasserapp.navfragments
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Message
+import android.text.Editable
+import android.text.TextUtils
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.AutoCompleteTextView
 
 import com.zeitform.wasserapp.R
+import com.zeitform.wasserapp.search.AutoSuggestAdapter
+import com.android.volley.VolleyError
+import org.json.JSONObject
+import org.json.JSONArray
+import com.zeitform.wasserapp.search.ApiCall
+import com.android.volley.Response
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +42,11 @@ class SucheFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private val TRIGGER_AUTO_COMPLETE = 100
+    private val AUTO_COMPLETE_DELAY: Long = 300
+    private var handler: Handler? = null
+    private lateinit var autoCompleteSearch: AutoCompleteTextView
+    private lateinit var autoSuggestAdapter: AutoSuggestAdapter
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,9 +62,65 @@ class SucheFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_suche, container, false)
+        var rootView = inflater.inflate(R.layout.fragment_suche, container, false)
+        autoCompleteSearch = rootView.findViewById(R.id.autoCompleteSearch)
+        autoSuggestAdapter = AutoSuggestAdapter(context, android.R.layout.simple_dropdown_item_1line)
+
+        autoCompleteSearch.threshold = 2
+        autoCompleteSearch.setAdapter(autoSuggestAdapter)
+        autoCompleteSearch.setOnItemClickListener { parent, view, position, id ->
+            print("Selected text"+position)
+        }
+        autoCompleteSearch.addTextChangedListener(inputTextWatcher)
+        handler = Handler(Handler.Callback { msg ->
+            if (msg.what == TRIGGER_AUTO_COMPLETE) {
+                if (!TextUtils.isEmpty(autoCompleteSearch.getText())) {
+                    makeApiCall(autoCompleteSearch.getText().toString())
+                }
+            }
+            false
+        })
+        return rootView
+    }
+    /*Observes text input in auto complete input field*/
+    private var inputTextWatcher = object: TextWatcher {
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            handler?.removeMessages(TRIGGER_AUTO_COMPLETE)
+            handler?.sendEmptyMessageDelayed(TRIGGER_AUTO_COMPLETE, AUTO_COMPLETE_DELAY)
+        }
+
+        override fun afterTextChanged(s: Editable?) {
+
+        }
+
     }
 
+    private fun makeApiCall(text: String) {
+        context?.let {
+            ApiCall.make(it, text, Response.Listener<String> { response ->
+                //parsing logic, please change it as per your requirement
+                val stringList = ArrayList<String>()
+                try {
+                    val responseObject = JSONObject(response)
+                    print(responseObject)
+                    val array = responseObject.getJSONArray("results")
+                    for (i in 0 until array.length()) {
+                        val row = array.getJSONObject(i)
+                        stringList.add(row.getString("trackName"))
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
+                //IMPORTANT: set data here and notify
+                autoSuggestAdapter.setData(stringList)
+                autoSuggestAdapter.notifyDataSetChanged()
+            }, Response.ErrorListener { error -> print(error) })
+        }
+    }
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)

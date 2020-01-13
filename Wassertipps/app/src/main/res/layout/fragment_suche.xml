@@ -6,7 +6,7 @@
              android:padding="@dimen/basic_text_padding"
              tools:context=".navfragments.SucheFragment">
     <AutoCompleteTextView
-            android:text="AutoCompleteTextView"
+            android:hint="Eingeben"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/autoCompleteSearch"/>

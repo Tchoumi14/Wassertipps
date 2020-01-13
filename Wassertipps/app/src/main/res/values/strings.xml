@@ -177,6 +177,10 @@
     </string>
     <string name="round_button_text">Link zur Gemeindeseite bzw. Analyse</string>
 
+
+    <!--Suche -->
+    <string name="search_query">https://wassertipps.de/cgi-bin/search.pl?term=%s</string>
+
     <!--Wasserbedarf rechner-->
     <string name="koerpermasse">Körpermaße</string>
     <string name="sport">Sport</string>
