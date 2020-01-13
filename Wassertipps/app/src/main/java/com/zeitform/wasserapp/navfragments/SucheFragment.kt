@@ -64,13 +64,13 @@ class SucheFragment : Fragment() {
         // Inflate the layout for this fragment
         var rootView = inflater.inflate(R.layout.fragment_suche, container, false)
         autoCompleteSearch = rootView.findViewById(R.id.autoCompleteSearch)
-        //autoSuggestAdapter = AutoSuggestAdapter(context, android.R.layout.simple_dropdown_item_1line)
+        autoSuggestAdapter = AutoSuggestAdapter(context, android.R.layout.simple_dropdown_item_1line)
 
-        //autoCompleteSearch.threshold = 2
-        //autoCompleteSearch.setAdapter(autoSuggestAdapter)
-        /*autoCompleteSearch.setOnItemClickListener { parent, view, position, id ->
+        autoCompleteSearch.threshold = 1
+        autoCompleteSearch.setAdapter(autoSuggestAdapter)
+        autoCompleteSearch.setOnItemClickListener { parent, view, position, id ->
             print("Selected text"+position)
-        }*/
+        }
         autoCompleteSearch.addTextChangedListener(inputTextWatcher)
         handler = Handler(Handler.Callback { msg ->
             if (msg.what == TRIGGER_AUTO_COMPLETE) {
@@ -111,15 +111,15 @@ class SucheFragment : Fragment() {
                     for (i in 0 until array.length()) {
                         val row = array.getJSONObject(i)
                         print("ROW:"+row)
-                        //stringList.add(row.getString("trackName"))
+                        stringList.add(row.getString("ort"))
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
 
                 //IMPORTANT: set data here and notify
-                //autoSuggestAdapter.setData(stringList)
-                //autoSuggestAdapter.notifyDataSetChanged()
+                autoSuggestAdapter.setData(stringList)
+                autoSuggestAdapter.notifyDataSetChanged()
             }, Response.ErrorListener { error -> print(error) })
         }
     }
