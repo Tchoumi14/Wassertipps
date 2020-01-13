@@ -64,17 +64,18 @@ class SucheFragment : Fragment() {
         // Inflate the layout for this fragment
         var rootView = inflater.inflate(R.layout.fragment_suche, container, false)
         autoCompleteSearch = rootView.findViewById(R.id.autoCompleteSearch)
-        autoSuggestAdapter = AutoSuggestAdapter(context, android.R.layout.simple_dropdown_item_1line)
+        //autoSuggestAdapter = AutoSuggestAdapter(context, android.R.layout.simple_dropdown_item_1line)
 
-        autoCompleteSearch.threshold = 2
-        autoCompleteSearch.setAdapter(autoSuggestAdapter)
-        autoCompleteSearch.setOnItemClickListener { parent, view, position, id ->
+        //autoCompleteSearch.threshold = 2
+        //autoCompleteSearch.setAdapter(autoSuggestAdapter)
+        /*autoCompleteSearch.setOnItemClickListener { parent, view, position, id ->
             print("Selected text"+position)
-        }
+        }*/
         autoCompleteSearch.addTextChangedListener(inputTextWatcher)
         handler = Handler(Handler.Callback { msg ->
             if (msg.what == TRIGGER_AUTO_COMPLETE) {
                 if (!TextUtils.isEmpty(autoCompleteSearch.getText())) {
+                    print("Api call with query "+autoCompleteSearch.getText().toString())
                     makeApiCall(autoCompleteSearch.getText().toString())
                 }
             }
@@ -104,20 +105,21 @@ class SucheFragment : Fragment() {
                 //parsing logic, please change it as per your requirement
                 val stringList = ArrayList<String>()
                 try {
-                    val responseObject = JSONObject(response)
+                    val responseObject = JSONArray(response)
                     print(responseObject)
-                    val array = responseObject.getJSONArray("results")
+                    val array = responseObject
                     for (i in 0 until array.length()) {
                         val row = array.getJSONObject(i)
-                        stringList.add(row.getString("trackName"))
+                        print("ROW:"+row)
+                        //stringList.add(row.getString("trackName"))
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
 
                 //IMPORTANT: set data here and notify
-                autoSuggestAdapter.setData(stringList)
-                autoSuggestAdapter.notifyDataSetChanged()
+                //autoSuggestAdapter.setData(stringList)
+                //autoSuggestAdapter.notifyDataSetChanged()
             }, Response.ErrorListener { error -> print(error) })
         }
     }
