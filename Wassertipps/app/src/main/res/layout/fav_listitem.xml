@@ -5,20 +5,22 @@
               android:layout_height="80dp">
 
     <TextView
-            android:text="City"
+            android:text="@string/city_label"
             android:layout_marginTop="@dimen/basic_text_padding"
             android:layout_marginStart="@dimen/basic_text_padding"
             android:layout_marginEnd="@dimen/basic_text_padding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/city_name"/>
     <TextView
-            android:text="PLZ"
+            android:text="@string/addr_label"
             android:layout_marginStart="@dimen/basic_text_padding"
             android:layout_marginEnd="@dimen/basic_text_padding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/addresse"/>
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
+                  android:layout_marginStart="@dimen/basic_text_padding"
+                  android:layout_marginEnd="@dimen/basic_text_padding"
                   android:orientation="horizontal">
         <!-- Härte -->
         <LinearLayout android:layout_width="0dp"
@@ -26,12 +28,12 @@
                       android:layout_height="wrap_content"
                       android:orientation="horizontal">
             <TextView
-                    android:text="Härte"
-                    android:layout_width="67dp"
+                    android:text="@string/haerte_label"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/haerte_label"/>
             <TextView
-                    android:text="--"
-                    android:layout_width="67dp"
+                    android:text="@string/blank_entry"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/fav_harte_label"/>
         </LinearLayout>
         <!-- Nitrat -->
@@ -40,11 +42,11 @@
                       android:layout_height="wrap_content"
                       android:orientation="horizontal">
             <TextView
-                    android:text="Nitrat"
+                    android:text="@string/nitrat_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/nitrat_label"/>
             <TextView
-                    android:text="--"
+                    android:text="@string/blank_entry"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/fav_nitrat_label"/>
         </LinearLayout>
