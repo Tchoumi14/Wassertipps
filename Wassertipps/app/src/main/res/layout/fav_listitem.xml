@@ -2,21 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="80dp">
-
+              android:layout_height="85dp">
+<LinearLayout android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight=".2"
+              android:layout_marginTop="@dimen/basic_text_padding"
+              android:layout_marginStart="@dimen/basic_text_padding"
+              android:layout_marginEnd="@dimen/basic_text_padding"
+              android:orientation="horizontal">
     <TextView
             android:text="@string/city_label"
-            android:layout_marginTop="@dimen/basic_text_padding"
-            android:layout_marginStart="@dimen/basic_text_padding"
-            android:layout_marginEnd="@dimen/basic_text_padding"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/city_name"/>
+            android:layout_width="0dp"
+            android:layout_weight=".9"
+            android:layout_height="wrap_content"
+            android:id="@+id/city_name"/>
+    <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button"
+            android:layout_weight=".1"
+            android:background="@android:drawable/ic_delete"/>
+</LinearLayout>
+
     <TextView
             android:text="@string/addr_label"
             android:layout_marginStart="@dimen/basic_text_padding"
             android:layout_marginEnd="@dimen/basic_text_padding"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/addresse"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/addresse"/>
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:layout_marginStart="@dimen/basic_text_padding"

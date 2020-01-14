@@ -215,7 +215,7 @@
     <!--Fav list item- Placeholders -->
     <string name="city_label">City</string>
     <string name="addr_label">Addresse</string>
-    <string name="haerte_label">Härte</string>
-    <string name="nitrat_label">Nitrat</string>
+    <string name="haerte_label">Härte:</string>
+    <string name="nitrat_label">Nitrat:</string>
     <string name="blank_entry">--</string>
 </resources>
