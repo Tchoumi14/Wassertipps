@@ -12,8 +12,9 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.navfragments.WasserinfoFragment
+import org.json.JSONObject
 
-class FavlistAdapter (private val context: Context, private val dataSource: Array<String>) : BaseAdapter() {
+class FavlistAdapter (private val context: Context, private val dataSource: ArrayList<JSONObject>) : BaseAdapter() {
 
     private val inflater: LayoutInflater
             = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -23,7 +24,7 @@ class FavlistAdapter (private val context: Context, private val dataSource: Arra
     }
 
     //2
-    override fun getItem(position: Int): String {
+    override fun getItem(position: Int): JSONObject {
         return dataSource[position]
     }
 
@@ -31,21 +32,21 @@ class FavlistAdapter (private val context: Context, private val dataSource: Arra
     override fun getItemId(position: Int): Long {
         return position.toLong()
     }
-
+    fun updateList() {
+        notifyDataSetChanged()
+    }
     //4
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         // Get view for row item
         val rowView = inflater.inflate(R.layout.fav_listitem, parent, false)
         val item = getItem(position)
         val listContainer = rowView.findViewById<LinearLayout>(R.id.fav_listitem)
-        listContainer.setOnClickListener { println("Item selected") }
-        val city = rowView.findViewById<ImageView>(R.id.city_name)
+        listContainer.setOnClickListener { println("Item selected"+item.optString("plz")) }
+        val city = rowView.findViewById<TextView>(R.id.city_name)
         val addresse = rowView.findViewById<TextView>(R.id.addresse)
-
-        addresse.text = item
+        city.text = item.optString("ort")
+        addresse.text = item.optString("plz")+", "+item.optString("land")
         return rowView
     }
-    private fun getIcon(): Drawable?{
-        return icon
-    }
+
 }

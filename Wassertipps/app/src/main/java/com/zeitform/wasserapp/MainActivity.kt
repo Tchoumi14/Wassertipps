@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionList
     RechnerFragment.OnFragmentInteractionListener, KontaktFragment.OnFragmentInteractionListener, TippsHaerteFragment.OnFragmentInteractionListener,
 TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, KontaktSubFragment.OnFragmentInteractionListener, SucheFragment.OnFragmentInteractionListener{
 
+
     private var isLocationFetched: Boolean = false
     private var doubleBackToExitPressedOnce = false
     private lateinit var locManager: LocationManager
@@ -245,6 +246,13 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             fm.beginTransaction().hide(active).show(fragmentKontaktSub).commit()
             active=fragmentKontaktSub
         }
+    }
+
+    /**
+     * From 'suche' page - Get data for this longitude and latitude
+     */
+    override fun showSearchedItem(longitude: Double, latitude: Double) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
     private val mRunnable = Runnable { doubleBackToExitPressedOnce = false }
 

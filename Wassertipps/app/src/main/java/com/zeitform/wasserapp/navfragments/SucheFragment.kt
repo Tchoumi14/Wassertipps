@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.AutoCompleteTextView
+import android.widget.ListView
 
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.search.AutoSuggestAdapter
@@ -23,6 +24,7 @@ import org.json.JSONObject
 import org.json.JSONArray
 import com.zeitform.wasserapp.search.ApiCall
 import com.android.volley.Response
+import com.zeitform.wasserapp.search.FavlistAdapter
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -49,6 +51,8 @@ class SucheFragment : Fragment() {
     private var handler: Handler? = null
     private lateinit var autoCompleteSearch: AutoCompleteTextView
     private lateinit var autoSuggestAdapter: AutoSuggestAdapter
+    private lateinit var favArrayList: ArrayList<JSONObject>
+    private lateinit var favList: ListView
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,6 +69,7 @@ class SucheFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_suche, container, false)
+        favArrayList = ArrayList()
         autoCompleteSearch = rootView.findViewById(R.id.autoCompleteSearch)
         autoSuggestAdapter = AutoSuggestAdapter(context, android.R.layout.simple_dropdown_item_1line)
 
@@ -72,6 +77,11 @@ class SucheFragment : Fragment() {
         autoCompleteSearch.setAdapter(autoSuggestAdapter)
         autoCompleteSearch.setOnItemClickListener { parent, view, position, id ->
             Log.d("Item selected", position.toString()+fullResponseData[position]) // show this in the home page and add it to favorite list
+            favArrayList.add(fullResponseData[position])
+            autoCompleteSearch.text.clear()
+
+            val adapter = favList.adapter as FavlistAdapter
+            adapter.updateList()
         }
         autoCompleteSearch.addTextChangedListener(inputTextWatcher) //Input listener (search input field)
         handler = Handler(Handler.Callback { msg ->
@@ -83,6 +93,11 @@ class SucheFragment : Fragment() {
             }
             false
         })
+
+        //favorite List
+        favList = rootView.findViewById(R.id.fav_list)
+        val favlistAdapter = FavlistAdapter(activity!!.applicationContext, favArrayList)
+        favList.adapter = favlistAdapter
         return rootView
     }
     /*Observes text input in auto complete input field*/
@@ -161,6 +176,7 @@ class SucheFragment : Fragment() {
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
+        fun showSearchedItem(longitude: Double, latitude: Double)
     }
 
     companion object {
