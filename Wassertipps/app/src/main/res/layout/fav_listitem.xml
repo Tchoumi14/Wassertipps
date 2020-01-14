@@ -24,7 +24,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:gravity="center"
-                android:id="@+id/button"
+                android:id="@+id/fav_delete_btn"
                 android:background="@drawable/ic_delete"/>
     </LinearLayout>
 

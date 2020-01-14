@@ -45,6 +45,7 @@ class SucheFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
     private lateinit var fullResponseData : ArrayList<JSONObject>
     private val TRIGGER_AUTO_COMPLETE = 100
     private val AUTO_COMPLETE_DELAY: Long = 300
@@ -69,17 +70,22 @@ class SucheFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_suche, container, false)
+        // TO DO - Load saved favArrayList at startup.
         favArrayList = ArrayList()
         autoCompleteSearch = rootView.findViewById(R.id.autoCompleteSearch)
         autoSuggestAdapter = AutoSuggestAdapter(context, android.R.layout.simple_dropdown_item_1line)
-
         autoCompleteSearch.threshold = 2
         autoCompleteSearch.setAdapter(autoSuggestAdapter)
+
+        /**
+         * Dropdown list click listener
+         */
         autoCompleteSearch.setOnItemClickListener { parent, view, position, id ->
             val item = fullResponseData[position] // show this in the home page and add it to favorite list
             favArrayList.add(fullResponseData[position])
             autoCompleteSearch.text.clear()
             listener?.loadSearchedItem(item.getDouble("lon"), item.getDouble("lat")) //call function in MainActivity to fetch data
+            //TO DO - Save favArrayList (in SharedViewModel), Switch to Home page
             val adapter = favList.adapter as FavlistAdapter
             adapter.updateList()
         }

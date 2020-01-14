@@ -6,10 +6,7 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.navfragments.WasserinfoFragment
 import org.json.JSONObject
@@ -44,6 +41,8 @@ class FavlistAdapter (private val context: Context, private val dataSource: Arra
         listContainer.setOnClickListener { println("Item selected"+item.optString("plz")) }
         val city = rowView.findViewById<TextView>(R.id.city_name)
         val addresse = rowView.findViewById<TextView>(R.id.addresse)
+        val deleteBtn = rowView.findViewById<Button>(R.id.fav_delete_btn)
+        deleteBtn.setOnClickListener { println("DELETED") }
         city.text = item.optString("ort")
         addresse.text = item.optString("plz")+", "+item.optString("land")
         return rowView
