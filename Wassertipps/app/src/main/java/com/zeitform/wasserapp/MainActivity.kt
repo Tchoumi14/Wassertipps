@@ -253,6 +253,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
         fm.beginTransaction().add(R.id.main_container, fragment5, "5").hide(fragment5).commit()
         fm.beginTransaction().add(R.id.main_container, fragment4, "4").hide(fragment4).commit()
         fm.beginTransaction().add(R.id.main_container, fragmentSuche, "suche").hide(fragmentSuche).commit()
+        fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit()
         fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit()
         fm.beginTransaction().add(R.id.main_container, fragment1, "1").commit()
 

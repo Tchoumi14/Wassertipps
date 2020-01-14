@@ -18,6 +18,9 @@ class SharedViewModel: ViewModel() {
     val isInternetUnavailable = MutableLiveData<Boolean>()
     val isOutsideDeutschland = MutableLiveData<Boolean>()
 
+    //sucheFragment
+    val favoriteList = MutableLiveData<ArrayList<JSONObject>>()  // Type - ArrayList of JSONObject
+
     //tippsFragment
     val tippsTitle = MutableLiveData<Spanned>()
     val tippsContent = MutableLiveData<String>()

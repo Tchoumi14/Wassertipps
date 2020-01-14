@@ -1,5 +1,6 @@
 package com.zeitform.wasserapp.navfragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
@@ -16,6 +17,8 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.AutoCompleteTextView
 import android.widget.ListView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.search.AutoSuggestAdapter
@@ -24,7 +27,11 @@ import org.json.JSONObject
 import org.json.JSONArray
 import com.zeitform.wasserapp.search.ApiCall
 import com.android.volley.Response
+import com.zeitform.wasserapp.MainActivity
+import com.zeitform.wasserapp.prefmanagers.DataManager
 import com.zeitform.wasserapp.search.FavlistAdapter
+import com.zeitform.wasserapp.viewmodel.SharedViewModel
+import org.json.JSONException
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -45,7 +52,7 @@ class SucheFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    private var dataManager: DataManager? = null
     private lateinit var fullResponseData : ArrayList<JSONObject>
     private val TRIGGER_AUTO_COMPLETE = 100
     private val AUTO_COMPLETE_DELAY: Long = 300
@@ -55,6 +62,7 @@ class SucheFragment : Fragment() {
     private lateinit var favArrayList: ArrayList<JSONObject>
     private lateinit var favList: ListView
     private var listener: OnFragmentInteractionListener? = null
+    private var sharedViewModel: SharedViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,16 +72,14 @@ class SucheFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    @SuppressLint("LongLogTag")
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_suche, container, false)
-        // TO DO - Load saved favArrayList at startup.
         favArrayList = ArrayList()
+        // TO DO - Load saved favArrayList at startup.
         autoCompleteSearch = rootView.findViewById(R.id.autoCompleteSearch)
-        autoSuggestAdapter = AutoSuggestAdapter(context, android.R.layout.simple_dropdown_item_1line)
+        autoSuggestAdapter = AutoSuggestAdapter(context,  android.R.layout.simple_dropdown_item_1line)
         autoCompleteSearch.threshold = 2
         autoCompleteSearch.setAdapter(autoSuggestAdapter)
 
@@ -83,11 +89,11 @@ class SucheFragment : Fragment() {
         autoCompleteSearch.setOnItemClickListener { parent, view, position, id ->
             val item = fullResponseData[position] // show this in the home page and add it to favorite list
             favArrayList.add(fullResponseData[position])
+            sharedViewModel?.favoriteList?.postValue(favArrayList) //update sharedViewModel
             autoCompleteSearch.text.clear()
             listener?.loadSearchedItem(item.getDouble("lon"), item.getDouble("lat")) //call function in MainActivity to fetch data
-            //TO DO - Save favArrayList (in SharedViewModel), Switch to Home page
-            val adapter = favList.adapter as FavlistAdapter
-            adapter.updateList()
+            //TO DO - , Switch to Home page
+
         }
         autoCompleteSearch.addTextChangedListener(inputTextWatcher) //Input listener (search input field)
         handler = Handler(Handler.Callback { msg ->
@@ -102,9 +108,22 @@ class SucheFragment : Fragment() {
 
         //favorite List
         favList = rootView.findViewById(R.id.fav_list)
-        val favlistAdapter = FavlistAdapter(activity!!.applicationContext, favArrayList)
+        val favlistAdapter = FavlistAdapter(activity!!.applicationContext, this, favArrayList)
         favList.adapter = favlistAdapter
+
+        sharedViewModel?.favoriteList?.observe(this, Observer {
+            it?.let {
+                favArrayList = it
+                //TO DO -save the list to DataManager (loaded to variable 'favArrayList' on app startup)
+                updateFavoritelist()
+            }
+        })
+
         return rootView
+    }
+    private fun updateFavoritelist() {
+        val adapter = favList.adapter as FavlistAdapter
+        adapter.notifyDataSetChanged()
     }
     /*Observes text input in auto complete input field*/
     private var inputTextWatcher = object: TextWatcher {

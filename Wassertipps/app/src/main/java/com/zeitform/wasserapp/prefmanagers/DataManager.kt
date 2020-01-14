@@ -24,6 +24,13 @@ class DataManager(internal var _context: Context) {
             editor.commit()
         }
 
+    //suche page
+    var favlistData: String?
+        get() = pref.getString(FAV_DATA,"")
+        set(dataJsonArr) {
+            editor.putString(FAV_DATA, dataJsonArr)
+            editor.commit()
+        }
     init {
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
         editor = pref.edit()
@@ -36,6 +43,8 @@ class DataManager(internal var _context: Context) {
 
         private const val SAVED_DATA = "saved-data"
         private const val IS_REDUCED = "saved-isreduced"
+
+        private const val FAV_DATA = "favorite-list-data"
     }
 
 }
