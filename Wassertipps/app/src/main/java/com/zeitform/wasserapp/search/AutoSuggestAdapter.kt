@@ -37,7 +37,6 @@ class AutoSuggestAdapter(context: Context?, resource: Int) : ArrayAdapter<String
     fun getObject(position: Int): String {
         return mlistData[position]
     }
-
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
@@ -49,7 +48,8 @@ class AutoSuggestAdapter(context: Context?, resource: Int) : ArrayAdapter<String
                 return filterResults
             }
 
-            override fun publishResults(constraint: CharSequence, results: FilterResults?) {
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                print(constraint)
                 if (results != null && results.count > 0) {
                     notifyDataSetChanged()
                 } else {

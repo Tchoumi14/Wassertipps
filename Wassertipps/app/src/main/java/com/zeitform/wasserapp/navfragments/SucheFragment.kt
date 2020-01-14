@@ -8,6 +8,7 @@ import android.os.Message
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -42,6 +43,7 @@ class SucheFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var fullResponseData : ArrayList<JSONObject>
     private val TRIGGER_AUTO_COMPLETE = 100
     private val AUTO_COMPLETE_DELAY: Long = 300
     private var handler: Handler? = null
@@ -62,16 +64,16 @@ class SucheFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var rootView = inflater.inflate(R.layout.fragment_suche, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_suche, container, false)
         autoCompleteSearch = rootView.findViewById(R.id.autoCompleteSearch)
         autoSuggestAdapter = AutoSuggestAdapter(context, android.R.layout.simple_dropdown_item_1line)
 
-        autoCompleteSearch.threshold = 1
+        autoCompleteSearch.threshold = 2
         autoCompleteSearch.setAdapter(autoSuggestAdapter)
         autoCompleteSearch.setOnItemClickListener { parent, view, position, id ->
-            print("Selected text"+position)
+            Log.d("Item selected", position.toString()+fullResponseData[position]) // show this in the home page and add it to favorite list
         }
-        autoCompleteSearch.addTextChangedListener(inputTextWatcher)
+        autoCompleteSearch.addTextChangedListener(inputTextWatcher) //Input listener (search input field)
         handler = Handler(Handler.Callback { msg ->
             if (msg.what == TRIGGER_AUTO_COMPLETE) {
                 if (!TextUtils.isEmpty(autoCompleteSearch.getText())) {
@@ -99,19 +101,22 @@ class SucheFragment : Fragment() {
 
     }
 
+    /**
+     * Send search request to the URL and add response to the dropdown list
+     */
     private fun makeApiCall(text: String) {
         context?.let {
             ApiCall.make(it, text, Response.Listener<String> { response ->
                 //parsing logic, please change it as per your requirement
+                fullResponseData = ArrayList<JSONObject>()
                 val stringList = ArrayList<String>()
                 try {
-                    val responseObject = JSONArray(response)
-                    print(responseObject)
-                    val array = responseObject
+                    val array = JSONArray(response)
                     for (i in 0 until array.length()) {
                         val row = array.getJSONObject(i)
-                        print("ROW:"+row)
-                        stringList.add(row.getString("ort"))
+                        fullResponseData.add(row)
+                        val listItem = row.getString("ort") +", "+ row.getString("plz")
+                        stringList.add(listItem)
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
