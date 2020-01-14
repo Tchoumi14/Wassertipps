@@ -13,7 +13,7 @@ import android.widget.TextView
 import com.zeitform.wasserapp.R
 import com.zeitform.wasserapp.navfragments.WasserinfoFragment
 
-class FavistAdapter (private val context: Context, private val listener: WasserinfoFragment.OnFragmentInteractionListener?, private val dataSource: Array<String>, private val icon:Drawable?) : BaseAdapter() {
+class FavlistAdapter (private val context: Context, private val dataSource: Array<String>) : BaseAdapter() {
 
     private val inflater: LayoutInflater
             = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -35,15 +35,14 @@ class FavistAdapter (private val context: Context, private val listener: Wasseri
     //4
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         // Get view for row item
-        val rowView = inflater.inflate(R.layout.list_item, parent, false)
+        val rowView = inflater.inflate(R.layout.fav_listitem, parent, false)
         val item = getItem(position)
-        val listContainer = rowView.findViewById<LinearLayout>(R.id.list_item)
-        listContainer.setOnClickListener { Handler().postDelayed(Runnable { listener!!.generateWasserinfos(item) }, 500) }
-        val leftIcon = rowView.findViewById<ImageView>(R.id.list_item_icon)
-        leftIcon.setImageDrawable(getIcon())
-        val listText = rowView.findViewById<TextView>(R.id.list_item_text)
+        val listContainer = rowView.findViewById<LinearLayout>(R.id.fav_listitem)
+        listContainer.setOnClickListener { println("Item selected") }
+        val city = rowView.findViewById<ImageView>(R.id.city_name)
+        val addresse = rowView.findViewById<TextView>(R.id.addresse)
 
-        listText.text = item
+        addresse.text = item
         return rowView
     }
     private fun getIcon(): Drawable?{
