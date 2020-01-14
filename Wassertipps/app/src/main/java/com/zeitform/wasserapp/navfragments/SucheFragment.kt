@@ -76,10 +76,10 @@ class SucheFragment : Fragment() {
         autoCompleteSearch.threshold = 2
         autoCompleteSearch.setAdapter(autoSuggestAdapter)
         autoCompleteSearch.setOnItemClickListener { parent, view, position, id ->
-            Log.d("Item selected", position.toString()+fullResponseData[position]) // show this in the home page and add it to favorite list
+            val item = fullResponseData[position] // show this in the home page and add it to favorite list
             favArrayList.add(fullResponseData[position])
             autoCompleteSearch.text.clear()
-
+            listener?.loadSearchedItem(item.getDouble("lon"), item.getDouble("lat")) //call function in MainActivity to fetch data
             val adapter = favList.adapter as FavlistAdapter
             adapter.updateList()
         }
@@ -176,7 +176,7 @@ class SucheFragment : Fragment() {
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
-        fun showSearchedItem(longitude: Double, latitude: Double)
+        fun loadSearchedItem(longitude: Double, latitude: Double)
     }
 
     companion object {

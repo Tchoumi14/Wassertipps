@@ -122,168 +122,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     private val mHandler: Handler = Handler()
 
 
-    override fun onFragmentInteraction(uri: Uri) {
-        System.out.println(uri.toString())
-    }
-    override fun setBillingManager(billingManager: BillingManager) {
-        //println("Billing manager set at main")
-        this.billingManager = billingManager
-    }
-    override fun getBillingManager(): BillingManager {
-        return billingManager
-    }
-    override fun updateRechnerStatus(isVisible: Boolean) {
-        println("At update rechner")
-        val f = fm.findFragmentByTag("4") as RechnerFragment
-        f.updateVisibility(isVisible)
-        updateRechnerNavIcon(isVisible) //update rechner bottomnav icon
-    }
-    override fun openTippsHaerte() {
-        if(sharedViewModel?.serverData?.value==null){
-            createToast("Die Daten wurden noch nicht geladen.")
-        } else {
-            toolbarText.setText(R.string.title_tipps_haerte)
-            fm.beginTransaction().hide(active).show(fragmentHaerte).commit()
-            active =fragmentHaerte
-        }
-    }
-    override fun openTippsNitrat() {
-        if(sharedViewModel?.serverData?.value==null){
-            createToast("Die Daten wurden noch nicht geladen.")
-        } else {
-            toolbarText.setText(R.string.title_tipps_nitrat)
-            fm.beginTransaction().hide(active).show(fragmentNitrat).commit()
-            active=fragmentNitrat
-        }
-    }
-    override fun generateHaerteTipps(button: String) {
-        var index = listHaerteItem.indexOf(button)
-        var hartArrayContent:Array<String>
-        when(hart){
-            1 -> {
-                hartArrayContent= resources.getStringArray(R.array.hart_1_content)
-                sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
-                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-            }
-            2 -> {
-                hartArrayContent= resources.getStringArray(R.array.hart_2_content)
-                sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
-                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-            }
-            3 -> {
-                hartArrayContent= resources.getStringArray(R.array.hart_3_content)
-                sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
-                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-            }
-        }
 
-
-        prevFragment = active
-        fm.beginTransaction().hide(active).show(fragmentTipps).commit()
-        active=fragmentTipps
-        //generate tipps page
-    }
-    override fun generateNitratTipps(button: String) {
-        val index = listNitratItem.indexOf(button)
-        val nitratArrayContent:Array<String>
-        when(nitrat){
-            1 -> {
-                nitratArrayContent= resources.getStringArray(R.array.nitrat_1_content)
-                sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
-                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-            }
-            2 -> {
-                nitratArrayContent= resources.getStringArray(R.array.nitrat_2_content)
-                sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
-                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-            }
-            3 -> {
-                nitratArrayContent= resources.getStringArray(R.array.nitrat_3_content)
-                sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
-                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-
-            }
-        }
-        prevFragment = active
-        fm.beginTransaction().hide(active).show(fragmentTipps).commit()
-        active=fragmentTipps
-        //generate tipps page
-    }
-    override fun generateWasserinfos(buttonBox: String) {
-        //Log.d("Info", "Wasserinfo"+wasserInfoList.indexOf(buttonBox)+" - ")
-        val index = wasserInfoList.indexOf(buttonBox)
-        val infoTitleArray:Array<String> = resources.getStringArray(R.array.wasserinfos_titles)
-        val infoContentArray:Array<String> = resources.getStringArray(R.array.wasserinfos_content)
-        toolbarText.text = wasserInfoTitlebarText[index]
-        sharedViewModel?.infoTitle?.postValue(HtmlCompat.fromHtml(infoTitleArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-        sharedViewModel?.infoContent?.postValue(HtmlCompat.fromHtml(infoContentArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-
-        prevFragment = active
-        fm.beginTransaction().hide(active).show(fragmentInfos).commit()
-        active=fragmentInfos
-    }
-    //generate kontakt pages
-    override fun generateKontaktSubPage(buttonBox: String) {
-        val index = kontaktList.indexOf(buttonBox)
-        val kontaktTitleArray:Array<String> = resources.getStringArray(R.array.kontakt_titlebar_text)
-        val kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
-        toolbarText.text = kontaktTitleArray[index]
-        if(index == 0){
-            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(kontaktContentArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
-        }
-        if(index == 1){
-            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(nutzungsbedingungText, HtmlCompat.FROM_HTML_MODE_COMPACT))
-        }
-        if(index == 2){
-            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(datenschutzText, HtmlCompat.FROM_HTML_MODE_COMPACT))
-        }
-        if(index == 3){
-            prevFragment = active
-            fm.beginTransaction().hide(active).show(fragment3).commit() //show FAQ fragment
-            active=fragment3
-        } else {
-            prevFragment = active
-            fm.beginTransaction().hide(active).show(fragmentKontaktSub).commit()
-            active=fragmentKontaktSub
-        }
-    }
-
-    /**
-     * From 'suche' page - Get data for this longitude and latitude
-     */
-    override fun showSearchedItem(longitude: Double, latitude: Double) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-    private val mRunnable = Runnable { doubleBackToExitPressedOnce = false }
-
-    override fun onBackPressed() {
-        //Log.d("Back", "On back pressed!")
-        if(active==fragmentHaerte || active == fragmentNitrat){
-            fm.beginTransaction().hide(active).show(fragment1).commit()
-            active = fragment1
-            var city = sharedViewModel?.serverData?.value?.optString("city")
-            toolbarText.text= getString(R.string.title_home)+city
-        } else if(active == fragmentTipps|| active == fragmentInfos || active == fragmentKontaktSub || active == fragment3){
-            fm.beginTransaction().hide(active).show(prevFragment).commit()
-            active = prevFragment
-            if(active == fragment2){
-                toolbarText.text = resources.getString(R.string.title_wasserinfos)
-            } else if(active == fragment5){
-                toolbarText.text = resources.getString(R.string.title_kontakt)
-            }
-        }else
-        {
-            if (doubleBackToExitPressedOnce){
-                super.onBackPressed()
-            }
-
-            this.doubleBackToExitPressedOnce = true
-            Toast.makeText(this, "Bitte klicken Sie erneut auf ZURÜCK zum Beenden", Toast.LENGTH_SHORT).show()
-
-            Handler().postDelayed(Runnable { mRunnable }, 2000)
-        }
-
-    }
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
@@ -311,14 +150,6 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
                 active = fragment2
                 return@OnNavigationItemSelectedListener true
             }
-            /*R.id.navigation_help -> {
-                textMessage.setText(R.string.title_help)
-                //toolbar.setTitle(R.string.title_help)
-                toolbarText.text = resources.getString(R.string.title_help)
-                fm.beginTransaction().hide(active).show(fragment3).commit()
-                active = fragment3
-                return@OnNavigationItemSelectedListener true
-            }*/
             R.id.navigation_wasserbedarf -> {
                 textMessage.setText(R.string.title_wasserbedarf)
                 //toolbar.setTitle(R.string.title_wasserbedarf)
@@ -377,7 +208,6 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
 
         // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this) {}
-
         // Create the InterstitialAd and set it up.
         mInterstitialAd = InterstitialAd(this).apply {
             adUnitId = AD_UNIT_ID
@@ -397,6 +227,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             })
         }
         mInterstitialAd.loadAd(AdRequest.Builder().build())
+
         navView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
 
@@ -530,7 +361,175 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             checkLocationPermission()
         }
     }
+    override fun onFragmentInteraction(uri: Uri) {
+        System.out.println(uri.toString())
+    }
+    override fun setBillingManager(billingManager: BillingManager) {
+        //println("Billing manager set at main")
+        this.billingManager = billingManager
+    }
+    override fun getBillingManager(): BillingManager {
+        return billingManager
+    }
+    override fun updateRechnerStatus(isVisible: Boolean) {
+        println("At update rechner")
+        val f = fm.findFragmentByTag("4") as RechnerFragment
+        f.updateVisibility(isVisible)
+        updateRechnerNavIcon(isVisible) //update rechner bottomnav icon
+    }
+    override fun openTippsHaerte() {
+        if(sharedViewModel?.serverData?.value==null){
+            createToast("Die Daten wurden noch nicht geladen.")
+        } else {
+            toolbarText.setText(R.string.title_tipps_haerte)
+            fm.beginTransaction().hide(active).show(fragmentHaerte).commit()
+            active =fragmentHaerte
+        }
+    }
+    override fun openTippsNitrat() {
+        if(sharedViewModel?.serverData?.value==null){
+            createToast("Die Daten wurden noch nicht geladen.")
+        } else {
+            toolbarText.setText(R.string.title_tipps_nitrat)
+            fm.beginTransaction().hide(active).show(fragmentNitrat).commit()
+            active=fragmentNitrat
+        }
+    }
+    override fun generateHaerteTipps(button: String) {
+        var index = listHaerteItem.indexOf(button)
+        var hartArrayContent:Array<String>
+        when(hart){
+            1 -> {
+                hartArrayContent= resources.getStringArray(R.array.hart_1_content)
+                sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+            }
+            2 -> {
+                hartArrayContent= resources.getStringArray(R.array.hart_2_content)
+                sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+            }
+            3 -> {
+                hartArrayContent= resources.getStringArray(R.array.hart_3_content)
+                sharedViewModel?.tippsContent?.postValue(hartArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(hartArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+            }
+        }
 
+
+        prevFragment = active
+        fm.beginTransaction().hide(active).show(fragmentTipps).commit()
+        active=fragmentTipps
+        //generate tipps page
+    }
+    override fun generateNitratTipps(button: String) {
+        val index = listNitratItem.indexOf(button)
+        val nitratArrayContent:Array<String>
+        when(nitrat){
+            1 -> {
+                nitratArrayContent= resources.getStringArray(R.array.nitrat_1_content)
+                sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+            }
+            2 -> {
+                nitratArrayContent= resources.getStringArray(R.array.nitrat_2_content)
+                sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+            }
+            3 -> {
+                nitratArrayContent= resources.getStringArray(R.array.nitrat_3_content)
+                sharedViewModel?.tippsContent?.postValue(nitratArrayContent[index])
+                //sharedViewModel?.tippsContent?.postValue(HtmlCompat.fromHtml(nitratArrayContent[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+
+            }
+        }
+        prevFragment = active
+        fm.beginTransaction().hide(active).show(fragmentTipps).commit()
+        active=fragmentTipps
+        //generate tipps page
+    }
+    override fun generateWasserinfos(buttonBox: String) {
+        //Log.d("Info", "Wasserinfo"+wasserInfoList.indexOf(buttonBox)+" - ")
+        val index = wasserInfoList.indexOf(buttonBox)
+        val infoTitleArray:Array<String> = resources.getStringArray(R.array.wasserinfos_titles)
+        val infoContentArray:Array<String> = resources.getStringArray(R.array.wasserinfos_content)
+        toolbarText.text = wasserInfoTitlebarText[index]
+        sharedViewModel?.infoTitle?.postValue(HtmlCompat.fromHtml(infoTitleArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+        sharedViewModel?.infoContent?.postValue(HtmlCompat.fromHtml(infoContentArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+
+        prevFragment = active
+        fm.beginTransaction().hide(active).show(fragmentInfos).commit()
+        active=fragmentInfos
+    }
+    //generate kontakt pages
+    override fun generateKontaktSubPage(buttonBox: String) {
+        val index = kontaktList.indexOf(buttonBox)
+        val kontaktTitleArray:Array<String> = resources.getStringArray(R.array.kontakt_titlebar_text)
+        val kontaktContentArray:Array<String> = resources.getStringArray(R.array.kontakt_sub_content)
+        toolbarText.text = kontaktTitleArray[index]
+        if(index == 0){
+            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(kontaktContentArray[index], HtmlCompat.FROM_HTML_MODE_COMPACT))
+        }
+        if(index == 1){
+            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(nutzungsbedingungText, HtmlCompat.FROM_HTML_MODE_COMPACT))
+        }
+        if(index == 2){
+            sharedViewModel?.kontaktSubContent?.postValue(HtmlCompat.fromHtml(datenschutzText, HtmlCompat.FROM_HTML_MODE_COMPACT))
+        }
+        if(index == 3){
+            prevFragment = active
+            fm.beginTransaction().hide(active).show(fragment3).commit() //show FAQ fragment
+            active=fragment3
+        } else {
+            prevFragment = active
+            fm.beginTransaction().hide(active).show(fragmentKontaktSub).commit()
+            active=fragmentKontaktSub
+        }
+    }
+
+    /**
+     * From 'suche' page - Get data for this longitude and latitude using getData(longitude, latitude)
+     * Keep actual location in a seperate variable to show later
+     */
+    override fun loadSearchedItem(longitude: Double, latitude: Double) {
+        println("LOAD item :"+longitude+" "+latitude)
+    }
+
+    /**
+     * Double press to close
+     */
+    private val mRunnable = Runnable { doubleBackToExitPressedOnce = false }
+
+    /**
+     * Back button pressed actions
+     */
+    override fun onBackPressed() {
+        if(active==fragmentHaerte || active == fragmentNitrat){
+            fm.beginTransaction().hide(active).show(fragment1).commit()
+            active = fragment1
+            var city = sharedViewModel?.serverData?.value?.optString("city")
+            toolbarText.text= getString(R.string.title_home)+city
+        } else if(active == fragmentTipps|| active == fragmentInfos || active == fragmentKontaktSub || active == fragment3){
+            fm.beginTransaction().hide(active).show(prevFragment).commit()
+            active = prevFragment
+            if(active == fragment2){
+                toolbarText.text = resources.getString(R.string.title_wasserinfos)
+            } else if(active == fragment5){
+                toolbarText.text = resources.getString(R.string.title_kontakt)
+            }
+        }else
+        {
+            if (doubleBackToExitPressedOnce){
+                super.onBackPressed()
+            }
+
+            this.doubleBackToExitPressedOnce = true
+            Toast.makeText(this, "Bitte klicken Sie erneut auf ZURÜCK zum Beenden", Toast.LENGTH_SHORT).show()
+
+            Handler().postDelayed(Runnable { mRunnable }, 2000)
+        }
+
+    }
     /**
      * Update Wasserbedarfrechner navbar icon
      */
