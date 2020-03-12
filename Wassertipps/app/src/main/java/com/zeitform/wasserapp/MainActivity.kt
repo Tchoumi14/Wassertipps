@@ -329,7 +329,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
     /**
      * Fetch webpage data from the URL
      */
-    private fun loadText(){
+ /**   private fun loadText(){
         Executors.newSingleThreadExecutor().execute {
             try{
                 datenschutzText = URL("https://app.wassertipps.de/app/datenschutz-app.html").readText()
@@ -345,7 +345,7 @@ TippsNitratFragment.OnFragmentInteractionListener, TippsFragment.OnFragmentInter
             }
 
         }
-    }
+    }*/
     /**
      * remove runnable from handler before closing the app
      */
